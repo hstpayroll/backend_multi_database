@@ -51,7 +51,7 @@ class AuthenticatedSessionController extends Controller
             'token_invalidated' => true
         ], JsonResponse::HTTP_OK);
     }
-    public function validateUser(Request $request): JsonResponse
+    public function validateUser(Request $request)
     {
 
         $user = Auth::user();

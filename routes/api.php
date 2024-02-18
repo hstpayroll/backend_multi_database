@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\UserController;
+use App\Http\Controllers\Api\V1\TenantController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
 use App\Http\Controllers\Api\V1\CurrencyController;
@@ -60,6 +61,7 @@ Route::prefix('v1')->group(function () {
 
         Route::apiResource('users', UserController::class);
     });
+    Route::apiResource('tenants', TenantController::class);
 
     // user
 });
