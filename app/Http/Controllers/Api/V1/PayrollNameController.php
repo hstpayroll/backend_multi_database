@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Models\Tenant\PayrollName;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePayrollNameRequest;
 use App\Http\Resources\Finance\PayrollNameResource;
-use App\Models\PayrollName;
 
 class PayrollNameController extends Controller
 {

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Calendar;
-use App\Http\Resources\Finance\CalenderResource;
+use App\Models\Tenant\Calendar;
 use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Finance\CalenderResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class CalendarController extends Controller

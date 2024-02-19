@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use Exception;
-use App\Models\Bank;
+use App\Models\Tenant\Bank;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;

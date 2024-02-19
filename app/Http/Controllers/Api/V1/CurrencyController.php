@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Currency;
 use Illuminate\Http\Request;
+use App\Models\Tenant\Currency;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCurrencyRequest;
 use App\Http\Resources\Finance\CurrencyResource;

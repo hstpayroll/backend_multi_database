@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\IncomeTax;
-use App\Http\Resources\Finance\IncomeTaxResource;
+use App\Models\Tenant\IncomeTax;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreIncomeTaxRequest;
+use App\Http\Resources\Finance\IncomeTaxResource;
 
 
 class IncomeTaxController extends Controller

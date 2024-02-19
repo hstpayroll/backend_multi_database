@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Controllers\Controller;
-use App\Models\EmploymentType;
 use Illuminate\Http\Request;
-use App\Http\Resources\Finance\EmploymentTypeResource;
+use App\Http\Controllers\Controller;
+use App\Models\Tenant\EmploymentType;
 use App\Http\Requests\StoreEmploymentTypeRequest;
+use App\Http\Resources\Finance\EmploymentTypeResource;
 
 class EmploymentTypeController extends Controller
 {

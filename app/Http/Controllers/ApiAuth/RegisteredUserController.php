@@ -4,7 +4,6 @@ namespace App\Http\Controllers\ApiAuth;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Validation\Rules;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
