@@ -16,7 +16,8 @@ class DomainResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->id,
+            'domain' => $this->domain,
+            'tenant_id' => $this->tenant_id,
         ];
     }
 }
