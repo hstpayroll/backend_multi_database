@@ -17,9 +17,9 @@ class TenantDatabaseSeeder extends Seeder
         // $this->call(CurrencySeeder::class);
         // $this->call(CalendarSeeder::class);
         // $this->call(CompanySeeder::class);
-        $this->call(RoleSeeder::class);
-        $this->call(PermissionSeeder::class);
-        $this->call(UserSeeder::class);
+        $this->call(TenantRoleSeeder::class);
+        $this->call(TenantPermissionSeeder::class);
+        $this->call(TenantUserSeeder::class);
         // $this->call(GradeSeeder::class);
         // $this->call(OverTimeTypeSeeder::class);
         // $this->call(BankSeeder::class);

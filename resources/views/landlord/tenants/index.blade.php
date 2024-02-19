@@ -7,6 +7,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="col-span-12 card 2xl:col-span-12">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <x-button-link href="{{ route('tenants.create') }}">{{ __('Create Tenants') }}</x-button-link>
+                </div>
                 <div class="card-body">
                     <div class="grid items-center grid-cols-1 gap-3 mb-5 2xl:grid-cols-12">
                         <div class="2xl:col-span-3">

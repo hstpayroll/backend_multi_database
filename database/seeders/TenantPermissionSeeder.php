@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class TenantPermissionSeeder extends Seeder
 {
@@ -16,11 +17,11 @@ class TenantPermissionSeeder extends Seeder
             'edit_profile',
             'change_password',
 
-            'user_index',
-            'user_create',
-            'user_show',
-            'user_update',
-            'user_destroy',
+            'tenant_user_index',
+            'tenant_user_create',
+            'tenant_user_show',
+            'tenant_user_update',
+            'tenant_user_destroy',
         ];
         foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);

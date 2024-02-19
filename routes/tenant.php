@@ -19,20 +19,6 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 | Feel free to customize them however you want. Good luck!
 |
 */
-
-// Route::middleware([
-//     // 'api',
-//     'tenant',
-//     // 'auth:sanctum',
-//     InitializeTenancyByDomain::class,
-//     PreventAccessFromCentralDomains::class,
-// ])->prefix('v1')->group(function () {
-//     dd("are you here");
-//     Route::get('users', function () {
-//         dd("are you here");
-//     });
-//     // Route::apiResource('users', TenantUserControllerApi::class);
-// });
 Route::middleware([
     'api',
     InitializeTenancyByDomain::class,
@@ -40,11 +26,15 @@ Route::middleware([
 ])->prefix('api/v1')->group(function () {
     //
     require __DIR__ . '/tenant_api_auth.php';
-    Route::name('api.')->middleware('auth:sanctum')->group(function () {;
+    Route::name('api.')
+    // ->middleware('auth:sanctum')
+    ->group(function () {
         Route::apiResource('users', TenantUserControllerApi::class);
     });
 });
 
+
+// The web start here
 Route::middleware([
     'web',
     InitializeTenancyByDomain::class,
