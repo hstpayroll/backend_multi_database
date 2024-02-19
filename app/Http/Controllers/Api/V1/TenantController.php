@@ -45,7 +45,7 @@ class TenantController extends Controller
         $tenant->domains()->create([
             'domain' => $data['domain'] . '.' . config('app.domain'),
         ]);
-        
+
         event(new Registered($tenant));
 
         return new  TenantResource($tenant);
@@ -56,7 +56,7 @@ class TenantController extends Controller
      */
     public function show(Tenant $tenant)
     {
-        //
+        return new TenantResource($tenant);
     }
 
     /**

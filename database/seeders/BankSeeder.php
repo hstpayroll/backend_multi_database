@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Bank;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Tenant\Bank;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class BankSeeder extends Seeder
 {

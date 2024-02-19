@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\OverTimeType;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\OverTimeType;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class OverTimeTypeSeeder extends Seeder
 {
@@ -16,27 +16,22 @@ class OverTimeTypeSeeder extends Seeder
         OverTimeType::create([
             'name' => '1.25 Hours',
             'rate' => '1.25',
-            'company_id' => '1',
         ]);
         OverTimeType::create([
             'name' => '1.5 Hours',
             'rate' => '1.5',
-            'company_id' => '1',
         ]);
         OverTimeType::create([
             'name' => '1.75 Hours',
             'rate' => '1.75',
-            'company_id' => '1',
         ]);
         OverTimeType::create([
             'name' => '2.0 Hours',
             'rate' => '2.0',
-            'company_id' => '1',
         ]);
         OverTimeType::create([
             'name' => '2.25 Hours',
             'rate' => '2.25',
-            'company_id' => '1',
         ]);
     }
 }

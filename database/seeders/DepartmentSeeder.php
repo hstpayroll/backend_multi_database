@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Department;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\Department;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DepartmentSeeder extends Seeder
 {
@@ -16,13 +16,11 @@ class DepartmentSeeder extends Seeder
         Department::create(
             [
                 'name' => 'IT',
-                'company_id' => '1',
             ]
         );
         Department::create(
             [
                 'name' => 'Accounting',
-                'company_id' => '1',
             ]
         );
     }

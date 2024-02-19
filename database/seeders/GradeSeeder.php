@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Grade;
+use App\Models\Tenant\Grade;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 

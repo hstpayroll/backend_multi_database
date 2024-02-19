@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\EmployeePension;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\EmployeePension;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class EmployeePensionSeeder extends Seeder
 {

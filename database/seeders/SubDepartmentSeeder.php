@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\SubDepartment;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\SubDepartment;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class SubDepartmentSeeder extends Seeder
 {
@@ -16,12 +16,10 @@ class SubDepartmentSeeder extends Seeder
         SubDepartment::create([
             'name' => 'Sub Department 2',
             'department_id' => 1,
-            'company_id' => 1
         ]);
         SubDepartment::create([
             'name' => 'Sub Depertment 2',
             'department_id' => 1,
-            'company_id' => 1
         ]);
     }
 }

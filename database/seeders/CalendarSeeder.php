@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Calendar;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Tenant\Calendar;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CalendarSeeder extends Seeder
 {

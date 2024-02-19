@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\PayrollPeriod;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\PayrollPeriod;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PayrollPeriodSeeder extends Seeder

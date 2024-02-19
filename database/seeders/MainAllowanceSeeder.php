@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\MainAllowance;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\MainAllowance;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class MainAllowanceSeeder extends Seeder
 {

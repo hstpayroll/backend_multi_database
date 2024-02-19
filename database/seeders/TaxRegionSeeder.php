@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\TaxRegion;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\TaxRegion;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class TaxRegionSeeder extends Seeder
 {

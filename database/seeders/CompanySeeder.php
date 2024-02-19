@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Calendar;
-use App\Models\Currency;
-use App\Models\Company;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Tenant\Company;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CompanySeeder extends Seeder
 {
@@ -25,6 +24,6 @@ class CompanySeeder extends Seeder
             'currency_id' =>2,
             'calendar_id' =>2
         ]);
-        Company::factory(50)->create();
+        // Company::factory(50)->create();
     }
 }

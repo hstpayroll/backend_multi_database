@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Position;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Tenant\Position;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PositionSeeder extends Seeder
 {
@@ -15,12 +15,10 @@ class PositionSeeder extends Seeder
     {
        Position::create([
             'name' => 'Position 1',
-            'company_id' => 1,
             'sub_department_id' => 1
         ]);
        Position::create([
             'name' => 'Position 2',
-            'company_id' => 1,
             'sub_department_id' => 1
         ]);
     }

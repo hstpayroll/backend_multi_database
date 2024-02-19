@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\EmploymentType;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\EmploymentType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class EmploymentTypeSeeder extends Seeder

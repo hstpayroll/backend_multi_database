@@ -3,10 +3,18 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\BankController;
+use App\Http\Controllers\Api\V1\CompanyController;
+use App\Http\Controllers\Api\V1\CalendarController;
+use App\Http\Controllers\Api\V1\CurrencyController;
+use App\Http\Controllers\Api\V1\IncomeTaxController;
+use App\Http\Controllers\Api\V1\FiscalYearController;
+use App\Http\Controllers\Api\V1\PayrollNameController;
 use App\Http\Controllers\Tenants\TenantUserController;
-use App\Http\Controllers\Api\V1\TenantUserController as TenantUserControllerApi;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+use App\Http\Controllers\Api\V1\TenantUserController as TenantUserControllerApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +38,22 @@ Route::middleware([
     // ->middleware('auth:sanctum')
     ->group(function () {
         Route::apiResource('users', TenantUserControllerApi::class);
+            // Route::apiResource('users', UserController::class);
+        // Route::get('/users', [UserController::class,'index'])->middleware('can:user_index');
+        // Route::post('/users', [UserController::class,'store']);
+        // Route::post('/users', [UserController::class,'store'])->middleware('can:user_store');
+        // Route::get('/users/{user}', [UserController::class,'show'])->middleware('can:user_show');
+        // Route::put('/users/{user}', [UserController::class,'update'])->middleware('can:user_update');
+        // Route::delete('/users/{user}', [UserController::class,'destroy'])->middleware('can:user_destroy');
+
+        Route::apiResource('currencies', CurrencyController::class);
+        Route::apiResource('banks', BankController::class);
+        Route::apiResource('calenders', CalendarController::class);
+        Route::apiResource('companies', CompanyController::class);
+        Route::apiResource('employment-types', EmploymentTypeController::class);
+        Route::apiResource('payroll-names', PayrollNameController::class);
+        Route::apiResource('income-taxes', IncomeTaxController::class);
+        Route::apiResource('fiscal-years', FiscalYearController::class);
     });
 });
 

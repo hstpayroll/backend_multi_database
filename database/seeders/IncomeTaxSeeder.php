@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\IncomeTax;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\IncomeTax;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class IncomeTaxSeeder extends Seeder

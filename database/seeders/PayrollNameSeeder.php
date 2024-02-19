@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\PayrollName;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\PayrollName;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PayrollNameSeeder extends Seeder

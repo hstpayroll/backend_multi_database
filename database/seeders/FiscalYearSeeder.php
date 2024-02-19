@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\FiscalYear;
 use Illuminate\Database\Seeder;
+use App\Models\Tenant\FiscalYear;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class FiscalYearSeeder extends Seeder
@@ -14,7 +14,7 @@ class FiscalYearSeeder extends Seeder
     public function run(): void
     {
         FiscalYear::create([
-            'name' => 'G',
+            'name' => '2024- Budget Year',
             'start_date' => '2024/01/01',
             'end_date' => '2024/12/31',
         ]);

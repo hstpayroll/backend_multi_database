@@ -16,6 +16,6 @@ class TenantRoleSeeder extends Seeder
         $role = Role::create(['name' => 'admin']);
         $role = Role::create(['name' => 'accountant']);
         $role = Role::create(['name' => 'hrm']);
-        $role = Role::create(['name' => 'managment']);
+        $role = Role::create(['name' => 'management']);
     }
 }
