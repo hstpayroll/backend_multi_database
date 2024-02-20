@@ -16,6 +16,14 @@ class TenantUserController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function auth_user_tenant()
+    {
+        $auth_user = auth()->user();
+        return response()->json([
+            'message' => 'success',
+            'code' => '200',
+        ]);
+    }
     public function index()
     {
         $users = User::paginate(10); // You can adjust the number of items per page as needed

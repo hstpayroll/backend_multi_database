@@ -50,5 +50,6 @@ class DomainController extends Controller
             return response()->json([
                 'message' => 'success',
                 'code' => '200',
-            ]);}
+            ]);
+        }
     }

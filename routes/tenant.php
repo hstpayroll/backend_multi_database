@@ -10,12 +10,11 @@ use App\Http\Controllers\Api\V1\CalendarController;
 use App\Http\Controllers\Api\V1\CurrencyController;
 use App\Http\Controllers\Api\V1\IncomeTaxController;
 use App\Http\Controllers\Api\V1\FiscalYearController;
+use App\Http\Controllers\Api\V1\TenantUserController;
 use App\Http\Controllers\Api\V1\PayrollNameController;
-use App\Http\Controllers\Tenants\TenantUserController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
-use App\Http\Controllers\Api\V1\TenantUserController as TenantUserControllerApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +37,8 @@ Route::middleware([
     Route::name('api.')
     ->middleware('auth:sanctum')
     ->group(function () {
-        Route::apiResource('users', TenantUserControllerApi::class);
+        Route::get('auth-user-tenant', [TenantUserController::class,'auth_user_tenant']);
+        Route::apiResource('users', TenantUserController::class);
             // Route::apiResource('users', UserController::class);
         // Route::get('/users', [UserController::class,'index'])->middleware('can:user_index');
         // Route::post('/users', [UserController::class,'store']);
@@ -75,7 +75,7 @@ Route::middleware([
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('users', TenantUserController::class);
+    // Route::resource('users', TenantUserController::class);
 
     require __DIR__ . '/tenant_auth.php';
 });
