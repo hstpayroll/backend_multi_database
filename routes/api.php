@@ -62,10 +62,11 @@ Route::prefix('v1')->group(function () {
             ->name('validate-user');
             Route::apiResource('users', UserController::class);
             Route::apiResource('tenants', TenantController::class);
-            Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');
             Route::apiResource('domains', DomainController::class)->only(['index']);
             Route::apiResource('roles', RoleController::class);
+            Route::get('auth-user', [DomainController::class, 'auth_user'])->name('auth-user');
         });
+        Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');
 
     // user
 });

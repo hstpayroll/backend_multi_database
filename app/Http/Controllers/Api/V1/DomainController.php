@@ -44,4 +44,11 @@ class DomainController extends Controller
             ]);
         }
     }
-}
+        public function auth_user()
+        {
+            $auth_user = auth()->user();
+            return response()->json([
+                'message' => 'success',
+                'code' => '200',
+            ]);}
+    }
