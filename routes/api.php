@@ -16,6 +16,7 @@ use App\Http\Controllers\Api\V1\PayrollNameController;
 use App\Http\Controllers\ApiAuth\NewPasswordController;
 use App\Http\Controllers\ApiAuth\VerifyEmailController;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
+use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\ApiAuth\RegisteredUserController;
 use App\Http\Controllers\ApiAuth\PasswordResetLinkController;
 use App\Http\Controllers\ApiAuth\AuthenticatedSessionController;
@@ -59,10 +60,12 @@ Route::prefix('v1')->group(function () {
 
         Route::post('/validate-user', [AuthenticatedSessionController::class, 'validateUser'])
             ->name('validate-user');
-    });
-    Route::apiResource('users', UserController::class);
-    Route::apiResource('tenants', TenantController::class);
-    Route::apiResource('domains', DomainController::class);
+            Route::apiResource('users', UserController::class);
+            Route::apiResource('tenants', TenantController::class);
+            Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');
+            Route::apiResource('domains', DomainController::class)->only(['index']);
+            Route::apiResource('roles', RoleController::class);
+        });
 
     // user
 });

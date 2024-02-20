@@ -36,7 +36,7 @@ Route::middleware([
     //
     require __DIR__ . '/tenant_api_auth.php';
     Route::name('api.')
-    // ->middleware('auth:sanctum')
+    ->middleware('auth:sanctum')
     ->group(function () {
         Route::apiResource('users', TenantUserControllerApi::class);
             // Route::apiResource('users', UserController::class);
