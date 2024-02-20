@@ -17,12 +17,11 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(IncomeTax::class);
             $table->foreignId('payroll_type_id')->constrained();
-            $table->foreignIdFor(FiscalYear::class)->constrained();
+            $table->foreignId('fiscal_year_id')->constrained();
             $table->string('name');
             $table->date('start_date');
             $table->date('end_date');
             $table->tinyInteger('status')->default(1); //0 for expired and 1 for active
-
             $table->softDeletes();
             $table->timestamps();
         });

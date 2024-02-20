@@ -18,7 +18,7 @@ class IncomeTaxResource extends JsonResource
             'tax_rate' => $this->tax_rate,
             'deduction' => $this->deduction,
             'details' => $this->details,
-            'status' => $this->status,
+            'status' => $this->status == 1 ? 'active' : 'inactive',
         ];
     }
 }

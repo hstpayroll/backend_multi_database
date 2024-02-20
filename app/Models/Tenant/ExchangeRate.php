@@ -29,11 +29,11 @@ class ExchangeRate extends Model
     use SoftDeletes;
 
     static $rules = [
-		'from_currency_id' => 'required',
-		'to_currency_id' => 'required',
-		'start_date' => 'required',
-		'rate' => 'required',
-		'status' => 'required',
+        'from_currency_id' => 'required',
+        'to_currency_id' => 'required',
+        'start_date' => 'required',
+        'rate' => 'required',
+        'status' => 'required',
     ];
 
     protected $perPage = 20;
@@ -43,7 +43,7 @@ class ExchangeRate extends Model
      *
      * @var array
      */
-    protected $fillable = ['from_currency_id','to_currency_id','start_date','end_date','rate','status'];
+    protected $fillable = ['from_currency_id', 'to_currency_id', 'start_date', 'end_date', 'rate', 'status'];
 
 
     /**
@@ -61,6 +61,4 @@ class ExchangeRate extends Model
     {
         return $this->hasOne(Currency::class, 'id', 'to_currency_id');
     }
-
-
 }

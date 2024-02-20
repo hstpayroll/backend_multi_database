@@ -38,16 +38,13 @@ class LoanType extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','company_id','rate','note'];
+    protected $fillable = ['name','rate','note'];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function company()
-    {
-        return $this->hasOne(Company::class, 'id', 'company_id');
-    }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

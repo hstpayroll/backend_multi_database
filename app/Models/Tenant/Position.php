@@ -41,10 +41,7 @@ class Position extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function company()
-    {
-        return $this->hasOne(Company::class, 'id', 'company_id');
-    }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

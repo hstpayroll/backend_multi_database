@@ -57,7 +57,7 @@ class Department extends Model
      */
     public function subDepartments()
     {
-        return $this->hasMany(SubDepartment::class, 'department_id', 'id');
+        return $this->hasMany(SubDepartment::class);
     }
 
 

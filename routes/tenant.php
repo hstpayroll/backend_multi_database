@@ -7,13 +7,17 @@ use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
+use App\Http\Controllers\Api\V1\CostCenterController;
 use App\Http\Controllers\Api\V1\CurrencyController;
+use App\Http\Controllers\Api\V1\DepartmentController;
 use App\Http\Controllers\Api\V1\IncomeTaxController;
 use App\Http\Controllers\Api\V1\FiscalYearController;
 use App\Http\Controllers\Api\V1\PayrollNameController;
 use App\Http\Controllers\Tenants\TenantUserController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
+use App\Http\Controllers\Api\V1\PayrollPeriodController;
+use App\Http\Controllers\Api\V1\SubDepartmentController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\Api\V1\TenantUserController as TenantUserControllerApi;
 
@@ -55,6 +59,10 @@ Route::middleware([
         Route::apiResource('payroll-names', PayrollNameController::class);
         Route::apiResource('income-taxes', IncomeTaxController::class);
         Route::apiResource('fiscal-years', FiscalYearController::class);
+        Route::apiResource('cost-centers', CostCenterController::class);
+        Route::apiResource('payroll-periods', PayrollPeriodController::class);
+        Route::apiResource('departments', DepartmentController::class);
+        Route::apiResource('sub-departments', SubDepartmentController::class);
     });
 });
 
