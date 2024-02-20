@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Currency;
 use Illuminate\Http\Request;
+use App\Models\Tenant\Currency;
 
 /**
  * Class CurrencyController

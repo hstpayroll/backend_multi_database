@@ -19,8 +19,8 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             // 'companies' => CompanyResource::collection($this->companies),
-            // 'roles' => $this->roles,
-            // 'permissions' => $this->permissions,
+            'roles' => $this->roles,
+            'permissions' => $this->permissions,
         ];
     }
 }

@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10); // You can adjust the number of items per page as needed
+        $users = User::with(['tenants', 'roles', 'permissions'])->paginate(10);
         return  UserResource::collection($users);
     }
 
@@ -40,8 +40,8 @@ class UserController extends Controller
         ]);
 
         $user->assignRole(['user']);
-        $user->givePermissionTo(['edit_profile', 'change_password', 'user_index', 'user_create', 'user_show', 'user_update', 'user_destroy']);
-        $user->companies()->attach(1);
+        $user->givePermissionTo(['edit_profile', 'change_password']);
+        $user->tenants()->attach(1);
 
         event(new Registered($user));
 
@@ -63,7 +63,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        // $user = $user->load(['companies', 'roles', 'permissions']);
+        $user = $user->load(['tenants', 'roles', 'permissions']);
         // $user = $user->load(['companies', 'roles', 'permissions']);
         return new UserResource($user);
     }
@@ -81,7 +81,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->companies()->detach();
+        $user->tenants()->detach();
         $user->roles()->detach();
         $user->permissions()->detach();
         $user->delete();

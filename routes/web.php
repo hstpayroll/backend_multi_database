@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TailwickController;
 use App\Http\Controllers\Landlord\TenantController;
 
 /*
@@ -14,16 +15,12 @@ use App\Http\Controllers\Landlord\TenantController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('index/{locale}', [TailwickController::class, 'lang']); //languge support
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', function () { return view('auth.login');});
 
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () { return view('index'); })->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -31,3 +28,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+

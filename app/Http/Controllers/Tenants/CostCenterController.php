@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CostCenter;
 use Illuminate\Http\Request;
+use App\Models\Tenant\CostCenter;
 
 /**
  * Class CostCenterController

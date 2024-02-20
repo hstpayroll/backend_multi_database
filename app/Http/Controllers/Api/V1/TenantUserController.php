@@ -80,7 +80,7 @@ class TenantUserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->companies()->detach();
+        $user->tenants()->detach();
         $user->roles()->detach();
         $user->permissions()->detach();
         $user->delete();

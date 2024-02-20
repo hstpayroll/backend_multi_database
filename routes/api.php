@@ -58,9 +58,8 @@ Route::prefix('v1')->group(function () {
 
         Route::post('/validate-user', [AuthenticatedSessionController::class, 'validateUser'])
             ->name('validate-user');
-
-        Route::apiResource('users', UserController::class);
     });
+    Route::apiResource('users', UserController::class);
     Route::apiResource('tenants', TenantController::class);
 
     // user
