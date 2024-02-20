@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\V1\TenantController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
 use App\Http\Controllers\Api\V1\CurrencyController;
+use App\Http\Controllers\Api\V1\DomainController;
 use App\Http\Controllers\Api\V1\IncomeTaxController;
 use App\Http\Controllers\Api\V1\FiscalYearController;
 use App\Http\Controllers\Api\V1\PayrollNameController;
@@ -61,6 +62,7 @@ Route::prefix('v1')->group(function () {
     });
     Route::apiResource('users', UserController::class);
     Route::apiResource('tenants', TenantController::class);
+    Route::apiResource('domains', DomainController::class);
 
     // user
 });

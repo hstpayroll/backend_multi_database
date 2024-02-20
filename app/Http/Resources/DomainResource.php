@@ -14,10 +14,11 @@ class DomainResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $domainWithoutSubdomain = str_replace('.localhost', '', $this->domain);
+
         return [
-            'id' => $this->id,
-            'domain' => $this->domain,
-            'tenant_id' => $this->tenant_id,
+            'domain' => $domainWithoutSubdomain, //mukera.localhost is change to mukra only here
+
         ];
     }
 }
