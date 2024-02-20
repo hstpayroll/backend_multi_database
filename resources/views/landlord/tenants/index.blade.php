@@ -1,158 +1,187 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="col-span-12 card 2xl:col-span-12">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <x-button-link href="{{ route('tenants.create') }}">{{ __('Create Tenants') }}</x-button-link>
+@extends('layouts.master')
+@section('title')
+    {{ __('Tenants') }}
+@endsection
+@section('content')
+    <x-page-title title="Tenants" pagetitle="HR Management" />
+
+    <div class="card" id="ordersTable">
+        <div class="card-body">
+            <div class="flex items-center gap-3 mb-4">
+                <h6 class="text-15 grow"> {{ __('Tenants') }}</h6>
+                <div class="shrink-0">
+                    <a href="{{ route('tenants.create') }}" data-modal-target="addDepartmentModal" type="button"
+                        class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20"><i
+                            data-lucide="plus" class="inline-block w-4 h-4"></i> <span class="align-middle">
+                            {{ __('Add Tenants') }} </span></a>
                 </div>
-                <div class="card-body">
-                    <div class="grid items-center grid-cols-1 gap-3 mb-5 2xl:grid-cols-12">
-                        <div class="2xl:col-span-3">
-                            <h6 class="text-15">Product Orders</h6>
-                        </div><!--end col-->
-                        <div class="2xl:col-span-3 2xl:col-start-10">
-                            <div class="flex gap-3">
-                                <div class="relative grow">
-                                    <input type="text"
-                                        class="ltr:pl-8 rtl:pr-8 search form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200"
-                                        placeholder="Search for ..." autocomplete="off">
-                                    <i data-lucide="search"
-                                        class="inline-block w-4 h-4 absolute ltr:left-2.5 rtl:right-2.5 top-2.5 text-slate-500 dark:text-zink-200 fill-slate-100 dark:fill-zink-600"></i>
-                                </div>
-                                <button type="button"
-                                    class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20"><i
-                                        class="align-baseline ltr:pr-1 rtl:pl-1 ri-download-2-line"></i> Export</button>
-                            </div>
-                        </div><!--end col-->
-                    </div><!--end grid-->
-                    <div class="overflow-x-auto">
-                        <table class="w-full whitespace-nowrap">
-                            <thead
-                                class="ltr:text-left rtl:text-right bg-slate-100 text-slate-500 dark:text-zink-200 dark:bg-zink-600">
-                                <tr>
-                                    <th
-                                        class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">
-                                        #
-                                    </th>
-                                    <th
-                                        class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">
-                                        Tenant Name</th>
-                                    <th
-                                        class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">
-                                        Domin</th>
-                                    <th
-                                        class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">
-                                        Email</th>
-                                    <th
-                                        class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">
-                                        Status</th>
-                                    <th
-                                        class="px-3.5 py-2.5 first:pl-5 last:pr-5 font-semibold border-y border-slate-200 dark:border-zink-500">
-                                        Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse ($tenants as $tenant)
-                                    <tr>
-                                        <td
-                                            class="px-3.5 py-2.5 first:pl-5 last:pr-5 border-y border-slate-200 dark:border-zink-500">
-                                            01
-                                        </td>
-                                        <td
-                                            class="px-3.5 py-2.5 first:pl-5 last:pr-5 border-y border-slate-200 dark:border-zink-500">
-                                            {{ $tenant->name }}</td>
-                                        <td
-                                            class="px-3.5 py-2.5 first:pl-5 last:pr-5 border-y border-slate-200 dark:border-zink-500">
-                                            @foreach ($tenant->domains as $domain)
-                                                <span
-                                                    class="text-slate-500 dark:text-zink-200">{{ $domain->domain }}</span>
-                                            @endforeach
-                                        </td>
-                                        <td
-                                            class="px-3.5 py-2.5 first:pl-5 last:pr-5 border-y border-slate-200 dark:border-zink-500">
-                                            {{ $tenant->email }}</td>
-                                        <td
-                                            class="px-3.5 py-2.5 first:pl-5 last:pr-5 border-y border-slate-200 dark:border-zink-500">
-                                            status</td>
-                                        <td
-                                            class="px-3.5 py-2.5 first:pl-5 last:pr-5 border-y border-slate-200 dark:border-zink-500">
-                                            <span
-                                                class="delivery_status px-2.5 py-0.5 text-xs inline-block font-medium rounded border bg-green-100 border-green-200 text-green-500 dark:bg-green-500/20 dark:border-green-500/20">Delivered</span>
-                                        </td>
-                                        <td
-                                            class="px-3.5 py-2.5 first:pl-5 last:pr-5 border-y border-slate-200 dark:border-zink-500">
-                                            <div class="relative dropdown">
-                                                <button id="orderAction1" data-bs-toggle="dropdown"
-                                                    class="flex items-center justify-center w-[30px] h-[30px] dropdown-toggle p-0 text-slate-500 btn bg-slate-100 hover:text-white hover:bg-slate-600 focus:text-white focus:bg-slate-600 focus:ring focus:ring-slate-100 active:text-white active:bg-slate-600 active:ring active:ring-slate-100 dark:bg-slate-500/20 dark:text-slate-400 dark:hover:bg-slate-500 dark:hover:text-white dark:focus:bg-slate-500 dark:focus:text-white dark:active:bg-slate-500 dark:active:text-white dark:ring-slate-400/20"><i
-                                                        data-lucide="more-horizontal" class="w-3 h-3"></i></button>
-                                                <ul class="absolute z-50 hidden py-2 mt-1 ltr:text-left rtl:text-right list-none bg-white rounded-md shadow-md dropdown-menu min-w-[10rem] dark:bg-zink-600"
-                                                    aria-labelledby="orderAction1">
-                                                    <li>
-                                                        <a class="block px-4 py-1.5 text-base transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:bg-slate-100 hover:text-slate-500 focus:bg-slate-100 focus:text-slate-500 dark:text-zink-100 dark:hover:bg-zink-500 dark:hover:text-zink-200 dark:focus:bg-zink-500 dark:focus:text-zink-200"
-                                                            href="{{ url('apps-ecommerce-order-overview') }}"><i
-                                                                data-lucide="eye"
-                                                                class="inline-block w-3 h-3 ltr:mr-1 rtl:ml-1"></i>
-                                                            <span class="align-middle">Overview</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="block px-4 py-1.5 text-base transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:bg-slate-100 hover:text-slate-500 focus:bg-slate-100 focus:text-slate-500 dark:text-zink-100 dark:hover:bg-zink-500 dark:hover:text-zink-200 dark:focus:bg-zink-500 dark:focus:text-zink-200"
-                                                            href="#!"><i data-lucide="file-edit"
-                                                                class="inline-block w-3 h-3 ltr:mr-1 rtl:ml-1"></i>
-                                                            <span class="align-middle">Edit</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="block px-4 py-1.5 text-base transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:bg-slate-100 hover:text-slate-500 focus:bg-slate-100 focus:text-slate-500 dark:text-zink-100 dark:hover:bg-zink-500 dark:hover:text-zink-200 dark:focus:bg-zink-500 dark:focus:text-zink-200"
-                                                            href="#!"><i data-lucide="trash-2"
-                                                                class="inline-block w-3 h-3 ltr:mr-1 rtl:ml-1"></i>
-                                                            <span class="align-middle">Delete</span></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @empty
-                                @endforelse
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full whitespace-nowrap">
+                    <thead class="ltr:text-left rtl:text-right">
+                        <tr>
+                            <th class="px-3.5 py-2.5 font-semibold border border-slate-200 dark:border-zink-500">#</th>
+                            <th class="px-3.5 py-2.5 font-semibold border border-slate-200 dark:border-zink-500">
+                                {{ __(' Tenants Name') }} </th>
+                            <th class="px-3.5 py-2.5 font-semibold border border-slate-200 dark:border-zink-500">
+                                {{ __('Email') }}</th>
+
+                            <th class="px-3.5 py-2.5 font-semibold border border-slate-200 dark:border-zink-500">
+                                {{ __('domain') }}</th>
+                            <th class="px-3.5 py-2.5 font-semibold border border-slate-200 dark:border-zink-500">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="">
+                        <tr>
+                            @forelse ($tenants as $tenant)
+                                <td class="px-3.5 py-2.5 border border-slate-200 dark:border-zink-500">
+                                    {{ $loop->iteration }}</td>
+                                <td class="px-3.5 py-2.5 border border-slate-200 dark:border-zink-500">{{ $tenant->name }}
+                                </td>
+                                <td class="px-3.5 py-2.5 border border-slate-200 dark:border-zink-500">{{ $tenant->email }}
+                                </td>
+                                <td class="px-3.5 py-2.5 border border-slate-200 dark:border-zink-500">
+                                    @foreach ($tenant->domains as $domain)
+                                        {{ $domain->domain }}
+                                    @endforeach
+                                </td>
+
+                                <td class="px-3.5 py-2.5 border border-slate-200 dark:border-zink-500">
+                                    <div class="flex gap-2">
+                                        <a href="#!" data-modal-target="addDepartmentModal"
+                                            class="flex items-center justify-center w-8 h-8 transition-all duration-200 ease-linear rounded-md bg-slate-100 dark:bg-zink-600 dark:text-zink-200 text-slate-500 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-100 dark:hover:bg-custom-500/20"><i
+                                                data-lucide="pencil" class="w-4 h-4"></i></a>
+                                        <a href="#!" data-modal-target="deleteModal"
+                                            class="flex items-center justify-center w-8 h-8 transition-all duration-200 ease-linear rounded-md bg-slate-100 dark:bg-zink-600 dark:text-zink-200 text-slate-500 hover:text-red-500 dark:hover:text-red-500 hover:bg-red-100 dark:hover:bg-red-500/20"><i
+                                                data-lucide="trash-2" class="w-4 h-4"></i></a>
+                                    </div>
+                                </td>
+                        </tr>
+                    @empty
+                        <p>{{ __('No data found') }}</p>
+                        @endforelse
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex flex-col items-center mt-5 md:flex-row">
+                <div class="mb-4 grow md:mb-0">
+                    <p class="text-slate-500 dark:text-zink-200">Showing <b>5</b> of <b>8</b> Results</p>
+                </div>
+                <ul class="flex flex-wrap items-center gap-2 shrink-0">
+                    <li>
+                        <a href="#!"
+                            class="inline-flex items-center justify-center bg-white dark:bg-zink-700 h-8 px-3 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto"><i
+                                class="w-4 h-4 mr-1 rtl:rotate-180" data-lucide="chevron-left"></i> Prev</a>
+                    </li>
+                    <li>
+                        <a href="#!"
+                            class="inline-flex items-center justify-center bg-white dark:bg-zink-700 w-8 h-8 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto">1</a>
+                    </li>
+                    <li>
+                        <a href="#!"
+                            class="inline-flex items-center justify-center bg-white dark:bg-zink-700 w-8 h-8 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto active">2</a>
+                    </li>
+                    <li>
+                        <a href="#!"
+                            class="inline-flex items-center justify-center bg-white dark:bg-zink-700 w-8 h-8 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto">3</a>
+                    </li>
+                    <li>
+                        <a href="#!"
+                            class="inline-flex items-center justify-center bg-white dark:bg-zink-700 h-8 px-3 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto">Next
+                            <i class="w-4 h-4 ml-1 rtl:rotate-180" data-lucide="chevron-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="flex flex-col items-center mt-5 md:flex-row">
-                        <div class="mb-4 grow md:mb-0">
-                            <p class="text-slate-500 dark:text-zink-200">Showing <b>07</b> of <b>19</b> Results</p>
+    <div id="addDepartmentModal" modal-center
+        class="fixed flex flex-col hidden transition-all duration-300 ease-in-out left-2/4 z-drawer -translate-x-2/4 -translate-y-2/4 show ">
+        <div class="w-screen md:w-[30rem] bg-white shadow rounded-md dark:bg-zink-600">
+            <div class="flex items-center justify-between p-4 border-b dark:border-zink-500">
+                <h5 class="text-16">Add Department</h5>
+                <button data-modal-close="addDepartmentModal"
+                    class="transition-all duration-200 ease-linear text-slate-400 hover:text-red-500"><i data-lucide="x"
+                        class="w-5 h-5"></i></button>
+            </div>
+            <div class="max-h-[calc(theme('height.screen')_-_180px)] p-4 overflow-y-auto">
+                <form action="#!">
+                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-12">
+                        <div class="xl:col-span-12">
+                            <label for="departmentInput" class="inline-block mb-2 text-base font-medium">Department
+                                Name</label>
+                            <input type="text" id="departmentInput"
+                                class="form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200"
+                                placeholder="Department name">
                         </div>
-                        <ul class="flex flex-wrap items-center gap-2 shrink-0">
-                            <li>
-                                <a href="#!"
-                                    class="inline-flex items-center justify-center bg-white dark:bg-zink-700 h-8 px-3 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto"><i
-                                        class="w-4 h-4 mr-1 rtl:rotate-180" data-lucide="chevron-left"></i> Prev</a>
-                            </li>
-                            <li>
-                                <a href="#!"
-                                    class="inline-flex items-center justify-center bg-white dark:bg-zink-700 w-8 h-8 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto">1</a>
-                            </li>
-                            <li>
-                                <a href="#!"
-                                    class="inline-flex items-center justify-center bg-white dark:bg-zink-700 w-8 h-8 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto active">2</a>
-                            </li>
-                            <li>
-                                <a href="#!"
-                                    class="inline-flex items-center justify-center bg-white dark:bg-zink-700 w-8 h-8 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto">3</a>
-                            </li>
-                            <li>
-                                <a href="#!"
-                                    class="inline-flex items-center justify-center bg-white dark:bg-zink-700 h-8 px-3 transition-all duration-150 ease-linear border rounded border-slate-200 dark:border-zink-500 text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-50 dark:hover:bg-custom-500/10 focus:bg-custom-50 dark:focus:bg-custom-500/10 focus:text-custom-500 dark:focus:text-custom-500 [&.active]:text-custom-500 dark:[&.active]:text-custom-500 [&.active]:bg-custom-50 dark:[&.active]:bg-custom-500/10 [&.active]:border-custom-50 dark:[&.active]:border-custom-500/10 [&.active]:hover:text-custom-700 dark:[&.active]:hover:text-custom-700 [&.disabled]:text-slate-400 dark:[&.disabled]:text-zink-300 [&.disabled]:cursor-auto">Next
-                                    <i class="w-4 h-4 ml-1 rtl:rotate-180" data-lucide="chevron-right"></i></a>
-                            </li>
-                        </ul>
+                        <div class="xl:col-span-12">
+                            <label for="headOfInput" class="inline-block mb-2 text-base font-medium">Head of Dep.
+                                Name</label>
+                            <input type="text" id="headOfInput"
+                                class="form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200"
+                                placeholder="Head name">
+                        </div>
+                        <div class="xl:col-span-12">
+                            <label for="phoneNumberInput" class="inline-block mb-2 text-base font-medium">Phone
+                                Number</label>
+                            <input type="number" id="phoneNumberInput"
+                                class="form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200"
+                                placeholder="(012) 1234 562 3145">
+                        </div>
+                        <div class="xl:col-span-12">
+                            <label for="emailInput" class="inline-block mb-2 text-base font-medium">Email</label>
+                            <input type="text" id="emailInput"
+                                class="form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200"
+                                placeholder="Enter email">
+                        </div>
+                        <div class="xl:col-span-12">
+                            <label for="employeeNumberInput" class="inline-block mb-2 text-base font-medium">Total
+                                Employee</label>
+                            <input type="number" id="employeeNumberInput"
+                                class="form-input border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200"
+                                placeholder="0">
+                        </div>
+                    </div>
+                    <div class="flex justify-end gap-2 mt-4">
+                        <button type="reset" data-modal-close="addDepartmentModal"
+                            class="text-red-500 bg-white btn hover:text-red-500 hover:bg-red-100 focus:text-red-500 focus:bg-red-100 active:text-red-500 active:bg-red-100 dark:bg-zink-600 dark:hover:bg-red-500/10 dark:focus:bg-red-500/10 dark:active:bg-red-500/10">Cancel</button>
+                        <button type="submit"
+                            class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">Add
+                            Department</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!--end add holiday-->
+
+    <div id="deleteModal" modal-center
+        class="fixed flex flex-col hidden transition-all duration-300 ease-in-out left-2/4 z-drawer -translate-x-2/4 -translate-y-2/4 show">
+        <div class="w-screen md:w-[25rem] bg-white shadow rounded-md dark:bg-zink-600">
+            <div class="max-h-[calc(theme('height.screen')_-_180px)] overflow-y-auto px-6 py-8">
+                <div class="float-right">
+                    <button data-modal-close="deleteModal"
+                        class="transition-all duration-200 ease-linear text-slate-500 hover:text-red-500"><i
+                            data-lucide="x" class="w-5 h-5"></i></button>
+                </div>
+                <img src="{{ URL::asset('build/images/delete.png') }}" alt="" class="block h-12 mx-auto">
+                <div class="mt-5 text-center">
+                    <h5 class="mb-1">Are you sure?</h5>
+                    <p class="text-slate-500 dark:text-zink-200">Are you certain you want to delete this record?</p>
+                    <div class="flex justify-center gap-2 mt-6">
+                        <button type="reset" data-modal-close="deleteModal"
+                            class="bg-white text-slate-500 btn hover:text-slate-500 hover:bg-slate-100 focus:text-slate-500 focus:bg-slate-100 active:text-slate-500 active:bg-slate-100 dark:bg-zink-600 dark:hover:bg-slate-500/10 dark:focus:bg-slate-500/10 dark:active:bg-slate-500/10">Cancel</button>
+                        <button type="submit"
+                            class="text-white bg-red-500 border-red-500 btn hover:text-white hover:bg-red-600 hover:border-red-600 focus:text-white focus:bg-red-600 focus:border-red-600 focus:ring focus:ring-red-100 active:text-white active:bg-red-600 active:border-red-600 active:ring active:ring-red-100 dark:ring-custom-400/20">Yes,
+                            Delete It!</button>
                     </div>
                 </div>
             </div>
-        </div><!--end col-->
-    </div><!--end col-->
-</x-app-layout>
+        </div>
+    </div><!--end delete modal-->
+@endsection
+@push('scripts')
+    <!-- App js -->
+    <script src="{{ URL::asset('build/js/app.js') }}"></script>
+@endpush
