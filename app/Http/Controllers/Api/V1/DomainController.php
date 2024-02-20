@@ -21,6 +21,7 @@ class DomainController extends Controller
         if($domain_exist){
         return response()->json([
             'status' => 'success',
+            'domain' => $domain,
             'message' => 'Domain exists',
         ]);
         }else{
