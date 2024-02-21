@@ -3,8 +3,10 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TailwickController;
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\UserController;
+use App\Http\Controllers\TenantRouteController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
 use App\Http\Controllers\Api\V1\CurrencyController;
@@ -27,6 +29,7 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 | Feel free to customize them however you want. Good luck!
 |
 */
+
 Route::middleware([
     'api',
     InitializeTenancyByDomain::class,
@@ -59,17 +62,16 @@ Route::middleware([
 });
 
 
-// The web start here
 Route::middleware([
     'web',
     InitializeTenancyByDomain::class,
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
     Route::get('/', function () {
-        return view('tenants.welcome');
+        return view('tenants.auth.login');
     });
     Route::get('/dashboard', function () {
-        return view('tenants.dashboard');
+        return view('tenants.index');
     })->middleware(['auth', 'verified'])->name('dashboard');
 
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -79,10 +81,3 @@ Route::middleware([
 
     require __DIR__ . '/tenant_auth.php';
 });
-
-// Route::middleware(['api'])->prefix('api')->group(function () {
-//     //
-//     Route::get('test', function () {
-//         return 'test!';
-//     });
-//  });

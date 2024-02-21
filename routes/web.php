@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RouteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TailwickController;
 use App\Http\Controllers\Landlord\TenantController;
@@ -20,7 +21,8 @@ Route::get('index/{locale}', [TailwickController::class, 'lang']); //languge sup
 Route::get('/', function () { return view('auth.login');});
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () { return view('index'); })->name('dashboard');
+    Route::get("/dashboard", [RouteController::class, 'index'])->name('dashboard');
+    // Route::get("{any}", [RouteController::class, 'routes']);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

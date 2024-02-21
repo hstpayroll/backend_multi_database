@@ -30,6 +30,7 @@
                                 <x-input id="email" type="email" name="email" :value="old('email')" required autofocus
                                     autocomplete="username" placeholder="Enter your email" />
                             </div>
+                            {{-- <x-input-error for="email" /> --}}
                             <div class="mb-3">
                                 <div class="flex justify-between">
                                     <div>
