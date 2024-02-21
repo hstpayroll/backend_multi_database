@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+//api
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\CompanyController;
@@ -15,7 +16,10 @@ use App\Http\Controllers\Tenants\TenantUserController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+//tenat
 use App\Http\Controllers\Api\V1\TenantUserController as TenantUserControllerApi;
+use App\Http\Controllers\Tenants\CompanyController as TenantCompanyControlle;
+use App\Http\Controllers\Tenants\CurrencyController as TenantCurrencyControlle;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,16 +70,18 @@ Route::middleware([
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
     Route::get('/', function () {
-        return view('tenants.welcome');
+        return view('tenants.auth.login');
     });
     Route::get('/dashboard', function () {
-        return view('tenants.dashboard');
+        return view('tenants.index');
     })->middleware(['auth', 'verified'])->name('dashboard');
 
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('users', TenantUserController::class);
+    Route::resource('companies', TenantCompanyControlle::class);
+    Route::resource('currencies', TenantCurrencyControlle::class);
 
     require __DIR__ . '/tenant_auth.php';
 });

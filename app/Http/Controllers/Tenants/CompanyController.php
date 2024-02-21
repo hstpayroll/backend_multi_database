@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenants;
 
-use App\Models\Company;
-use App\Models\Employee;
+
 use Illuminate\Http\Request;
+use App\Models\Tenant\Company;
+use App\Models\Tenant\Employee;
+use App\Http\Controllers\Controller;
 
 /**
  * Class CompanyController

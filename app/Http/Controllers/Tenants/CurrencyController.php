@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenants;
 
 use Illuminate\Http\Request;
 use App\Models\Tenant\Currency;
+use App\Http\Controllers\Controller;
 
 /**
  * Class CurrencyController
@@ -20,7 +21,7 @@ class CurrencyController extends Controller
     {
         $currencies = Currency::paginate();
 
-        return view('currency.index', compact('currencies'))
+        return view('tenants.finance.currency.index', compact('currencies'))
             ->with('i', (request()->input('page', 1) - 1) * $currencies->perPage());
     }
 

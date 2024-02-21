@@ -8,6 +8,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Session;
 
 class TenantController extends Controller
 {
@@ -16,7 +17,7 @@ class TenantController extends Controller
      */
     public function index()
     {
-        $tenants = Tenant::all();
+        $tenants = Tenant::with('domains')->paginate(5);
         return view('landlord.tenants.index', compact('tenants'));
     }
 
@@ -31,32 +32,69 @@ class TenantController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(Request $request)
+    // {
+    //     $data = $request->validate([
+    //         'name' => ['required', 'string', 'max:255'],
+    //         'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Tenant::class],
+    //         'password' => ['required', 'confirmed', Rules\Password::defaults()],
+    //         'domain' => [
+    //             'required',
+    //             'string',
+    //             'min:3',
+    //             'max:20',
+    //             'unique:' . Tenant::class,
+    //             Rule::notIn(['www', 'localhost']),
+    //             'regex:/^[a-zA-Z0-9\-]+$/',
+    //         ],
+    //     ]);
+
+    //     $tenant = Tenant::create($data);
+    //     $tenant->domains()->create([
+    //         'domain' => $data['domain'] . '.' . config('app.domain'),
+    //     ]);
+    //     event(new Registered($tenant));
+
+    //     // Auth::login($user);
+
+    //     return redirect()->to(route('tenants.index'));
+    // }
+
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Tenant::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'domain' => [
-                'required',
-                'string',
-                'min:3',
-                'max:20',
-                'unique:' . Tenant::class,
-                Rule::notIn(['www', 'localhost']),
-                'regex:/^[a-zA-Z0-9\-]+$/',
-            ],
-        ]);
+        try {
+            $data = $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Tenant::class],
+                'password' => ['required', 'confirmed', Rules\Password::defaults()],
+                'domain' => [
+                    'required',
+                    'string',
+                    'min:3',
+                    'max:20',
+                    'unique:' . Tenant::class,
+                    Rule::notIn(['www', 'localhost']),
+                    'regex:/^[a-zA-Z0-9\-]+$/',
+                ],
+            ]);
 
-        $tenant = Tenant::create($data);
-        $tenant->domains()->create([
-            'domain' => $data['domain'] . '.' . config('app.domain'),
-        ]);
-        event(new Registered($tenant));
+            $tenant = Tenant::create($data);
+            $tenant->domains()->create([
+                'domain' => $data['domain'] . '.' . config('app.domain'),
+            ]);
 
-        // Auth::login($user);
+            event(new Registered($tenant));
 
-        return redirect()->to(route('tenants.index'));
+            // Flash success message
+            Session::flash('success', 'Tenant created successfully');
+
+            return redirect()->route('tenants.index');
+        } catch (\Exception $e) {
+            // Flash error message
+            Session::flash('error', 'Error creating tenant: ' . $e->getMessage());
+
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
@@ -80,14 +118,44 @@ class TenantController extends Controller
      */
     public function update(Request $request, Tenant $tenant)
     {
-        //
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Tenant::class],
+            'domain' => [
+                'required',
+                'string',
+                'min:3',
+                'max:20',
+                'unique:' . Tenant::class,
+                Rule::notIn(['www', 'localhost']),
+                'regex:/^[a-zA-Z0-9\-]+$/',
+            ],
+        ]);
+
+        // Update the main tenant data
+        $tenant->update($data);
+
+        // Update the associated domain
+        $tenant->domains()->update([
+            'domain' => $data['domain'] . '.' . config('app.domain'),
+        ]);
+
+        //event(new Registered($tenant));
+        
+        return redirect()->route('tenants.index')
+        ->with('success', 'Tenant Update successfully');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Tenant $tenant)
     {
-        //
+        
+        // dd($tenant->domains()->id);
+        $tenant = $tenant->delete();
+        return redirect()->route('tenants.index')
+            ->with('success', 'Bank deleted successfully');
     }
 }
