@@ -152,17 +152,17 @@
         },
         {
             "name": "brianium/paratest",
-            "version": "v7.4.2",
-            "version_normalized": "7.4.2.0",
+            "version": "v7.4.3",
+            "version_normalized": "7.4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paratestphp/paratest.git",
-                "reference": "cf4e141f6e778646384a7044c42ce792f1637e40"
+                "reference": "64fcfd0e28a6b8078a19dbf9127be2ee645b92ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paratestphp/paratest/zipball/cf4e141f6e778646384a7044c42ce792f1637e40",
-                "reference": "cf4e141f6e778646384a7044c42ce792f1637e40",
+                "url": "https://api.github.com/repos/paratestphp/paratest/zipball/64fcfd0e28a6b8078a19dbf9127be2ee645b92ec",
+                "reference": "64fcfd0e28a6b8078a19dbf9127be2ee645b92ec",
                 "shasum": ""
             },
             "require": {
@@ -192,7 +192,7 @@
                 "squizlabs/php_codesniffer": "^3.9.0",
                 "symfony/filesystem": "^6.4.3 || ^7.0.3"
             },
-            "time": "2024-02-19T15:13:11+00:00",
+            "time": "2024-02-20T07:24:02+00:00",
             "bin": [
                 "bin/paratest",
                 "bin/paratest.bat",
@@ -233,7 +233,7 @@
             ],
             "support": {
                 "issues": "https://github.com/paratestphp/paratest/issues",
-                "source": "https://github.com/paratestphp/paratest/tree/v7.4.2"
+                "source": "https://github.com/paratestphp/paratest/tree/v7.4.3"
             },
             "funding": [
                 {
@@ -1884,17 +1884,17 @@
         },
         {
             "name": "knuckleswtf/scribe",
-            "version": "4.30.1",
-            "version_normalized": "4.30.1.0",
+            "version": "4.32.0",
+            "version_normalized": "4.32.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/knuckleswtf/scribe.git",
-                "reference": "0900c0d44965b0a13c480a8ea6dbc27e4698bcd9"
+                "reference": "d1d96fb1805a8e600a3c2a33abdb391510a4c22a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/knuckleswtf/scribe/zipball/0900c0d44965b0a13c480a8ea6dbc27e4698bcd9",
-                "reference": "0900c0d44965b0a13c480a8ea6dbc27e4698bcd9",
+                "url": "https://api.github.com/repos/knuckleswtf/scribe/zipball/d1d96fb1805a8e600a3c2a33abdb391510a4c22a",
+                "reference": "d1d96fb1805a8e600a3c2a33abdb391510a4c22a",
                 "shasum": ""
             },
             "require": {
@@ -1908,12 +1908,12 @@
                 "illuminate/support": "^8.0|^9.0|^10.0",
                 "league/flysystem": "^1.1.4|^2.1.1|^3.0",
                 "mpociot/reflection-docblock": "^1.0.1",
-                "nikic/php-parser": "^4.10|^5.0",
+                "nikic/php-parser": "^5.0",
                 "nunomaduro/collision": "^5.10|^6.0|^7.0|^8.0",
                 "php": ">=8.0",
                 "ramsey/uuid": "^4.2.2",
                 "shalvah/clara": "^3.1.0",
-                "shalvah/upgrader": "^0.4.0",
+                "shalvah/upgrader": ">=0.6.0",
                 "spatie/data-transfer-object": "^2.6|^3.0",
                 "symfony/var-exporter": "^5.4|^6.0|^7.0",
                 "symfony/yaml": "^5.4|^6.0|^7.0"
@@ -1935,7 +1935,7 @@
                 "symfony/css-selector": "^5.4|^6.0",
                 "symfony/dom-crawler": "^5.4|^6.0"
             },
-            "time": "2024-02-18T14:19:49+00:00",
+            "time": "2024-02-20T12:11:29+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1970,7 +1970,7 @@
             ],
             "support": {
                 "issues": "https://github.com/knuckleswtf/scribe/issues",
-                "source": "https://github.com/knuckleswtf/scribe/tree/4.30.1"
+                "source": "https://github.com/knuckleswtf/scribe/tree/4.32.0"
             },
             "funding": [
                 {
@@ -1982,17 +1982,17 @@
         },
         {
             "name": "laravel/breeze",
-            "version": "v1.28.2",
-            "version_normalized": "1.28.2.0",
+            "version": "v1.28.3",
+            "version_normalized": "1.28.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/breeze.git",
-                "reference": "1e48e29d3f769bb90bbdf2934c52f4612e3b5b47"
+                "reference": "c8bd0a8557aa2b0597bae762d9926b819d886419"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/breeze/zipball/1e48e29d3f769bb90bbdf2934c52f4612e3b5b47",
-                "reference": "1e48e29d3f769bb90bbdf2934c52f4612e3b5b47",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/c8bd0a8557aa2b0597bae762d9926b819d886419",
+                "reference": "c8bd0a8557aa2b0597bae762d9926b819d886419",
                 "shasum": ""
             },
             "require": {
@@ -2006,7 +2006,7 @@
                 "orchestra/testbench": "^8.0",
                 "phpstan/phpstan": "^1.10"
             },
-            "time": "2024-02-13T02:26:19+00:00",
+            "time": "2024-02-19T02:47:27+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2047,17 +2047,17 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.44.0",
-            "version_normalized": "10.44.0.0",
+            "version": "v10.45.1",
+            "version_normalized": "10.45.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1199dbe361787bbe9648131a79f53921b4148cf6"
+                "reference": "dcf5d1d722b84ad38a5e053289130b6962f830bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1199dbe361787bbe9648131a79f53921b4148cf6",
-                "reference": "1199dbe361787bbe9648131a79f53921b4148cf6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/dcf5d1d722b84ad38a5e053289130b6962f830bd",
+                "reference": "dcf5d1d722b84ad38a5e053289130b6962f830bd",
                 "shasum": ""
             },
             "require": {
@@ -2207,7 +2207,7 @@
                 "symfony/postmark-mailer": "Required to enable support for the Postmark mail transport (^6.2).",
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0)."
             },
-            "time": "2024-02-13T16:01:16+00:00",
+            "time": "2024-02-21T14:07:36+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2256,17 +2256,17 @@
         },
         {
             "name": "laravel/pint",
-            "version": "v1.13.11",
-            "version_normalized": "1.13.11.0",
+            "version": "v1.14.0",
+            "version_normalized": "1.14.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/pint.git",
-                "reference": "60a163c3e7e3346a1dec96d3e6f02e6465452552"
+                "reference": "6b127276e3f263f7bb17d5077e9e0269e61b2a0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/60a163c3e7e3346a1dec96d3e6f02e6465452552",
-                "reference": "60a163c3e7e3346a1dec96d3e6f02e6465452552",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/6b127276e3f263f7bb17d5077e9e0269e61b2a0e",
+                "reference": "6b127276e3f263f7bb17d5077e9e0269e61b2a0e",
                 "shasum": ""
             },
             "require": {
@@ -2285,7 +2285,7 @@
                 "nunomaduro/termwind": "^1.15.1",
                 "pestphp/pest": "^2.33.6"
             },
-            "time": "2024-02-13T17:20:13+00:00",
+            "time": "2024-02-20T17:38:05+00:00",
             "bin": [
                 "builds/pint"
             ],
@@ -2385,17 +2385,17 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.27.4",
-            "version_normalized": "1.27.4.0",
+            "version": "v1.28.0",
+            "version_normalized": "1.28.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "3047e1a157fad968cc5f6e620d5cbe5c0867fffd"
+                "reference": "a05861ca9b04558b1ec1f36cff521a271a259b6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/3047e1a157fad968cc5f6e620d5cbe5c0867fffd",
-                "reference": "3047e1a157fad968cc5f6e620d5cbe5c0867fffd",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/a05861ca9b04558b1ec1f36cff521a271a259b6c",
+                "reference": "a05861ca9b04558b1ec1f36cff521a271a259b6c",
                 "shasum": ""
             },
             "require": {
@@ -2409,7 +2409,7 @@
                 "orchestra/testbench": "^7.0|^8.0|^9.0",
                 "phpstan/phpstan": "^1.10"
             },
-            "time": "2024-02-08T15:24:21+00:00",
+            "time": "2024-02-20T15:11:00+00:00",
             "bin": [
                 "bin/sail"
             ],
@@ -3134,17 +3134,17 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.4.5",
-            "version_normalized": "3.4.5.0",
+            "version": "v3.4.6",
+            "version_normalized": "3.4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "266ee3dcaef540f666d4eee19a314025aba5c6e4"
+                "reference": "7e7d638183b34fb61621455891869f5abfd55a82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/266ee3dcaef540f666d4eee19a314025aba5c6e4",
-                "reference": "266ee3dcaef540f666d4eee19a314025aba5c6e4",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/7e7d638183b34fb61621455891869f5abfd55a82",
+                "reference": "7e7d638183b34fb61621455891869f5abfd55a82",
                 "shasum": ""
             },
             "require": {
@@ -3166,7 +3166,7 @@
                 "phpunit/phpunit": "^10.4",
                 "psy/psysh": "^0.11.22|^0.12"
             },
-            "time": "2024-02-19T14:52:03+00:00",
+            "time": "2024-02-20T14:04:25+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3200,7 +3200,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.4.5"
+                "source": "https://github.com/livewire/livewire/tree/v3.4.6"
             },
             "funding": [
                 {
@@ -3853,17 +3853,17 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.0.0",
-            "version_normalized": "5.0.0.0",
+            "version": "v5.0.1",
+            "version_normalized": "5.0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "4a21235f7e56e713259a6f76bf4b5ea08502b9dc"
+                "reference": "2218c2252c874a4624ab2f613d86ac32d227bc69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4a21235f7e56e713259a6f76bf4b5ea08502b9dc",
-                "reference": "4a21235f7e56e713259a6f76bf4b5ea08502b9dc",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/2218c2252c874a4624ab2f613d86ac32d227bc69",
+                "reference": "2218c2252c874a4624ab2f613d86ac32d227bc69",
                 "shasum": ""
             },
             "require": {
@@ -3876,7 +3876,7 @@
                 "ircmaxell/php-yacc": "^0.0.7",
                 "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
             },
-            "time": "2024-01-07T17:17:35+00:00",
+            "time": "2024-02-21T19:24:10+00:00",
             "bin": [
                 "bin/php-parse"
             ],
@@ -3908,7 +3908,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.1"
             },
             "install-path": "../nikic/php-parser"
         },
@@ -7061,22 +7061,22 @@
         },
         {
             "name": "shalvah/upgrader",
-            "version": "0.4.0",
-            "version_normalized": "0.4.0.0",
+            "version": "0.6.0",
+            "version_normalized": "0.6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shalvah/upgrader.git",
-                "reference": "b9c5dcccf226ff29b5e6f9a53dfe3b96a30acf7a"
+                "reference": "d95ed17fe9f5e1ee7d47ad835595f1af080a867f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shalvah/upgrader/zipball/b9c5dcccf226ff29b5e6f9a53dfe3b96a30acf7a",
-                "reference": "b9c5dcccf226ff29b5e6f9a53dfe3b96a30acf7a",
+                "url": "https://api.github.com/repos/shalvah/upgrader/zipball/d95ed17fe9f5e1ee7d47ad835595f1af080a867f",
+                "reference": "d95ed17fe9f5e1ee7d47ad835595f1af080a867f",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": ">=8.0",
-                "nikic/php-parser": "^4.13|^5.0",
+                "nikic/php-parser": "^5.0",
                 "php": ">=8.0"
             },
             "require-dev": {
@@ -7085,7 +7085,7 @@
                 "phpstan/phpstan": "^1.0",
                 "spatie/ray": "^1.33"
             },
-            "time": "2024-02-14T23:57:54+00:00",
+            "time": "2024-02-20T11:51:46+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -7110,7 +7110,7 @@
             ],
             "support": {
                 "issues": "https://github.com/shalvah/upgrader/issues",
-                "source": "https://github.com/shalvah/upgrader/tree/0.4.0"
+                "source": "https://github.com/shalvah/upgrader/tree/0.6.0"
             },
             "funding": [
                 {
