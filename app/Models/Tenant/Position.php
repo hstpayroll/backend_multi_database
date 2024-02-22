@@ -11,12 +11,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $id
  * @property $name
  * @property $sub_department_id
- * @property $company_id
  * @property $created_at
  * @property $updated_at
  * @property $deleted_at
- *
- * @property Company $company
  * @property Employee[] $employees
  * @property SubDepartment $subDepartment
  * @package App
