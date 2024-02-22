@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost'
+    url: 'http://multidb.local'
 paths:
   /api/v1/register:
     post:
@@ -26,15 +26,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: okp
+                  example: u
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: tess.casper@example.com
+                  example: shields.rosa@example.org
                 password:
                   type: string
                   description: ''
-                  example: illum
+                  example: qui
               required:
                 - name
                 - email
@@ -59,11 +59,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: griffin.turner@example.net
+                  example: lilly.borer@example.org
                 password:
                   type: string
                   description: ''
-                  example: 'nq8rX[a7F&q]1Pv"'
+                  example: s2>AuAFA=p453J
               required:
                 - email
                 - password
@@ -87,7 +87,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: sdoyle@example.org
+                  example: newton.jakubowski@example.org
               required:
                 - email
       security: []
@@ -110,15 +110,15 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: et
+                  example: quia
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: maci.brown@example.net
+                  example: little.wilfredo@example.com
                 password:
                   type: string
                   description: ''
-                  example: ratione
+                  example: consequatur
               required:
                 - token
                 - email
@@ -151,7 +151,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the verify email.'
-        example: debitis
+        example: qui
         required: true
         schema:
           type: string
@@ -159,7 +159,7 @@ paths:
         in: path
         name: hash
         description: ''
-        example: aut
+        example: vitae
         required: true
         schema:
           type: string
@@ -233,15 +233,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: uwwdkofgwhsylhuxzclogmn
+                  example: swdnkjyddipmn
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: runte.brooklyn@example.net
+                  example: cole.nitzsche@example.com
                 password:
                   type: string
                   description: ''
-                  example: sint
+                  example: et
               required:
                 - name
                 - email
@@ -336,19 +336,19 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: sd
+                  example: fyednflstsjbeddcyxupcjiuw
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: kmclaughlin@example.net
+                  example: emmerich.kaylee@example.net
                 password:
                   type: string
                   description: ''
-                  example: aspernatur
+                  example: facere
                 domain:
                   type: string
                   description: 'Must match the regex /^[a-zA-Z0-9\-]+$/. Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: qtkmvhjqemufolgxedl
+                  example: qvbngsdlxl
               required:
                 - name
                 - email
@@ -466,7 +466,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: qbm
+                  example: scegyrmtgyrxcbbayll
               required:
                 - name
       security: []
@@ -510,7 +510,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vbqw
+                  example: ujlrvgtoveiqbfifwpgadpr
               required:
                 - name
       security: []
@@ -2118,11 +2118,11 @@ paths:
                 code:
                   type: string
                   description: 'Must contain only letters. Must be 3 characters.'
-                  example: yad
+                  example: liy
                 name:
                   type: string
                   description: ''
-                  example: distinctio
+                  example: nihil
               required:
                 - code
                 - name
@@ -2905,11 +2905,11 @@ paths:
                 code:
                   type: string
                   description: 'Must contain only letters. Must be 3 characters.'
-                  example: jkp
+                  example: dsa
                 name:
                   type: string
                   description: ''
-                  example: ea
+                  example: repellat
               required:
                 - code
                 - name
@@ -2928,7 +2928,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the currency.'
-        example: 6
+        example: 12
         required: true
         schema:
           type: integer
@@ -3710,11 +3710,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: evncmcsejgun
+                  example: rshsgjqrvggkbp
                 swift:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: gjsubfjzurfujocdqdjeiap
+                  example: hspxsas
               required:
                 - name
                 - swift
@@ -4497,11 +4497,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vjwowyvkq
+                  example: sohetycnvfvonof
                 swift:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xsivsdqbrrnur
+                  example: xvycjj
               required:
                 - name
                 - swift
@@ -4520,7 +4520,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the bank.'
-        example: 13
+        example: 7
         required: true
         schema:
           type: integer
@@ -6076,7 +6076,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the calender.'
-        example: 11
+        example: 3
         required: true
         schema:
           type: integer
@@ -6858,15 +6858,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: laborum
+                  example: voluptate
                 address:
                   type: string
                   description: ''
-                  example: architecto
+                  example: quas
                 tin:
                   type: string
                   description: ''
-                  example: molestiae
+                  example: unde
                 logo:
                   type: string
                   format: binary
@@ -6874,55 +6874,55 @@ paths:
                 website:
                   type: string
                   description: 'Must be a valid URL.'
-                  example: 'https://kirlin.org/nihil-nihil-maxime-mollitia-pariatur.html'
+                  example: 'http://www.gibson.net/'
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: uhayes@example.com
+                  example: schulist.natalie@example.com
                 phone_number:
                   type: string
                   description: ''
-                  example: eum
+                  example: voluptatibus
                 address_line:
                   type: string
                   description: ''
-                  example: delectus
+                  example: dolores
                 city:
                   type: string
                   description: ''
-                  example: iusto
+                  example: impedit
                 sub_city:
                   type: string
                   description: ''
-                  example: similique
+                  example: numquam
                 kebele:
                   type: string
                   description: ''
-                  example: illum
+                  example: eveniet
                 woreda:
                   type: string
                   description: ''
-                  example: asperiores
+                  example: facilis
                 house_no:
                   type: string
                   description: ''
-                  example: porro
+                  example: ab
                 fax:
                   type: string
                   description: ''
-                  example: harum
+                  example: beatae
                 currency_id:
                   type: string
                   description: ''
-                  example: excepturi
+                  example: nam
                 calendar_id:
                   type: string
                   description: ''
-                  example: tempora
+                  example: est
                 description:
                   type: string
                   description: ''
-                  example: voluptas
+                  example: eos
               required:
                 - name
                 - address
@@ -7717,15 +7717,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: quo
+                  example: voluptatem
                 address:
                   type: string
                   description: ''
-                  example: nam
+                  example: fugit
                 tin:
                   type: string
                   description: ''
-                  example: pariatur
+                  example: rerum
                 logo:
                   type: string
                   format: binary
@@ -7733,55 +7733,55 @@ paths:
                 website:
                   type: string
                   description: 'Must be a valid URL.'
-                  example: 'http://mueller.org/autem-et-iure-repellendus-modi-incidunt-dolorem'
+                  example: 'https://www.schamberger.com/deserunt-asperiores-qui-amet-libero-error-ut'
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: haskell11@example.com
+                  example: avis.gutmann@example.com
                 phone_number:
                   type: string
                   description: ''
-                  example: velit
+                  example: est
                 address_line:
                   type: string
                   description: ''
-                  example: nam
+                  example: vel
                 city:
                   type: string
                   description: ''
-                  example: voluptate
+                  example: ipsum
                 sub_city:
                   type: string
                   description: ''
-                  example: nulla
+                  example: fugit
                 kebele:
                   type: string
                   description: ''
-                  example: labore
+                  example: saepe
                 woreda:
                   type: string
                   description: ''
-                  example: omnis
+                  example: et
                 house_no:
                   type: string
                   description: ''
-                  example: qui
+                  example: quam
                 fax:
                   type: string
                   description: ''
-                  example: pariatur
+                  example: placeat
                 currency_id:
                   type: string
                   description: ''
-                  example: ducimus
+                  example: facilis
                 calendar_id:
                   type: string
                   description: ''
-                  example: quia
+                  example: maxime
                 description:
                   type: string
                   description: ''
-                  example: sint
+                  example: accusantium
               required:
                 - name
                 - address
@@ -7812,7 +7812,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the company.'
-        example: eum
+        example: et
         required: true
         schema:
           type: string
@@ -8594,7 +8594,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: minus
+                  example: voluptatem
               required:
                 - name
       security: []
@@ -9376,7 +9376,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: sit
+                  example: esse
               required:
                 - name
       security: []
@@ -9394,7 +9394,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the employment type.'
-        example: 1
+        example: 8
         required: true
         schema:
           type: integer
@@ -10176,23 +10176,23 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: in
+                  example: voluptatem
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-02-22T08:44:30'
+                  example: '2024-02-22T13:53:53'
                 end_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2040-06-17'
+                  example: '2060-05-21'
                 details:
                   type: string
                   description: ''
-                  example: et
+                  example: eligendi
                 status:
                   type: integer
                   description: ''
-                  example: '1'
+                  example: '0'
                   enum:
                     - '0'
                     - '1'
@@ -10979,23 +10979,23 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: deleniti
+                  example: veniam
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-02-22T08:44:30'
+                  example: '2024-02-22T13:53:53'
                 end_date:
                   type: string
                   description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
-                  example: '2118-01-08'
+                  example: '2085-06-07'
                 details:
                   type: string
                   description: ''
-                  example: atque
+                  example: consequatur
                 status:
                   type: integer
                   description: ''
-                  example: '1'
+                  example: '0'
                   enum:
                     - '0'
                     - '1'
@@ -11018,7 +11018,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the payroll name.'
-        example: 11
+        example: 4
         required: true
         schema:
           type: integer
@@ -11800,31 +11800,31 @@ paths:
                 payroll_name_id:
                   type: string
                   description: ''
-                  example: voluptatem
+                  example: iusto
                 name:
                   type: string
                   description: ''
-                  example: rerum
+                  example: quibusdam
                 min_income:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 60
+                  example: 16
                 max_income:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 15
+                  example: 36
                 tax_rate:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 32
+                  example: 63
                 deduction:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 55
+                  example: 89
                 details:
                   type: string
                   description: ''
-                  example: quis
+                  example: voluptatem
                 status:
                   type: integer
                   description: ''
@@ -12617,35 +12617,35 @@ paths:
                 payroll_name_id:
                   type: string
                   description: ''
-                  example: quasi
+                  example: magni
                 name:
                   type: string
                   description: ''
-                  example: voluptatem
+                  example: repellat
                 min_income:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 7
+                  example: 50
                 max_income:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 83
+                  example: 9
                 tax_rate:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 12
+                  example: 66
                 deduction:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 24
+                  example: 87
                 details:
                   type: string
                   description: ''
-                  example: esse
+                  example: ipsa
                 status:
                   type: integer
                   description: ''
-                  example: '1'
+                  example: '0'
                   enum:
                     - '0'
                     - '1'
@@ -12670,7 +12670,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the income tax.'
-        example: 8
+        example: 17
         required: true
         schema:
           type: integer
@@ -14226,7 +14226,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the fiscal year.'
-        example: 8
+        example: 3
         required: true
         schema:
           type: integer
@@ -15008,11 +15008,11 @@ paths:
                 code:
                   type: string
                   description: ''
-                  example: quae
+                  example: ducimus
                 description:
                   type: string
                   description: ''
-                  example: 'Voluptatem eos minima ipsum iusto sint itaque et ut.'
+                  example: 'Atque consectetur repellendus voluptatem fuga asperiores.'
                 status:
                   type: integer
                   description: ''
@@ -15802,11 +15802,11 @@ paths:
                 code:
                   type: string
                   description: ''
-                  example: est
+                  example: enim
                 description:
                   type: string
                   description: ''
-                  example: 'Aspernatur dicta qui fuga tempora aut maxime.'
+                  example: 'Amet placeat dolore dolor minima qui aliquid.'
                 status:
                   type: integer
                   description: ''
@@ -15832,7 +15832,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the cost center.'
-        example: 1
+        example: 5
         required: true
         schema:
           type: integer
@@ -16614,27 +16614,27 @@ paths:
                 income_tax_id:
                   type: string
                   description: ''
-                  example: consequatur
+                  example: repellat
                 payroll_type_id:
                   type: string
                   description: ''
-                  example: nesciunt
+                  example: enim
                 fiscal_year_id:
                   type: string
                   description: ''
-                  example: ipsam
+                  example: accusantium
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: thgntdejmxjkrltk
+                  example: qkhtantbufgycfnjt
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-02-22T08:44:30'
+                  example: '2024-02-22T13:53:53'
                 end_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-02-22T08:44:30'
+                  example: '2024-02-22T13:53:53'
                 status:
                   type: boolean
                   description: ''
@@ -17426,31 +17426,31 @@ paths:
                 income_tax_id:
                   type: string
                   description: ''
-                  example: amet
+                  example: nisi
                 payroll_type_id:
                   type: string
                   description: ''
-                  example: sed
+                  example: ab
                 fiscal_year_id:
                   type: string
                   description: ''
-                  example: placeat
+                  example: a
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: mnjohrqfkraxoafpuhkkadao
+                  example: iuambuurtxznjkjduppyxhnt
                 start_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-02-22T08:44:30'
+                  example: '2024-02-22T13:53:53'
                 end_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-02-22T08:44:30'
+                  example: '2024-02-22T13:53:53'
                 status:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - income_tax_id
                 - payroll_type_id
@@ -17474,7 +17474,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the payroll period.'
-        example: 14
+        example: 6
         required: true
         schema:
           type: integer
@@ -18256,7 +18256,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: pjwnqxrieqiio
+                  example: tuhjvhoignbf
               required:
                 - name
       security: []
@@ -19038,7 +19038,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: zpith
+                  example: ogkubswbqrmaajyolzwgew
               required:
                 - name
       security: []
@@ -19056,7 +19056,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the department.'
-        example: 19
+        example: 7
         required: true
         schema:
           type: integer
@@ -19838,11 +19838,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: cizyvqmfdxmlkcwxuxnb
+                  example: c
                 department_id:
                   type: string
                   description: ''
-                  example: harum
+                  example: dolorum
               required:
                 - name
                 - department_id
@@ -20625,11 +20625,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: tjwlcqd
+                  example: gpvto
                 department_id:
                   type: string
                   description: ''
-                  example: architecto
+                  example: deleniti
               required:
                 - name
                 - department_id
@@ -20648,7 +20648,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the sub department.'
-        example: 19
+        example: 9
         required: true
         schema:
           type: integer
@@ -21430,7 +21430,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: glov
+                  example: v
               required:
                 - name
       security: []
@@ -22217,7 +22217,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the tax region.'
-        example: 10
+        example: 18
         required: true
         schema:
           type: integer
@@ -22999,7 +22999,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vyheftugyijdwu
+                  example: hodnp
               required:
                 - name
       security: []
@@ -23781,7 +23781,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: z
+                  example: xgnpm
               required:
                 - name
       security: []
@@ -23799,7 +23799,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the grade.'
-        example: 18
+        example: 4
         required: true
         schema:
           type: integer
@@ -24581,7 +24581,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: muguqtjtkhjc
+                  example: vml
               required:
                 - name
       security: []
@@ -25363,7 +25363,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: jptfzyvghdnqsaxkketsc
+                  example: zcqlcqvdrbwamxjpwmwu
               required:
                 - name
       security: []
@@ -25381,7 +25381,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the citizenship.'
-        example: 14
+        example: 11
         required: true
         schema:
           type: integer
@@ -26163,11 +26163,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: cqsy
+                  example: hdwhiyikb
                 sub_department_id:
                   type: string
                   description: ''
-                  example: id
+                  example: quas
               required:
                 - name
                 - sub_department_id
@@ -26950,11 +26950,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rngg
+                  example: amo
                 sub_department_id:
                   type: string
                   description: ''
-                  example: velit
+                  example: eum
               required:
                 - name
                 - sub_department_id
@@ -26973,7 +26973,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the position.'
-        example: 16
+        example: 5
         required: true
         schema:
           type: integer
