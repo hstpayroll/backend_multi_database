@@ -9,13 +9,21 @@ use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\TenantRouteController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
+use App\Http\Controllers\Api\V1\CitizenshipController;
+use App\Http\Controllers\Api\V1\CostCenterController;
 use App\Http\Controllers\Api\V1\CurrencyController;
+use App\Http\Controllers\Api\V1\DepartmentController;
 use App\Http\Controllers\Api\V1\IncomeTaxController;
 use App\Http\Controllers\Api\V1\FiscalYearController;
 use App\Http\Controllers\Api\V1\TenantUserController;
 use App\Http\Controllers\Api\V1\PayrollNameController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
+use App\Http\Controllers\Api\V1\GradeController;
+use App\Http\Controllers\Api\V1\PayrollPeriodController;
+use App\Http\Controllers\Api\V1\PositionController;
+use App\Http\Controllers\Api\V1\SubDepartmentController;
+use App\Http\Controllers\Api\V1\TaxRegionController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 /*
@@ -43,22 +51,31 @@ Route::middleware([
         Route::get('auth-user-tenant', [TenantUserController::class,'auth_user_tenant']);
         Route::apiResource('users', TenantUserController::class);
             // Route::apiResource('users', UserController::class);
-        // Route::get('/users', [UserController::class,'index'])->middleware('can:user_index');
-        // Route::post('/users', [UserController::class,'store']);
-        // Route::post('/users', [UserController::class,'store'])->middleware('can:user_store');
-        // Route::get('/users/{user}', [UserController::class,'show'])->middleware('can:user_show');
-        // Route::put('/users/{user}', [UserController::class,'update'])->middleware('can:user_update');
-        // Route::delete('/users/{user}', [UserController::class,'destroy'])->middleware('can:user_destroy');
+            // Route::get('/users', [UserController::class,'index'])->middleware('can:user_index');
+            // Route::post('/users', [UserController::class,'store']);
+            // Route::post('/users', [UserController::class,'store'])->middleware('can:user_store');
+            // Route::get('/users/{user}', [UserController::class,'show'])->middleware('can:user_show');
+            // Route::put('/users/{user}', [UserController::class,'update'])->middleware('can:user_update');
+            // Route::delete('/users/{user}', [UserController::class,'destroy'])->middleware('can:user_destroy');
 
-        Route::apiResource('currencies', CurrencyController::class);
-        Route::apiResource('banks', BankController::class);
-        Route::apiResource('calenders', CalendarController::class);
-        Route::apiResource('companies', CompanyController::class);
-        Route::apiResource('employment-types', EmploymentTypeController::class);
-        Route::apiResource('payroll-names', PayrollNameController::class);
-        Route::apiResource('income-taxes', IncomeTaxController::class);
-        Route::apiResource('fiscal-years', FiscalYearController::class);
-    });
+            Route::apiResource('currencies', CurrencyController::class);
+            Route::apiResource('banks', BankController::class);
+            Route::apiResource('calenders', CalendarController::class);
+            Route::apiResource('companies', CompanyController::class);
+            Route::apiResource('employment-types', EmploymentTypeController::class);
+            Route::apiResource('payroll-names', PayrollNameController::class);
+            Route::apiResource('income-taxes', IncomeTaxController::class);
+            Route::apiResource('fiscal-years', FiscalYearController::class);
+            Route::apiResource('cost-centers', CostCenterController::class);
+            Route::apiResource('payroll-periods', PayrollPeriodController::class);
+            Route::apiResource('departments', DepartmentController::class);
+            Route::apiResource('sub-departments', SubDepartmentController::class);
+            Route::apiResource('tax-regions', TaxRegionController::class);
+            Route::apiResource('grades', GradeController::class);
+            Route::apiResource('citizenship', CitizenshipController::class);
+            Route::apiResource('positions', PositionController::class);
+
+        });
 });
 
 

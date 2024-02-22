@@ -4,6 +4,8 @@ namespace App\Models\Tenant;
 
 use App\Models\Employee;
 use App\Models\AllowanceType;
+use App\Models\Tenant\AllowanceType as TenantAllowanceType;
+use App\Models\Tenant\Employee as TenantEmployee;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -53,7 +55,7 @@ class AllowanceTransaction extends Model
      */
     public function allowanceType()
     {
-        return $this->hasOne(AllowanceType::class, 'id', 'allowance_type_id');
+        return $this->hasOne(TenantAllowanceType::class, 'id', 'allowance_type_id');
     }
 
     /**
@@ -61,7 +63,7 @@ class AllowanceTransaction extends Model
      */
     public function employee()
     {
-        return $this->hasOne(Employee::class, 'id', 'employee_id');
+        return $this->hasOne(TenantEmployee::class, 'id', 'employee_id');
     }
 
 

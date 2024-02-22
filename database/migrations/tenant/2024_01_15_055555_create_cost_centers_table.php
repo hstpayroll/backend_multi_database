@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->text('description');
             $table->tinyInteger('status')->default(0);
-            $table->foreignId('company_id')->constrained('companies')->onDelete('restrict')->onUpdate('cascade');
             $table->timestamps();
         });
     }

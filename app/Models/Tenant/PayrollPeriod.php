@@ -26,22 +26,29 @@ class PayrollPeriod extends Model
 {
     use SoftDeletes;
 
-    static $rules = [
-		'income_tax_id' => 'required',
-		'name' => 'required',
-		'start_date' => 'required',
-		'end_date' => 'required',
+    protected $fillable = [
+        'income_tax_id',
+        'payroll_type_id',
+        'fiscal_year_id',
+        'name',
+        'year',
+        'start_date',
+        'end_date',
+        'status',
     ];
 
-    protected $perPage = 20;
+    public function incomeTaxes()
+    {
+        return $this->hasMany(IncomeTax::class, 'id', 'income_tax_id');
+    }
 
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['income_tax_id','name','year','start_date','end_date','status'];
+    public function payrollTypes()
+    {
+        return $this->hasMany(PayrollType::class, 'id', 'payroll_type_id');
+    }
 
-
-
+    public function fiscalYears()
+    {
+        return $this->hasMany(FiscalYear::class, 'id', 'fiscal_year_id');
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models\Tenant;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -38,7 +39,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property AllowanceTransaction[] $allowanceTransactions
  * @property Bank $bank
  * @property Citizenship $citizenship
- * @property Company $company
  * @property Department $department
  * @property EmploymentType $employmentType
  * @property Grade $grade
@@ -57,32 +57,15 @@ class Employee extends Model
 {
     use SoftDeletes;
 
-    static $rules = [
-		'emp_id' => 'required',
-		'first_name' => 'required',
-		'father_name' => 'required',
-		'gfather_name' => 'required',
-		'sex' => 'required',
-		'birth_date' => 'required',
-		'tax_region_id' => 'required',
-		'grade_id' => 'required',
-		'department_id' => 'required',
-		'sub_department_id' => 'required',
-		'position_id' => 'required',
-		'employment_type_id' => 'required',
-		'citizenship_id' => 'required',
-		'company_id' => 'required',
-		'bank_id' => 'required',
-    ];
 
-    protected $perPage = 20;
+
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['emp_id','first_name','father_name','gfather_name','sex','birth_date','hired_date','tin_no','cost_center','tax_region_id','grade_id','department_id','sub_department_id','position_id','employment_type_id','citizenship_id','company_id','email','bank_id','account_number','image','status','comment'];
+    protected $fillable = ['emp_id', 'first_name', 'father_name', 'gfather_name', 'sex', 'birth_date', 'hired_date', 'tin_no', 'cost_center', 'tax_region_id', 'grade_id', 'department_id', 'sub_department_id', 'position_id', 'employment_type_id', 'citizenship_id', 'email', 'bank_id', 'account_number', 'image', 'status', 'comment'];
 
 
     /**
@@ -109,13 +92,6 @@ class Employee extends Model
         return $this->hasOne(Citizenship::class, 'id', 'citizenship_id');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function company()
-    {
-        return $this->hasOne(Company::class, 'id', 'company_id');
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -204,6 +180,4 @@ class Employee extends Model
     {
         return $this->hasOne(TaxRegion::class, 'id', 'tax_region_id');
     }
-
-
 }

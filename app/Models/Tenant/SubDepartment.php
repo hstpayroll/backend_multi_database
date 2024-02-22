@@ -28,17 +28,14 @@ class SubDepartment extends Model
     use SoftDeletes;
 
 
-    protected $fillable = ['name','department_id'];
+    protected $fillable = ['name', 'department_id'];
 
-
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
     public function department()
     {
-        return $this->hasOne(Department::class, 'id', 'department_id');
+        return $this->belongsTo(Department::class);
     }
+
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -55,6 +52,4 @@ class SubDepartment extends Model
     {
         return $this->hasMany(Position::class, 'sub_department_id', 'id');
     }
-
-
 }

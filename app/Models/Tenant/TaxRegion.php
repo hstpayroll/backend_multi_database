@@ -28,6 +28,4 @@ class TaxRegion extends Model
     {
         return $this->hasMany(Employee::class, 'tax_region_id', 'id');
     }
-
-
 }
