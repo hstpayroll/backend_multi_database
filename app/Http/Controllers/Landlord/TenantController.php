@@ -25,7 +25,8 @@ class TenantController extends Controller
      */
     public function create()
     {
-        return view('landlord.tenants.create');
+        $tenant = new Tenant();
+        return view('landlord.tenants.create')->with('tenant', $tenant);
     }
 
     /**
@@ -33,6 +34,7 @@ class TenantController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Tenant::class],
@@ -72,7 +74,7 @@ class TenantController extends Controller
      */
     public function edit(Tenant $tenant)
     {
-        //
+        return view('landlord.tenants.edit')->with('tenant', $tenant);
     }
 
     /**
@@ -80,7 +82,7 @@ class TenantController extends Controller
      */
     public function update(Request $request, Tenant $tenant)
     {
-        //
+       dd($request->all());
     }
 
     /**
