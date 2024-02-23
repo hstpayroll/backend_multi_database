@@ -54,14 +54,14 @@
 
     <div class="absolute z-50 hidden p-3 mt-1 text-left list-none bg-white rounded-md shadow-md dropdown-menu min-w-[9rem] flex flex-col gap-3 dark:bg-zink-600"
         aria-labelledby="dropdownMenuButton">
-        <a href="#!" class="flex items-center gap-3 group/items">
+        <a href="{{ url('index/en') }}" class="flex items-center gap-3 group/items">
             <img src="{{ URL::asset('build/images/flags/us.svg') }}" alt=""
                 class="object-cover h-4 rounded-full">
             <h6
                 class="text-sm font-medium transition-all duration-200 ease-linear text-slate-600 group-hover/items:text-custom-500 dark:text-zink-200 dark:group-hover/items:text-custom-500">
                 English</h6>
         </a>
-        <a href="#!" class="flex items-center gap-3 group/items">
+        <a href="{{ url('index/sp') }}" class="flex items-center gap-3 group/items">
             <img src="{{ URL::asset('build/images/flags/es.svg') }}" alt=""
                 class="object-cover h-4 rounded-full">
             <h6

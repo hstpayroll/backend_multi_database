@@ -11,6 +11,7 @@ class TailwickController extends Controller
     //
     public function lang($locale)
     {
+        // dd($locale);
         if ($locale) {
             App::setLocale($locale);
             Session::put('lang', $locale);

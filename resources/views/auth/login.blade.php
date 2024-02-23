@@ -30,7 +30,8 @@
                                 <x-input id="email" type="email" name="email" :value="old('email')" required autofocus
                                     autocomplete="username" placeholder="Enter your email" />
                             </div>
-                            {{-- <x-input-error for="email" /> --}}
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
                             <div class="mb-3">
                                 <div class="flex justify-between">
                                     <div>
@@ -45,6 +46,7 @@
                                 </div>
                                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
                                     autocomplete="current-password" placeholder="Enter your password" value="" />
+                                <x-input-error :messages="$errors->get('password')" class="mt-2" />
                             </div>
                             <div>
                                 <div class="flex items-center gap-2">
@@ -53,7 +55,7 @@
                                         class="inline-block text-base font-medium align-middle cursor-pointer">Remember
                                         me</label>
                                 </div>
-                                {{-- <x-input-error for="remember" /> --}}
+                                <x-input-error :messages="$errors->get('remember')" class="mt-2" />
                             </div>
                             <div class="mt-5">
                                 <button type="submit"
@@ -68,14 +70,14 @@
                                     Sign In with</h5>
                             </div>
 
-                            <x-social-login />
-
+                            {{-- <x-social-login /> --}}
+                            {{--
                             <div class="mt-10 text-center">
                                 <p class="mb-0 text-slate-500 dark:text-zink-200">Don't have an account ? <a
                                         href="{{ route('register') }}"
                                         class="font-semibold underline transition-all duration-150 ease-linear text-slate-500 dark:text-zink-200 hover:text-custom-500 dark:hover:text-custom-500">
                                         SignUp</a> </p>
-                            </div>
+                            </div> --}}
                         </form>
                     </div>
                 </div>
