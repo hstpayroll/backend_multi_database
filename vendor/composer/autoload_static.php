@@ -764,6 +764,8 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Http\\Controllers\\Tenants\\Auth\\PasswordResetLinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/Tenants/Auth/PasswordResetLinkController.php',
         'App\\Http\\Controllers\\Tenants\\Auth\\RegisteredUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Tenants/Auth/RegisteredUserController.php',
         'App\\Http\\Controllers\\Tenants\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Tenants/Auth/VerifyEmailController.php',
+        'App\\Http\\Controllers\\Tenants\\CompanyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Tenants/CompanyController.php',
+        'App\\Http\\Controllers\\Tenants\\CurrencyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Tenants/CurrencyController.php',
         'App\\Http\\Controllers\\Tenants\\TenantUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Tenants/TenantUserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

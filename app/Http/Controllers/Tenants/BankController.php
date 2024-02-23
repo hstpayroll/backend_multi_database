@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenants;
 
-use App\Models\Bank;
+use App\Models\Tenant\Bank;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 /**
  * Class BankController
@@ -18,10 +19,10 @@ class BankController extends Controller
      */
     public function index()
     {
+        $title = __('bank');
         $banks = Bank::paginate();
-// return $banks;
-        return view('bank.index', compact('banks'))
-            ->with('i', (request()->input('page', 1) - 1) * $banks->perPage());
+        return view('tenants.finance.bank.index', compact('banks'))
+            ->with('i', (request()->input('page', 1) - 1) * $banks->perPage())->with('title', $title);
     }
 
     /**

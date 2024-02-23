@@ -20,6 +20,7 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\Api\V1\TenantUserController as TenantUserControllerApi;
 use App\Http\Controllers\Tenants\CompanyController as TenantCompanyControlle;
 use App\Http\Controllers\Tenants\CurrencyController as TenantCurrencyControlle;
+use App\Http\Controllers\Tenants\BankController as TenantBankControlle;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,7 @@ Route::middleware([
     Route::resource('users', TenantUserController::class);
     Route::resource('companies', TenantCompanyControlle::class);
     Route::resource('currencies', TenantCurrencyControlle::class);
+    Route::resource('banks', TenantCurrencyControlle::class);
 
     require __DIR__ . '/tenant_auth.php';
 });

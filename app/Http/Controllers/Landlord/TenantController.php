@@ -62,7 +62,7 @@ class TenantController extends Controller
 
     public function store(Request $request)
     {
-        try {
+        // try {
             $data = $request->validate([
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Tenant::class],
@@ -88,13 +88,14 @@ class TenantController extends Controller
             // Flash success message
             Session::flash('success', 'Tenant created successfully');
 
-            return redirect()->route('tenants.index');
-        } catch (\Exception $e) {
-            // Flash error message
-            Session::flash('error', 'Error creating tenant: ' . $e->getMessage());
+            return redirect()->route('tenants.index')
+            ->with('success', 'Currency created successfully.');
+        // } catch (\Exception $e) {
+        //     // Flash error message
+        //     Session::flash('error', 'Error creating tenant: ' . $e->getMessage());
 
-            return redirect()->back()->withInput();
-        }
+        //     return redirect()->back()->withInput();
+        // }
     }
 
     /**

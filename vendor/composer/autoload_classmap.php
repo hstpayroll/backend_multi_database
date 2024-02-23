@@ -53,6 +53,8 @@ return array(
     'App\\Http\\Controllers\\Tenants\\Auth\\PasswordResetLinkController' => $baseDir . '/app/Http/Controllers/Tenants/Auth/PasswordResetLinkController.php',
     'App\\Http\\Controllers\\Tenants\\Auth\\RegisteredUserController' => $baseDir . '/app/Http/Controllers/Tenants/Auth/RegisteredUserController.php',
     'App\\Http\\Controllers\\Tenants\\Auth\\VerifyEmailController' => $baseDir . '/app/Http/Controllers/Tenants/Auth/VerifyEmailController.php',
+    'App\\Http\\Controllers\\Tenants\\CompanyController' => $baseDir . '/app/Http/Controllers/Tenants/CompanyController.php',
+    'App\\Http\\Controllers\\Tenants\\CurrencyController' => $baseDir . '/app/Http/Controllers/Tenants/CurrencyController.php',
     'App\\Http\\Controllers\\Tenants\\TenantUserController' => $baseDir . '/app/Http/Controllers/Tenants/TenantUserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
