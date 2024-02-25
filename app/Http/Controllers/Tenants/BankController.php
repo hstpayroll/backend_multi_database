@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Tenants;
 use App\Models\Tenant\Bank;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class BankController
@@ -44,13 +45,22 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Bank::$rules);
+        $validator = Validator::make($request->all(), Bank::$rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', true)
+                ->with('updating', false);
+        }
 
         $bank = Bank::create($request->all());
 
         return redirect()->route('banks.index')
             ->with('success', 'Bank created successfully.');
     }
+
 
     /**
      * Display the specified resource.
@@ -85,14 +95,24 @@ class BankController extends Controller
      * @param  Bank $bank
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bank $bank)
+    public function update(Request $request, $id)
     {
-        request()->validate(Bank::$rules);
+        $validator = Validator::make($request->all(), Bank::$rules);
 
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', false)
+                ->with('updating', true)
+                ->with('id', $id);
+        }
+
+        $bank = Bank::find($id);
         $bank->update($request->all());
 
         return redirect()->route('banks.index')
-            ->with('success', 'Bank updated successfully');
+            ->with('success', 'Bank updated successfully.');
     }
 
     /**

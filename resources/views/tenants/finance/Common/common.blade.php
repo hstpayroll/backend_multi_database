@@ -24,12 +24,12 @@
             <ul class="flex flex-wrap w-full text-sm font-medium text-center nav-tabs">
 
                 <li class="@if(isset($title) && $title === __('currency')) group active @else group @endif">
-                    <a href="javascript:void(0);" data-tab-toggle data-target="currency"
+                    <a href="{{ route('currencies.index') }}" data-tab-toggle data-target="currency"
                         class="inline-block px-4 py-2 text-base transition-all duration-300 ease-linear rounded-t-md text-slate-500 dark:text-zink-200 border-b border-transparent group-[.active]:text-custom-500 dark:group-[.active]:text-custom-500 group-[.active]:border-b-custom-500 dark:group-[.active]:border-b-custom-500 hover:text-custom-500 dark:hover:text-custom-500 active:text-custom-500 dark:active:text-custom-500 -mb-[1px]">Currency</a>
                 </li>
 
                 <li class="@if(isset($title) && $title === __('bank')) group active @else group @endif">
-                    <a href=" " data-tab-toggle data-target="bank"
+                    <a href="{{ route('banks.index') }}" data-tab-toggle data-target="bank"
                         class="inline-block px-4 py-2 text-base transition-all duration-300 ease-linear rounded-t-md text-slate-500 dark:text-zink-200 border-b border-transparent group-[.active]:text-custom-500 dark:group-[.active]:text-custom-500 group-[.active]:border-b-custom-500 dark:group-[.active]:border-b-custom-500 hover:text-custom-500 dark:hover:text-custom-500 active:text-custom-500 dark:active:text-custom-500 -mb-[1px]">Bank</a>
                 </li>
             </ul>

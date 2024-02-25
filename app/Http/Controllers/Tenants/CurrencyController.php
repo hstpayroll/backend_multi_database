@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tenant\Currency;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class CurrencyController
@@ -46,24 +47,24 @@ class CurrencyController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'code' => 'required | size:3',
-            'name' => 'required'
+        $validator = Validator::make($request->all(), [
+            'code' => 'required|size:3',
+            'name' => 'required',
         ]);
-        try {
-            $currency = Currency::create($data);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', true)
+                ->with('updating', false);
+        }
+            $currency = Currency::create($request->all());
             Session::flash('success', 'Currency created successfully');
             return redirect()->route('currencies.index');
-        } catch (\Exception $e) {
-            // If an exception occurs (e.g., validation error), handle it here
-            return redirect()
-                ->back()
-                ->withInput()
-                ->withErrors($request->validator)
-                ->with('operation', 'store'); // Set the 'operation' value to 'edit'
-        }
-
+        
     }
+
 
 
     /**
@@ -99,21 +100,27 @@ class CurrencyController extends Controller
      * @param  Currency $currency
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Currency $currency)
+    public function update(Request $request, $id)
     {
-        $data = $request->validate([
-            'code' => 'required|max:3',
-            'name' => 'required'
+        $validator = Validator::make($request->all(), [
+            'code' => 'required | size:3',
+            'name' => 'required',
         ]);
 
-        try {
-            $currency->update($data);
-            Session::flash('success', 'Currency updated successfully');
-            return redirect()->route('currencies.index')->with('success', 'Currency updated successfully');
-        } catch (\Exception $e) {
-            // If an exception occurs (e.g., validation error), handle it here
-            return view('tenants.finance.currency.form');// Set the 'operation' value to 'edit'
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('updating', true)
+                ->with('creating', false)
+                ->with('id', $id);
         }
+
+        $currency = Currency::find($id);
+        $currency->update($request->all());
+
+        Session::flash('success', 'Currency updated successfully');
+        return redirect()->route('currencies.index');
     }
 
 

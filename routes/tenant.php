@@ -83,7 +83,7 @@ Route::middleware([
     Route::resource('users', TenantUserController::class);
     Route::resource('companies', TenantCompanyControlle::class);
     Route::resource('currencies', TenantCurrencyControlle::class);
-    Route::resource('banks', TenantCurrencyControlle::class);
+    Route::resource('banks', TenantBankControlle::class);
 
     require __DIR__ . '/tenant_auth.php';
 });
