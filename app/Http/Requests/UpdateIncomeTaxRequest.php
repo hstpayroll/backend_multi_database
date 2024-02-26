@@ -6,23 +6,22 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateIncomeTaxRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
+    public function rules()
     {
         return [
-            //
+            'payroll_name_id' => 'required|exists:payroll_names,id',
+            'name' => 'required|string',
+            'min_income' => 'required|numeric|min:0',
+            'max_income' => 'nullable|numeric|min:0',
+            'tax_rate' => 'required|numeric|min:0',
+            'deduction' => 'required|numeric|min:0',
+            'details' => 'nullable|string',
+            'status' => 'nullable|integer|in:0,1',
         ];
     }
 }

@@ -15,8 +15,9 @@ class CostCenterController extends Controller
     public function index()
     {
         $costCenters = CostCenter::paginate(10);
-        return response()->json(['data' => CostCenterResource::collection($costCenters)], Response::HTTP_OK);
+        return CostCenterResource::collection($costCenters);
     }
+
 
     public function store(StoreCostCenterRequest $request)
     {

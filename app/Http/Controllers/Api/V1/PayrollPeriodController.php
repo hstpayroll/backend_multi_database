@@ -14,32 +14,31 @@ class PayrollPeriodController extends Controller
 {
     public function index()
     {
-        $payrollPeriods = PayrollPeriod::paginate(10);
-        return response()->json(['data' => PayrollPeriodResource::collection($payrollPeriods)], Response::HTTP_OK);
+        return PayrollPeriodResource::collection(PayrollPeriod::paginate(10));
     }
 
     public function store(StorePayrollPeriodRequest $request)
     {
         $validatedData = $request->validated();
         $payrollPeriod = PayrollPeriod::create($validatedData);
-        return response()->json(['data' => new PayrollPeriodResource($payrollPeriod)], Response::HTTP_CREATED);
+        return new PayrollPeriodResource($payrollPeriod);
     }
 
     public function show(PayrollPeriod $payrollPeriod)
     {
-        return response()->json(['data' => new PayrollPeriodResource($payrollPeriod)], Response::HTTP_OK);
+        return new PayrollPeriodResource($payrollPeriod);
     }
 
     public function update(UpdatePayrollPeriodRequest $request, PayrollPeriod $payrollPeriod)
     {
         $validatedData = $request->validated();
         $payrollPeriod->update($validatedData);
-        return response()->json(['data' => new PayrollPeriodResource($payrollPeriod)], Response::HTTP_OK);
+        return new PayrollPeriodResource($payrollPeriod);
     }
 
     public function destroy(PayrollPeriod $payrollPeriod)
     {
         $payrollPeriod->delete();
-        return response()->json(null, Response::HTTP_NO_CONTENT);
+        return response()->noContent();
     }
 }

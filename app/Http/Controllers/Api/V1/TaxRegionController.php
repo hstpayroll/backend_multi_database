@@ -12,32 +12,31 @@ class TaxRegionController extends Controller
 {
     public function index()
     {
-        $taxRegions = TaxRegion::all();
-        return response()->json(['data' => TaxRegionResource::collection($taxRegions)], 200);
+        return TaxRegionResource::collection(TaxRegion::all());
     }
 
     public function store(StoreTaxRegionRequest $request)
     {
         $validatedData = $request->validated();
         $taxRegion = TaxRegion::create($validatedData);
-        return response()->json(['data' => new TaxRegionResource($taxRegion)], 201);
+        return new TaxRegionResource($taxRegion);
     }
 
     public function show(TaxRegion $taxRegion)
     {
-        return response()->json(['data' => new TaxRegionResource($taxRegion)], 200);
+        return new TaxRegionResource($taxRegion);
     }
 
     public function update(UpdateTaxRegionRequest $request, TaxRegion $taxRegion)
     {
         $validatedData = $request->validated();
         $taxRegion->update($validatedData);
-        return response()->json(['data' => new TaxRegionResource($taxRegion)], 200);
+        return new TaxRegionResource($taxRegion);
     }
 
     public function destroy(TaxRegion $taxRegion)
     {
         $taxRegion->delete();
-        return response()->json(['message' => 'TaxRegion deleted successfully'], 200);
+        return response()->noContent();
     }
 }

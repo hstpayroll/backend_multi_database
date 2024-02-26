@@ -14,38 +14,31 @@ class SubDepartmentController extends Controller
 {
     public function index()
     {
-        $subDepartments = SubDepartment::paginate(10);
-        return SubDepartmentResource::collection($subDepartments);
+        return SubDepartmentResource::collection(SubDepartment::paginate(10));
     }
 
     public function store(StoreSubDepartmentRequest $request)
     {
         $validatedData = $request->validated();
         $subDepartment = SubDepartment::create($validatedData);
-        return response()->json([
-            'data' => new SubDepartmentResource($subDepartment)
-        ], Response::HTTP_CREATED);
+        return new SubDepartmentResource($subDepartment);
     }
 
     public function show(SubDepartment $subDepartment)
     {
-        return response()->json([
-            'data' => new SubDepartmentResource($subDepartment)
-        ], Response::HTTP_OK);
+        return new SubDepartmentResource($subDepartment);
     }
 
     public function update(UpdateSubDepartmentRequest $request, SubDepartment $subDepartment)
     {
         $validatedData = $request->validated();
         $subDepartment->update($validatedData);
-        return response()->json([
-            'data' => new SubDepartmentResource($subDepartment)
-        ], Response::HTTP_OK);
+        return new SubDepartmentResource($subDepartment);
     }
 
     public function destroy(SubDepartment $subDepartment)
     {
         $subDepartment->delete();
-        return response()->json(null, Response::HTTP_NO_CONTENT);
+        return response()->noContent();
     }
 }

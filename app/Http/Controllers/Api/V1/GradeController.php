@@ -22,9 +22,7 @@ class GradeController extends Controller
     public function store(StoreGradeRequest $request)
     {
         $grade = Grade::create($request->validated());
-        return (new GradeResource($grade))
-            ->response()
-            ->setStatusCode(Response::HTTP_CREATED);
+        return new GradeResource($grade);
     }
 
     public function show(Grade $grade)
@@ -35,14 +33,12 @@ class GradeController extends Controller
     public function update(UpdateGradeRequest $request, Grade $grade)
     {
         $grade->update($request->validated());
-        return (new GradeResource($grade))
-            ->response()
-            ->setStatusCode(Response::HTTP_ACCEPTED);
+        return new GradeResource($grade);
     }
 
     public function destroy(Grade $grade)
     {
         $grade->delete();
-        return response()->json(null, Response::HTTP_NO_CONTENT);
+        return response()->noContent();
     }
 }

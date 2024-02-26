@@ -15,39 +15,31 @@ class DepartmentController extends Controller
     public function index()
     {
         $departments = Department::paginate(10);
-        return response()->json([
-            'data' => DepartmentResource::collection($departments)
-        ], Response::HTTP_OK);
+        return DepartmentResource::collection($departments);
     }
 
     public function store(StoreDepartmentRequest $request)
     {
         $validatedData = $request->validated();
         $department = Department::create($validatedData);
-        return response()->json([
-            'data' => new DepartmentResource($department)
-        ], Response::HTTP_CREATED);
+        return new DepartmentResource($department);
     }
 
     public function show(Department $department)
     {
-        return response()->json([
-            'data' => new DepartmentResource($department)
-        ], Response::HTTP_OK);
+        return new DepartmentResource($department);
     }
 
     public function update(UpdateDepartmentRequest $request, Department $department)
     {
         $validatedData = $request->validated();
         $department->update($validatedData);
-        return response()->json([
-            'data' => new DepartmentResource($department)
-        ], Response::HTTP_OK);
+        return new DepartmentResource($department);
     }
 
     public function destroy(Department $department)
     {
         $department->delete();
-        return response()->json(null, Response::HTTP_NO_CONTENT);
+        return Response::noContent();
     }
 }

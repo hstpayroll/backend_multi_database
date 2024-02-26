@@ -14,16 +14,13 @@ class CitizenshipController extends Controller
 {
     public function index()
     {
-        $citizenships = Citizenship::paginate(20);
-        return CitizenshipResource::collection($citizenships);
+        return CitizenshipResource::collection(Citizenship::paginate(20));
     }
 
     public function store(StoreCitizenshipRequest $request)
     {
         $citizenship = Citizenship::create($request->validated());
-        return (new CitizenshipResource($citizenship))
-            ->response()
-            ->setStatusCode(Response::HTTP_CREATED);
+        return new CitizenshipResource($citizenship);
     }
 
     public function show(Citizenship $citizenship)
@@ -34,14 +31,12 @@ class CitizenshipController extends Controller
     public function update(UpdateCitizenshipRequest $request, Citizenship $citizenship)
     {
         $citizenship->update($request->validated());
-        return (new CitizenshipResource($citizenship))
-            ->response()
-            ->setStatusCode(Response::HTTP_ACCEPTED);
+        return new CitizenshipResource($citizenship);
     }
 
     public function destroy(Citizenship $citizenship)
     {
         $citizenship->delete();
-        return response()->json(null, Response::HTTP_NO_CONTENT);
+        return response()->noContent();
     }
 }

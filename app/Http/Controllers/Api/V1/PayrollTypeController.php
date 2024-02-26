@@ -12,51 +12,33 @@ use Illuminate\Http\JsonResponse;
 
 class PayrollTypeController extends Controller
 {
-    public function index(): JsonResponse
+    public function index()
     {
-        $payrollTypes = PayrollType::paginate();
-        return response()->json([
-            'success' => true,
-            'data' => PayrollTypeResource::collection($payrollTypes)
-        ]);
+        return PayrollTypeResource::collection(PayrollType::paginate(10));
     }
 
-    public function store(StorePayrollTypeRequest $request): JsonResponse
+    public function store(StorePayrollTypeRequest $request)
     {
         $validatedData = $request->validated();
         $payrollType = PayrollType::create($validatedData);
-        return response()->json([
-            'success' => true,
-            'message' => 'Payroll type created successfully',
-            'data' => new PayrollTypeResource($payrollType)
-        ], JsonResponse::HTTP_CREATED);
+        return new PayrollTypeResource($payrollType);
     }
 
-    public function show(PayrollType $payrollType): JsonResponse
+    public function show(PayrollType $payrollType)
     {
-        return response()->json([
-            'success' => true,
-            'data' => new PayrollTypeResource($payrollType)
-        ]);
+        return new PayrollTypeResource($payrollType);
     }
 
-    public function update(UpdatePayrollTypeRequest $request, PayrollType $payrollType): JsonResponse
+    public function update(UpdatePayrollTypeRequest $request, PayrollType $payrollType)
     {
         $validatedData = $request->validated();
         $payrollType->update($validatedData);
-        return response()->json([
-            'success' => true,
-            'message' => 'Payroll type updated successfully',
-            'data' => new PayrollTypeResource($payrollType)
-        ]);
+        return new PayrollTypeResource($payrollType);
     }
 
-    public function destroy(PayrollType $payrollType): JsonResponse
+    public function destroy(PayrollType $payrollType)
     {
         $payrollType->delete();
-        return response()->json([
-            'success' => true,
-            'message' => 'Payroll type deleted successfully'
-        ]);
+        return response()->noContent();
     }
 }
