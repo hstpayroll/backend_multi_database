@@ -7,19 +7,18 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class PayrollPeriodResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @return array<string, mixed>
-     */
-    public function toArray(Request $request): array
+    public function toArray($request)
     {
         return [
             'id' => $this->id,
             'income_tax_id' => $this->income_tax_id,
+            'income_tax' => new IncomeTaxResource($this->incomeTax),
             'payroll_type_id' => $this->payroll_type_id,
+            'payroll_type' => new PayrollTypeResource($this->payrollType),
             'fiscal_year_id' => $this->fiscal_year_id,
+            'fiscal_year' => new FiscalYearResource($this->fiscalYear),
             'name' => $this->name,
+            'year' => $this->year,
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
             'status' => $this->status == 1 ? 'active' : 'inactive',

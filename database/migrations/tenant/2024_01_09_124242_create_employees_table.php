@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
+     /**
      * Run the migrations.
      */
     public function up(): void
@@ -29,7 +29,6 @@ return new class extends Migration
             $table->foreignId('position_id')->constrained('positions')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('employment_type_id')->constrained('employment_types')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('citizenship_id')->constrained('citizenships')->onDelete('restrict')->onUpdate('cascade');
-            $table->foreignId('company_id')->constrained('companies')->onDelete('restrict')->onUpdate('cascade');
             $table->string('email')->nullable();
             $table->foreignId('bank_id')->constrained('banks')->onDelete('restrict')->onUpdate('cascade');
             $table->string('account_number')->nullable();
