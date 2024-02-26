@@ -182,16 +182,6 @@
                         </button>
                     </div>
 
-                    <div class="relative flex items-center h-header">
-                        <button type="button" data-drawer-target="cartSidePenal"
-                            class="inline-flex relative justify-center items-center p-0 text-topbar-item transition-all w-[37.5px] h-[37.5px] duration-200 ease-linear bg-topbar rounded-md btn hover:bg-topbar-item-bg-hover hover:text-topbar-item-hover group-data-[topbar=dark]:bg-topbar-dark group-data-[topbar=dark]:hover:bg-topbar-item-bg-hover-dark group-data-[topbar=dark]:hover:text-topbar-item-hover-dark group-data-[topbar=brand]:bg-topbar-brand group-data-[topbar=brand]:hover:bg-topbar-item-bg-hover-brand group-data-[topbar=brand]:hover:text-topbar-item-hover-brand group-data-[topbar=dark]:dark:bg-zink-700 group-data-[topbar=dark]:dark:hover:bg-zink-600 group-data-[topbar=brand]:text-topbar-item-brand group-data-[topbar=dark]:dark:hover:text-zink-50 group-data-[topbar=dark]:dark:text-zink-200 group-data-[topbar=dark]:text-topbar-item-dark">
-                            <i data-lucide="shopping-cart"
-                                class="inline-block w-5 h-5 stroke-1 fill-slate-100 group-data-[topbar=dark]:fill-topbar-item-bg-hover-dark group-data-[topbar=brand]:fill-topbar-item-bg-hover-brand"></i>
-                            <span
-                                class="absolute flex items-center justify-center w-[16px] h-[16px] text-xs text-white bg-red-400 border-white rounded-full -top-1 -right-1">3</span>
-                        </button>
-                    </div>
-
                     <div class="relative flex items-center dropdown h-header">
                         <button type="button"
                             class="inline-flex justify-center relative items-center p-0 text-topbar-item transition-all w-[37.5px] h-[37.5px] duration-200 ease-linear bg-topbar rounded-md dropdown-toggle btn hover:bg-topbar-item-bg-hover hover:text-topbar-item-hover group-data-[topbar=dark]:bg-topbar-dark group-data-[topbar=dark]:hover:bg-topbar-item-bg-hover-dark group-data-[topbar=dark]:hover:text-topbar-item-hover-dark group-data-[topbar=brand]:bg-topbar-brand group-data-[topbar=brand]:hover:bg-topbar-item-bg-hover-brand group-data-[topbar=brand]:hover:text-topbar-item-hover-brand group-data-[topbar=dark]:dark:bg-zink-700 group-data-[topbar=dark]:dark:hover:bg-zink-600 group-data-[topbar=brand]:text-topbar-item-brand group-data-[topbar=dark]:dark:hover:text-zink-50 group-data-[topbar=dark]:dark:text-zink-200 group-data-[topbar=dark]:text-topbar-item-dark"
@@ -345,307 +335,73 @@
                             <i data-lucide="settings"
                                 class="inline-block w-5 h-5 stroke-1 fill-slate-100 group-data-[topbar=dark]:fill-topbar-item-bg-hover-dark group-data-[topbar=brand]:fill-topbar-item-bg-hover-brand"></i>
                         </button>
-                    </div>
-                    {{-- @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                        <div class="relative flex items-center dropdown md:flex">
+                        <div class="relative flex items-center dropdown h-header">
                             <button type="button"
                                 class="inline-block p-0 transition-all duration-200 ease-linear bg-topbar rounded-full text-topbar-item dropdown-toggle btn hover:bg-topbar-item-bg-hover hover:text-topbar-item-hover group-data-[topbar=dark]:text-topbar-item-dark group-data-[topbar=dark]:bg-topbar-dark group-data-[topbar=dark]:hover:bg-topbar-item-bg-hover-dark group-data-[topbar=dark]:hover:text-topbar-item-hover-dark group-data-[topbar=brand]:bg-topbar-brand group-data-[topbar=brand]:hover:bg-topbar-item-bg-hover-brand group-data-[topbar=brand]:hover:text-topbar-item-hover-brand group-data-[topbar=dark]:dark:bg-zink-700 group-data-[topbar=dark]:dark:hover:bg-zink-600 group-data-[topbar=brand]:text-topbar-item-brand group-data-[topbar=dark]:dark:hover:text-zink-50 group-data-[topbar=dark]:dark:text-zink-200"
                                 id="dropdownMenuButton" data-bs-toggle="dropdown">
-                                <i data-lucide="users"
-                                    class="inline-block w-5 h-5 stroke-1 fill-slate-100 group-data-[topbar=dark]:fill-topbar-item-bg-hover-dark group-data-[topbar=brand]:fill-topbar-item-bg-hover-brand"></i>
+                                @if (false)
+                                    <div class="bg-pink-100 rounded-full">
+                                        <img src="{{ Auth::user()->profile_photo_url }}" alt=""
+                                            class="w-[37.5px] h-[37.5px] rounded-full">
+                                    </div>
+                                @else
+                                    <i data-lucide="user-2"
+                                        class="inline-block w-5 h-5 stroke-1 fill-slate-100 group-data-[topbar=dark]:fill-topbar-item-bg-hover-dark group-data-[topbar=brand]:fill-topbar-item-bg-hover-brand"></i>
+                                @endif
+
                             </button>
                             <div class="absolute z-50 hidden p-4 ltr:text-left rtl:text-right bg-white rounded-md shadow-md !top-4 dropdown-menu min-w-[14rem] dark:bg-zink-600"
                                 aria-labelledby="dropdownMenuButton">
-                                <h5 class="mb-2 text-sm font-normal text-slate-500 dark:text-zink-300 flex">
-                                    {{ Auth::user()->currentTeam->name }}
-                                    <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                                    </svg>
-                                </h5>
-                                <ul class="pt-2 mt-2 border-t border-slate-200 dark:border-zink-500">
+                                <h6 class="mb-2 text-sm font-normal text-slate-500 dark:text-zink-300">Welcome to
+                                    Tailwick
+                                </h6>
+                                <a href="#!" class="flex gap-3 mb-3">
+                                    @if (Auth::user()->profile_photo_url)
+                                        <div class="relative inline-block shrink-0">
+                                            <div class="rounded bg-slate-100 dark:bg-zink-500">
+                                                <img src="{{ Auth::user()->profile_photo_url }}"
+                                                    alt="{{ Auth::user()->name }}" class="w-12 h-12 rounded">
+                                            </div>
+                                            <span
+                                                class="-top-1 ltr:-right-1 rtl:-left-1 absolute w-2.5 h-2.5 bg-green-400 border-2 border-white rounded-full dark:border-zink-600"></span>
+                                        </div>
+                                    @endif
+                                    <div>
+                                        <h6 class="mb-1 text-15">{{ Auth::user()->name }}</h6>
+                                        <p class="text-slate-500 dark:text-zink-300">Role comes here</p>
+                                    </div>
+                                </a>
+                                <ul>
                                     <li>
                                         <a class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                                            href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"><i
-                                                data-lucide="user-2"
-                                                class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i> Team Setting</a>
+                                            href="{{ route('profile.edit') }}"><i data-lucide="user-2"
+                                                class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i> Profile</a>
                                     </li>
-                                    @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                        <li>
-                                            <a class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                                                href="{{ route('teams.create') }}"><i data-lucide="user-2"
-                                                    class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i> Create New Team</a>
-                                        </li>
-                                    @endcan
-                                    <!-- Team Switcher -->
-                                    @if (Auth::user()->allTeams()->count() > 1)
-                                        <div class="border-t border-gray-200 mt-3 dark:border-zink-500"></div>
+                                    <li>
+                                        <a class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
+                                            href="{{ url('apps-mailbox') }}"><i data-lucide="mail"
+                                                class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i> Inbox <span
+                                                class="inline-flex items-center justify-center w-5 h-5 ltr:ml-2 rtl:mr-2 text-[11px] font-medium border rounded-full text-white bg-red-500 border-red-500">15</span></a>
+                                    </li>
+                                    <!-- Logout -->
+                                    <li class="pt-2 mt-2 border-t border-slate-200 dark:border-zink-500">
+                                        <form method="POST" action="{{ route('logout') }}" x-data>
+                                            @csrf
 
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            {{ __('Switch Teams') }}
-                                        </div>
-
-                                        @foreach (Auth::user()->allTeams() as $team)
-                                            <x-switchable-team :team="$team" />
-                                        @endforeach
-                                    @endif
+                                            <a href="{{ route('logout') }}"
+                                                class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
+                                                @click.prevent="$root.submit();">
+                                                <i data-lucide="log-out"
+                                                    class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i>
+                                                {{ __('Sign Out') }}
+                                            </a>
+                                        </form>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                    @endif --}}
-
-                    <div class="relative flex items-center dropdown h-header">
-                        <button type="button"
-                            class="inline-block p-0 transition-all duration-200 ease-linear bg-topbar rounded-full text-topbar-item dropdown-toggle btn hover:bg-topbar-item-bg-hover hover:text-topbar-item-hover group-data-[topbar=dark]:text-topbar-item-dark group-data-[topbar=dark]:bg-topbar-dark group-data-[topbar=dark]:hover:bg-topbar-item-bg-hover-dark group-data-[topbar=dark]:hover:text-topbar-item-hover-dark group-data-[topbar=brand]:bg-topbar-brand group-data-[topbar=brand]:hover:bg-topbar-item-bg-hover-brand group-data-[topbar=brand]:hover:text-topbar-item-hover-brand group-data-[topbar=dark]:dark:bg-zink-700 group-data-[topbar=dark]:dark:hover:bg-zink-600 group-data-[topbar=brand]:text-topbar-item-brand group-data-[topbar=dark]:dark:hover:text-zink-50 group-data-[topbar=dark]:dark:text-zink-200"
-                            id="dropdownMenuButton" data-bs-toggle="dropdown">
-                            @if (false)
-                                <div class="bg-pink-100 rounded-full">
-                                    <img src="{{ Auth::user()->profile_photo_url }}" alt=""
-                                        class="w-[37.5px] h-[37.5px] rounded-full">
-                                </div>
-                            @else
-                                <i data-lucide="user-2"
-                                    class="inline-block w-5 h-5 stroke-1 fill-slate-100 group-data-[topbar=dark]:fill-topbar-item-bg-hover-dark group-data-[topbar=brand]:fill-topbar-item-bg-hover-brand"></i>
-                            @endif
-                        </button>
-                        <div class="absolute z-50 hidden p-4 ltr:text-left rtl:text-right bg-white rounded-md shadow-md !top-4 dropdown-menu min-w-[14rem] dark:bg-zink-600"
-                            aria-labelledby="dropdownMenuButton">
-                            <h6 class="mb-2 text-sm font-normal text-slate-500 dark:text-zink-300">Welcome to Tailwick
-                            </h6>
-                            <a href="#!" class="flex gap-3 mb-3">
-                                @if (false)
-                                    <div class="relative inline-block shrink-0">
-                                        <div class="rounded bg-slate-100 dark:bg-zink-500">
-                                            <img src="{{ Auth::user()->profile_photo_url }}"
-                                                alt="{{ Auth::user()->name }}" class="w-12 h-12 rounded">
-                                        </div>
-                                        <span
-                                            class="-top-1 ltr:-right-1 rtl:-left-1 absolute w-2.5 h-2.5 bg-green-400 border-2 border-white rounded-full dark:border-zink-600"></span>
-                                    </div>
-                                @endif
-                                <div>
-                                    <h6 class="mb-1 text-15">{{ Auth::user()->name }}</h6>
-                                    <p class="text-slate-500 dark:text-zink-300">CEO & Founder</p>
-                                </div>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                                        href="#"><i data-lucide="user-2"
-                                            class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i> Profile</a>
-                                </li>
-                                @if (false)
-                                    <li>
-                                        <a class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                                            href="{{ route('api-tokens.index') }}"><i data-lucide="key-round"
-                                                class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i> API Tokens</a>
-                                    </li>
-                                @endif
-                                <li>
-                                    <a class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                                        href="{{ url('apps-mailbox') }}"><i data-lucide="mail"
-                                            class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i> Inbox <span
-                                            class="inline-flex items-center justify-center w-5 h-5 ltr:ml-2 rtl:mr-2 text-[11px] font-medium border rounded-full text-white bg-red-500 border-red-500">15</span></a>
-                                </li>
-                                <li>
-                                    <a class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                                        href="{{ url('apps-chat') }}"><i data-lucide="messages-square"
-                                            class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i> Chat</a>
-                                </li>
-                                <li>
-                                    <a class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                                        href="#!"><i data-lucide="gem"
-                                            class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i> Upgrade <span
-                                            class="inline-flex items-center justify-center w-auto h-5 ltr:ml-2 rtl:mr-2 px-1 text-[12px] font-medium border rounded text-white bg-sky-500 border-sky-500">Pro</span></a>
-                                </li>
-                                <!-- Logout -->
-                                <li class="pt-2 mt-2 border-t border-slate-200 dark:border-zink-500">
-                                    <form method="POST" action="{{ route('logout') }}" x-data>
-                                        @csrf
-
-                                        <a href="{{ route('logout') }}"
-                                            class="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                                            @click.prevent="$root.submit();">
-                                            <i data-lucide="log-out"
-                                                class="inline-block w-4 h-4 ltr:mr-2 rtl:ml-2"></i>
-                                            {{ __('Sign Out') }}
-                                        </a>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </header>
-
-
-<div id="cartSidePenal" drawer-end
-    class="fixed inset-y-0 flex flex-col w-full transition-transform duration-300 ease-in-out transform bg-white shadow dark:bg-zink-600 ltr:right-0 rtl:left-0 md:w-96 z-drawer show">
-    <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
-        <div class="grow">
-            <h5 class="mb-0 text-16">Shopping Cart <span
-                    class="inline-flex items-center justify-center w-5 h-5 ml-1 text-[11px] font-medium border rounded-full text-white bg-custom-500 border-custom-500">3</span>
-            </h5>
-        </div>
-        <div class="shrink-0">
-            <button data-drawer-close="cartSidePenal"
-                class="transition-all duration-150 ease-linear text-slate-500 hover:text-slate-800"><i data-lucide="x"
-                    class="w-4 h-4"></i></button>
-        </div>
-    </div>
-    <div class="px-4 py-3 text-sm text-green-500 border border-transparent bg-green-50 dark:bg-green-400/20">
-        <span class="font-bold underline">TAILWICK50</span> Coupon code applied successfully.
-    </div>
-    <div>
-        <div class="h-[calc(100vh_-_370px)] p-4 overflow-y-auto product-list">
-            <div class="flex flex-col gap-4">
-                <div class="flex gap-2 product">
-                    <div
-                        class="flex items-center justify-center w-12 h-12 rounded-md bg-slate-100 shrink-0 dark:bg-zink-500">
-                        <img src="{{ URL::asset('build/images/product/img-01.png') }}" alt=""
-                            class="h-8">
-                    </div>
-                    <div class="overflow-hidden grow">
-                        <div class="ltr:float-right rtl:float-left">
-                            <button
-                                class="transition-all duration-150 ease-linear text-slate-500 dark:text-zink-200 hover:text-red-500 dark:hover:text-red-500"><i
-                                    data-lucide="x" class="w-4 h-4"></i></button>
-                        </div>
-                        <a href="#!" class="transition-all duration-200 ease-linear hover:text-custom-500">
-                            <h6 class="mb-1 text-15">Cotton collar t-shirts for men</h6>
-                        </a>
-                        <div class="flex items-center mb-3">
-                            <h5 class="text-base product-price"> $<span>155.32</span></h5>
-                            <div class="font-normal rtl:mr-1 ltr:ml-1 text-slate-500 dark:text-zink-200">(Fashion)
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between gap-3">
-                            <div class="inline-flex text-center input-step">
-                                <button type="button"
-                                    class="border w-9 h-9 leading-[15px] minus bg-white dark:bg-zink-700 dark:border-zink-500 ltr:rounded-l rtl:rounded-r transition-all duration-200 ease-linear border-slate-200 text-slate-500 dark:text-zink-200 hover:bg-custom-500 dark:hover:bg-custom-500 hover:text-custom-50 dark:hover:text-custom-50 hover:border-custom-500 dark:hover:border-custom-500 focus:bg-custom-500 dark:focus:bg-custom-500 focus:border-custom-500 dark:focus:border-custom-500 focus:text-custom-50 dark:focus:text-custom-50"><i
-                                        data-lucide="minus" class="inline-block w-4 h-4"></i></button>
-                                <input type="number"
-                                    class="w-12 text-center h-9 border-y product-quantity dark:bg-zink-700 focus:shadow-none dark:border-zink-500"
-                                    value="2" min="0" max="100" readonly>
-                                <button type="button"
-                                    class="transition-all duration-200 ease-linear bg-white border dark:bg-zink-700 dark:border-zink-500 ltr:rounded-r rtl:rounded-l w-9 h-9 border-slate-200 plus text-slate-500 dark:text-zink-200 hover:bg-custom-500 dark:hover:bg-custom-500 hover:text-custom-50 dark:hover:text-custom-50 hover:border-custom-500 dark:hover:border-custom-500 focus:bg-custom-500 dark:focus:bg-custom-500 focus:border-custom-500 dark:focus:border-custom-500 focus:text-custom-50 dark:focus:text-custom-50"><i
-                                        data-lucide="plus" class="inline-block w-4 h-4"></i></button>
-                            </div>
-                            <h6 class="product-line-price">310.64</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex gap-2 product">
-                    <div
-                        class="flex items-center justify-center w-12 h-12 rounded-md bg-slate-100 shrink-0 dark:bg-zink-500">
-                        <img src="{{ URL::asset('build/images/product/img-03.png') }}" alt=""
-                            class="h-8">
-                    </div>
-                    <div class="overflow-hidden grow">
-                        <div class="ltr:float-right rtl:float-left">
-                            <button
-                                class="transition-all duration-150 ease-linear text-slate-500 dark:text-zink-200 hover:text-red-500 dark:hover:text-red-500"><i
-                                    data-lucide="x" class="w-4 h-4"></i></button>
-                        </div>
-                        <a href="#!" class="transition-all duration-200 ease-linear hover:text-custom-500">
-                            <h6 class="mb-1 text-15">Like style travel black handbag</h6>
-                        </a>
-                        <div class="flex items-center mb-3">
-                            <h5 class="text-base product-price"> $<span>349.95</span></h5>
-                            <div class="font-normal rtl:mr-1 ltr:ml-1 text-slate-400 dark:text-zink-200">(Luggage)
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between gap-3">
-                            <div class="inline-flex text-center input-step">
-                                <button type="button"
-                                    class="border w-9 h-9 leading-[15px] minus bg-white dark:bg-zink-700 dark:border-zink-500 ltr:rounded-l rtl:rounded-r transition-all duration-200 ease-linear border-slate-200 text-slate-500 dark:text-zink-200 hover:bg-custom-500 dark:hover:bg-custom-500 hover:text-custom-50 dark:hover:text-custom-50 hover:border-custom-500 dark:hover:border-custom-500 focus:bg-custom-500 dark:focus:bg-custom-500 focus:border-custom-500 dark:focus:border-custom-500 focus:text-custom-50 dark:focus:text-custom-50"><i
-                                        data-lucide="minus" class="inline-block w-4 h-4"></i></button>
-                                <input type="number"
-                                    class="w-12 text-center h-9 border-y product-quantity dark:bg-zink-700 focus:shadow-none dark:border-zink-500"
-                                    value="1" min="0" max="100" readonly>
-                                <button type="button"
-                                    class="transition-all duration-200 ease-linear bg-white border dark:bg-zink-700 dark:border-zink-500 ltr:rounded-r rtl:rounded-l w-9 h-9 border-slate-200 plus text-slate-500 dark:text-zink-200 hover:bg-custom-500 dark:hover:bg-custom-500 hover:text-custom-50 dark:hover:text-custom-50 hover:border-custom-500 dark:hover:border-custom-500 focus:bg-custom-500 dark:focus:bg-custom-500 focus:border-custom-500 dark:focus:border-custom-500 focus:text-custom-50 dark:focus:text-custom-50"><i
-                                        data-lucide="plus" class="inline-block w-4 h-4"></i></button>
-                            </div>
-                            <h6 class="product-line-price">349.95</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex gap-2 product">
-                    <div
-                        class="flex items-center justify-center w-12 h-12 rounded-md bg-slate-100 shrink-0 dark:bg-zink-500">
-                        <img src="{{ URL::asset('build/images/product/img-09.png') }}" alt=""
-                            class="h-8">
-                    </div>
-                    <div class="overflow-hidden grow">
-                        <div class="ltr:float-right rtl:float-left">
-                            <button
-                                class="transition-all duration-150 ease-linear text-slate-500 dark:text-zink-200 hover:text-red-500 dark:hover:text-red-500"><i
-                                    data-lucide="x" class="w-4 h-4"></i></button>
-                        </div>
-                        <a href="#!" class="transition-all duration-200 ease-linear hover:text-custom-500">
-                            <h6 class="mb-1 text-15">Blive Printed Men Round Neck</h6>
-                        </a>
-                        <div class="flex items-center mb-3">
-                            <h5 class="text-base product-price">$<span>546.74</span></h5>
-                            <div class="font-normal rtl:mr-1 ltr:ml-1 text-slate-400 dark:text-zink-200">(Fashion)
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between gap-3">
-                            <div class="inline-flex text-center input-step">
-                                <button type="button"
-                                    class="border w-9 h-9 leading-[15px] minus bg-white dark:bg-zink-700 dark:border-zink-500 ltr:rounded-l rtl:rounded-r transition-all duration-200 ease-linear border-slate-200 text-slate-500 dark:text-zink-200 hover:bg-custom-500 dark:hover:bg-custom-500 hover:text-custom-50 dark:hover:text-custom-50 hover:border-custom-500 dark:hover:border-custom-500 focus:bg-custom-500 dark:focus:bg-custom-500 focus:border-custom-500 dark:focus:border-custom-500 focus:text-custom-50 dark:focus:text-custom-50"><i
-                                        data-lucide="minus" class="inline-block w-4 h-4"></i></button>
-                                <input type="number"
-                                    class="w-12 text-center h-9 border-y product-quantity dark:bg-zink-700 focus:shadow-none dark:border-zink-500"
-                                    value="4" min="0" max="100" readonly>
-                                <button type="button"
-                                    class="transition-all duration-200 ease-linear bg-white border dark:bg-zink-700 dark:border-zink-500 ltr:rounded-r rtl:rounded-l w-9 h-9 border-slate-200 plus text-slate-500 dark:text-zink-200 hover:bg-custom-500 dark:hover:bg-custom-500 hover:text-custom-50 dark:hover:text-custom-50 hover:border-custom-500 dark:hover:border-custom-500 focus:bg-custom-500 dark:focus:bg-custom-500 focus:border-custom-500 dark:focus:border-custom-500 focus:text-custom-50 dark:focus:text-custom-50"><i
-                                        data-lucide="plus" class="inline-block w-4 h-4"></i></button>
-                            </div>
-                            <h6 class="product-line-price end">2,186.96</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="p-4 border-t border-slate-200 dark:border-zink-500">
-
-            <table class="w-full mb-3 ">
-                <tbody class="table-total">
-                    <tr>
-                        <td class="py-2">Sub Total :</td>
-                        <td class="text-right cart-subtotal">$2,847.55</td>
-                    </tr>
-                    <tr>
-                        <td class="py-2">Discount <span class="text-muted">(TAILWICK50)</span>:</td>
-                        <td class="text-right cart-discount">-$476.00</td>
-                    </tr>
-                    <tr>
-                        <td class="py-2">Shipping Charge :</td>
-                        <td class="text-right cart-shipping">$89.00</td>
-                    </tr>
-                    <tr>
-                        <td class="py-2">Estimated Tax (12.5%) : </td>
-                        <td class="text-right cart-tax">$70.62</td>
-                    </tr>
-                    <tr class="font-semibold">
-                        <td class="py-2">Total : </td>
-                        <td class="text-right cart-total">$2,531.17</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="flex items-center justify-between gap-3">
-                <a href="{{ url('apps-ecommerce-product-grid') }}"
-                    class="w-full text-white btn bg-slate-500 border-slate-500 hover:text-white hover:bg-slate-600 hover:border-slate-600 focus:text-white focus:bg-slate-600 focus:border-slate-600 focus:ring focus:ring-slate-100 active:text-white active:bg-slate-600 active:border-slate-600 active:ring active:ring-slate-100 dark:ring-slate-400/10">Continue
-                    Shopping</a>
-                <a href="{{ url('apps-ecommerce-checkout') }}"
-                    class="w-full text-white bg-red-500 border-red-500 btn hover:text-white hover:bg-red-600 hover:border-red-600 focus:text-white focus:bg-red-600 focus:border-red-600 focus:ring focus:ring-red-100 active:text-white active:bg-red-600 active:border-red-600 active:ring active:ring-red-100 dark:ring-custom-400/20">Checkout</a>
-            </div>
-        </div>
-    </div>
-</div>
