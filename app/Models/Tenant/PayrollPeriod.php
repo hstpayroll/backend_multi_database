@@ -37,18 +37,18 @@ class PayrollPeriod extends Model
         'status',
     ];
 
-    public function incomeTaxes()
+    public function incomeTax()
     {
-        return $this->hasMany(IncomeTax::class, 'id', 'income_tax_id');
+        return $this->belongsTo(IncomeTax::class, 'income_tax_id');
     }
 
-    public function payrollTypes()
+    public function payrollType()
     {
-        return $this->hasMany(PayrollType::class, 'id', 'payroll_type_id');
+        return $this->belongsTo(PayrollType::class, 'payroll_type_id');
     }
 
-    public function fiscalYears()
+    public function fiscalYear()
     {
-        return $this->hasMany(FiscalYear::class, 'id', 'fiscal_year_id');
+        return $this->belongsTo(FiscalYear::class, 'fiscal_year_id');
     }
 }

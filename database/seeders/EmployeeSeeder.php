@@ -30,7 +30,6 @@ class EmployeeSeeder extends Seeder
             'position_id'=>"1",
             'employment_type_id'=>"1",
             'citizenship_id'=>"1",
-            'company_id'=>"1",
             'email'=>"yetim@tadesse.com",
             'bank_id'=>"1",
             'account_number'=>"136547",

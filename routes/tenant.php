@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\V1\CitizenshipController;
 use App\Http\Controllers\Api\V1\CostCenterController;
 use App\Http\Controllers\Api\V1\CurrencyController;
 use App\Http\Controllers\Api\V1\DepartmentController;
+use App\Http\Controllers\Api\V1\EmployeeController;
 use App\Http\Controllers\Api\V1\IncomeTaxController;
 use App\Http\Controllers\Api\V1\FiscalYearController;
 use App\Http\Controllers\Api\V1\TenantUserController;
@@ -21,6 +22,7 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use App\Http\Controllers\Api\V1\GradeController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
+use App\Http\Controllers\Api\V1\PayrollTypeController;
 use App\Http\Controllers\Api\V1\PositionController;
 use App\Http\Controllers\Api\V1\SubDepartmentController;
 use App\Http\Controllers\Api\V1\TaxRegionController;
@@ -74,6 +76,8 @@ Route::middleware([
             Route::apiResource('grades', GradeController::class);
             Route::apiResource('citizenship', CitizenshipController::class);
             Route::apiResource('positions', PositionController::class);
+            Route::apiResource('payroll-types', PayrollTypeController::class);
+            Route::apiResource('employees', EmployeeController::class);
 
         });
 });
