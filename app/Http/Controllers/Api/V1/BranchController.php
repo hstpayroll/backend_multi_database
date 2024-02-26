@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Resources\Branch\BranchResource;
-use App\Models\Branch;
+use App\Models\Tenant\Branch;
 use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Branch\BranchResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class BranchController extends Controller
@@ -17,7 +17,7 @@ class BranchController extends Controller
 
     public function index(): AnonymousResourceCollection
     {
-        $branches = Branch::useFilters()->dynamicPaginate();
+        $branches = Branch::paginate();
 
         return BranchResource::collection($branches);
     }
@@ -26,7 +26,8 @@ class BranchController extends Controller
     {
         $branch = Branch::create($request->validated());
 
-        return $this->responseCreated('Branch created successfully', new BranchResource($branch));
+        return $this->responseCreated('Branch created successfully',
+         new BranchResource($branch));
     }
 
     public function show(Branch $branch): JsonResponse

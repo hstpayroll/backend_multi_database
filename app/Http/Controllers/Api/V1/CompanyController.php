@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Company;
 use Illuminate\Http\Request;
+use App\Models\Tenant\Company;
 use App\Http\Controllers\Controller;
+use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 use App\Http\Resources\Finance\CompanyResource;
-use Spatie\QueryBuilder\QueryBuilder;
 
 class CompanyController extends Controller
 {
