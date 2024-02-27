@@ -48,10 +48,10 @@ Route::middleware([
     //
     require __DIR__ . '/tenant_api_auth.php';
     Route::name('api.')
-    ->middleware('auth:sanctum')
-    ->group(function () {
-        Route::get('auth-user-tenant', [TenantUserController::class,'auth_user_tenant']);
-        Route::apiResource('users', TenantUserController::class);
+        ->middleware('auth:sanctum')
+        ->group(function () {
+            Route::get('auth-user-tenant', [TenantUserController::class, 'auth_user_tenant']);
+            Route::apiResource('users', TenantUserController::class);
             // Route::apiResource('users', UserController::class);
             // Route::get('/users', [UserController::class,'index'])->middleware('can:user_index');
             // Route::post('/users', [UserController::class,'store']);
@@ -78,7 +78,6 @@ Route::middleware([
             Route::apiResource('positions', PositionController::class);
             Route::apiResource('payroll-types', PayrollTypeController::class);
             Route::apiResource('employees', EmployeeController::class);
-
         });
 });
 
@@ -98,7 +97,7 @@ Route::middleware([
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('users', TenantUserController::class);
+    // Route::resource('users', TenantUserController::class);
 
     require __DIR__ . '/tenant_auth.php';
 });

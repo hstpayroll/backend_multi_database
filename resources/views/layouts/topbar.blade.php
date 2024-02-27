@@ -356,7 +356,7 @@
                                     Tailwick
                                 </h6>
                                 <a href="#!" class="flex gap-3 mb-3">
-                                    @if (Auth::user()->profile_photo_url)
+                                    @if (false)
                                         <div class="relative inline-block shrink-0">
                                             <div class="rounded bg-slate-100 dark:bg-zink-500">
                                                 <img src="{{ Auth::user()->profile_photo_url }}"
@@ -367,7 +367,7 @@
                                         </div>
                                     @endif
                                     <div>
-                                        <h6 class="mb-1 text-15">{{ Auth::user()->name }}</h6>
+                                        <h6 class="mb-1 text-15">{{ Auth::user()->name ?? '' }}</h6>
                                         <p class="text-slate-500 dark:text-zink-300">Role comes here</p>
                                     </div>
                                 </a>

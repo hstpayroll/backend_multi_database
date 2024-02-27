@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.master-without-nav')
 @section('title')
-    {{ __('t-register') }}
+    {{ __('t-login') }}
 @endsection
 @section('content')
 
