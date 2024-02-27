@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Company;
-use App\Models\Employee;
 use Illuminate\Http\Request;
+use App\Models\Tenant\Company;
+use App\Models\Tenant\Employee;
 
 /**
  * Class CompanyController
@@ -17,13 +17,6 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function dashboard(Request $request, Company $company)
-    {
-        $employees_count = Employee::where('company_id',  $company->id)->count();
-        return view('company.dashboard')
-            ->with('company', $company)
-            ->with('employees_count', $employees_count);
-    }
     public function index()
     {
 

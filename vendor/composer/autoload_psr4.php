@@ -54,6 +54,7 @@ return array(
     'Spatie\\FlareClient\\' => array($vendorDir . '/spatie/flare-client-php/src'),
     'Spatie\\DataTransferObject\\' => array($vendorDir . '/spatie/data-transfer-object/src'),
     'Spatie\\Backtrace\\' => array($vendorDir . '/spatie/backtrace/src'),
+    'Spatie\\Activitylog\\' => array($vendorDir . '/spatie/laravel-activitylog/src'),
     'Shalvah\\Upgrader\\' => array($vendorDir . '/shalvah/upgrader/src'),
     'Shalvah\\Clara\\' => array($vendorDir . '/shalvah/clara/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),

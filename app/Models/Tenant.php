@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Spatie\Activitylog\LogOptions;
 use Illuminate\Support\Facades\Hash;
 use Stancl\Tenancy\Contracts\TenantWithDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDomains;
 use Stancl\Tenancy\Database\Concerns\HasDatabase;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
 
 class Tenant extends BaseTenant implements TenantWithDatabase
 {
-    use HasDatabase, HasDomains;
+    use HasDatabase, HasDomains, LogsActivity;
 
     public static function getCustomColumns(): array
     {
@@ -25,5 +27,11 @@ class Tenant extends BaseTenant implements TenantWithDatabase
     public function setPasswordAttribute($value)
     {
         return  $this->attributes['password'] =Hash::make($value);
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logOnly(['name']);
     }
 }

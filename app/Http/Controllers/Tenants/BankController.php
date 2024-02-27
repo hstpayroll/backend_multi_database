@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bank;
+use App\Models\Tenant\Bank;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Spatie\Activitylog\Models\Activity;
 
 /**
  * Class BankController
@@ -19,9 +21,8 @@ class BankController extends Controller
     public function index()
     {
         $banks = Bank::paginate();
-// return $banks;
         return view('bank.index', compact('banks'))
-            ->with('i', (request()->input('page', 1) - 1) * $banks->perPage());
+            ->with('banks', $banks);
     }
 
     /**
@@ -43,9 +44,8 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Bank::$rules);
+        $bank = Bank::create($request->validated());
 
-        $bank = Bank::create($request->all());
 
         return redirect()->route('banks.index')
             ->with('success', 'Bank created successfully.');

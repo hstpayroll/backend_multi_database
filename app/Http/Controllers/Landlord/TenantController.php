@@ -6,8 +6,10 @@ use App\Models\Tenant;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
+use Spatie\Activitylog\Models\Activity;
 
 class TenantController extends Controller
 {
@@ -35,6 +37,7 @@ class TenantController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Tenant::class],
@@ -57,6 +60,8 @@ class TenantController extends Controller
         event(new Registered($tenant));
 
         // Auth::login($user);
+        $activity = Activity::all()->last();
+        Log::info($activity);
 
         return redirect()->to(route('tenants.index'));
     }
@@ -82,7 +87,7 @@ class TenantController extends Controller
      */
     public function update(Request $request, Tenant $tenant)
     {
-       dd($request->all());
+        dd($request->all());
     }
 
     /**

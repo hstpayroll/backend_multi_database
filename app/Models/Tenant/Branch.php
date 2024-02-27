@@ -10,18 +10,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Branch extends Model
 {
-    use HasFactory, Filterable;
+    use HasFactory;
 
-    protected string $default_filters = BranchFilters::class;
 
     /**
      * Mass-assignable attributes.
      *
      * @var array
      */
-    protected $fillable = [
+    protected $fillable = ['name', 'bank_id'];
 
-    ];
-
-
+    public function bank()
+    {
+        return $this->belongsTo(Bank::class);
+    }
 }

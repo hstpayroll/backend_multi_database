@@ -19,23 +19,9 @@ use Illuminate\Database\Eloquent\Model;
 class Citizenship extends Model
 {
 
-    static $rules = [
-		'name' => 'required',
-    ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
     protected $fillable = ['name'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function employees()
     {
         return $this->hasMany(Employee::class, 'citizenship_id', 'id');

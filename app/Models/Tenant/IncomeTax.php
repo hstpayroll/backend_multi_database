@@ -48,9 +48,6 @@ class IncomeTax extends Model
     protected $fillable = ['payroll_name_id','name','min_income','max_income','tax_rate','deduction','details','status'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function payrolls()
     {
         return $this->hasMany(Payroll::class, 'income_taxe_id', 'id');

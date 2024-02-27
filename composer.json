@@ -13,10 +13,10 @@
         "laravel/telescope": "^4.17",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
+        "spatie/laravel-activitylog": "^4.7",
         "spatie/laravel-permission": "^6.3",
         "spatie/laravel-query-builder": "^5.8",
         "stancl/tenancy": "^3.7"
-
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.10",
