@@ -8,7 +8,7 @@ class StoreIncomeTaxRequest extends FormRequest
 {
     public function authorize()
     {
-        return true; // Adjust authorization logic as needed
+        return true;
     }
 
     public function rules()

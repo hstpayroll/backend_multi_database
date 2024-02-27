@@ -12,43 +12,29 @@ class PayrollNameController extends Controller
     public function index()
     {
         $payrollNames = PayrollName::paginate(10);
-        return  PayrollNameResource::collection($payrollNames);
+        return PayrollNameResource::collection($payrollNames);
     }
 
     public function store(StorePayrollNameRequest $request)
     {
         $payrollName = PayrollName::create($request->validated());
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Payroll name created successfully',
-            'data' => new PayrollNameResource($payrollName),
-        ], 201);
+        return new PayrollNameResource($payrollName);
     }
 
     public function show(PayrollName $payrollName)
     {
-        return response()->json([
-            'status' => 'success',
-            'data' => new PayrollNameResource($payrollName),
-        ]);
+        return new PayrollNameResource($payrollName);
     }
 
     public function update(StorePayrollNameRequest $request, PayrollName $payrollName)
     {
         $payrollName->update($request->validated());
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Payroll name updated successfully',
-            'data' => new PayrollNameResource($payrollName),
-        ]);
+        return new PayrollNameResource($payrollName);
     }
 
     public function destroy(PayrollName $payrollName)
     {
         $payrollName->delete();
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Payroll name deleted successfully',
-        ]);
+        return response()->noContent();
     }
 }

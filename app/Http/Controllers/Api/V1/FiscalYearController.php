@@ -5,53 +5,39 @@ namespace App\Http\Controllers\Api\V1;
 use Illuminate\Http\Request;
 use App\Models\Tenant\FiscalYear;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreFiscalYearRequest;
+use App\Http\Requests\UpdateFiscalYearRequest;
 use App\Http\Resources\Finance\FiscalYearResource;
 
 class FiscalYearController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $FiscalYear = FiscalYear::paginate(10);
-        return  FiscalYearResource::collection($FiscalYear);
+        $fiscalYears = FiscalYear::paginate(10);
+        return  FiscalYearResource::collection($fiscalYears);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreFiscalYearRequest $request)
     {
-        $company = FiscalYear::create($request->validated());
-        return response()->json([
-            'company' =>  new FiscalYearResource($company),
-            'status' => 200,
-            'message' => 'Company created successfully',
-        ]);
+        $validatedData = $request->validated();
+        $fiscalYear = FiscalYear::create($validatedData);
+        return new FiscalYearResource($fiscalYear);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(FiscalYear $FiscalYear)
+    public function show(FiscalYear $fiscalYear)
     {
-        //
+        return new FiscalYearResource($fiscalYear);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, FiscalYear $FiscalYear)
+    public function update(UpdateFiscalYearRequest $request, FiscalYear $fiscalYear)
     {
-        //
+        $fiscalYear->update($request->validated());
+        return new FiscalYearResource($fiscalYear);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(FiscalYear $FiscalYear)
+    public function destroy(FiscalYear $fiscalYear)
     {
-        //
+        $fiscalYear->delete();
+        return response()->noContent();
     }
 }

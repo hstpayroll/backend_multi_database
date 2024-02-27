@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
+
 use App\Models\Tenant\Branch;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
@@ -26,8 +27,10 @@ class BranchController extends Controller
     {
         $branch = Branch::create($request->validated());
 
-        return $this->responseCreated('Branch created successfully',
-         new BranchResource($branch));
+        return $this->responseCreated(
+            'Branch created successfully',
+            new BranchResource($branch)
+        );
     }
 
     public function show(Branch $branch): JsonResponse

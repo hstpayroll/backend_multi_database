@@ -16,10 +16,6 @@ class Employee extends Model
      */
     protected $fillable = ['emp_id', 'first_name', 'father_name', 'gfather_name', 'sex', 'birth_date', 'hired_date', 'tin_no', 'cost_center', 'tax_region_id', 'grade_id', 'department_id', 'sub_department_id', 'position_id', 'employment_type_id', 'citizenship_id', 'email', 'bank_id', 'account_number', 'image', 'status', 'comment'];
 
-    /**
-     * Define your relationships here.
-     */
-
     public function allowanceTransactions()
     {
         return $this->hasMany(AllowanceTransaction::class, 'employee_id', 'id');
@@ -50,6 +46,7 @@ class Employee extends Model
         return $this->hasOne(Grade::class, 'id', 'grade_id');
     }
 
+    
     public function loans()
     {
         return $this->hasMany(Loan::class, 'employee_id', 'id');
