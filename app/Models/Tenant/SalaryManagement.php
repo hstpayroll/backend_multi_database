@@ -31,21 +31,14 @@ class SalaryManagement extends Model
     protected $table = 'salary_managements';
 
     static $rules = [
-		'employee_id' => 'required',
-		'reason' => 'required',
-		'old_salary' => 'required',
-		'new_salary' => 'required',
-		'start_date' => 'required',
+        'employee_id' => 'required',
+        'reason' => 'required',
+        'old_salary' => 'required',
+        'new_salary' => 'required',
+        'start_date' => 'required',
     ];
 
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['employee_id','reason','old_salary','new_salary','start_date','end_date','description','status'];
+    protected $fillable = ['employee_id', 'reason', 'old_salary', 'new_salary', 'start_date', 'end_date', 'description', 'status'];
 
 
     /**
@@ -53,8 +46,6 @@ class SalaryManagement extends Model
      */
     public function employee()
     {
-        return $this->hasOne(Employee::class ,'id', 'employee_id');
+        return $this->hasOne(Employee::class, 'id', 'employee_id');
     }
-
-
 }

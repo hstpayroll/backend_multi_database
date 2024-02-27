@@ -18,7 +18,9 @@ class TenantController extends Controller
      */
     public function index()
     {
-        $tenants = Tenant::with('domains')->get();
+        $tenants = Tenant::with('domains')
+            // ->withTrashed()
+            ->get();
         return view('landlord.tenants.index', compact('tenants'));
     }
 
@@ -87,7 +89,31 @@ class TenantController extends Controller
      */
     public function update(Request $request, Tenant $tenant)
     {
-        dd($request->all());
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            Rule::unique((new Tenant)->getTable())->ignore($tenant),
+            'domain' => [
+                'required',
+                'string',
+                'min:3',
+                'max:20',
+                'unique:' . Tenant::class,
+                Rule::notIn(['www', 'localhost']),
+                'regex:/^[a-zA-Z0-9\-]+$/',
+            ],
+        ]);
+
+        $tenant->update($data);
+        $tenant->domains()->update([
+            'domain' => $data['domain'] . '.' . config('app.domain'),
+        ]);
+        event(new Registered($tenant));
+
+        // Auth::login($user);
+        $activity = Activity::all()->last();
+        Log::info($activity);
+
+        return redirect()->to(route('tenants.index'));
     }
 
     /**
@@ -95,6 +121,9 @@ class TenantController extends Controller
      */
     public function destroy(Tenant $tenant)
     {
-        //
+        // dd($tenant);
+        $tenant->domains()->delete();
+        $tenant->delete();
+        return redirect()->to(route('tenants.index'));
     }
 }

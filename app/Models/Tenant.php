@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 use Illuminate\Support\Facades\Hash;
 use Stancl\Tenancy\Contracts\TenantWithDatabase;
@@ -12,7 +13,7 @@ use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
 
 class Tenant extends BaseTenant implements TenantWithDatabase
 {
-    use HasDatabase, HasDomains, LogsActivity;
+    use HasDatabase, HasDomains, LogsActivity, SoftDeletes;
 
     public static function getCustomColumns(): array
     {
@@ -26,12 +27,12 @@ class Tenant extends BaseTenant implements TenantWithDatabase
     }
     public function setPasswordAttribute($value)
     {
-        return  $this->attributes['password'] =Hash::make($value);
+        return  $this->attributes['password'] = Hash::make($value);
     }
 
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-        ->logOnly(['name']);
+            ->logOnly(['name']);
     }
 }

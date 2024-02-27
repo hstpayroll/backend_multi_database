@@ -32,7 +32,7 @@ class Position extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','sub_department_id'];
+    protected $fillable = ['name', 'sub_department_id'];
 
 
     /**
@@ -55,6 +55,4 @@ class Position extends Model
     {
         return $this->hasOne(SubDepartment::class, 'id', 'sub_department_id');
     }
-
-
 }
