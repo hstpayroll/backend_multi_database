@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Landlord\PermissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TailwickController;
+use App\Http\Controllers\Landlord\RoleController;
 use App\Http\Controllers\Landlord\UserController;
 use App\Http\Controllers\Landlord\TenantController;
 
@@ -32,4 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::resource('tenants', TenantController::class);
+    Route::resource('roles', RoleController::class);
+    Route::resource('permissions', PermissionController::class);
+    // Route::resource('domains', DomainC::class);
 });

@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 use Illuminate\Support\Facades\Hash;
+use Stancl\Tenancy\Database\Models\Domain;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Stancl\Tenancy\Contracts\TenantWithDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDomains;
 use Stancl\Tenancy\Database\Concerns\HasDatabase;
-use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Tenant extends BaseTenant implements TenantWithDatabase
 {
@@ -35,4 +38,9 @@ class Tenant extends BaseTenant implements TenantWithDatabase
         return LogOptions::defaults()
             ->logOnly(['name']);
     }
+    /**
+     * The roles that belong to the Tenant
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
 }

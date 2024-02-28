@@ -17,8 +17,7 @@ class SubDepartmentResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'department_id' => $this->department_id,
-            'department' => new DepartmentResource($this->department),
+            // 'department' => new DepartmentResource($this->department),
         ];
     }
 }

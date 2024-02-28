@@ -77,6 +77,8 @@ Route::middleware([
             Route::apiResource('citizenship', CitizenshipController::class);
             Route::apiResource('positions', PositionController::class);
             Route::apiResource('payroll-types', PayrollTypeController::class);
+            Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');
+            Route::get('employee-position', [EmployeeController::class, 'employeePosition'])->name('employee-position');
             Route::apiResource('employees', EmployeeController::class);
         });
 });

@@ -14,7 +14,7 @@ class DomainController extends Controller
      */
     public function index()
     {
-        $domains = Domain::with(['tenants'])->paginate(10); // You can adjust the number of items per page as needed
+        $domains = Domain::with('tenant')->paginate(10);       // dd($domains->tenant);
         return DomainResource::collection($domains);
     }
 

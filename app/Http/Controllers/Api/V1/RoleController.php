@@ -23,9 +23,9 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-            $request->validate([
-                'name' => ['required', 'string', 'lowercase',  'max:255', 'unique:' . Role::class],
-            ]);
+        $request->validate([
+            'name' => ['required', 'string', 'lowercase',  'max:255', 'unique:' . Role::class],
+        ]);
 
         $role =   Role::create($request->all());
         return new RoleResource($role);
