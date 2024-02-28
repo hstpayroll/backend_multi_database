@@ -26,6 +26,7 @@ use App\Http\Controllers\Tenants\DepartmentController as TenantDepartmentControl
 use App\Http\Controllers\Tenants\SubDepartmentController as TenantSubDepartmentControlle;
 use App\Http\Controllers\Tenants\PositionController as TenantPositionControlle;
 use App\Http\Controllers\Tenants\GradeController as TenantGradeControlle;
+use App\Http\Controllers\Tenants\EmployeeController as TenantEmployeesControlle;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +95,7 @@ Route::middleware([
     Route::resource('sub_departments', TenantSubDepartmentControlle::class);
     Route::resource('positions', TenantPositionControlle::class);
     Route::resource('grades', TenantGradeControlle::class);
+    Route::resource('employees', TenantEmployeesControlle::class);
 
     require __DIR__ . '/tenant_auth.php';
 });

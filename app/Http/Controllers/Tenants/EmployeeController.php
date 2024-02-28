@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenants;
 
 
 use Illuminate\Http\Request;
 use App\Models\Tenant\Employee;
+use App\Http\Controllers\Controller;
 
 /**
  * Class EmployeeController
@@ -17,12 +18,12 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Company $company)
+    public function index()
     {
-        $employees = Employee::where('company_id', $company->id)->get();
-        return view('employee.index', compact('employees'))
-        ->with('company', $company)
-            ->with('employees',$employees);
+        $title = 'employee_info';
+        $employees = Employee::paginate();
+        return view('tenants.finance.employee.index', compact('employees'))
+            ->with('employees',$employees)->with('title',$title);
     }
 
     /**
