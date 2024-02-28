@@ -21,7 +21,7 @@ class Calendar extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','status'];
+    protected $fillable = ['name', 'status'];
 
     public function companies()
     {
@@ -29,17 +29,17 @@ class Calendar extends Model
     }
 
     public function getFormattedStatusAttribute()
-{
-    return $this->status === 1 ? 'active' : 'inactive';
-}
+    {
+        return $this->status === 1 ? 'active' : 'inactive';
+    }
 
-// public function price() : Attribute
-// {
-//     return Attribute::make(
-//         set: fn ($value) => $value  * 100,
-//         get: fn ($value) => $value / 100,
-//     );
-// }
+    // public function price() : Attribute
+    // {
+    //     return Attribute::make(
+    //         set: fn ($value) => $value  * 100,
+    //         get: fn ($value) => $value / 100,
+    //     );
+    // }
 
 
 }

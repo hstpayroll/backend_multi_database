@@ -14,7 +14,7 @@ class DomainController extends Controller
      */
     public function index()
     {
-        $domains = Domain::paginate(10); // You can adjust the number of items per page as needed
+        $domains = Domain::with(['tenants'])->paginate(10); // You can adjust the number of items per page as needed
         return DomainResource::collection($domains);
     }
 
@@ -44,12 +44,12 @@ class DomainController extends Controller
             ]);
         }
     }
-        public function auth_user()
-        {
-            $auth_user = auth()->user();
-            return response()->json([
-                'message' => 'success',
-                'code' => '200',
-            ]);
-        }
+    public function auth_user()
+    {
+        $auth_user = auth()->user();
+        return response()->json([
+            'message' => 'success',
+            'code' => '200',
+        ]);
     }
+}
