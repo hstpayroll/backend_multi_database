@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenants;
 
-use App\Models\Grade;
+use App\Models\Tenant\Grade;
 use Illuminate\Http\Request;
+use App\Models\Tenant\Company;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class GradeController
@@ -18,9 +21,11 @@ class GradeController extends Controller
      */
     public function index()
     {
-        $grades = Grade::paginate();
+        $title = __('grade');
+        $company = Company::first();
+        $grades = Grade::paginate(5);
 
-        return view('grade.index', compact('grades'))
+        return view('tenants.finance.Department-Section.grade.show', compact('grades'))->with('title', $title)->with('company', $company)
             ->with('i', (request()->input('page', 1) - 1) * $grades->perPage());
     }
 
@@ -43,12 +48,20 @@ class GradeController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Grade::$rules);
+        $validator = Validator::make($request->all(), Grade::$rules);
+        
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', true)
+                ->with('updating', false);
+        }
 
         $grade = Grade::create($request->all());
 
         return redirect()->route('grades.index')
-            ->with('success', 'Grade created successfully.');
+            ->with('success', 'grade created successfully.');
     }
 
     /**
@@ -84,14 +97,24 @@ class GradeController extends Controller
      * @param  Grade $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Grade $grade)
+    public function update(Request $request, $id)
     {
-        request()->validate(Grade::$rules);
+        $validator = Validator::make($request->all(), Grade::$rules);
 
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', false)
+                ->with('updating', true)
+                ->with('id', $id);
+        }
+
+        $grade = Grade::find($id);
         $grade->update($request->all());
 
         return redirect()->route('grades.index')
-            ->with('success', 'Grade updated successfully');
+            ->with('success', 'Grade updated successfully.');
     }
 
     /**

@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenants;
 
 use Illuminate\Http\Request;
+use App\Models\Tenant\Company;
 use App\Models\Tenant\Department;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class DepartmentController
@@ -18,9 +21,11 @@ class DepartmentController extends Controller
      */
     public function index()
     {
+        $title = __('department');
+        $company = Company::first();
         $departments = Department::paginate();
 
-        return view('department.index', compact('departments'))
+        return view('tenants.finance.Department-Section.department.show', compact('departments', 'title'))->with('company', $company)
             ->with('i', (request()->input('page', 1) - 1) * $departments->perPage());
     }
 
@@ -43,12 +48,20 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Department::$rules);
+        $validator = Validator::make($request->all(), Department::$rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', true)
+                ->with('updating', false);
+        }
 
         $department = Department::create($request->all());
 
         return redirect()->route('departments.index')
-            ->with('success', 'Department created successfully.');
+            ->with('success', 'department created successfully.');
     }
 
     /**
@@ -84,14 +97,24 @@ class DepartmentController extends Controller
      * @param  Department $department
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Department $department)
+    public function update(Request $request, $id)
     {
-        request()->validate(Department::$rules);
+        $validator = Validator::make($request->all(), Department::$rules);
 
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', false)
+                ->with('updating', true)
+                ->with('id', $id);
+        }
+
+        $department = Department::find($id);
         $department->update($request->all());
 
         return redirect()->route('departments.index')
-            ->with('success', 'Department updated successfully');
+            ->with('success', 'Department updated successfully.');
     }
 
     /**

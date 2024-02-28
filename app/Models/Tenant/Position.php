@@ -26,7 +26,10 @@ class Position extends Model
 {
     use SoftDeletes;
 
-
+    static $rules = [
+		'name' => 'required',
+        'sub_department_id' => 'required',
+    ];
 
     protected $perPage = 20;
 

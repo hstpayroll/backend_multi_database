@@ -1,9 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenants;
 
-use App\Models\Position;
 use Illuminate\Http\Request;
+use App\Models\Tenant\Company;
+use App\Models\Tenant\Position;
+use App\Models\Tenant\Department;
+use App\Http\Controllers\Controller;
+use App\Models\Tenant\SubDepartment;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class PositionController
@@ -18,9 +23,12 @@ class PositionController extends Controller
      */
     public function index()
     {
-        $positions = Position::paginate();
+        $title = __('position');
+        $company = Company::first();
+        $subdepartments = SubDepartment::all();
+        $positions = Position::with('subdepartment')->paginate(5);
 
-        return view('position.index', compact('positions'))
+        return view('tenants.finance.Department-Section.position.show', compact('positions'))->with('title', $title)->with('company', $company)->with('subdepartments', $subdepartments)
             ->with('i', (request()->input('page', 1) - 1) * $positions->perPage());
     }
 
@@ -43,7 +51,15 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Position::$rules);
+        $validator = Validator::make($request->all(), Position::$rules);
+        
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', true)
+                ->with('updating', false);
+        }
 
         $position = Position::create($request->all());
 
@@ -84,14 +100,24 @@ class PositionController extends Controller
      * @param  Position $position
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Position $position)
+    public function update(Request $request, $id)
     {
-        request()->validate(Position::$rules);
+        $validator = Validator::make($request->all(), Position::$rules);
 
-        $position->update($request->all());
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', false)
+                ->with('updating', true)
+                ->with('id', $id);
+        }
+
+        $positioon = Position::find($id);
+        $positioon->update($request->all());
 
         return redirect()->route('positions.index')
-            ->with('success', 'Position updated successfully');
+            ->with('success', 'Postion updated successfully.');
     }
 
     /**

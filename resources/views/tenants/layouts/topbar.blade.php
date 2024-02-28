@@ -424,10 +424,22 @@
                                             class="-top-1 ltr:-right-1 rtl:-left-1 absolute w-2.5 h-2.5 bg-green-400 border-2 border-white rounded-full dark:border-zink-600"></span>
                                     </div>
                                 @endif
-                                <div>
+                                @if(Auth::check())
+                                    <div>
+                                        <h6 class="mb-1 text-15">{{ Auth::user()->name }}</h6>
+                                        <p class="text-slate-500 dark:text-zink-300">CEO & Founder</p>
+                                    </div>
+                                @else
+                                    @php
+                                        // Redirect to the login page using the named route
+                                        redirect()->route('login')->send();
+                                    @endphp
+                                @endif
+
+                                {{-- <div>
                                     <h6 class="mb-1 text-15">{{ Auth::user()->name }}</h6>
                                     <p class="text-slate-500 dark:text-zink-300">CEO & Founder</p>
-                                </div>
+                                </div> --}}
                             </a>
                             <ul>
                                 <li>

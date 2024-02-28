@@ -1,9 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenants;
 
 use Illuminate\Http\Request;
-use App\Models\SubDepartment;
+use App\Models\Tenant\SubDepartment;
+use App\Http\Controllers\Controller;
+use App\Models\Tenant\Company;
+use App\Models\Tenant\Department;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class SubDepartmentController
@@ -18,9 +22,12 @@ class SubDepartmentController extends Controller
      */
     public function index()
     {
-        $subDepartments = SubDepartment::paginate();
+        $title = __('sub_department');
+        $company = Company::first();
+        $departments = Department::all();
+        $subDepartments = SubDepartment::with('department')->paginate(5);
 
-        return view('sub-department.index', compact('subDepartments'))
+        return view('tenants.finance.Department-Section.sub-department.show', compact('subDepartments', 'title'))->with('company', $company)->with('departments', $departments)
             ->with('i', (request()->input('page', 1) - 1) * $subDepartments->perPage());
     }
 
@@ -43,12 +50,20 @@ class SubDepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(SubDepartment::$rules);
+        $validator = Validator::make($request->all(), SubDepartment::$rules);
 
-        $subDepartment = SubDepartment::create($request->all());
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', true)
+                ->with('updating', false);
+        }
 
-        return redirect()->route('sub-departments.index')
-            ->with('success', 'SubDepartment created successfully.');
+        $subdepartment = SubDepartment::create($request->all());
+
+        return redirect()->route('sub_departments.index')
+            ->with('success', 'sub department created successfully.');
     }
 
     /**
@@ -84,14 +99,24 @@ class SubDepartmentController extends Controller
      * @param  SubDepartment $subDepartment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubDepartment $subDepartment)
+    public function update(Request $request, $id)
     {
-        request()->validate(SubDepartment::$rules);
+        $validator = Validator::make($request->all(), SubDepartment::$rules);
 
-        $subDepartment->update($request->all());
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('creating', false)
+                ->with('updating', true)
+                ->with('id', $id);
+        }
 
-        return redirect()->route('sub-departments.index')
-            ->with('success', 'SubDepartment updated successfully');
+        $subdepartment = SubDepartment::find($id);
+        $subdepartment->update($request->all());
+
+        return redirect()->route('sub_departments.index')
+            ->with('success', 'Sub Department updated successfully.');
     }
 
     /**
@@ -103,7 +128,7 @@ class SubDepartmentController extends Controller
     {
         $subDepartment = SubDepartment::find($id)->delete();
 
-        return redirect()->route('sub-departments.index')
+        return redirect()->route('sub_departments.index')
             ->with('success', 'SubDepartment deleted successfully');
     }
 }

@@ -21,6 +21,11 @@ use App\Http\Controllers\Api\V1\TenantUserController as TenantUserControllerApi;
 use App\Http\Controllers\Tenants\CompanyController as TenantCompanyControlle;
 use App\Http\Controllers\Tenants\CurrencyController as TenantCurrencyControlle;
 use App\Http\Controllers\Tenants\BankController as TenantBankControlle;
+use App\Http\Controllers\Tenants\FiscalYearController as TenantFiscalYearControlle;
+use App\Http\Controllers\Tenants\DepartmentController as TenantDepartmentControlle;
+use App\Http\Controllers\Tenants\SubDepartmentController as TenantSubDepartmentControlle;
+use App\Http\Controllers\Tenants\PositionController as TenantPositionControlle;
+use App\Http\Controllers\Tenants\GradeController as TenantGradeControlle;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +89,11 @@ Route::middleware([
     Route::resource('companies', TenantCompanyControlle::class);
     Route::resource('currencies', TenantCurrencyControlle::class);
     Route::resource('banks', TenantBankControlle::class);
+    Route::resource('fiscal_years', TenantFiscalYearControlle::class);
+    Route::resource('departments', TenantDepartmentControlle::class);
+    Route::resource('sub_departments', TenantSubDepartmentControlle::class);
+    Route::resource('positions', TenantPositionControlle::class);
+    Route::resource('grades', TenantGradeControlle::class);
 
     require __DIR__ . '/tenant_auth.php';
 });

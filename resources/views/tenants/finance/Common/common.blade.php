@@ -19,20 +19,23 @@
             </span>
         </div>
     </div>
-    <div class="mt-4 -ml-3 -mr-3 rounded-none card">
-        <div class="card-body !px-2.5 !py-0">
+    <div class="card">
+        <div class="card-body">
+
             <ul class="flex flex-wrap w-full text-sm font-medium text-center nav-tabs">
+
+                <li class="@if(isset($title) && $title === __('bank')) group active @else group @endif">
+                    <a href="{{ route('banks.index') }}" data-tab-toggle data-target="currency"
+                        class="inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:hover:text-custom-500 dark:active:text-custom-500 dark:group-[.active]:hover:text-white -mb-[1px]">Bank</a>
+                </li>
 
                 <li class="@if(isset($title) && $title === __('currency')) group active @else group @endif">
                     <a href="{{ route('currencies.index') }}" data-tab-toggle data-target="currency"
-                        class="inline-block px-4 py-2 text-base transition-all duration-300 ease-linear rounded-t-md text-slate-500 dark:text-zink-200 border-b border-transparent group-[.active]:text-custom-500 dark:group-[.active]:text-custom-500 group-[.active]:border-b-custom-500 dark:group-[.active]:border-b-custom-500 hover:text-custom-500 dark:hover:text-custom-500 active:text-custom-500 dark:active:text-custom-500 -mb-[1px]">Currency</a>
+                        class="inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:hover:text-custom-500 dark:active:text-custom-500 dark:group-[.active]:hover:text-white -mb-[1px]">Currency</a>
                 </li>
-
-                <li class="@if(isset($title) && $title === __('bank')) group active @else group @endif">
-                    <a href="{{ route('banks.index') }}" data-tab-toggle data-target="bank"
-                        class="inline-block px-4 py-2 text-base transition-all duration-300 ease-linear rounded-t-md text-slate-500 dark:text-zink-200 border-b border-transparent group-[.active]:text-custom-500 dark:group-[.active]:text-custom-500 group-[.active]:border-b-custom-500 dark:group-[.active]:border-b-custom-500 hover:text-custom-500 dark:hover:text-custom-500 active:text-custom-500 dark:active:text-custom-500 -mb-[1px]">Bank</a>
-                </li>
+                
             </ul>
+
         </div>
     </div><!--end card-->
 

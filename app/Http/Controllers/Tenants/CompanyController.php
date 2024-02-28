@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Tenants;
 
 use Illuminate\Http\Request;
 use App\Models\Tenant\Company;
+use App\Models\Tenant\Calendar;
+use App\Models\Tenant\Currency;
 use App\Models\Tenant\Employee;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class CompanyController
@@ -26,13 +29,15 @@ class CompanyController extends Controller
             ->with('company', $company)
             ->with('employees_count', $employees_count);
     }
+
     public function index()
     {
+        $title = __('company_info');
+        $calendars = Calendar::all();
+        $currencies = Currency::all();
+        $company = Company::first();
 
-        $companies = Company::paginate(10);
-
-        return view('company.index', compact('companies'))
-            ->with('i', (request()->input('page', 1) - 1) * $companies->perPage());
+        return view('tenants.finance.company.index', compact('company', 'title'))->with('calendars', $calendars)->with('currencies', $currencies);
     }
 
     /**
@@ -65,21 +70,33 @@ class CompanyController extends Controller
 
 
     public function edit($id)
-    {
+    {        
         $company = Company::find($id);
 
         return view('company.edit', compact('company'));
     }
-
-    public function update(Request $request, Company $company)
+    
+    // ...
+    
+    public function update(Request $request, $id)
     {
-        request()->validate(Company::$rules);
-
-        $company->update($request->all());
-
-        return redirect()->route('companies.index')
-            ->with('success', 'Company updated successfully');
-    }
+      $validator = Validator::make($request->all(), Company::$rules);
+    
+      if ($validator->fails()) {
+        return back()->withErrors($validator)->withInput()->with('updating', true)->with('id', $id);
+      }
+    
+      $company = Company::find($id) ?? abort(404, 'Company not found');
+    
+      if ($request->hasFile('logo')) {
+        $company->logo = $request->file('logo')->storeAs('tenant6/app/public/logos', uniqid() . '_' . $request->file('logo')->getClientOriginalName());
+      }
+    
+      $company->fill($request->except('logo'))->save();
+    
+      return redirect()->route('companies.index')->with('success', 'Company updated successfully.');
+    }    
+    
 
     public function destroy($id)
     {

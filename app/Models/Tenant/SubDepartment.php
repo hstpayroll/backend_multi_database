@@ -27,6 +27,11 @@ class SubDepartment extends Model
 {
     use SoftDeletes;
 
+    static $rules = [
+		'name' => 'required',
+        'department_id' => 'required',
+    ];
+
 
     protected $fillable = ['name','department_id'];
 
