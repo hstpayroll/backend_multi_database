@@ -23,10 +23,6 @@ class MainAllowance extends Model
 {
     use SoftDeletes;
 
-    static $rules = [
-		'name' => 'required',
-    ];
-
     protected $perPage = 20;
 
     /**

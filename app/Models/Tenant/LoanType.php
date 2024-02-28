@@ -10,13 +10,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property $id
  * @property $name
- * @property $company_id
  * @property $note
  * @property $created_at
  * @property $updated_at
  * @property $deleted_at
  *
- * @property Company $company
  * @property LoanRate[] $loanRates
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -27,7 +25,6 @@ class LoanType extends Model
 
     static $rules = [
 		'name' => 'required',
-		'company_id' => 'required',
 		'rate' => 'required',
     ];
 
