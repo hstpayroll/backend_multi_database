@@ -25,13 +25,7 @@ class EmployeePension extends Model
 {
     use SoftDeletes;
 
-    static $rules = [
-		'name' => 'required',
-		'rate' => 'required',
-		'status' => 'required',
-    ];
 
-    protected $perPage = 20;
 
     /**
      * Attributes that should be mass-assignable.
