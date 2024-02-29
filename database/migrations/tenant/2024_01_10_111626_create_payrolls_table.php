@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('company_id')->constrained('companies')->onDelete('restrict')->onUpdate('cascade');
-            $table->foreignId('income_taxe_id')->constrained('income_taxes')->onDelete('restrict')->onUpdate('cascade');
             $table->date('payroll_date');
             $table->integer('number_of_days_worked')->default(26);
             $table->decimal('basic_salary_arrears', 10, 2)->default(0);
@@ -40,25 +39,25 @@ return new class extends Migration
             $table->decimal('actual_pension', 10, 2)->default(0);
             $table->decimal('penalty', 10, 2)->default(0);
 
-            $table->decimal('deduction_of_advance_paid_star_award',10,2)->default(0);
-            $table->decimal('deduction_of_overpaid_motor_vehicle_tax',10,2)->default(0);
-            $table->decimal('review_allowance_recovery',10,2)->default(0);
-            $table->decimal('acting_allowance_recovery',10,2)->default(0);
-            $table->decimal('deduction_due_to_unnoticed_resignation',10,2)->default(0);
-            $table->decimal('deduction_of_overutilized_leave',10,2)->default(0);
-            $table->decimal('cash_advance_recovery',10,2)->default(0);
-            $table->decimal('outstanding_cash_advance',10,2)->default(0);
-            $table->decimal('salary_advance_recovery',10,2)->default(0);
-            $table->decimal('outstanding_salary_advance',10,2)->default(0);
-            $table->decimal('laptop_recovery',10,2)->default(0);
-            $table->decimal('outstanding_laptop_recovery',10,2)->default(0);
-            $table->decimal('hardship_allowance_recovery',10,2)->default(0);
-            $table->decimal('outstanding_hardship_allowance_recovery',10,2)->default(0);
-            $table->decimal('"total_deductions"',10,2)->default(0);
-            $table->decimal('net_pay',10,2)->default(0);
-            $table->decimal('employer_pension',10,2)->default(0); // 11%
-            $table->decimal('employer_pension_arrear',10,2)->default(0); // 11%
-            $table->decimal('actual_employer_pension',10,2)->default(0);
+            $table->decimal('deduction_of_advance_paid_star_award', 10, 2)->default(0);
+            $table->decimal('deduction_of_overpaid_motor_vehicle_tax', 10, 2)->default(0);
+            $table->decimal('review_allowance_recovery', 10, 2)->default(0);
+            $table->decimal('acting_allowance_recovery', 10, 2)->default(0);
+            $table->decimal('deduction_due_to_unnoticed_resignation', 10, 2)->default(0);
+            $table->decimal('deduction_of_overutilized_leave', 10, 2)->default(0);
+            $table->decimal('cash_advance_recovery', 10, 2)->default(0);
+            $table->decimal('outstanding_cash_advance', 10, 2)->default(0);
+            $table->decimal('salary_advance_recovery', 10, 2)->default(0);
+            $table->decimal('outstanding_salary_advance', 10, 2)->default(0);
+            $table->decimal('laptop_recovery', 10, 2)->default(0);
+            $table->decimal('outstanding_laptop_recovery', 10, 2)->default(0);
+            $table->decimal('hardship_allowance_recovery', 10, 2)->default(0);
+            $table->decimal('outstanding_hardship_allowance_recovery', 10, 2)->default(0);
+            $table->decimal('"total_deductions"', 10, 2)->default(0);
+            $table->decimal('net_pay', 10, 2)->default(0);
+            $table->decimal('employer_pension', 10, 2)->default(0); // 11%
+            $table->decimal('employer_pension_arrear', 10, 2)->default(0); // 11%
+            $table->decimal('actual_employer_pension', 10, 2)->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -70,6 +69,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('payrolls');
-
     }
 };

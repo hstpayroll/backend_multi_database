@@ -14,11 +14,11 @@ class CompanyPensionSeeder extends Seeder
     public function run(): void
     {
         CompanyPension::create([
-                'name' => 'Company Pension  1',
-                'description' => 'Company 1 description',
-                'rate' => 11,
-                'start_date' => '2010-01-01',
-                'end_date' => '2021-01-01',
-            ]);
+            'name' => 'Company Pension  1',
+            'description' => 'Company 1 description',
+            'rate' => 11,
+            'start_date' => '2010-01-01',
+            'end_date' => '2021-01-01',
+        ]);
     }
 }

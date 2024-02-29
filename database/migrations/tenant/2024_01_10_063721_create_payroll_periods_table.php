@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignIdFor(IncomeTax::class);
             $table->foreignId('payroll_type_id')->constrained();
             $table->foreignId('fiscal_year_id')->constrained();
+            $table->foreignId('employee_pension_id')->constrained('employee_pensions');
+            $table->foreignId('company_pension_id')->constrained('company_pensions');
             $table->string('name');
             $table->date('start_date');
             $table->date('end_date');

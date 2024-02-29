@@ -5,27 +5,7 @@ namespace App\Models\Tenant;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class OverTimeCalculation
- *
- * @property $id
- * @property $company_id
- * @property $employee_id
- * @property $over_time_type_id
- * @property $ot_date
- * @property $ot_hour
- * @property $ot_value
- * @property $created_at
- * @property $updated_at
- * @property $deleted_at
- *
- * @property Company $company
- * @property Employee $employee
- * @property OverTimeType $overTimeType
- * @property Payroll[] $payrolls
- * @package App
- * @mixin \Illuminate\Database\Eloquent\Builder
- */
+
 class OverTimeCalculation extends Model
 {
     use SoftDeletes;
@@ -47,9 +27,7 @@ class OverTimeCalculation extends Model
     protected $fillable = ['employee_id', 'over_time_type_id', 'ot_date', 'ot_hour', 'ot_value'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
+
     public function company()
     {
         return $this->hasOne(Company::class, 'id', 'company_id');
