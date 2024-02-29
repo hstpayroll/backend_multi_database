@@ -15,7 +15,6 @@ class LoanTypeSeeder extends Seeder
     {
       LoanType::create([
           'name' => 'Staff Loan',
-          'company_id' => '1',
           'rate' => '12',
       ]);
     }

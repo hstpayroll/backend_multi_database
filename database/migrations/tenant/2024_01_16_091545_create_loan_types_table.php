@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('loan_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('company_id')->constrained('companies')->onDelete('restrict')->onUpdate('cascade');
             $table->decimal('rate', 10, 2);
             $table->text('note')->nullable();
             $table->timestamps();

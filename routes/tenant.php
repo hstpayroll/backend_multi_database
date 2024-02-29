@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Api\V1\AllowanceTypeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TailwickController;
 use App\Http\Controllers\Api\V1\BankController;
@@ -21,6 +22,10 @@ use App\Http\Controllers\Api\V1\PayrollNameController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use App\Http\Controllers\Api\V1\GradeController;
+use App\Http\Controllers\Api\V1\LoanController;
+use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
+use App\Http\Controllers\Api\V1\LoanTypeController;
+use App\Http\Controllers\Api\V1\MainAllowanceController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
 use App\Http\Controllers\Api\V1\PayrollTypeController;
 use App\Http\Controllers\Api\V1\PositionController;
@@ -80,6 +85,11 @@ Route::middleware([
             Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');
             Route::get('employee-position', [EmployeeController::class, 'employeePosition'])->name('employee-position');
             Route::apiResource('employees', EmployeeController::class);
+            Route::apiResource('loans', LoanController::class);
+            Route::apiResource('loan-types', LoanTypeController::class);
+            Route::apiResource('loan-payment-records', LoanPaymentRecordController::class);
+            Route::apiResource('main-allowances', MainAllowanceController::class);
+            Route::apiResource('allowance-types', AllowanceTypeController::class);
         });
 });
 

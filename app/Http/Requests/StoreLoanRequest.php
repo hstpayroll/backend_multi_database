@@ -6,23 +6,23 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreLoanRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
+    public function rules()
     {
         return [
-            //
+            'employee_id' => 'required|exists:employees,id',
+            'loan_type_id' => 'required|exists:loan_types,id',
+            'amount' => 'required|numeric|min:0',
+            'start_date' => 'required|date',
+            'expected_end_date' => 'required|date',
+            'duration_months' => 'required|integer|min:0',
+            'description' => 'nullable|string|max:255',
+            'status' => 'required|integer|in:0,1',
+            'termination_date' => 'nullable|date|required_if:status,1',
         ];
     }
 }
