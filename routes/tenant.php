@@ -29,6 +29,7 @@ use App\Http\Controllers\Api\V1\MainAllowanceController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
 use App\Http\Controllers\Api\V1\SubDepartmentController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use App\Http\Controllers\Api\V1\CompanyPensionController;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use App\Http\Controllers\Api\V1\EmployeePensionController;
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
@@ -92,6 +93,7 @@ Route::middleware([
             Route::apiResource('main-allowances', MainAllowanceController::class);
             Route::apiResource('allowance-types', AllowanceTypeController::class);
             Route::apiResource('employee-pensions', EmployeePensionController::class);
+            Route::apiResource('company-pensions', CompanyPensionController::class);
         });
 });
 
