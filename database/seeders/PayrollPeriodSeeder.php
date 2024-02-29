@@ -14,7 +14,7 @@ class PayrollPeriodSeeder extends Seeder
     public function run(): void
     {
         PayrollPeriod::create([
-            'income_tax_id' => 1,
+            'payroll_name_id' => 1,
             'payroll_type_id' => 1,
             'fiscal_year_id' => 1,
             'employee_pension_id' => 1,

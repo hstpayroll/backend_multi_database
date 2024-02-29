@@ -7,8 +7,6 @@ use App\Http\Requests\StorePayrollPeriodRequest;
 use App\Http\Requests\UpdatePayrollPeriodRequest;
 use App\Http\Resources\Finance\PayrollPeriodResource;
 use App\Models\Tenant\PayrollPeriod;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class PayrollPeriodController extends Controller
 {

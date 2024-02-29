@@ -27,9 +27,11 @@ class PayrollPeriod extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'income_tax_id',
+        'payroll_name_id',
         'payroll_type_id',
         'fiscal_year_id',
+        'employee_pension_id',
+        'company_pension_id',
         'name',
         'year',
         'start_date',
@@ -37,9 +39,9 @@ class PayrollPeriod extends Model
         'status',
     ];
 
-    public function incomeTax()
+    public function payrollName()
     {
-        return $this->belongsTo(IncomeTax::class, 'income_tax_id');
+        return $this->belongsTo(PayrollName::class, 'payroll_name_id');
     }
 
     public function payrollType()
@@ -50,5 +52,13 @@ class PayrollPeriod extends Model
     public function fiscalYear()
     {
         return $this->belongsTo(FiscalYear::class, 'fiscal_year_id');
+    }
+    public function employeePension()
+    {
+        return $this->belongsTo(FiscalYear::class, 'employee_pension_id');
+    }
+    public function companyPension()
+    {
+        return $this->belongsTo(FiscalYear::class, 'company_pension_id');
     }
 }

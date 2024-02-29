@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
-            $table->foreignId('company_id')->constrained('companies')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreignId('payroll_period_id')->constrained('payroll_periods')->onDelete('restrict')->onUpdate('cascade');
             $table->date('payroll_date');
             $table->integer('number_of_days_worked')->default(26);
             $table->decimal('basic_salary_arrears', 10, 2)->default(0);

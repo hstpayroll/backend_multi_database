@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('payroll_periods', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(IncomeTax::class);
+            $table->foreignId('payroll_name_id')->constrained('payroll_names');
             $table->foreignId('payroll_type_id')->constrained();
             $table->foreignId('fiscal_year_id')->constrained();
             $table->foreignId('employee_pension_id')->constrained('employee_pensions');
