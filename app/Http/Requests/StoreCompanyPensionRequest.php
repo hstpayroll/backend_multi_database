@@ -11,7 +11,7 @@ class StoreCompanyPensionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreCompanyPensionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'discription' => 'nullable',
+            'rate' => 'required|numeric|between:0,100',
+            'start_date' => 'required | date',
+            'end_date' => 'nullable | date',
         ];
     }
 }

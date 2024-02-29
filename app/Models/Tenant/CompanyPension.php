@@ -23,12 +23,6 @@ class CompanyPension extends Model
 {
     use SoftDeletes;
 
-    static $rules = [
-		'name' => 'required',
-		'rate' => 'required',
-		'status' => 'required',
-    ];
-
     protected $perPage = 20;
 
     /**
@@ -36,7 +30,7 @@ class CompanyPension extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','description','rate','status'];
+    protected $fillable = ['name','description','rate','start_date','end_date','status'];
 
 
 
