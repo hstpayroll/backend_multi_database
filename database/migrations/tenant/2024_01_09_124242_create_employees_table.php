@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-     /**
+    /**
      * Run the migrations.
      */
     public function up(): void
@@ -21,6 +21,15 @@ return new class extends Migration
             $table->string('birth_date');
             $table->string('hired_date')->nullable();
             $table->string('tin_no')->nullable();
+
+            $table->text('phone_number')->nullable();
+            $table->text('city')->nullable();
+            $table->text('sub_city')->nullable();
+            $table->text('kebele')->nullable();
+            $table->text('woreda')->nullable();
+            $table->text('house_no')->nullable();
+            $table->string('email')->nullable();
+
             $table->integer('cost_center')->nullable();
             $table->foreignId('tax_region_id')->constrained('tax_regions')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('grade_id')->constrained('grades')->onDelete('restrict')->onUpdate('cascade');
@@ -29,7 +38,6 @@ return new class extends Migration
             $table->foreignId('position_id')->constrained('positions')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('employment_type_id')->constrained('employment_types')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('citizenship_id')->constrained('citizenships')->onDelete('restrict')->onUpdate('cascade');
-            $table->string('email')->nullable();
             $table->foreignId('bank_id')->constrained('banks')->onDelete('restrict')->onUpdate('cascade');
             $table->string('account_number')->nullable();
 
@@ -39,7 +47,6 @@ return new class extends Migration
 
             $table->softDeletes();
             $table->timestamps();
-
         });
     }
 

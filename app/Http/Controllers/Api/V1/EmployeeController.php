@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
 use App\Http\Resources\Finance\EmployeeResource;
-use App\Http\Resources\Finance\SubDepartmentResource;
 use App\Models\Tenant\Employee;
 use App\Models\Tenant\Position;
 use App\Models\Tenant\SubDepartment;
@@ -44,7 +43,7 @@ class EmployeeController extends Controller
         $employee->delete();
         return response()->json(null, 204);
     }
-    public function employeeDepartment(Request $request,)
+    public function employeeDepartment(Request $request, Employee $employee)
     {
         $department_id = $request->department_id;
         $subDepartment = SubDepartment::where('department_id', $department_id)->get();

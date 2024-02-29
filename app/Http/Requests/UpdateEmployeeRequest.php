@@ -2,11 +2,12 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateEmployeeRequest extends FormRequest
 {
-      /**
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
@@ -27,7 +28,12 @@ class UpdateEmployeeRequest extends FormRequest
     {
         // Define validation rules for creating or updating an employee
         return [
-            'emp_id' => 'required|string|unique:employees,emp_id',
+            'emp_id' => [
+                'required',
+                'min:2',
+                'max:25',
+                Rule::unique('employees')->ignore($this->employee->id),
+            ],
             'first_name' => 'required|string',
             'father_name' => 'required|string',
             'gfather_name' => 'required|string',
@@ -35,6 +41,21 @@ class UpdateEmployeeRequest extends FormRequest
             'birth_date' => 'required|date',
             'hired_date' => 'nullable|date',
             'tin_no' => 'nullable|string',
+
+            'phone_number' => [
+                'required',
+                'numeric',
+                'min:10',
+                Rule::unique('employees')->ignore($this->employee->id),
+            ],
+
+            'city' => 'nullable|string|max:255',
+            'sub_city' => 'nullable|string|max:255',
+            'kebele' => 'nullable|string|max:255',
+            'woreda' => 'nullable|string|max:255',
+            'house_no' => 'nullable|string|max:255',
+            'email' => 'required|email',
+
             'cost_center' => 'nullable|integer',
             'tax_region_id' => 'required|exists:tax_regions,id',
             'grade_id' => 'required|exists:grades,id',
@@ -43,7 +64,6 @@ class UpdateEmployeeRequest extends FormRequest
             'position_id' => 'required|exists:positions,id',
             'employment_type_id' => 'required|exists:employment_types,id',
             'citizenship_id' => 'required|exists:citizenships,id',
-            'email' => 'nullable|email',
             'bank_id' => 'required|exists:banks,id',
             'account_number' => 'nullable|string',
             'image' => 'nullable|string',

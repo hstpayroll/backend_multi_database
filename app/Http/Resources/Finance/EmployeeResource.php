@@ -24,6 +24,15 @@ class EmployeeResource extends JsonResource
             'birth_date' => $this->birth_date,
             'hired_date' => $this->hired_date,
             'tin_no' => $this->tin_no,
+
+            'phone_number' => $this->phone_number,
+            'city' => $this->city,
+            'sub_city' => $this->sub_city,
+            'kebele' => $this->kebele,
+            'woreda' => $this->woreda,
+            'house_no' => $this->house_no,
+            'email' => $this->email,
+
             'cost_center' => $this->cost_center,
             'tax_region' => new TaxRegionResource($this->taxRegion),
             'grade' => new GradeResource($this->grade),
@@ -32,13 +41,11 @@ class EmployeeResource extends JsonResource
             'position' => new PositionResource($this->position),
             'employment_type' => new EmploymentTypeResource($this->employmentType),
             'citizenship' => new CitizenshipResource($this->citizenship),
-            'email' => $this->email,
             'bank' => new BankResource($this->bank),
             'account_number' => $this->account_number,
             'image' => $this->image,
             'status' => $this->status == 1 ? 'active' : 'inactive',
             'comment' => $this->comment,
-            // Include other relationships or computed properties as needed
         ];
     }
 }
