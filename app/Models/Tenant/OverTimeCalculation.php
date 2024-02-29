@@ -31,10 +31,10 @@ class OverTimeCalculation extends Model
     use SoftDeletes;
 
     static $rules = [
-		'employee_id' => 'required',
-		'over_time_type_id' => 'required',
-		'ot_date' => 'required',
-		'ot_hour' => 'required',
+        'employee_id' => 'required',
+        'over_time_type_id' => 'required',
+        'ot_date' => 'required',
+        'ot_hour' => 'required',
     ];
 
     protected $perPage = 20;
@@ -44,7 +44,7 @@ class OverTimeCalculation extends Model
      *
      * @var array
      */
-    protected $fillable = ['employee_id','over_time_type_id','ot_date','ot_hour','ot_value'];
+    protected $fillable = ['employee_id', 'over_time_type_id', 'ot_date', 'ot_hour', 'ot_value'];
 
 
     /**
@@ -78,6 +78,4 @@ class OverTimeCalculation extends Model
     {
         return $this->hasMany(Payroll::class, 'over_time_calculation_id', 'id');
     }
-
-
 }

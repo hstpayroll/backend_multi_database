@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('over_time_calculations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('company_id')->constrained('companies')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('over_time_type_id')->constrained('over_time_types')->onDelete('restrict')->onUpdate('cascade');
             $table->date('ot_date');

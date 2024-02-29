@@ -17,7 +17,6 @@ class PositionResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'sub_department_id' => $this->sub_department_id,
             'sub_department' => new SubDepartmentResource($this->subDepartment),
             // 'employees' => EmployeeResource::collection($this->whenLoaded('employees')),
         ];

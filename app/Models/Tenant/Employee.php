@@ -112,9 +112,9 @@ class Employee extends Model
         return $this->hasMany(SalaryManagement::class, 'employee_id', 'id');
     }
 
-    public function subDepartments()
+    public function subDepartment()
     {
-        return $this->hasMany(SubDepartment::class);
+        return $this->belongsTo(SubDepartment::class, 'sub_department_id', 'id');
     }
 
     public function taxRegion()

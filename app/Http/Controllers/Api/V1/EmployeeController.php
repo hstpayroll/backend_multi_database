@@ -16,6 +16,8 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::paginate(10);
+        // $employees = Employee::first();
+        // dd($employees->subDepartment);
         return EmployeeResource::collection($employees);
     }
 
