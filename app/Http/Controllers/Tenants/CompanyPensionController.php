@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\CompanyPension;
+use App\Models\Tenant\CompanyPension;
 
 /**
  * Class CompanyPensionController
@@ -43,12 +43,12 @@ class CompanyPensionController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(CompanyPension::$rules);
+        // request()->validate(CompanyPension::$rules);
 
-        $companyPension = CompanyPension::create($request->all());
+        // $companyPension = CompanyPension::create($request->all());
 
-        return redirect()->route('company-pensions.index')
-            ->with('success', 'CompanyPension created successfully.');
+        // return redirect()->route('company-pensions.index')
+        //     ->with('success', 'CompanyPension created successfully.');
     }
 
     /**
@@ -86,7 +86,7 @@ class CompanyPensionController extends Controller
      */
     public function update(Request $request, CompanyPension $companyPension)
     {
-        request()->validate(CompanyPension::$rules);
+        // request()->validate(CompanyPension::$rules);
 
         $companyPension->update($request->all());
 
