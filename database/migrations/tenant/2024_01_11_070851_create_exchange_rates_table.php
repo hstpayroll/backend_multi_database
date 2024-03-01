@@ -13,15 +13,14 @@ return new class extends Migration
     {
         Schema::create('exchange_rates', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('from_currency_id')->constrained('currencies');
-            $table->foreignId('to_currency_id')->constrained('currencies');
+            $table->foreignId('from_currency_id')->constrained('currencies')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreignId('to_currency_id')->constrained('currencies')->onDelete('restrict')->onUpdate('cascade');
             $table->datetime('start_date');
             $table->datetime('end_date')->nullable();
             $table->decimal('rate', 10, 4); // Exchange rate
             $table->tinyInteger('status')->default(1); //0 for expired and 1 for active
             $table->softDeletes();
             $table->timestamps();
-
         });
     }
 

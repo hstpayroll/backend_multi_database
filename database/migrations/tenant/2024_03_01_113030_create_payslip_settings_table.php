@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('company_settings', function (Blueprint $table) {
+        Schema::create('payslip_settings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained('companies')->onDelete('restrict')->onUpdate('cascade');
             $table->string('name');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('company_settings');
+        Schema::dropIfExists('payslip_settings');
     }
 };

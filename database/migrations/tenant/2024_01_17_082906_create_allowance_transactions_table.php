@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('allowance_transactions', function (Blueprint $table) {
             $table->id();
             $table->date('payroll_date')->nullable();
-            $table->foreignId('employee_id')->constrained('employees');
-            $table->foreignId('allowance_type_id')->constrained('allowance_types');
+            $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreignId('allowance_type_id')->constrained('allowance_types')->onDelete('restrict')->onUpdate('cascade');
             $table->decimal('amount', 10, 2);
             $table->decimal('taxable_amount', 10, 2)->default(0);
             $table->decimal('non_taxable_amount', 10, 2)->default(0);

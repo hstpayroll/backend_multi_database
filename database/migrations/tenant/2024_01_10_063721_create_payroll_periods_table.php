@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->date('start_date');
             $table->date('end_date');
-            $table->foreignId('payroll_name_id')->constrained('payroll_names');
-            $table->foreignId('payroll_type_id')->constrained('payroll_types');
-            $table->foreignId('fiscal_year_id')->constrained('fiscal_years');
-            $table->foreignId('employee_pension_id')->constrained('employee_pensions');
-            $table->foreignId('company_pension_id')->constrained('company_pensions');
+            $table->foreignId('payroll_name_id')->constrained('payroll_names')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreignId('payroll_type_id')->constrained('payroll_types')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreignId('fiscal_year_id')->constrained('fiscal_years')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreignId('employee_pension_id')->constrained('employee_pensions')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreignId('company_pension_id')->constrained('company_pensions')->onDelete('restrict')->onUpdate('cascade');
             $table->tinyInteger('status')->default(1); //0 for expired and 1 for active
             $table->softDeletes();
             $table->timestamps();

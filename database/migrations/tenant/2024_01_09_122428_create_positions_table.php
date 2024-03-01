@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('sub_department_id')->constrained('sub_departments')->onDelete('restrict')->onUpdate('cascade');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('loan_payment_records', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('loan_id')->constrained('loans');
+            $table->foreignId('loan_id')->constrained('loans')->onDelete('restrict')->onUpdate('cascade');
             $table->decimal('amount_payed', 10, 2);
             $table->decimal('outstanding_amount', 10, 2);
             $table->boolean('is_partial')->default(false);
             $table->boolean('is_missed')->default(false);
-           $table->timestamps();
+            $table->timestamps();
         });
     }
 

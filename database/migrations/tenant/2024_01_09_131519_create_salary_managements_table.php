@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('salary_managements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained('employees');
+            $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->text('reason'); // this is the reason for salary to increase or decrese it might be due to promotion or demotion
             //if the employee is new write the reason as new employee registered
             $table->decimal('old_salary', 10, 2);

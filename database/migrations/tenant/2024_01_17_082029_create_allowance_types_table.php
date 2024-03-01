@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('allowance_types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('main_allowance_id')->constrained('main_allowances');
+            $table->foreignId('main_allowance_id')->constrained('main_allowances')->onDelete('restrict')->onUpdate('cascade');
             $table->string('name');
             $table->tinyInteger('taxability')->default(1);
             $table->decimal('tax_free_amount', 10, 2)->default(0);
