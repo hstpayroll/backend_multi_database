@@ -26,6 +26,7 @@ use App\Http\Controllers\Api\V1\LoanController;
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
 use App\Http\Controllers\Api\V1\LoanTypeController;
 use App\Http\Controllers\Api\V1\MainAllowanceController;
+use App\Http\Controllers\Api\V1\OverTimeTypeController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
 use App\Http\Controllers\Api\V1\PayrollTypeController;
 use App\Http\Controllers\Api\V1\PositionController;
@@ -90,6 +91,7 @@ Route::middleware([
             Route::apiResource('loan-payment-records', LoanPaymentRecordController::class);
             Route::apiResource('main-allowances', MainAllowanceController::class);
             Route::apiResource('allowance-types', AllowanceTypeController::class);
+            Route::apiResource('overtime-types', OverTimeTypeController::class);
         });
 });
 
