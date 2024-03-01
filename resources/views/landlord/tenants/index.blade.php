@@ -43,7 +43,8 @@
                                 </td>
                                 <td class="px-3.5 py-2.5 border border-slate-200 dark:border-zink-500">
                                     @foreach ($tenant->domains as $domain)
-                                        {{ $domain->domain }}
+                                        <a href="http://{{ $domain->domain }}:8000" target="_blank"
+                                            class="hover:shadow-lg hover:text-5xl">{{ $domain->domain }}</a>
                                     @endforeach
                                 </td>
 
