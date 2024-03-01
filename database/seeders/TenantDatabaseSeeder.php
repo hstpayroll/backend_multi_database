@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Tenant\CompanyPension;
 
 class TenantDatabaseSeeder extends Seeder
 {
@@ -32,10 +31,9 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(PositionSeeder::class);
         $this->call(PayrollTypeSeeder::class);
         $this->call(PayrollNameSeeder::class);
-        $this->call(CompanyPensionSeeder::class);
-        $this->call(CompanyPension::class);
         $this->call(FiscalYearSeeder::class);
         $this->call(EmployeePensionSeeder::class);
+        $this->call(CompanyPensionSeeder::class);
         $this->call(IncomeTaxSeeder::class);
         $this->call(PayrollPeriodSeeder::class);
         $this->call(EmploymentTypeSeeder::class);
