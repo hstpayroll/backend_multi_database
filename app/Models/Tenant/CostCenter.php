@@ -21,8 +21,8 @@ class CostCenter extends Model
 {
 
     static $rules = [
-		'code' => 'required',
-		'description' => 'required',
+        'code' => 'required',
+        'description' => 'required',
     ];
 
     protected $perPage = 20;
@@ -32,8 +32,5 @@ class CostCenter extends Model
      *
      * @var array
      */
-    protected $fillable = ['code','description','status'];
-
-
-
+    protected $fillable = ['code', 'description', 'status'];
 }

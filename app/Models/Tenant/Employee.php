@@ -15,6 +15,7 @@ class Employee extends Model
      * @var array
      */
     protected $fillable = [
+        //basic info
         'emp_id',
         'first_name',
         'father_name',
@@ -23,14 +24,14 @@ class Employee extends Model
         'birth_date',
         'hired_date',
         'tin_no',
-
-        'phone_number',
+        //address
         'city',
         'sub_city',
         'kebele',
         'woreda',
         'house_no',
         'email',
+        'phone_number',
 
         'cost_center',
         'tax_region_id',
@@ -112,9 +113,9 @@ class Employee extends Model
         return $this->hasMany(SalaryManagement::class, 'employee_id', 'id');
     }
 
-    public function subDepartments()
+    public function subDepartment()
     {
-        return $this->hasMany(SubDepartment::class);
+        return $this->belongsTo(SubDepartment::class, 'sub_department_id', 'id');
     }
 
     public function taxRegion()

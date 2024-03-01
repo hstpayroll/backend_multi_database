@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class IncomeTaxResource extends JsonResource
-{  public function toArray($request)
+{
+    public function toArray($request)
     {
         return [
             'id' => $this->id,

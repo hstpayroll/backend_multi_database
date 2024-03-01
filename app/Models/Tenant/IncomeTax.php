@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Tenant;
 
 use Illuminate\Database\Eloquent\Model;
@@ -30,22 +31,14 @@ class IncomeTax extends Model
 {
     use SoftDeletes;
 
-    static $rules = [
-		'payroll_name_id' => 'required',
-		'name' => 'required',
-		'min_income' => 'required',
-		'tax_rate' => 'required',
-		'deduction' => 'required',
-    ];
-
-    protected $perPage = 20;
+    protected $table = 'income_taxes';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['payroll_name_id','name','min_income','max_income','tax_rate','deduction','details','status'];
+    protected $fillable = ['payroll_name_id', 'name', 'min_income', 'max_income', 'tax_rate', 'deduction', 'details', 'status'];
 
 
     public function payrolls()
@@ -60,6 +53,4 @@ class IncomeTax extends Model
     {
         return $this->hasOne(PayrollName::class, 'id', 'payroll_name_id');
     }
-
-
 }

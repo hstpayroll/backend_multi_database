@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Tenant;
 
 use Illuminate\Database\Eloquent\Model;
@@ -23,21 +24,5 @@ class CompanyPension extends Model
 {
     use SoftDeletes;
 
-    static $rules = [
-		'name' => 'required',
-		'rate' => 'required',
-		'status' => 'required',
-    ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['name','description','rate','status'];
-
-
-
+    protected $fillable = ['name', 'description', 'rate', 'start_date', 'end_date', 'status'];
 }

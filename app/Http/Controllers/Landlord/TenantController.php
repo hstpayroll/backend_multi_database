@@ -18,8 +18,7 @@ class TenantController extends Controller
      */
     public function index()
     {
-        $tenants = Tenant::with('domains')
-            ->get();
+        $tenants = Tenant::with('domains')->get();
         return view('landlord.tenants.index', compact('tenants'));
     }
 
