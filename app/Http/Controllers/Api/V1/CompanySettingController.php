@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Tenants;
+namespace App\Http\Controllers\Api\V1;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\CompanySetting;
 use App\Http\Requests\StoreCompanySettingRequest;
 use App\Http\Requests\UpdateCompanySettingRequest;
+use App\Http\Resources\Finance\CompanySettingResource;
 
 class CompanySettingController extends Controller
 {
@@ -14,15 +16,8 @@ class CompanySettingController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $companySetting = CompanySetting::paginate(10);
+        return   CompanySettingResource::collection($companySetting);
     }
 
     /**
@@ -30,7 +25,8 @@ class CompanySettingController extends Controller
      */
     public function store(StoreCompanySettingRequest $request)
     {
-        //
+        $companySetting = CompanySetting::create($request->validated());
+        return new CompanySettingResource($companySetting);
     }
 
     /**
@@ -38,15 +34,7 @@ class CompanySettingController extends Controller
      */
     public function show(CompanySetting $companySetting)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(CompanySetting $companySetting)
-    {
-        //
+        return new CompanySettingResource($companySetting);
     }
 
     /**
@@ -54,7 +42,8 @@ class CompanySettingController extends Controller
      */
     public function update(UpdateCompanySettingRequest $request, CompanySetting $companySetting)
     {
-        //
+        $companySetting->update($request->validated());
+        return new CompanySettingResource($companySetting);
     }
 
     /**
@@ -62,6 +51,7 @@ class CompanySettingController extends Controller
      */
     public function destroy(CompanySetting $companySetting)
     {
-        //
+        $companySetting->delete();
+        return response()->noContent();
     }
 }
