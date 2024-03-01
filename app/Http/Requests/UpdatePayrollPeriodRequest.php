@@ -24,13 +24,14 @@ class UpdatePayrollPeriodRequest extends FormRequest
     public function rules()
     {
         return [
-            'income_tax_id' => 'required|exists:App\Models\Tenant\IncomeTax,id',
-            'payroll_type_id' => 'required|exists:App\Models\Tenant\PayrollType,id',
-            'fiscal_year_id' => 'required|exists:App\Models\Tenant\FiscalYear,id',
             'name' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'required|date',
-            'status' => 'required|boolean',
+            'payroll_name_id' =>  'required|exists:payroll_names,id',
+            'payroll_type_id' =>  'required|exists:payroll_types,id',
+            'fiscal_year_id' =>  'required|exists:fiscal_years,id',
+            'employee_pension_id' =>  'required|exists:employee_pensions,id',
+            'company_pension_id' =>  'required|exists:company_pensions,id',
         ];
     }
 }
