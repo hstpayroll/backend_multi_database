@@ -11,7 +11,7 @@ class StoreCompanySettingRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreCompanySettingRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'company_id' => 'required',
+            'name' => 'required',
+            'discription' => 'nullable',
+            'value' => 'required',
         ];
     }
 }
