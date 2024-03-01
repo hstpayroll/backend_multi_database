@@ -38,6 +38,7 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(PayrollPeriodSeeder::class);
         $this->call(EmploymentTypeSeeder::class);
         $this->call(EmployeeSeeder::class);
+        $this->call(SalaryManagementSeeder::class);
 
         $this->call(LoanTypeSeeder::class);
         $this->call(MainAllowanceSeeder::class);
