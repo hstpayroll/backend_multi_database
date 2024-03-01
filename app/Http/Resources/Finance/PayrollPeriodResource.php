@@ -17,7 +17,6 @@ class PayrollPeriodResource extends JsonResource
             'employee_pension' => new EmployeePensionResource($this->employeePension),
             'company_pension' => new CompanyPensionResource($this->companyPension),
             'name' => $this->name,
-            'year' => $this->year,
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
             'status' => $this->status == 1 ? 'active' : 'inactive',

@@ -27,15 +27,14 @@ class PayrollPeriod extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'name',
+        'start_date',
+        'end_date',
         'payroll_name_id',
         'payroll_type_id',
         'fiscal_year_id',
         'employee_pension_id',
         'company_pension_id',
-        'name',
-        'year',
-        'start_date',
-        'end_date',
         'status',
     ];
 
