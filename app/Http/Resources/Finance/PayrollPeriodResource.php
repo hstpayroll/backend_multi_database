@@ -11,7 +11,7 @@ class PayrollPeriodResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'payroll_name' => new PayrollNameResource($this->payrollName),
+            'payroll_name' =>  PayrollNameResource::collection($this->payrollName),
             'payroll_type' => new PayrollTypeResource($this->payrollType),
             'fiscal_year' => new FiscalYearResource($this->fiscalYear),
             'employee_pension' => new EmployeePensionResource($this->employeePension),

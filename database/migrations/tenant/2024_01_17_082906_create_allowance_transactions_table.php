@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('allowance_transactions', function (Blueprint $table) {
             $table->id();
-            $table->date('payroll_date')->nullable();
+            $table->foreignId('payroll_period_id')->constrained('payroll_periods')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('allowance_type_id')->constrained('allowance_types')->onDelete('restrict')->onUpdate('cascade');
             $table->decimal('amount', 10, 2);

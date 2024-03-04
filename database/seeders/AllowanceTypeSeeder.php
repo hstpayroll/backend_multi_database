@@ -18,24 +18,32 @@ class AllowanceTypeSeeder extends Seeder
             'name' => 'Transportation Allowance one',
             'taxability' => '2', //  1 for taxable, 2 for non-taxable 3 for partially taxable 4 for tex covered by employer
             'tax_free_amount' => 0,
-            'value_type' => 'Fixed',
-            'status' => 'Active',
+            'value_type' => 1,
+            'status' => 1,
         ]);
         AllowanceType::create([
             'main_allowance_id' => 2,
             'name' => 'Transportation Allowance Two',
-            'taxability' => 'Non-Taxable',
-            'tax_free_amount' => 1000,
-            'value_type' => 'Percentage',
-            'status' => 'Inactive',
+            'taxability' => 1,
+            'tax_free_amount' => 0,
+            'value_type' => 0,
+            'status' => 1,
         ]);
         AllowanceType::create([
             'main_allowance_id' => 2,
             'name' => 'Housing Allowance',
-            'taxability' => 'Non-Taxable',
+            'taxability' => 3,
             'tax_free_amount' => 1000,
-            'value_type' => 'Percentage',
-            'status' => 'Inactive',
+            'value_type' => 1,
+            'status' => 0,
+        ]);
+        AllowanceType::create([
+            'main_allowance_id' => 2,
+            'name' => 'Housing Allowance',
+            'taxability' => 4,
+            'tax_free_amount' => 0,
+            'value_type' => 1,
+            'status' => 0,
         ]);
     }
 }

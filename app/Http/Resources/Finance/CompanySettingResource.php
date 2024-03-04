@@ -15,9 +15,9 @@ class CompanySettingResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-           return [
+        return [
             'id' => $this->id,
-            'company' => CompanyResource::make($this->company),
+            'company' => CompanyResource::collection($this->company),
             'name' => $this->name,
             'description' => $this->description,
             'value' => $this->value,

@@ -2,10 +2,8 @@
 
 namespace App\Models\Tenant;
 
-use App\Models\Employee;
-use App\Models\AllowanceType;
-use App\Models\Tenant\AllowanceType as TenantAllowanceType;
-use App\Models\Tenant\Employee as TenantEmployee;
+use App\Models\Tenant\AllowanceType;
+use App\Models\Tenant\Employee;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -31,40 +29,20 @@ use Illuminate\Database\Eloquent\Model;
 class AllowanceTransaction extends Model
 {
 
-    static $rules = [
-		'employee_id' => 'required',
-		'allowance_type_id' => 'required',
-		'amount' => 'required',
-		'taxable_amount' => 'required',
-		'non_taxable_amount' => 'required',
-		'is_day_based' => 'required',
-    ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['payroll_date','employee_id','allowance_type_id','amount','taxable_amount','non_taxable_amount','is_day_based','start_date'];
+    protected $fillable = ['payroll_period_id', 'employee_id', 'allowance_type_id', 'amount', 'taxable_amount', 'non_taxable_amount', 'is_day_based', 'start_date'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function allowanceType()
+    public function payrollPeriods()
     {
-        return $this->hasOne(TenantAllowanceType::class, 'id', 'allowance_type_id');
+        return $this->belongsTo(PayrollPeriod::class);
+    }
+    public function employees()
+    {
+        return $this->belongsTo(Employee::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function employee()
+    public function allowanceTypes()
     {
-        return $this->hasOne(TenantEmployee::class, 'id', 'employee_id');
+        return $this->belongsTo(AllowanceType::class);
     }
-
-
 }

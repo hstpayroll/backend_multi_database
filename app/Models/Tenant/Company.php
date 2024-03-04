@@ -13,39 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-/**
- * Class Company
- *
- * @property $id
- * @property $name
- * @property $address
- * @property $tin
- * @property $logo
- * @property $website
- * @property $currency_id
- * @property $calendar_id
- * @property $description
- * @property $created_at
- * @property $updated_at
- * @property $deleted_at
- *
- * @property AllowanceType[] $allowanceTypes
- * @property Branch[] $branches
- * @property Calendar $calendar
- * @property CompanyUser $companyUser
- * @property Currency $currency
- * @property Department[] $departments
- * @property Employee[] $employees
- * @property Grade[] $grades
- * @property LoanType[] $loanTypes
- * @property OverTimeCalculation[] $overTimeCalculations
- * @property OverTimeType[] $overTimeTypes
- * @property Payroll[] $payrolls
- * @property Position[] $positions
- * @property SubDepartment[] $subDepartments
- * @package App
- * @mixin \Illuminate\Database\Eloquent\Builder
- */
+
 class Company extends Model
 {
     use SoftDeletes, HasFactory;
@@ -138,5 +106,9 @@ class Company extends Model
     public function subDepartments()
     {
         return $this->hasMany(SubDepartment::class, 'company_id', 'id');
+    }
+    public function companySetting()
+    {
+        return $this->belongsTo(companySetting::class, 'company_id', 'id');
     }
 }

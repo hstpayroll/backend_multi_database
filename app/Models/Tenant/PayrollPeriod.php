@@ -5,42 +5,14 @@ namespace App\Models\Tenant;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class PayrollPeriod
- *
- * @property $id
- * @property $income_tax_id
- * @property $name
- * @property $year
- * @property $start_date
- * @property $end_date
- * @property $status
- * @property $deleted_at
- * @property $created_at
- * @property $updated_at
- *
- * @package App
- * @mixin \Illuminate\Database\Eloquent\Builder
- */
+
 class PayrollPeriod extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = [
-        'name',
-        'start_date',
-        'end_date',
-        'payroll_name_id',
-        'payroll_type_id',
-        'fiscal_year_id',
-        'employee_pension_id',
-        'company_pension_id',
-        'status',
-    ];
-
     public function payrollName()
     {
-        return $this->belongsTo(PayrollName::class, 'payroll_name_id');
+        return $this->belongsTo(PayrollName::class);
     }
 
     public function payrollType()

@@ -44,5 +44,8 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(MainAllowanceSeeder::class);
         $this->call(CompanySettingSeeder::class);
         $this->call(PayslipSettingSeeder::class);
+        $this->call(MainAllowanceSeeder::class);
+        $this->call(AllowanceTypeSeeder::class);
+        $this->call(AllowanceTransactionSeeder::class);
     }
 }

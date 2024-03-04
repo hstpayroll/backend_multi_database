@@ -27,9 +27,9 @@ class PayrollName extends Model
     use SoftDeletes;
 
     static $rules = [
-		'name' => 'required',
-		'start_date' => 'required',
-		'details' => 'required',
+        'name' => 'required',
+        'start_date' => 'required',
+        'details' => 'required',
     ];
 
     protected $perPage = 20;
@@ -39,7 +39,7 @@ class PayrollName extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','start_date','end_date','details','status'];
+    protected $fillable = ['name', 'start_date', 'end_date', 'details', 'status'];
 
 
     /**
@@ -49,6 +49,4 @@ class PayrollName extends Model
     {
         return $this->hasMany(IncomeTax::class, 'payroll_name_id', 'id');
     }
-
-
 }

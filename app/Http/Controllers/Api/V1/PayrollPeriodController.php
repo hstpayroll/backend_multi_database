@@ -12,7 +12,8 @@ class PayrollPeriodController extends Controller
 {
     public function index()
     {
-        return PayrollPeriodResource::collection(PayrollPeriod::paginate(10));
+        $payrollPeriods = PayrollPeriod::first();
+        return PayrollPeriodResource::collection($payrollPeriods);
     }
 
     public function store(StorePayrollPeriodRequest $request)
