@@ -23,10 +23,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Department extends Model
 {
-    use SoftDeletes;
 
     static $rules = [
-		'name' => 'required',
+        'name' => 'required',
     ];
 
     protected $perPage = 20;
@@ -59,6 +58,4 @@ class Department extends Model
     {
         return $this->hasMany(SubDepartment::class);
     }
-
-
 }

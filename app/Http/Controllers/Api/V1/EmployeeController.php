@@ -2,26 +2,30 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use Illuminate\Http\Request;
+use App\Models\Tenant\Employee;
+use App\Models\Tenant\Position;
 use App\Http\Controllers\Controller;
+use App\Models\Tenant\SubDepartment;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
 use App\Http\Resources\Finance\EmployeeResource;
-use App\Models\Tenant\Employee;
-use App\Models\Tenant\Position;
-use App\Models\Tenant\SubDepartment;
-use Illuminate\Http\Request;
+use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class EmployeeController extends Controller
 {
     public function index(Request $request)
     {
-        $user = $request->user();
-        if ($user->hasPermissionTo('employee_index')) {
-            $employees = Employee::paginate(10);
-            return EmployeeResource::collection($employees);
-        } else {
-            // User doesn't have permission, return unauthorized response
-            return response()->json(['message' => 'Unauthorized'], 403);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('employee_index')) {
+                $employees = Employee::paginate(10);
+                return EmployeeResource::collection($employees);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
         }
     }
 

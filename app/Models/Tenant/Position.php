@@ -21,7 +21,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Position extends Model
 {
-    use SoftDeletes;
 
 
 

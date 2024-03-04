@@ -95,12 +95,12 @@ class Company extends Model
 
     public function calendar()
     {
-        return $this->hasOne(Calendar::class, 'id', 'calendar_id');
+        return $this->hasMany(Calendar::class, 'id', 'calendar_id');
     }
 
     public function currency()
     {
-        return $this->hasOne(Currency::class, 'id', 'currency_id');
+        return $this->hasMany(Currency::class, 'id', 'currency_id');
     }
 
     public function departments()

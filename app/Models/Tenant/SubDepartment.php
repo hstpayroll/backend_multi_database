@@ -25,7 +25,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class SubDepartment extends Model
 {
-    use SoftDeletes;
 
 
     protected $fillable = ['name', 'department_id'];

@@ -12,7 +12,7 @@ class TenantUserSeeder extends Seeder
     public function run(): void
     {
 
-           //user 4
+        //user 4
         $user4 =  User::create([
             'name' => "User 4",
             'email' => "user2@gmail.com",
@@ -28,6 +28,6 @@ class TenantUserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ])->assignRole(['accountant']);
-        $user4->givePermissionTo(['edit_profile', 'change_password']);
+        $user5->givePermissionTo(['edit_profile', 'change_password', 'employee_index', 'employee_store', 'employee_show', 'employee_update', 'employee_destroy']);
     }
 }

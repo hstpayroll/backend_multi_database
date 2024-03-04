@@ -17,9 +17,11 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = QueryBuilder::for(Company::with(['currency', 'calendar']))
-            ->allowedSorts(['name', 'id'])
-            ->paginate(10);
+        $companies = Company::with(['currency', 'calendar'])->paginate(10);
+        // dd($companies);
+        //  QueryBuilder::for(Company::with(['currency', 'calendar']))
+        //     ->allowedSorts(['name', 'id'])
+        //     ->paginate(10);
         //  Company::with(['currency','calendar'])->paginate(10));
         return  CompanyResource::collection($companies);
     }
