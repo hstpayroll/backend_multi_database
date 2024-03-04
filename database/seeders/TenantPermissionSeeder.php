@@ -59,11 +59,25 @@ class TenantPermissionSeeder extends Seeder
             'company_destroy',
 
             //Company-pensions
-            'company-pensions_index',
-            'company-pensions_store',
-            'company-pensions_show',
-            'company-pensions_update',
-            'company-pensions_destroy',
+            'company-pension_index',
+            'company-pension_store',
+            'company-pension_show',
+            'company-pension_update',
+            'company-pension_destroy',
+
+            //Cost Center
+            'cost-center_index',
+            'cost-center_store',
+            'cost-center_show',
+            'cost-center_update',
+            'cost-center_destroy',
+
+            //Company-Setting
+            'company-setting_index',
+            'company-setting_store',
+            'company-setting_show',
+            'company-setting_update',
+            'company-setting_destroy',
 
 
         ];

@@ -36,7 +36,9 @@ class TenantUserSeeder extends Seeder
                 'calendar_index', 'calendar_store', 'calendar_show', 'calendar_update', 'calendar_destroy',
                 'citizenship_index', 'citizenship_store', 'citizenship_show', 'citizenship_update', 'citizenship_destroy',
                 'company_index', 'company_store', 'company_show', 'company_update', 'company_destroy',
-                'company-pensions_index', 'company-pensions_store', 'company-pensions_show', 'company-pensions_update', 'company-pensions_destroy',
+                'company-pension_index', 'company-pension_store', 'company-pension_show', 'company-pension_update', 'company-pension_destroy',
+                'cost-center_index', 'cost-center_store', 'cost-center_show', 'cost-center_update', 'cost-center_destroy',
+                'company-setting_index', 'company-setting_store', 'company-setting_show', 'company-setting_update', 'company-setting_destroy',
             ]
         );
     }
