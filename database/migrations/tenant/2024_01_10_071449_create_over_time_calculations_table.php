@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     * this table is pivot for employee  and overtime type
-     */
-
     public function up(): void
     {
         Schema::create('over_time_calculations', function (Blueprint $table) {
@@ -25,11 +20,9 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('over_time_calculations');
     }
 };
+
