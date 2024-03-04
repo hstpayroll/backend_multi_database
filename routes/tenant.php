@@ -34,18 +34,11 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use App\Http\Controllers\Api\V1\CompanyPensionController;
 use App\Http\Controllers\Api\V1\CompanySettingController;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
-use App\Http\Controllers\Api\V1\EmployeePensionController;
-use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
-
-use App\Http\Controllers\Api\V1\LoanTypeController;
-use App\Http\Controllers\Api\V1\MainAllowanceController;
-use App\Http\Controllers\Api\V1\OverTimeTypeController;
-use App\Http\Controllers\Api\V1\PayrollPeriodController;
-use App\Http\Controllers\Api\V1\PayrollTypeController;
 use App\Http\Controllers\Api\V1\PayslipSettingController;
-use App\Http\Controllers\Api\V1\PositionController;
-use App\Http\Controllers\Api\V1\SubDepartmentController;
-use App\Http\Controllers\Api\V1\TaxRegionController;
+use App\Http\Controllers\Api\V1\EmployeePensionController;
+
+
+use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 /*
