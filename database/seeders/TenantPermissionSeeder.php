@@ -37,6 +37,13 @@ class TenantPermissionSeeder extends Seeder
             'bank_update',
             'bank_destroy',
 
+            //Calendars
+            'calendar_index',
+            'calendar_store',
+            'calendar_show',
+            'calendar_update',
+            'calendar_destroy',
+
 
         ];
         foreach ($permissions as $permission) {

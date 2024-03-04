@@ -72,7 +72,7 @@ Route::middleware([
 
             Route::apiResource('currencies', CurrencyController::class);
             Route::apiResource('banks', BankController::class);
-            Route::apiResource('calenders', CalendarController::class);
+            Route::apiResource('calendars', CalendarController::class);
             Route::apiResource('companies', CompanyController::class);
             Route::apiResource('employment-types', EmploymentTypeController::class);
             Route::apiResource('payroll-names', PayrollNameController::class);
