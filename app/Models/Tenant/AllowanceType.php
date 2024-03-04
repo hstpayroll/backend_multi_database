@@ -10,8 +10,6 @@ class AllowanceType extends Model
 {
     use SoftDeletes;
 
-    protected $perPage = 20;
-
     protected $fillable = [
         'main_allowance_id',
         'name',
