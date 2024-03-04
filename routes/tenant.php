@@ -31,6 +31,7 @@ use App\Http\Controllers\Api\V1\MainAllowanceController;
 use App\Http\Controllers\Api\V1\OverTimeTypeController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
 use App\Http\Controllers\Api\V1\PayrollTypeController;
+use App\Http\Controllers\Api\V1\PayslipSettingController;
 use App\Http\Controllers\Api\V1\PositionController;
 use App\Http\Controllers\Api\V1\SubDepartmentController;
 use App\Http\Controllers\Api\V1\TaxRegionController;
@@ -96,6 +97,8 @@ Route::middleware([
             Route::apiResource('employee-pensions', EmployeePensionController::class);
             Route::apiResource('company-pensions', CompanyPensionController::class);
             Route::apiResource('overtime-types', OverTimeTypeController::class);
+            Route::apiResource('payslip-settings', PayslipSettingController::class);
+
         });
 });
 
