@@ -16,11 +16,9 @@ class EmployeeController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
-        if ($user->hasPermissionTo('index employee')) {
+        if ($user->hasPermissionTo('employee_index')) {
             $employees = Employee::paginate(10);
             return EmployeeResource::collection($employees);
-
-            // return response()->json(['message' => 'Action performed successfully']);
         } else {
             // User doesn't have permission, return unauthorized response
             return response()->json(['message' => 'Unauthorized'], 403);
