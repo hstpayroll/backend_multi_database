@@ -18,7 +18,7 @@ class EmployeeController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('employee_index')) {
+            if ($user->hasPermissionTo('employee_indexes')) {
                 $employees = Employee::paginate(10);
                 return EmployeeResource::collection($employees);
             } else {
