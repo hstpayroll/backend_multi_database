@@ -3,8 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'fac0377f7db8dfd01167e45e9c0df8127e5a205c',
-
+        'reference' => 'be00382ef0bd3992363c16e3847901a6a6ff4fdc',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -44,6 +43,15 @@
             'reference' => '0ad82ce168c82ba30d1c01ec86116ab52f589478',
             'type' => 'library',
             'install_path' => __DIR__ . '/../brick/math',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'brick/money' => array(
+            'pretty_version' => '0.8.1',
+            'version' => '0.8.1.0',
+            'reference' => '25f484a347756b7f3fbe7ad63ed9ad2d87b20004',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../brick/money',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -482,8 +490,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'fac0377f7db8dfd01167e45e9c0df8127e5a205c',
-
+            'reference' => 'be00382ef0bd3992363c16e3847901a6a6ff4fdc',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

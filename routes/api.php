@@ -1,21 +1,12 @@
 <?php
 
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\TenantController;
-use App\Http\Controllers\Api\V1\CompanyController;
-use App\Http\Controllers\Api\V1\CalendarController;
-use App\Http\Controllers\Api\V1\CurrencyController;
 use App\Http\Controllers\Api\V1\DomainController;
-use App\Http\Controllers\Api\V1\IncomeTaxController;
-use App\Http\Controllers\Api\V1\FiscalYearController;
-use App\Http\Controllers\Api\V1\PayrollNameController;
 use App\Http\Controllers\ApiAuth\NewPasswordController;
 use App\Http\Controllers\ApiAuth\VerifyEmailController;
-use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\ApiAuth\RegisteredUserController;
 use App\Http\Controllers\ApiAuth\PasswordResetLinkController;
@@ -60,13 +51,13 @@ Route::prefix('v1')->group(function () {
 
         Route::post('/validate-user', [AuthenticatedSessionController::class, 'validateUser'])
             ->name('validate-user');
-            Route::apiResource('users', UserController::class);
-            Route::apiResource('tenants', TenantController::class);
-            Route::apiResource('domains', DomainController::class)->only(['index']);
-            Route::apiResource('roles', RoleController::class);
-            Route::get('auth-user', [DomainController::class, 'auth_user'])->name('auth-user');
-        });
-        Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');
+        Route::apiResource('users', UserController::class);
+        Route::apiResource('tenants', TenantController::class);
+        Route::apiResource('domains', DomainController::class)->only(['index']);
+        Route::apiResource('roles', RoleController::class);
+        Route::get('auth-user', [DomainController::class, 'auth_user'])->name('auth-user');
+    });
+    Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');
 
     // user
 });

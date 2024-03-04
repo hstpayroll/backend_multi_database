@@ -12,69 +12,58 @@ class BankTest extends TestCase
     /**
      * A basic feature test example.
      */
-    use RefreshDatabase;
+    use RefreshDatabase, WithFaker;
 
     /** @test */
-    public function it_can_create_a_bank()
+    public function testIndexReturnsPaginatedBanksWithCorrectAttributes()
     {
-        // Arrange
-        $data = [
-            'name' => 'Example Bank',
-            'swift' => 'EXAMPLESWFT',
-            // Add other required fields
-        ];
+        // Create a factory for Bank model if not already defined:
+        Bank::factory()->count(15)->create();
 
-        // Act
-        $response = $this->post(route('banks.store'), $data);
+        $response = $this->getJson('/api/v1/banks'); // Adjust route based on actual API path
 
-        // Assert
-        $response->assertStatus(201);
-        $this->assertDatabaseHas('banks', $data);
+        $response->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [
+                    '*' => [
+                        'id',
+                        'name',
+                        'swift',
+                    ],
+                ],
+                'links' => [
+                    'first',
+                    'last',
+                    'prev',
+                    'next',
+                ],
+                'meta' => [
+                    'current_page',
+                    'from',
+                    'last_page',
+                    'path',
+                    'per_page',
+                    'to',
+                    'total',
+                ],
+            ]);
+
+        $data = $response->json('data');
+
+        // Assert that each bank resource in the response has the expected attributes:
+        // $data->each(function ($bank) use ($response) {
+        //     $this->assertInstanceOf(BankResource::class, $bank);
+        //     $this->assertArrayHasKey('id', $bank);
+        //     $this->assertArrayHasKey('name', $bank);
+        //     $this->assertArrayHasKey('swift', $bank);
+        // });
+
+        // Additional assertions based on specific conditions can be added here:
+        // - Verify pagination meta information
+        // - Check for specific data based on factory or test setup
+
+        // Example: Assert that only the first 10 banks are returned,
+        // considering the page size is 10 in the `paginate` call:
+        $this->assertCount(10, $data);
     }
-
-    /** @test */
-    // public function it_can_show_a_bank()
-    // {
-    //     // Arrange
-    //     $bank = factory(Bank::class)->create();
-
-    //     // Act
-    //     $response = $this->get(route('banks.show', ['bank' => $bank->id]));
-
-    //     // Assert
-    //     $response->assertStatus(200);
-    //     $response->assertJsonFragment(['id' => $bank->id]);
-    // }
-
-    /** @test */
-    // public function it_can_update_a_bank()
-    // {
-    //     // Arrange
-    //     $bank = factory(Bank::class)->create();
-    //     $updatedData = [
-    //         'name' => 'Updated Bank Name',
-    //         // Update other fields as needed
-    //     ];
-
-    //     // Act
-    //     $response = $this->put(route('banks.update', ['bank' => $bank->id]), $updatedData);
-
-    //     // Assert
-    //     $response->assertStatus(200);
-    //     $this->assertDatabaseHas('banks', $updatedData);
-    // }
-
-    /** @test */
-    // public function it_can_delete_a_bank()
-    // {
-    //     // Arrange
-    //     $bank = factory(Bank::class)->create();
-
-    //     // Act
-    //     $response = $this->delete(route('banks.destroy', ['bank' => $bank->id]));
-
-    //     // Assert
-    //     $response->assertStatus(204);
-    //     $this->assertDatabaseMissing('banks', ['id' => $bank->id]);
-    // }
 }

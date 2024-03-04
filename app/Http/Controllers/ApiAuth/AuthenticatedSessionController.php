@@ -28,10 +28,11 @@ class AuthenticatedSessionController extends Controller
             ], 422);
         }
         $user = Auth::user();
+
         $token = $user->createToken('main')->plainTextToken;
 
         return response([
-            'user' => $user,
+            'user' => "user",
             'token' => $token
         ]);
     }

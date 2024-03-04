@@ -20,7 +20,7 @@ class BankController extends Controller
      * @param Request $request
      * @return BankCollection
      */
-    public function index(Request $request)
+    public function index()
     {
         $banks = Bank::paginate(10);
         return  BankResource::collection($banks);
