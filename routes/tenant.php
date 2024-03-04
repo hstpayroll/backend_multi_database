@@ -84,7 +84,7 @@ Route::middleware([
             Route::apiResource('sub-departments', SubDepartmentController::class);
             Route::apiResource('tax-regions', TaxRegionController::class);
             Route::apiResource('grades', GradeController::class);
-            Route::apiResource('citizenship', CitizenshipController::class);
+            Route::apiResource('citizenships', CitizenshipController::class);
             Route::apiResource('positions', PositionController::class);
             Route::apiResource('payroll-types', PayrollTypeController::class);
             Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');

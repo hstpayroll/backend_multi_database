@@ -34,6 +34,7 @@ class TenantUserSeeder extends Seeder
                 'employee_index', 'employee_store', 'employee_show', 'employee_update', 'employee_destroy',
                 'bank_index', 'bank_store', 'bank_show', 'bank_update', 'bank_destroy',
                 'calendar_index', 'calendar_store', 'calendar_show', 'calendar_update', 'calendar_destroy',
+                'citizenship_index', 'citizenship_store', 'citizenship_show', 'citizenship_update', 'citizenship_destroy',
             ]
         );
     }
