@@ -32,7 +32,7 @@ class StoreEmployeeRequest extends FormRequest
             'birth_date' => 'required|date',
             'hired_date' => 'nullable|date',
             'tin_no' => 'nullable|string',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:employees,email',
 
             'phone_number' => 'required|numeric|min:10|unique:employees,phone_number',
             'city' => 'nullable|string|max:255',
@@ -49,7 +49,6 @@ class StoreEmployeeRequest extends FormRequest
             'position_id' => 'required|exists:positions,id',
             'employment_type_id' => 'required|exists:employment_types,id',
             'citizenship_id' => 'required|exists:citizenships,id',
-            'email' => 'required|email',
             'bank_id' => 'required|exists:banks,id',
             'account_number' => 'nullable|string',
             'image' => 'nullable|string', // Assuming the image will be stored as a string (path or URL)

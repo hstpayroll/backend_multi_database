@@ -14,11 +14,11 @@ class SubDepartmentSeeder extends Seeder
     public function run(): void
     {
         SubDepartment::create([
-            'name' => 'Sub Department 2',
+            'name' => 'Sub Department 1',
             'department_id' => 1,
         ]);
         SubDepartment::create([
-            'name' => 'Sub Depertment 2',
+            'name' => 'Sub Department 2',
             'department_id' => 1,
         ]);
     }

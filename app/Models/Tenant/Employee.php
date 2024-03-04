@@ -48,6 +48,7 @@ class Employee extends Model
         'comment'
     ];
 
+
     public function allowanceTransactions()
     {
         return $this->hasMany(
