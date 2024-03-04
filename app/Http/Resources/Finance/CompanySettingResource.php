@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Finance;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\Finance\CompanyResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CompanySettingResource extends JsonResource
@@ -16,7 +17,7 @@ class CompanySettingResource extends JsonResource
     {
            return [
             'id' => $this->id,
-            'company_id' => $this->company_id,
+            'company' => CompanyResource::make($this->company),
             'name' => $this->name,
             'description' => $this->description,
             'value' => $this->value,
