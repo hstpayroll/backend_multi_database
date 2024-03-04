@@ -51,6 +51,13 @@ class TenantPermissionSeeder extends Seeder
             'citizenship_update',
             'citizenship_destroy',
 
+            //Companies
+            'company_index',
+            'company_store',
+            'company_show',
+            'company_update',
+            'company_destroy',
+
 
         ];
         foreach ($permissions as $permission) {
