@@ -23,12 +23,21 @@ class TenantPermissionSeeder extends Seeder
             'tenant_user_update',
             'tenant_user_destroy',
 
-            //employes
+            //employs
             'employee_index',
             'employee_store',
             'employee_show',
             'employee_update',
             'employee_destroy',
+
+            //Banks
+            'bank_index',
+            'bank_store',
+            'bank_show',
+            'bank_update',
+            'bank_destroy',
+
+
         ];
         foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);

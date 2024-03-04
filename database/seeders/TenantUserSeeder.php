@@ -28,6 +28,12 @@ class TenantUserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ])->assignRole(['accountant']);
-        $user5->givePermissionTo(['edit_profile', 'change_password', 'employee_index', 'employee_store', 'employee_show', 'employee_update', 'employee_destroy']);
+        $user5->givePermissionTo(
+            [
+                'edit_profile', 'change_password',
+                'employee_index', 'employee_store', 'employee_show', 'employee_update', 'employee_destroy',
+                'bank_index', 'bank_store', 'bank_show', 'bank_update', 'bank_destroy'
+            ]
+        );
     }
 }

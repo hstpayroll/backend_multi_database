@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\BankCollection;
 use App\Http\Requests\StoreBankRequest;
 use App\Http\Resources\Finance\BankResource;
+use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 
 class BankController extends Controller
@@ -20,10 +21,19 @@ class BankController extends Controller
      * @param Request $request
      * @return BankCollection
      */
-    public function index()
+    public function index(Request $request)
     {
-        $banks = Bank::paginate(10);
-        return  BankResource::collection($banks);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('bank_indexs')) {
+                $banks = Bank::paginate(10);
+                return  BankResource::collection($banks);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
     public function store(StoreBankRequest $request)
