@@ -36,6 +36,16 @@ use App\Http\Controllers\Api\V1\CompanySettingController;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use App\Http\Controllers\Api\V1\EmployeePensionController;
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
+
+use App\Http\Controllers\Api\V1\LoanTypeController;
+use App\Http\Controllers\Api\V1\MainAllowanceController;
+use App\Http\Controllers\Api\V1\OverTimeTypeController;
+use App\Http\Controllers\Api\V1\PayrollPeriodController;
+use App\Http\Controllers\Api\V1\PayrollTypeController;
+use App\Http\Controllers\Api\V1\PayslipSettingController;
+use App\Http\Controllers\Api\V1\PositionController;
+use App\Http\Controllers\Api\V1\SubDepartmentController;
+use App\Http\Controllers\Api\V1\TaxRegionController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 /*
@@ -99,6 +109,7 @@ Route::middleware([
             Route::apiResource('company-pensions', CompanyPensionController::class);
             Route::apiResource('overtime-types', OverTimeTypeController::class);
             Route::apiResource('company-settings', CompanySettingController::class);
+            Route::apiResource('payslip-settings', PayslipSettingController::class);
         });
 });
 
