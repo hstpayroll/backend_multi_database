@@ -15,11 +15,6 @@ class CompanyPensionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    // public function index()
-    // {
-    //     $companyPension = CompanyPension::paginate(10);
-    //     return   CompanyPensionResource::collection($companyPension);
-    // }
 
     public function index(Request $request)
     {
@@ -39,11 +34,6 @@ class CompanyPensionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    // public function store(StoreCompanyPensionRequest $request)
-    // {
-    //     $companyPension = CompanyPension::create($request->validated());
-    //     return new CompanyPensionResource($companyPension);
-    // }
 
     public function store(StoreCompanyPensionRequest $request)
     {
@@ -62,10 +52,6 @@ class CompanyPensionController extends Controller
     /**
      * Display the specified resource.
      */
-    // public function show(CompanyPension $companyPension)
-    // {
-    //     return new CompanyPensionResource($companyPension);
-    // }
     public function show(Request $request, CompanyPension $companyPension)
     {
         $user = $request->user();
@@ -83,11 +69,6 @@ class CompanyPensionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    // public function update(UpdateCompanyPensionRequest $request, CompanyPension $companyPension)
-    // {
-    //     $companyPension->update($request->validated());
-    //     return new CompanyPensionResource($companyPension);
-    // }
     public function update(UpdateCompanyPensionRequest $request, CompanyPension $companyPension)
     {
         try {
@@ -107,11 +88,6 @@ class CompanyPensionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    // public function destroy(CompanyPension $companyPension)
-    // {
-    //     $companyPension->delete();
-    //     return response()->noContent();
-    // }
     public function destroy(Request $request, CompanyPension $companyPension)
     {
         try {
