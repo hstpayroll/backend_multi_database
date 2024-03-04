@@ -9,37 +9,83 @@ use App\Http\Requests\UpdateDepartmentRequest;
 use App\Http\Resources\Finance\DepartmentResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class DepartmentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $departments = Department::paginate(10);
-        return DepartmentResource::collection($departments);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('department_index')) {
+                $departments = Department::paginate(10);
+                return DepartmentResource::collection($departments);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
     public function store(StoreDepartmentRequest $request)
     {
-        $validatedData = $request->validated();
-        $department = Department::create($validatedData);
-        return new DepartmentResource($department);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('department_store')) {
+                $validatedData = $request->validated();
+                $department = Department::create($validatedData);
+                return new DepartmentResource($department);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    public function show(Department $department)
+    public function show(Request $request, Department $department)
     {
-        return new DepartmentResource($department);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('department_show')) {
+                return new DepartmentResource($department);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
     public function update(UpdateDepartmentRequest $request, Department $department)
     {
-        $validatedData = $request->validated();
-        $department->update($validatedData);
-        return new DepartmentResource($department);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('department_update')) {
+                $validatedData = $request->validated();
+                $department->update($validatedData);
+                return new DepartmentResource($department);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    public function destroy(Department $department)
+    public function destroy(Request $request, Department $department)
     {
-        $department->delete();
-        return Response::noContent();
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('department_destroy')) {
+                $department->delete();
+                return Response::noContent();
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 }

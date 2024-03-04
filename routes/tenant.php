@@ -27,6 +27,7 @@ use App\Http\Controllers\Api\V1\PayrollNameController;
 use App\Http\Controllers\Api\V1\PayrollTypeController;
 use App\Http\Controllers\Api\V1\OverTimeTypeController;
 use App\Http\Controllers\Api\V1\AllowanceTypeController;
+use App\Http\Controllers\Api\V1\BranchController;
 use App\Http\Controllers\Api\V1\MainAllowanceController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
 use App\Http\Controllers\Api\V1\SubDepartmentController;
@@ -87,7 +88,7 @@ Route::middleware([
             Route::apiResource('sub-departments', SubDepartmentController::class);
             Route::apiResource('tax-regions', TaxRegionController::class);
             Route::apiResource('grades', GradeController::class);
-            Route::apiResource('citizenship', CitizenshipController::class);
+            Route::apiResource('citizenships', CitizenshipController::class);
             Route::apiResource('positions', PositionController::class);
             Route::apiResource('payroll-types', PayrollTypeController::class);
             Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');
@@ -103,6 +104,7 @@ Route::middleware([
             Route::apiResource('overtime-types', OverTimeTypeController::class);
             Route::apiResource('company-settings', CompanySettingController::class);
             Route::apiResource('payslip-settings', PayslipSettingController::class);
+            Route::apiResource('branches', BranchController::class);
         });
 });
 

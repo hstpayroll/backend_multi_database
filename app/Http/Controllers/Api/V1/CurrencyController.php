@@ -7,47 +7,81 @@ use App\Models\Tenant\Currency;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCurrencyRequest;
 use App\Http\Resources\Finance\CurrencyResource;
+use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class CurrencyController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $currencies = Currency::paginate(10); // You can adjust the number of items per page as needed
-        return CurrencyResource::collection($currencies);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('currency_index')) {
+                $currencies = Currency::paginate(10); // You can adjust the number of items per page as needed
+                return CurrencyResource::collection($currencies);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreCurrencyRequest $request)
     {
-        $currency =   Currency::create($request->validated());
-        return new CurrencyResource($currency);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('currency_store')) {
+                $currency = Currency::create($request->validated());
+                return new CurrencyResource($currency);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Currency $currency)
+    public function show(Request $request, Currency $currency)
     {
-        return new CurrencyResource($currency);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('currency_show')) {
+                return new CurrencyResource($currency);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(StoreCurrencyRequest $request, Currency $currency)
     {
-        $currency->update($request->validated());
-        return new CurrencyResource($currency->refresh());
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('currency_update')) {
+                $currency->update($request->validated());
+                return new CurrencyResource($currency->refresh());
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Currency $currency)
+    public function destroy(Request $request, Currency $currency)
     {
-        $currency->delete();
-        return response()->noContent();
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('currency_destroy')) {
+                $currency->delete();
+                return response()->noContent();
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 }
