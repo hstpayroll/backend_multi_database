@@ -6,12 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Tenant\Citizenship;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCitizenshipRequest;
-use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\UpdateCitizenshipRequest;
 use App\Http\Resources\Finance\CitizenshipResource;
-use App\Models\Tenant\Citizenship;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
+
 
 class CitizenshipController extends Controller
 {
