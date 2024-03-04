@@ -64,7 +64,7 @@ class TenantPermissionSeeder extends Seeder
             'department_show',
             'department_update',
             'department_destroy',
-            
+
             // Currency
             'currency_index',
             'currency_store',
