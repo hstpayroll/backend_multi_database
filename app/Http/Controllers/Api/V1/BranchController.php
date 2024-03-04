@@ -3,52 +3,87 @@
 namespace App\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBranchRequest;
+use App\Http\Requests\UpdateBranchRequest;
+use App\Http\Resources\Finance\BranchResource;
 use App\Models\Tenant\Branch;
 use Illuminate\Http\JsonResponse;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\Branch\BranchResource;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class BranchController extends Controller
 {
-    public function __construct()
+    public function index(Request $request)
     {
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('branch_index')) {
+                $branches = Branch::paginate();
+                return BranchResource::collection($branches);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
-    public function index(): AnonymousResourceCollection
+    public function store(StoreBranchRequest $request)
     {
-        $branches = Branch::paginate();
-
-        return BranchResource::collection($branches);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('branch_store')) {
+                $branch = Branch::create($request->validated());
+                return new BranchResource($branch);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
-    public function store(Request $request): JsonResponse
+    public function show(Request $request, Branch $branch)
     {
-        $branch = Branch::create($request->validated());
-
-        return $this->responseCreated(
-            'Branch created successfully',
-            new BranchResource($branch)
-        );
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('branch_show')) {
+                return new BranchResource($branch);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
-    public function show(Branch $branch): JsonResponse
+    public function update(UpdateBranchRequest $request, Branch $branch)
     {
-        return $this->responseSuccess(null, new BranchResource($branch));
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('branch_update')) {
+                $branch->update($request->validated());
+                return new BranchResource($branch);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
-    public function update(Request $request, Branch $branch): JsonResponse
+    public function destroy(Request $request, Branch $branch)
     {
-        $branch->update($request->validated());
-
-        return $this->responseSuccess('Branch updated Successfully', new BranchResource($branch));
-    }
-
-    public function destroy(Branch $branch): JsonResponse
-    {
-        $branch->delete();
-
-        return $this->responseDeleted();
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('branch_destroy')) {
+                $branch->delete();
+                return response()->json(['message' => 'Branch deleted successfully']);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 }

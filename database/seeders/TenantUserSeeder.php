@@ -32,7 +32,23 @@ class TenantUserSeeder extends Seeder
             [
                 'edit_profile', 'change_password',
                 'employee_index', 'employee_store', 'employee_show', 'employee_update', 'employee_destroy',
-                'bank_index', 'bank_store', 'bank_show', 'bank_update', 'bank_destroy'
+                'bank_index', 'bank_store', 'bank_show', 'bank_update', 'bank_destroy',
+                'branch_index', 'branch_store', 'branch_show', 'branch_update', 'branch_destroy',
+                'citizenship_index', 'citizenship_store', 'citizenship_show', 'citizenship_update', 'citizenship_destroy',
+                'cost_center_index', 'cost_center_store', 'cost_center_show', 'cost_center_update', 'cost_center_destroy',
+                // Departments
+                'department_index',
+                'department_store',
+                'department_show',
+                'department_update',
+                'department_destroy',
+
+                // Currency
+                'currency_index',
+                'currency_store',
+                'currency_show',
+                'currency_update',
+                'currency_destroy',
             ]
         );
     }

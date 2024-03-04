@@ -37,6 +37,40 @@ class TenantPermissionSeeder extends Seeder
             'bank_update',
             'bank_destroy',
 
+            // Branches
+            'branch_index',
+            'branch_store',
+            'branch_show',
+            'branch_update',
+            'branch_destroy',
+
+            // Citizenship
+            'citizenship_index',
+            'citizenship_store',
+            'citizenship_show',
+            'citizenship_update',
+            'citizenship_destroy',
+
+            // Cost Centers
+            'cost_center_index',
+            'cost_center_store',
+            'cost_center_show',
+            'cost_center_update',
+            'cost_center_destroy',
+
+            // Departments
+            'department_index',
+            'department_store',
+            'department_show',
+            'department_update',
+            'department_destroy',
+            
+            // Currency
+            'currency_index',
+            'currency_store',
+            'currency_show',
+            'currency_update',
+            'currency_destroy',
 
         ];
         foreach ($permissions as $permission) {
