@@ -58,6 +58,13 @@ class TenantPermissionSeeder extends Seeder
             'company_update',
             'company_destroy',
 
+            //Company-pensions
+            'company-pensions_index',
+            'company-pensions_store',
+            'company-pensions_show',
+            'company-pensions_update',
+            'company-pensions_destroy',
+
 
         ];
         foreach ($permissions as $permission) {
