@@ -2,27 +2,27 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Resources\Finance\OverTimeTypeResource;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateOverTimeCalculationRequest extends FormRequest
+class StoreOverTimeCalculationRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
+    public function rules()
     {
         return [
-            //
+            'id' => $this->id,
+            'employee_id' => $this->employee_id,
+            'over_time_type' => new OverTimeTypeResource($this->overTimeType),
+            'ot_date' => $this->ot_date,
+            'ot_hour' => $this->ot_hour,
+            'ot_value' => $this->ot_value,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ];
     }
 }

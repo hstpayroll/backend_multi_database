@@ -13,12 +13,18 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $employees = Employee::paginate(10);
-        // $employees = Employee::first();
-        // dd($employees->subDepartment);
-        return EmployeeResource::collection($employees);
+        $user = $request->user();
+        if ($user->hasPermissionTo('index employee')) {
+            $employees = Employee::paginate(10);
+            return EmployeeResource::collection($employees);
+
+            // return response()->json(['message' => 'Action performed successfully']);
+        } else {
+            // User doesn't have permission, return unauthorized response
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
     }
 
     public function store(StoreEmployeeRequest $request)

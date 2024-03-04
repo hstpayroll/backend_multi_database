@@ -20,7 +20,7 @@ return [
     'central_domains' => [
         'localhost',
         '127.0.0.1',
-        'pay.hst-et.com'
+        // 'pay.hst-et.com'
         // '10.1.11.29',
         // 'multidb.local'
     ],

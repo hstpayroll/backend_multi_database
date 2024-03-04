@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
         $token = $user->createToken('main')->plainTextToken;
 
         return response([
-            'user' => "user",
+            'user' =>  $user,
             'token' => $token
         ]);
     }

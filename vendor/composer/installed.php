@@ -491,6 +491,7 @@
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
             'reference' => 'be00382ef0bd3992363c16e3847901a6a6ff4fdc',
+            'reference' => '2a1b2b6b0d800ae10fd32d34035ba4e632cfd874',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
