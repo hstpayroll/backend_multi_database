@@ -25,7 +25,7 @@ class BankController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('bank_indexs')) {
+            if ($user->hasPermissionTo('bank_index')) {
                 $banks = Bank::paginate(10);
                 return  BankResource::collection($banks);
             } else {
@@ -38,13 +38,31 @@ class BankController extends Controller
 
     public function store(StoreBankRequest $request)
     {
-        $bank = Bank::create($request->validated());
-        return new BankResource($bank);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('bank_stores')) {
+                $bank = Bank::create($request->validated());
+                return new BankResource($bank);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
-    public function show(Bank $bank)
+    public function show(Request $request, Bank $bank)
     {
-        return new BankResource($bank);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('bank_show')) {
+                return new BankResource($bank);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
     /**
@@ -56,8 +74,17 @@ class BankController extends Controller
      */
     public function update(StoreBankRequest $request, Bank $bank)
     {
-        $bank->update($request->validated());
-        return new BankResource($bank);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('bank_update')) {
+                $bank->update($request->validated());
+                return new BankResource($bank);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
     /**
@@ -67,12 +94,21 @@ class BankController extends Controller
      * @return JsonResponse
      * @throws Exception
      */
-    public function destroy(Bank $bank)
+    public function destroy(Request $request, Bank $bank)
     {
-        $bank->delete();
-        return response()->json([
-            'status' => 200,
-            'message' => 'Bank deleted successfully',
-        ]);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('bank_update')) {
+                $bank->delete();
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Bank deleted successfully',
+                ]);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 }
