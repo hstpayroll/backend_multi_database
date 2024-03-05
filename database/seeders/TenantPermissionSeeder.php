@@ -115,6 +115,13 @@ class TenantPermissionSeeder extends Seeder
             'employement_type_update',
             'employement_type_destroy',
 
+            //Fiscal Year
+            'fiscal_year_index',
+            'fiscal_year_store',
+            'fiscal_year_show',
+            'fiscal_year_update',
+            'fiscal_year_destroy',
+
 
         ];
         foreach ($permissions as $permission) {
