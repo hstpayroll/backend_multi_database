@@ -17,4 +17,8 @@ class FiscalYear  extends Model
         'description',
         'status'
     ];
+    public function payrollPeriods()
+    {
+        return $this->hasMany(PayrollPeriod::class);
+    }
 }

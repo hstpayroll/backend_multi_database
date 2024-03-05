@@ -45,6 +45,14 @@ class TenantPermissionSeeder extends Seeder
             'branch_destroy',
 
             // Citizenship
+            //Calendars
+            'calendar_index',
+            'calendar_store',
+            'calendar_show',
+            'calendar_update',
+            'calendar_destroy',
+
+            //citizenships
             'citizenship_index',
             'citizenship_store',
             'citizenship_show',
@@ -71,6 +79,27 @@ class TenantPermissionSeeder extends Seeder
             'currency_show',
             'currency_update',
             'currency_destroy',
+            //Companies
+            'company_index',
+            'company_store',
+            'company_show',
+            'company_update',
+            'company_destroy',
+
+            //Company_pensions
+            'company_pension_index',
+            'company_pension_store',
+            'company_pension_show',
+            'company_pension_update',
+            'company_pension_destroy',
+
+            //Company_Setting
+            'company_setting_index',
+            'company_setting_store',
+            'company_setting_show',
+            'company_setting_update',
+            'company_setting_destroy',
+
 
             // TaxRegion
             'tax_region_index',

@@ -18,19 +18,11 @@ use Illuminate\Database\Eloquent\Model;
 class PayrollType extends Model
 {
 
-    static $rules = [
-		'name' => 'required',
-    ];
 
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
     protected $fillable = ['name'];
 
-
-
+    public function payrollPeriods()
+    {
+        return $this->hasMany(PayrollPeriod::class);
+    }
 }

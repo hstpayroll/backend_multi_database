@@ -24,6 +24,7 @@ class PayrollPeriodController extends Controller
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
+
     }
 
     public function store(StorePayrollPeriodRequest $request)
@@ -40,6 +41,7 @@ class PayrollPeriodController extends Controller
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
+
     }
 
     public function show(Request $request, PayrollPeriod $payrollPeriod)
@@ -54,6 +56,7 @@ class PayrollPeriodController extends Controller
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
+
     }
 
     public function update(UpdatePayrollPeriodRequest $request, PayrollPeriod $payrollPeriod)
@@ -70,6 +73,7 @@ class PayrollPeriodController extends Controller
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
+
     }
 
     public function destroy(Request $request, PayrollPeriod $payrollPeriod)

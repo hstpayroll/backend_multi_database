@@ -2,69 +2,31 @@
 
 namespace App\Models\Tenant;
 
-use App\Models\Employee;
-use App\Models\AllowanceType;
-use App\Models\Tenant\AllowanceType as TenantAllowanceType;
-use App\Models\Tenant\Employee as TenantEmployee;
+use App\Models\Tenant\AllowanceType;
+use App\Models\Tenant\Employee;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class AllowanceTransaction
- *
- * @property $id
- * @property $payroll_date
- * @property $employee_id
- * @property $allowance_type_id
- * @property $amount
- * @property $taxable_amount
- * @property $non_taxable_amount
- * @property $is_day_based
- * @property $start_date
- * @property $created_at
- * @property $updated_at
- *
- * @property AllowanceType $allowanceType
- * @property Employee $employee
- * @package App
- * @mixin \Illuminate\Database\Eloquent\Builder
- */
 class AllowanceTransaction extends Model
 {
 
-    static $rules = [
-		'employee_id' => 'required',
-		'allowance_type_id' => 'required',
-		'amount' => 'required',
-		'taxable_amount' => 'required',
-		'non_taxable_amount' => 'required',
-		'is_day_based' => 'required',
-    ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['payroll_date','employee_id','allowance_type_id','amount','taxable_amount','non_taxable_amount','is_day_based','start_date'];
+    protected $fillable = ['payroll_period_id', 'employee_id', 'allowance_type_id', 'amount', 'taxable_amount', 'non_taxable_amount', 'is_day_based', 'start_date'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function allowanceType()
+    public function payrollPeriods()
     {
-        return $this->hasOne(TenantAllowanceType::class, 'id', 'allowance_type_id');
+        return $this->hasMany(PayrollPeriod::class, 'id', 'payroll_period_id');
+    }
+    public function employees()
+    {
+        return $this->hasMany(Employee::class, 'id', 'employee_id');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function employee()
+    public function allowanceTypes()
     {
-        return $this->hasOne(TenantEmployee::class, 'id', 'employee_id');
+        return $this->hasMany(AllowanceType::class, 'id', 'allowance_type_id');
     }
-
-
+    public function mainAllowance()
+    {
+        return $this->hasMany(mainAllowance::class, 'id', 'allowance_type_id');
+    }
 }

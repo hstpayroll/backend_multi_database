@@ -2,13 +2,10 @@
 
 declare(strict_types=1);
 
-use App\Models\Tenant\CompanySetting;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TailwickController;
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\LoanController;
 use App\Http\Controllers\Api\V1\UserController;
-use App\Http\Controllers\TenantRouteController;
 use App\Http\Controllers\Api\V1\GradeController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
@@ -41,6 +38,7 @@ use App\Http\Controllers\Api\V1\EmployeePensionController;
 
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+use App\Http\Controllers\Api\V1\AllowanceTransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +74,7 @@ Route::middleware([
 
             Route::apiResource('currencies', CurrencyController::class);
             Route::apiResource('banks', BankController::class);
-            Route::apiResource('calenders', CalendarController::class);
+            Route::apiResource('calendars', CalendarController::class);
             Route::apiResource('companies', CompanyController::class);
             Route::apiResource('employment-types', EmploymentTypeController::class);
             Route::apiResource('payroll-names', PayrollNameController::class);
@@ -99,6 +97,7 @@ Route::middleware([
             Route::apiResource('loan-payment-records', LoanPaymentRecordController::class);
             Route::apiResource('main-allowances', MainAllowanceController::class);
             Route::apiResource('allowance-types', AllowanceTypeController::class);
+            Route::apiResource('allowance-transactions', AllowanceTransactionController::class);
             Route::apiResource('employee-pensions', EmployeePensionController::class);
             Route::apiResource('company-pensions', CompanyPensionController::class);
             Route::apiResource('overtime-types', OverTimeTypeController::class);
