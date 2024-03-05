@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
@@ -9,36 +8,80 @@ use App\Http\Resources\Finance\PayrollTypeResource;
 use App\Models\Tenant\PayrollType;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class PayrollTypeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return PayrollTypeResource::collection(PayrollType::paginate(10));
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('payroll_type_index')) {
+                return PayrollTypeResource::collection(PayrollType::paginate(10));
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
     public function store(StorePayrollTypeRequest $request)
     {
-        // $validatedData = $request->validated();
-        $payrollType = PayrollType::create($request->validated());
-        return new PayrollTypeResource($payrollType);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('payroll_type_store')) {
+                $payrollType = PayrollType::create($request->validated());
+                return new PayrollTypeResource($payrollType);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    public function show(PayrollType $payrollType)
+    public function show(Request $request, PayrollType $payrollType)
     {
-        return new PayrollTypeResource($payrollType);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('payroll_type_show')) {
+                return new PayrollTypeResource($payrollType);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
     public function update(UpdatePayrollTypeRequest $request, PayrollType $payrollType)
     {
-        $validatedData = $request->validated();
-        $payrollType->update($validatedData);
-        return new PayrollTypeResource($payrollType);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('payroll_type_update')) {
+                $payrollType->update($request->validated());
+                return new PayrollTypeResource($payrollType);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    public function destroy(PayrollType $payrollType)
+    public function destroy(Request $request, PayrollType $payrollType)
     {
-        $payrollType->delete();
-        return response()->noContent();
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('payroll_type_destroy')) {
+                $payrollType->delete();
+                return response()->noContent();
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 }
