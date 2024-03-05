@@ -108,12 +108,12 @@ class TenantPermissionSeeder extends Seeder
             'employee_pension_update',
             'employee_pension_destroy',
 
-            //Employee_pensions
-            'employee_pension_index',
-            'employee_pension_store',
-            'employee_pension_show',
-            'employee_pension_update',
-            'employee_pension_destroy',
+            //Employement-Type
+            'employement_type_index',
+            'employement_type_store',
+            'employement_type_show',
+            'employement_type_update',
+            'employement_type_destroy',
 
 
         ];
