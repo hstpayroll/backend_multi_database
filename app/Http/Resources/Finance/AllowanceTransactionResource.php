@@ -11,29 +11,14 @@ class AllowanceTransactionResource extends JsonResource
         return [
             'id' => $this->id,
             'payrollPeriods' => PayrollPeriodResource::collection($this->payrollPeriods),
-            // 'employees' => EmployeeResource::collection($this->employee),
-            // 'allowanceTypes' => AllowanceTypeResource::collection($this->allowanceTypes),
-            // 'main_allowance' => new MainAllowanceResource($this->mainAllowance), // Assuming mainAllowance is the relationship with the MainAllowance model
-            // 'name' => $this->name,
-            // 'taxability' => $this->getTaxabilityLabel(),
-            // 'tax_free_amount' => $this->tax_free_amount,
-            // 'value_type' => $this->value_type == 0 ? 'amount' : 'Percent',
-            // 'status' => $this->status == 1 ? 'active' : 'inactive',
+            'employees' => EmployeeResource::collection($this->employees),
+            'allowanceTypes' => AllowanceTypeResource::collection($this->allowanceTypes),
+            'amount' => $this->amount,
+            'taxable_amount' => $this->taxable_amount,
+            'tax_free_amount' => $this->tax_free_amount,
+            'is_day_based' => $this->value_type == 0 ? 'Yes' : 'No',
+            'start_date' =>  $this->start_date,
+            'status' => $this->status == 1 ? 'active' : 'inactive',
         ];
-    }
-    protected function getTaxabilityLabel()
-    {
-        switch ($this->taxability) {
-            case 1:
-                return 'Tax-free';
-            case 2:
-                return 'Taxable';
-            case 3:
-                return 'Partially taxable';
-            case 4:
-                return 'Tax covered by employer';
-            default:
-                return null;
-        }
     }
 }

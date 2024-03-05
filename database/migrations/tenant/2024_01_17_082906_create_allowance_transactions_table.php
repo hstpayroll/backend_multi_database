@@ -17,10 +17,11 @@ return new class extends Migration
             $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('allowance_type_id')->constrained('allowance_types')->onDelete('restrict')->onUpdate('cascade');
             $table->decimal('amount', 10, 2);
-            $table->decimal('taxable_amount', 10, 2)->default(0);
-            $table->decimal('non_taxable_amount', 10, 2)->default(0);
+            $table->decimal('taxable_amount', 10, 2)->nullable()->default(0);
+            $table->decimal('non_taxable_amount', 10, 2)->nullable()->default(0);
             $table->boolean('is_day_based')->default(0);
             $table->date('start_date')->nullable();
+            $table->tinyInteger('status')->default(0); //0 for inactive 1 for active
             $table->timestamps();
         });
     }

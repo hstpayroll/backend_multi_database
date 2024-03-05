@@ -12,26 +12,25 @@ class PayrollPeriodController extends Controller
 {
     public function index()
     {
-        $payrollPeriods = PayrollPeriod::first();
+        $payrollPeriods = PayrollPeriod::with(['payrollName', 'payrollType', 'fiscalYear', 'employeePension', 'companyPension'])->paginate();
         return PayrollPeriodResource::collection($payrollPeriods);
     }
 
     public function store(StorePayrollPeriodRequest $request)
     {
-        $validatedData = $request->validated();
-        $payrollPeriod = PayrollPeriod::create($validatedData);
+        $payrollPeriod = PayrollPeriod::create($request->validated());
         return new PayrollPeriodResource($payrollPeriod);
     }
 
     public function show(PayrollPeriod $payrollPeriod)
     {
+        $payrollPeriod->load(['payrollName', 'payrollType', 'fiscalYear', 'employeePension', 'companyPension']);
         return new PayrollPeriodResource($payrollPeriod);
     }
 
     public function update(UpdatePayrollPeriodRequest $request, PayrollPeriod $payrollPeriod)
     {
-        $validatedData = $request->validated();
-        $payrollPeriod->update($validatedData);
+        $payrollPeriod->update($request->validated());
         return new PayrollPeriodResource($payrollPeriod);
     }
 
