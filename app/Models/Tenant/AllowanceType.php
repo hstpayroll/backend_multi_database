@@ -3,14 +3,11 @@
 namespace App\Models\Tenant;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AllowanceType extends Model
 {
     use SoftDeletes;
-
-    protected $perPage = 20;
 
     protected $fillable = [
         'main_allowance_id',
@@ -21,13 +18,13 @@ class AllowanceType extends Model
         'status'
     ];
 
-    public function allowanceTransactions(): HasMany
-    {
-        return $this->hasMany(AllowanceTransaction::class, 'allowance_type_id', 'id');
-    }
-
     public function mainAllowance()
     {
-        return $this->belongsTo(MainAllowance::class, 'main_allowance_id');
+        return $this->hasMany(MainAllowance::class, 'id', 'main_allowance_id');
+    }
+
+    public function allowanceTransactions()
+    {
+        return $this->belongsTo(AllowanceTransaction::class, 'allowance_type_id', 'id');
     }
 }

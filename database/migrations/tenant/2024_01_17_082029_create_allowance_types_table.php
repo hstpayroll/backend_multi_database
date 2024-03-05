@@ -14,8 +14,8 @@ return new class extends Migration
             $table->foreignId('main_allowance_id')->constrained('main_allowances')->onDelete('restrict')->onUpdate('cascade');
             $table->string('name');
             $table->tinyInteger('taxability')->default(1);
-            $table->decimal('tax_free_amount', 10, 2)->default(0);
-            $table->boolean('value_type')->default(1);
+            $table->decimal('tax_free_amount', 10, 2)->default(0)->nullable();
+            $table->boolean('value_type')->default(0); //0 for fixed value, 1 for percentage
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
             $table->softDeletes();

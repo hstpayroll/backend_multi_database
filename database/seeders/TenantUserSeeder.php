@@ -34,7 +34,6 @@ class TenantUserSeeder extends Seeder
                 'employee_index', 'employee_store', 'employee_show', 'employee_update', 'employee_destroy',
                 'bank_index', 'bank_store', 'bank_show', 'bank_update', 'bank_destroy',
                 'branch_index', 'branch_store', 'branch_show', 'branch_update', 'branch_destroy',
-                'citizenship_index', 'citizenship_store', 'citizenship_show', 'citizenship_update', 'citizenship_destroy',
                 'cost_center_index', 'cost_center_store', 'cost_center_show', 'cost_center_update', 'cost_center_destroy',
                 // Departments
                 'department_index',
@@ -49,6 +48,11 @@ class TenantUserSeeder extends Seeder
                 'currency_show',
                 'currency_update',
                 'currency_destroy',
+                'calendar_index', 'calendar_store', 'calendar_show', 'calendar_update', 'calendar_destroy',
+                'citizenship_index', 'citizenship_store', 'citizenship_show', 'citizenship_update', 'citizenship_destroy',
+                'company_index', 'company_store', 'company_show', 'company_update', 'company_destroy',
+                'company_pension_index', 'company_pension_store', 'company_pension_show', 'company_pension_update', 'company_pension_destroy',
+                'company_setting_index', 'company_setting_store', 'company_setting_show', 'company_setting_update', 'company_setting_destroy',
             ]
         );
     }

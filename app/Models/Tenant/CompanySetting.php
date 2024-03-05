@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompanySetting extends Model
 {
-    
+
     use HasFactory;
 
     protected $fillable = ['company_id', 'name', 'description', 'value'];
@@ -16,11 +16,9 @@ class CompanySetting extends Model
     {
         return $this->belongsTo(Company::class, 'company_id'); // Specify the foreign key
     }
-    
-    public function companyDetail()
-    {
-        return $this->hasOne(Company::class, 'id', 'company_id'); // Specify the foreign key and local key
-    }
+
+    // public function companyDetail()
+    // {
+    //     return $this->hasOne(Company::class, 'id', 'company_id'); // Specify the foreign key and local key
+    // }
 }
-
-

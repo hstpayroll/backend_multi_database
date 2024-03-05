@@ -23,14 +23,8 @@ class MainAllowance extends Model
 {
     use SoftDeletes;
 
-    protected $perPage = 20;
 
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['name','description'];
+    protected $fillable = ['name', 'description'];
 
 
     /**
@@ -40,6 +34,4 @@ class MainAllowance extends Model
     {
         return $this->hasMany(AllowanceType::class, 'main_allowance_id', 'id');
     }
-
-
 }

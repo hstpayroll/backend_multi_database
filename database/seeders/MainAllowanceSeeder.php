@@ -14,8 +14,12 @@ class MainAllowanceSeeder extends Seeder
     public function run(): void
     {
         MainAllowance::create([
-        'name' => 'Hardship Allowance',
-        'description' => 'Hardship Allowance description',
+            'name' => 'Transportation Allowance',
+            'description' => 'Transportation Allowance description',
+        ]);
+        MainAllowance::create([
+            'name' => 'Hardship Allowance',
+            'description' => 'Hardship Allowance description',
         ]);
     }
 }

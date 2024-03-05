@@ -14,7 +14,8 @@ class PayrollTypeController extends Controller
 {
     public function index()
     {
-        return PayrollTypeResource::collection(PayrollType::paginate(10));
+        $payrollTypes = PayrollType::paginate(10);
+        return PayrollTypeResource::collection($payrollTypes);
     }
 
     public function store(StorePayrollTypeRequest $request)

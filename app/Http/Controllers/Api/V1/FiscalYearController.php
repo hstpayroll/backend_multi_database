@@ -13,7 +13,7 @@ class FiscalYearController extends Controller
 {
     public function index()
     {
-        $fiscalYears = FiscalYear::paginate(10);
+        $fiscalYears = FiscalYear::paginate();
         return  FiscalYearResource::collection($fiscalYears);
     }
 

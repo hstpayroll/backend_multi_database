@@ -18,7 +18,7 @@ class EmployeeController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('employee_indexes')) {
+            if ($user->hasPermissionTo('employee_index')) {
                 $employees = Employee::paginate(10);
                 return EmployeeResource::collection($employees);
             } else {
@@ -31,27 +31,63 @@ class EmployeeController extends Controller
 
     public function store(StoreEmployeeRequest $request)
     {
-        $validatedData = $request->validated();
-        $employee = Employee::create($validatedData);
-        return new EmployeeResource($employee);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('employee_store')) {
+                $validatedData = $request->validated();
+                $employee = Employee::create($validatedData);
+                return new EmployeeResource($employee);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
-    public function show(Employee $employee)
+    public function show(Request $request, Employee $employee)
     {
-        return new EmployeeResource($employee);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('employee_show')) {
+                return new EmployeeResource($employee);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
-        $validatedData = $request->validated();
-        $employee->update($validatedData);
-        return new EmployeeResource($employee);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('employee_update')) {
+                $validatedData = $request->validated();
+                $employee->update($validatedData);
+                return new EmployeeResource($employee);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
-    public function destroy(Employee $employee)
+    public function destroy(Request $request, Employee $employee)
     {
-        $employee->delete();
-        return response()->json(null, 204);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('employee_destroy')) {
+                $employee->delete();
+                return response()->json(null, 204);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
     public function employeeDepartment(Request $request, Employee $employee)
     {

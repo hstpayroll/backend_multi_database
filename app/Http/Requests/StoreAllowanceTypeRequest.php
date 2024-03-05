@@ -17,9 +17,9 @@ class StoreAllowanceTypeRequest extends FormRequest
             'main_allowance_id' => 'required|exists:main_allowances,id',
             'name' => 'required|string',
             'taxability' => 'required|integer',
-            'tax_free_amount' => 'required|numeric',
-            'value_type' => 'required|boolean',
-            'status' => 'required|integer',
+            'tax_free_amount' => 'nullable|numeric|required_if:taxability,3',
+            'value_type' => 'nullable|boolean',
+            'status' => 'nullable|integer',
         ];
     }
 }
