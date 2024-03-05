@@ -14,7 +14,7 @@ class PayslipSettingResource extends JsonResource
             'company' => new CompanyResource($this->company),
             'name' => $this->name,
             'description' => $this->description,
-            'value' => $this->value,
-        ];
+            'value' => $this->value == 1 ? true : false,
+        ];        
     }
 }
