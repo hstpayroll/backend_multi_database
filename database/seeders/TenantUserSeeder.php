@@ -35,6 +35,7 @@ class TenantUserSeeder extends Seeder
                 'bank_index', 'bank_store', 'bank_show', 'bank_update', 'bank_destroy',
                 'branch_index', 'branch_store', 'branch_show', 'branch_update', 'branch_destroy',
                 'cost_center_index', 'cost_center_store', 'cost_center_show', 'cost_center_update', 'cost_center_destroy',
+
                 // Departments
                 'department_index',
                 'department_store',

@@ -8,35 +8,82 @@ use App\Http\Requests\StoreLoanPaymentRecordRequest;
 use App\Http\Requests\UpdateLoanPaymentRecordRequest;
 use App\Http\Resources\Finance\LoanPaymentRecordResource;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class LoanPaymentRecordController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $loanPaymentRecords = LoanPaymentRecord::paginate(10);
-        return LoanPaymentRecordResource::collection($loanPaymentRecords);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('loan_payment_record_index')) {
+                $loanPaymentRecords = LoanPaymentRecord::paginate(10);
+                return LoanPaymentRecordResource::collection($loanPaymentRecords);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
     public function store(StoreLoanPaymentRecordRequest $request)
     {
-        $loanPaymentRecord = LoanPaymentRecord::create($request->validated());
-        return new LoanPaymentRecordResource($loanPaymentRecord);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('loan_payment_record_store')) {
+                $loanPaymentRecord = LoanPaymentRecord::create($request->validated());
+                return new LoanPaymentRecordResource($loanPaymentRecord);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    public function show(LoanPaymentRecord $loanPaymentRecord)
+    public function show(Request $request, LoanPaymentRecord $loanPaymentRecord)
     {
-        return new LoanPaymentRecordResource($loanPaymentRecord);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('loan_payment_record_show')) {
+                return new LoanPaymentRecordResource($loanPaymentRecord);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
     public function update(UpdateLoanPaymentRecordRequest $request, LoanPaymentRecord $loanPaymentRecord)
     {
-        $loanPaymentRecord->update($request->validated());
-        return new LoanPaymentRecordResource($loanPaymentRecord);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('loan_payment_record_update')) {
+                $loanPaymentRecord->update($request->validated());
+                return new LoanPaymentRecordResource($loanPaymentRecord);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 
-    public function destroy(LoanPaymentRecord $loanPaymentRecord)
+    public function destroy(Request $request, LoanPaymentRecord $loanPaymentRecord)
     {
-        $loanPaymentRecord->delete();
-        return response()->noContent();
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('loan_payment_record_destroy')) {
+                $loanPaymentRecord->delete();
+                return response()->noContent();
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
     }
 }
