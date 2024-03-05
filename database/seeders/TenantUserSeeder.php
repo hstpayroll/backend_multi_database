@@ -53,6 +53,7 @@ class TenantUserSeeder extends Seeder
                 'company_index', 'company_store', 'company_show', 'company_update', 'company_destroy',
                 'company_pension_index', 'company_pension_store', 'company_pension_show', 'company_pension_update', 'company_pension_destroy',
                 'company_setting_index', 'company_setting_store', 'company_setting_show', 'company_setting_update', 'company_setting_destroy',
+                'employee_pension_index', 'employee_pension_store', 'employee_pension_show', 'employee_pension_update', 'employee_pension_destroy',
             ]
         );
     }
