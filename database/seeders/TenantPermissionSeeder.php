@@ -122,6 +122,13 @@ class TenantPermissionSeeder extends Seeder
             'fiscal_year_update',
             'fiscal_year_destroy',
 
+            //Grade
+            'grade_index',
+            'grade_store',
+            'grade_show',
+            'grade_update',
+            'grade_destroy',
+
 
         ];
         foreach ($permissions as $permission) {
