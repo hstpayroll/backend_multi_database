@@ -16,7 +16,7 @@ class EmploymentTypeController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('employement_type_index')) {
+            if ($user->hasPermissionTo('employment_type_index')) {
                 $employmentTypes = EmploymentType::paginate(10);
                 return  EmploymentTypeResource::collection($employmentTypes);
             } else {
@@ -31,7 +31,7 @@ class EmploymentTypeController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('employement_type_store')) {
+            if ($user->hasPermissionTo('employment_type_store')) {
                 $employmentType = EmploymentType::create($request->validated());
                 return new EmploymentTypeResource($employmentType);
             } else {
@@ -46,7 +46,7 @@ class EmploymentTypeController extends Controller
     {
         $user = $request->user();
         try {
-            if ($user->hasPermissionTo('employement_type_show')) {
+            if ($user->hasPermissionTo('employment_type_show')) {
                 return new EmploymentTypeResource($employmentType);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
@@ -60,7 +60,7 @@ class EmploymentTypeController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('employement_type_update')) {
+            if ($user->hasPermissionTo('employment_type_update')) {
                 // Update the calendar data using the request data
                 $employmentType->update($request->all());
                 return new EmploymentTypeResource($employmentType);
@@ -76,7 +76,7 @@ class EmploymentTypeController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('employement_type_destroy')) {
+            if ($user->hasPermissionTo('employment_type_destroy')) {
                 $employmentType->delete();
                 return response()->json(['message' => 'company Pension deleted successfully']);
             } else {
