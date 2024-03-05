@@ -79,6 +79,7 @@ class TenantPermissionSeeder extends Seeder
             'currency_show',
             'currency_update',
             'currency_destroy',
+
             //Companies
             'company_index',
             'company_store',
@@ -99,6 +100,34 @@ class TenantPermissionSeeder extends Seeder
             'company_setting_show',
             'company_setting_update',
             'company_setting_destroy',
+
+            //Employee_pensions
+            'employee_pension_index',
+            'employee_pension_store',
+            'employee_pension_show',
+            'employee_pension_update',
+            'employee_pension_destroy',
+
+            //Employement-Type
+            'employement_type_index',
+            'employement_type_store',
+            'employement_type_show',
+            'employement_type_update',
+            'employement_type_destroy',
+
+            //Fiscal Year
+            'fiscal_year_index',
+            'fiscal_year_store',
+            'fiscal_year_show',
+            'fiscal_year_update',
+            'fiscal_year_destroy',
+
+            //Grade
+            'grade_index',
+            'grade_store',
+            'grade_show',
+            'grade_update',
+            'grade_destroy',
 
 
         ];
