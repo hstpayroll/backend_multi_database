@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\TaxRegionController;
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\LoanController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\GradeController;
 use App\Http\Controllers\Api\V1\BranchController;
-use App\Http\Controllers\Api\V1\SubDepartmentController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
 use App\Http\Controllers\Api\V1\CurrencyController;
@@ -28,6 +28,7 @@ use App\Http\Controllers\Api\V1\OverTimeTypeController;
 use App\Http\Controllers\Api\V1\AllowanceTypeController;
 use App\Http\Controllers\Api\V1\MainAllowanceController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
+use App\Http\Controllers\Api\V1\SubDepartmentController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use App\Http\Controllers\Api\V1\CompanyPensionController;
 use App\Http\Controllers\Api\V1\CompanySettingController;
