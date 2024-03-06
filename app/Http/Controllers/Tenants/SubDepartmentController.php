@@ -43,12 +43,12 @@ class SubDepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(SubDepartment::$rules);
+        // request()->validate(SubDepartment::$rules);
 
-        $subDepartment = SubDepartment::create($request->all());
+        // $subDepartment = SubDepartment::create($request->all());
 
-        return redirect()->route('sub-departments.index')
-            ->with('success', 'SubDepartment created successfully.');
+        // return redirect()->route('sub-departments.index')
+        //     ->with('success', 'SubDepartment created successfully.');
     }
 
     /**
@@ -59,9 +59,9 @@ class SubDepartmentController extends Controller
      */
     public function show($id)
     {
-        $subDepartment = SubDepartment::find($id);
+        // $subDepartment = SubDepartment::find($id);
 
-        return view('sub-department.show', compact('subDepartment'));
+        // return view('sub-department.show', compact('subDepartment'));
     }
 
     /**
@@ -72,9 +72,9 @@ class SubDepartmentController extends Controller
      */
     public function edit($id)
     {
-        $subDepartment = SubDepartment::find($id);
+        // $subDepartment = SubDepartment::find($id);
 
-        return view('sub-department.edit', compact('subDepartment'));
+        // return view('sub-department.edit', compact('subDepartment'));
     }
 
     /**
@@ -86,12 +86,12 @@ class SubDepartmentController extends Controller
      */
     public function update(Request $request, SubDepartment $subDepartment)
     {
-        request()->validate(SubDepartment::$rules);
+        // request()->validate(SubDepartment::$rules);
 
-        $subDepartment->update($request->all());
+        // $subDepartment->update($request->all());
 
-        return redirect()->route('sub-departments.index')
-            ->with('success', 'SubDepartment updated successfully');
+        // return redirect()->route('sub-departments.index')
+        //     ->with('success', 'SubDepartment updated successfully');
     }
 
     /**
@@ -101,9 +101,9 @@ class SubDepartmentController extends Controller
      */
     public function destroy($id)
     {
-        $subDepartment = SubDepartment::find($id)->delete();
+        // $subDepartment = SubDepartment::find($id)->delete();
 
-        return redirect()->route('sub-departments.index')
-            ->with('success', 'SubDepartment deleted successfully');
+        // return redirect()->route('sub-departments.index')
+        //     ->with('success', 'SubDepartment deleted successfully');
     }
 }
