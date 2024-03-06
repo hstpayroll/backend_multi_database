@@ -105,9 +105,9 @@ Route::middleware([
             Route::apiResource('company-settings', CompanySettingController::class);
             Route::apiResource('payslip-settings', PayslipSettingController::class);
             Route::apiResource('branches', BranchController::class);
-        });
 });
 
+        });
 
 Route::middleware([
     'web',
