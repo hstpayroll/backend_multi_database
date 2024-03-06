@@ -49,7 +49,7 @@ class CompanySettingController extends Controller
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
     }
-    
+
     /**
      * Display the specified resource.
      */
@@ -76,7 +76,7 @@ class CompanySettingController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('company_setting_update')) {
                 // Update the company setting data using the request data
-                $companySetting->update($request->all());
+                $companySetting->update($request->validated());
                 return new CompanySettingResource($companySetting);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
