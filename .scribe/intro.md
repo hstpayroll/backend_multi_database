@@ -3,7 +3,7 @@
 
 
 <aside>
-    <strong>Base URL</strong>: <code>http://multidb.local</code>
+    <strong>Base URL</strong>: <code>http://pay.hst-et.com</code>
 </aside>
 
 This documentation aims to provide all the information you need to work with our API.
