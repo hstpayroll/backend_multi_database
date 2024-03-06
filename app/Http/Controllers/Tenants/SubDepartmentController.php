@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SubDepartment;
+use App\Models\Tenant\SubDepartment;
 
 /**
  * Class SubDepartmentController
