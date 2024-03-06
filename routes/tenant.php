@@ -7,6 +7,8 @@ use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\LoanController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\GradeController;
+use App\Http\Controllers\Api\V1\BranchController;
+use App\Http\Controllers\SubDepartmentController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
 use App\Http\Controllers\Api\V1\CurrencyController;
@@ -17,25 +19,24 @@ use App\Http\Controllers\Api\V1\IncomeTaxController;
 use App\Http\Controllers\Api\V1\CostCenterController;
 use App\Http\Controllers\Api\V1\DepartmentController;
 use App\Http\Controllers\Api\V1\FiscalYearController;
+use App\Http\Controllers\Api\V1\PermissionController;
 use App\Http\Controllers\Api\V1\TenantUserController;
 use App\Http\Controllers\Api\V1\CitizenshipController;
 use App\Http\Controllers\Api\V1\PayrollNameController;
 use App\Http\Controllers\Api\V1\PayrollTypeController;
 use App\Http\Controllers\Api\V1\OverTimeTypeController;
 use App\Http\Controllers\Api\V1\AllowanceTypeController;
-use App\Http\Controllers\Api\V1\BranchController;
 use App\Http\Controllers\Api\V1\MainAllowanceController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use App\Http\Controllers\Api\V1\CompanyPensionController;
 use App\Http\Controllers\Api\V1\CompanySettingController;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use App\Http\Controllers\Api\V1\PayslipSettingController;
 use App\Http\Controllers\Api\V1\EmployeePensionController;
-use App\Http\Controllers\Api\V1\AllowanceTransactionController;
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
-use App\Http\Controllers\Api\V1\PermissionController;
-use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+use App\Http\Controllers\Api\V1\AllowanceTransactionController;
 
 /*
 |--------------------------------------------------------------------------
