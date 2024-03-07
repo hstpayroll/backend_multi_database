@@ -16,6 +16,7 @@ class AllowanceTypeResource extends JsonResource
             'taxability' => $this->getTaxabilityLabel(),
             'tax_free_amount' => $this->tax_free_amount,
             'value_type' => $this->value_type == 0 ? 'amount' : 'Percent',
+            'value' => $this->value,
             'status' => $this->status == 1 ? 'active' : 'inactive',
         ];
     }

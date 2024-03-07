@@ -6,15 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('allowance_types', function (Blueprint $table) {
+        Schema::create('deductions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('main_allowance_id')->constrained('main_allowances')->onDelete('restrict')->onUpdate('cascade');
             $table->string('name');
-            $table->tinyInteger('taxability')->default(1);
-            $table->decimal('tax_free_amount', 10, 2)->default(0)->nullable();
             $table->boolean('value_type')->default(0); //0 for fixed value, 1 for percentage
             $table->decimal('value', 10, 2)->default(0)->nullable(); //how can it deduct from your salary if it is in % deduct in % or the actual value
             $table->tinyInteger('status')->default(1);
@@ -23,8 +22,11 @@ return new class extends Migration
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('allowance_types');
+        Schema::dropIfExists('deductions');
     }
 };
