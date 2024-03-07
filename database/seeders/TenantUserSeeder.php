@@ -35,19 +35,8 @@ class TenantUserSeeder extends Seeder
                 'bank_index', 'bank_store', 'bank_show', 'bank_update', 'bank_destroy',
                 'branch_index', 'branch_store', 'branch_show', 'branch_update', 'branch_destroy',
                 'cost_center_index', 'cost_center_store', 'cost_center_show', 'cost_center_update', 'cost_center_destroy',
-                // Departments
-                'department_index',
-                'department_store',
-                'department_show',
-                'department_update',
-                'department_destroy',
-
-                // Currency
-                'currency_index',
-                'currency_store',
-                'currency_show',
-                'currency_update',
-                'currency_destroy',
+                'department_index', 'department_store', 'department_show', 'department_update','department_destroy',
+                'currency_index','currency_store', 'currency_show','currency_update','currency_destroy',
                 'calendar_index', 'calendar_store', 'calendar_show', 'calendar_update', 'calendar_destroy',
                 'citizenship_index', 'citizenship_store', 'citizenship_show', 'citizenship_update', 'citizenship_destroy',
                 'company_index', 'company_store', 'company_show', 'company_update', 'company_destroy',
@@ -57,6 +46,7 @@ class TenantUserSeeder extends Seeder
                 'employment_type_index', 'employment_type_store', 'employment_type_show', 'employment_type_update', 'employment_type_destroy',
                 'fiscal_year_index', 'fiscal_year_store', 'fiscal_year_show', 'fiscal_year_update', 'fiscal_year_destroy',
                 'grade_index', 'grade_store', 'grade_show', 'grade_update', 'grade_destroy',
+                'main_allowance_index', 'main_allowance_store', 'main_allowance_show', 'main_allowance_update', 'main_allowance_destroy',
             ]
         );
     }
