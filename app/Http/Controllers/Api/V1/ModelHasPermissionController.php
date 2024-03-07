@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Api\V1;
-use Spatie\Permission\Models\ModelHasPermission;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreModelHasPermissionRequest;
 use App\Http\Requests\UpdateModelHasPermissionRequest;
@@ -38,14 +37,13 @@ class ModelHasPermissionController extends Controller
     {
         $validatedData = $request->validated();
 
+
         $user = User::findOrFail($id);
         $user->syncRoles($validatedData['roles']);
         $user->syncPermissions($validatedData['permissions']);
 
-        // Fetch the updated user with roles and permissions eagerly loaded
         $updatedUser = User::with('roles', 'permissions')->findOrFail($id)->firstOrFail();
 
-        // Return the updated user data using StoreModelHasPermissionResource
         return new StoreModelHasPermissionResource($updatedUser,$updatedUser);
     }
 
