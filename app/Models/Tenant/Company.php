@@ -18,19 +18,6 @@ class Company extends Model
 {
     use SoftDeletes, HasFactory;
 
-    static $rules = [
-        'name' => 'required',
-        'currency_id' => 'required',
-        'calendar_id' => 'required',
-    ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name',
         'address',

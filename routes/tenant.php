@@ -2,13 +2,10 @@
 
 declare(strict_types=1);
 
-use App\Models\Tenant\CompanySetting;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TailwickController;
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\LoanController;
 use App\Http\Controllers\Api\V1\UserController;
-use App\Http\Controllers\TenantRouteController;
 use App\Http\Controllers\Api\V1\GradeController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
