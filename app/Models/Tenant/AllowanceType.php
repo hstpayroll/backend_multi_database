@@ -15,6 +15,7 @@ class AllowanceType extends Model
         'taxability',
         'tax_free_amount',
         'value_type',
+        'value',
         'status'
     ];
 

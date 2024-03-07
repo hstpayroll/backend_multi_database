@@ -53,7 +53,7 @@ return new class extends Migration
             $table->decimal('outstanding_laptop_recovery', 10, 2)->default(0);
             $table->decimal('hardship_allowance_recovery', 10, 2)->default(0);
             $table->decimal('outstanding_hardship_allowance_recovery', 10, 2)->default(0);
-            $table->decimal('"total_deductions"', 10, 2)->default(0);
+            $table->decimal('total_deductions', 10, 2)->default(0);
             $table->decimal('net_pay', 10, 2)->default(0);
             $table->decimal('employer_pension', 10, 2)->default(0); // 11%
             $table->decimal('employer_pension_arrear', 10, 2)->default(0); // 11%
