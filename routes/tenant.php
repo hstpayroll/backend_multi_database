@@ -39,6 +39,7 @@ use App\Http\Controllers\Api\V1\EmployeePensionController;
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\Api\V1\AllowanceTransactionController;
+use App\Http\Controllers\Api\V1\ModelHasPermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,6 +105,8 @@ Route::middleware([
             Route::apiResource('company-settings', CompanySettingController::class);
             Route::apiResource('payslip-settings', PayslipSettingController::class);
             Route::apiResource('branches', BranchController::class);
+            Route::apiResource('roles-and-permissions', ModelHasPermissionController::class);
+
         });
 });
 

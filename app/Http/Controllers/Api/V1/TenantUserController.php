@@ -45,7 +45,7 @@ class TenantUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-        ]);
+        ]); 
 
         $user->assignRole(['user']);
         $user->givePermissionTo(['edit_profile', 'change_password', 'user_index', 'user_create', 'user_show', 'user_update', 'user_destroy']);
