@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers\Api\V1;
+
 use Illuminate\Http\Request;
 use App\Models\Tenant\TaxRegion;
 use App\Http\Controllers\Controller;
