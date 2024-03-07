@@ -36,8 +36,7 @@ class ModelHasPermissionController extends Controller
     public function update(UpdateModelHasPermissionRequest $request, $id)
     {
         $validatedData = $request->validated();
-
-
+        
         $user = User::findOrFail($id);
         $user->syncRoles($validatedData['roles']);
         $user->syncPermissions($validatedData['permissions']);
