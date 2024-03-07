@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('loan_payment_records', function (Blueprint $table) {
-            $table->id();
+        Schema::create('deduction_transactions', function (Blueprint $table) {
             $table->foreignId('payroll_period_id')->constrained('payroll_periods')->onDelete('restrict')->onUpdate('cascade');
-            $table->foreignId('loan_id')->constrained('loans')->onDelete('restrict')->onUpdate('cascade');
-            $table->decimal('amount_payed', 10, 2);
-            $table->decimal('outstanding_amount', 10, 2);
-            $table->boolean('is_partial')->default(false);
-            $table->boolean('is_missed')->default(false);
+            $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
+            $table->decimal('amount', 10, 2);
+            $table->date('start_date')->nullable();
+            $table->tinyInteger('status')->default(0); //0 for inactive 1 for active
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('loan_payment_records');
+        Schema::dropIfExists('deduction_transactions');
     }
 };
