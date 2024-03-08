@@ -16,7 +16,7 @@ class StoreSalaryManagementRequest extends FormRequest
         return [
             'employee_id' => 'required|exists:employees,id',
             'reason' => 'required|string',
-            'old_salary' => 'required|numeric|min:0',
+            'old_salary' => 'nullable|numeric|min:0',
             'new_salary' => 'required|numeric|min:0',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date',
