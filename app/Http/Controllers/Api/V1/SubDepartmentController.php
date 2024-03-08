@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Http\Controllers\Api\V1;
-use App\Models\Tenant\SubDepartment;
+
+use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\SubDepartment;

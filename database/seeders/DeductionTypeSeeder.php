@@ -14,10 +14,6 @@ class DeductionTypeSeeder extends Seeder
     public function run(): void
     {
         DeductionType::create([
-            'name' => 'Loan',
-            'name' => 'It is employees loan',
-        ]);
-        DeductionType::create([
             'name' => 'Penalities',
             'name' => 'It is employees Penalities',
         ]);

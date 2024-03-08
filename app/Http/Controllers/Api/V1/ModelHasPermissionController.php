@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api\V1;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreModelHasPermissionRequest;
 use App\Http\Requests\UpdateModelHasPermissionRequest;
@@ -36,14 +37,14 @@ class ModelHasPermissionController extends Controller
     public function update(UpdateModelHasPermissionRequest $request, $id)
     {
         $validatedData = $request->validated();
-        
+
         $user = User::findOrFail($id);
         $user->syncRoles($validatedData['roles']);
         $user->syncPermissions($validatedData['permissions']);
 
         $updatedUser = User::with('roles', 'permissions')->findOrFail($id)->firstOrFail();
 
-        return new StoreModelHasPermissionResource($updatedUser,$updatedUser);
+        return new StoreModelHasPermissionResource($updatedUser, $updatedUser);
     }
 
     public function destroy($id)
