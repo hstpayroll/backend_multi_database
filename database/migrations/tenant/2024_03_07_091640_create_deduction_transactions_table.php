@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('deduction_transactions', function (Blueprint $table) {
             $table->foreignId('payroll_period_id')->constrained('payroll_periods')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
-            $table->foreignId('deduction_type_id')->constrained('deduction_types')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreignId('deduction_id')->constrained('deductions')->onDelete('restrict')->onUpdate('cascade');
             $table->decimal('amount_deducted', 10, 2);
             $table->decimal('outstanding_amount', 10, 2);
             $table->boolean('is_partial')->default(false);
             $table->boolean('is_missed')->default(false);
             $table->date('start_date')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
