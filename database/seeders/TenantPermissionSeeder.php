@@ -191,8 +191,10 @@ class TenantPermissionSeeder extends Seeder
             'sub_department_show',
             'sub_department_update',
             'sub_department_destroy',
-
+            'employment_type_index', 'employment_type_store', 'employment_type_show', 'employment_type_update', 'employment_type_destroy',
             'employee_pension_index', 'employee_pension_store', 'employee_pension_show', 'employee_pension_update', 'employee_pension_destroy',
+            'fiscal_year_index', 'fiscal_year_store', 'fiscal_year_show', 'fiscal_year_update', 'fiscal_year_destroy',
+            'grade_index', 'grade_store', 'grade_show', 'grade_update', 'grade_destroy',
 
         ];
         foreach ($permissions as $permission) {
