@@ -1,13 +1,14 @@
 <?php
 namespace App\Http\Controllers\Api\V1;
 use App\Models\Tenant\SubDepartment;
+
 use App\Http\Controllers\Controller;
+use App\Models\Tenant\SubDepartment;
 use App\Http\Requests\StoreSubDepartmentRequest;
 use App\Http\Requests\UpdateSubDepartmentRequest;
 use App\Http\Resources\Finance\SubDepartmentResource;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
+
 
 class SubDepartmentController extends Controller
 {

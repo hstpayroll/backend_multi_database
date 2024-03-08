@@ -23,7 +23,7 @@ class StoreEmployeePensionRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'discription' => 'nullable',
+            'description' => 'nullable',
             'rate' => 'required|numeric|between:0,100',
             'start_date' => 'required | date',
             'end_date' => 'nullable | date',

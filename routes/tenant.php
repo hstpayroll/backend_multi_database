@@ -3,10 +3,12 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\TaxRegionController;
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\LoanController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\GradeController;
+use App\Http\Controllers\Api\V1\BranchController;
 use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\CalendarController;
 use App\Http\Controllers\Api\V1\CurrencyController;
@@ -14,17 +16,16 @@ use App\Http\Controllers\Api\V1\EmployeeController;
 use App\Http\Controllers\Api\V1\LoanTypeController;
 use App\Http\Controllers\Api\V1\PositionController;
 use App\Http\Controllers\Api\V1\IncomeTaxController;
-use App\Http\Controllers\Api\V1\TaxRegionController;
 use App\Http\Controllers\Api\V1\CostCenterController;
 use App\Http\Controllers\Api\V1\DepartmentController;
 use App\Http\Controllers\Api\V1\FiscalYearController;
+use App\Http\Controllers\Api\V1\PermissionController;
 use App\Http\Controllers\Api\V1\TenantUserController;
 use App\Http\Controllers\Api\V1\CitizenshipController;
 use App\Http\Controllers\Api\V1\PayrollNameController;
 use App\Http\Controllers\Api\V1\PayrollTypeController;
 use App\Http\Controllers\Api\V1\OverTimeTypeController;
 use App\Http\Controllers\Api\V1\AllowanceTypeController;
-use App\Http\Controllers\Api\V1\BranchController;
 use App\Http\Controllers\Api\V1\MainAllowanceController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
 use App\Http\Controllers\Api\V1\SubDepartmentController;
@@ -34,8 +35,6 @@ use App\Http\Controllers\Api\V1\CompanySettingController;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use App\Http\Controllers\Api\V1\PayslipSettingController;
 use App\Http\Controllers\Api\V1\EmployeePensionController;
-
-
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\Api\V1\AllowanceTransactionController;
@@ -74,7 +73,9 @@ Route::middleware([
             // Route::put('/users/{user}', [UserController::class,'update'])->middleware('can:user_update');
             // Route::delete('/users/{user}', [UserController::class,'destroy'])->middleware('can:user_destroy');
 
-            Route::apiResource('currencies', CurrencyController::class);
+            Route::apiResource('permissions', PermissionController::class);
+
+            Route::apiResource('currencies', CurrencyController::class); //
             Route::apiResource('banks', BankController::class);
             Route::apiResource('calendars', CalendarController::class);
             Route::apiResource('companies', CompanyController::class);
@@ -111,7 +112,6 @@ Route::middleware([
 
         });
 });
-
 
 Route::middleware([
     'web',

@@ -19,6 +19,7 @@ class StoreAllowanceTypeRequest extends FormRequest
             'taxability' => 'required|integer',
             'tax_free_amount' => 'nullable|numeric|required_if:taxability,3',
             'value_type' => 'nullable|boolean',
+            'value' => 'required_if:value_type,1|numeric',
             'status' => 'nullable|integer',
         ];
     }

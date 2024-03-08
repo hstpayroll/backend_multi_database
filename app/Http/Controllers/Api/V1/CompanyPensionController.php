@@ -20,7 +20,7 @@ class CompanyPensionController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('company-pension_index')) {
+            if ($user->hasPermissionTo('company_pension_index')) {
                 $companyPension = CompanyPension::paginate(10);
                 return  CompanyPensionResource::collection($companyPension);
             } else {
@@ -39,7 +39,7 @@ class CompanyPensionController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('company-pension_store')) {
+            if ($user->hasPermissionTo('company_pension_store')) {
                 $companyPension = CompanyPension::create($request->validated());
                 return new CompanyPensionResource($companyPension);
             } else {
@@ -56,7 +56,7 @@ class CompanyPensionController extends Controller
     {
         $user = $request->user();
         try {
-            if ($user->hasPermissionTo('company-pension_show')) {
+            if ($user->hasPermissionTo('company_pension_show')) {
                 return new CompanyPensionResource($companyPension);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
@@ -73,7 +73,7 @@ class CompanyPensionController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('company-pension_update')) {
+            if ($user->hasPermissionTo('company_pension_update')) {
                 // Update the calendar data using the request data
                 $companyPension->update($request->all());
                 return new CompanyPensionResource($companyPension);
@@ -92,7 +92,7 @@ class CompanyPensionController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('company-pension_destroy')) {
+            if ($user->hasPermissionTo('company_pension_destroy')) {
                 $companyPension->delete();
                 return response()->json(['message' => 'company Pension deleted successfully']);
             } else {

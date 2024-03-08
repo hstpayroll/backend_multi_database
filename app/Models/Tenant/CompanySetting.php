@@ -14,7 +14,7 @@ class CompanySetting extends Model
 
     public function company()
     {
-        return $this->belongsTo(Company::class, 'company_id'); // Specify the foreign key
+        return $this->hasMany(Company::class, 'id', 'company_id'); // Specify the foreign key
     }
 
     // public function companyDetail()

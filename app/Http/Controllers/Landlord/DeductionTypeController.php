@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PayslipSetting;
-use App\Http\Requests\StorePayslipSettingRequest;
-use App\Http\Requests\UpdatePayslipSettingRequest;
+use App\Models\Tenant\DeductionType;
+use App\Http\Requests\StoreDeductionTypeRequest;
+use App\Http\Requests\UpdateDeductionTypeRequest;
 
-class PayslipSettingController extends Controller
+class DeductionTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class PayslipSettingController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePayslipSettingRequest $request)
+    public function store(StoreDeductionTypeRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class PayslipSettingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(PayslipSetting $payslipSetting)
+    public function show(DeductionType $deductionType)
     {
         //
     }
@@ -43,7 +43,7 @@ class PayslipSettingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PayslipSetting $payslipSetting)
+    public function edit(DeductionType $deductionType)
     {
         //
     }
@@ -51,7 +51,7 @@ class PayslipSettingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePayslipSettingRequest $request, PayslipSetting $payslipSetting)
+    public function update(UpdateDeductionTypeRequest $request, DeductionType $deductionType)
     {
         //
     }
@@ -59,7 +59,7 @@ class PayslipSettingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PayslipSetting $payslipSetting)
+    public function destroy(DeductionType $deductionType)
     {
         //
     }
