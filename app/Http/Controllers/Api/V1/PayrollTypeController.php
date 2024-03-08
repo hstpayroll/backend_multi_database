@@ -17,7 +17,7 @@ class PayrollTypeController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('payroll_type_index')) {
-                return PayrollTypeResource::collection(PayrollType::paginate(10));
+                return PayrollTypeResource::collection(PayrollType::latest()->paginate(10));
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }

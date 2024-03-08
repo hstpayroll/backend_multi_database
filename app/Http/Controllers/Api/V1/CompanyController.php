@@ -21,7 +21,7 @@ class CompanyController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('company_index')) {
-                $companies = Company::with(['currency', 'calendar'])->paginate(10);
+                $companies = Company::with(['currency', 'calendar'])->latest()->paginate(10);
                 return CompanyResource::collection($companies);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

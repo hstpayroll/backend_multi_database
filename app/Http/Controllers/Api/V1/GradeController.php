@@ -20,7 +20,7 @@ class GradeController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('grade_index')) {
-                $grades = Grade::paginate(10);
+                $grades = Grade::latest()->paginate(10);
                 return  GradeResource::collection($grades);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

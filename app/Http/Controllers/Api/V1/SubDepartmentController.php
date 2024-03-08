@@ -19,7 +19,7 @@ class SubDepartmentController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('sub_department_index')) {
-                return SubDepartmentResource::collection(SubDepartment::paginate(10));
+                return SubDepartmentResource::collection(SubDepartment::latest()->paginate(10));
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }

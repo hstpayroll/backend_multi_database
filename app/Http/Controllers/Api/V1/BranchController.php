@@ -18,7 +18,7 @@ class BranchController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('branch_index')) {
-                $branches = Branch::paginate();
+                $branches = Branch::latest()->paginate();
                 return BranchResource::collection($branches);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

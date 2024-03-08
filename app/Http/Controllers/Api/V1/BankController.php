@@ -26,7 +26,7 @@ class BankController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('bank_index')) {
-                $banks = Bank::paginate(10);
+                $banks = Bank::latest()->paginate(10);
                 return  BankResource::collection($banks);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

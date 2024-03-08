@@ -17,7 +17,7 @@ class PositionController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('position_index')) {
-                return PositionResource::collection(Position::paginate(20));
+                return PositionResource::collection(Position::latest()->paginate(20));
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }

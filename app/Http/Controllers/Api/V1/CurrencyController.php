@@ -16,7 +16,7 @@ class CurrencyController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('currency_index')) {
-                $currencies = Currency::paginate(10); // You can adjust the number of items per page as needed
+                $currencies = Currency::latest()->paginate(10); // You can adjust the number of items per page as needed
                 return CurrencyResource::collection($currencies);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

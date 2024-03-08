@@ -18,7 +18,7 @@ class MainAllowanceController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('main_allowance_index')) {
-                return MainAllowanceResource::collection(MainAllowance::paginate(10));
+                return MainAllowanceResource::collection(MainAllowance::latest()->paginate(10));
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }

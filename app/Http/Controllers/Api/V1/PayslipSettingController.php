@@ -17,7 +17,7 @@ class PayslipSettingController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('payslip_setting_index')) {
-                $payslipSettings = PayslipSetting::paginate(10);
+                $payslipSettings = PayslipSetting::latest()->paginate(10);
                 return PayslipSettingResource::collection($payslipSettings);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

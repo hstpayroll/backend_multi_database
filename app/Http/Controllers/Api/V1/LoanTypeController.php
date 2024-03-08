@@ -18,7 +18,7 @@ class LoanTypeController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('loan_type_index')) {
-                $loanTypes = LoanType::paginate(10);
+                $loanTypes = LoanType::latest()->paginate(10);
                 return LoanTypeResource::collection($loanTypes);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

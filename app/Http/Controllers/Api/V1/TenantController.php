@@ -17,7 +17,7 @@ class TenantController extends Controller
      */
     public function index()
     {
-        $tenants = Tenant::paginate(10);
+        $tenants = Tenant::latest()->paginate(10);
         return  TenantResource::collection($tenants);
     }
 

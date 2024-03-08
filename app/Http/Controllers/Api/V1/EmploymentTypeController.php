@@ -17,7 +17,7 @@ class EmploymentTypeController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('employment_type_index')) {
-                $employmentTypes = EmploymentType::paginate(10);
+                $employmentTypes = EmploymentType::latest()->paginate(10);
                 return  EmploymentTypeResource::collection($employmentTypes);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

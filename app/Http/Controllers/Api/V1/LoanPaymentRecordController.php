@@ -18,7 +18,7 @@ class LoanPaymentRecordController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('loan_payment_record_index')) {
-                $loanPaymentRecords = LoanPaymentRecord::paginate(10);
+                $loanPaymentRecords = LoanPaymentRecord::latest()->paginate(10);
                 return LoanPaymentRecordResource::collection($loanPaymentRecords);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

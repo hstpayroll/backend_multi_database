@@ -21,7 +21,7 @@ class CostCenterController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('cost_center_index')) {
-                $costCenters = CostCenter::paginate(10);
+                $costCenters = CostCenter::latest()->paginate(10);
                 return  CostCenterResource::collection($costCenters);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

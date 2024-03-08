@@ -14,7 +14,7 @@ class CitizenshipController extends Controller
 {
     public function index(Request $request)
     {
-        return CitizenshipResource::collection(Citizenship::paginate(20));
+        return CitizenshipResource::collection(Citizenship::latest()->paginate(20));
     }
 
     public function store(StoreCitizenshipRequest $request)
