@@ -38,6 +38,8 @@ use App\Http\Controllers\Api\V1\EmployeePensionController;
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\Api\V1\AllowanceTransactionController;
+use App\Http\Controllers\Api\v1\DeductionController;
+use App\Http\Controllers\Api\v1\DeductionTypeController;
 use App\Http\Controllers\Api\V1\ModelHasPermissionController;
 use App\Http\Controllers\Api\V1\SalaryManagementController;
 
@@ -109,6 +111,9 @@ Route::middleware([
             Route::apiResource('branches', BranchController::class);
             Route::apiResource('roles-and-permissions', ModelHasPermissionController::class);
             Route::apiResource('salary-managements', SalaryManagementController::class);
+            Route::apiResource('deduction-types', DeductionTypeController::class);
+            Route::apiResource('deductions', DeductionController::class);
+
 
         });
 });

@@ -15,7 +15,7 @@ class DeductionResource extends JsonResource
             'deduction_type' => new DeductionTypeResource($this->deductionType), // Assuming DeductionTypeResource exists
             'value_type' => $this->value_type,
             'value' => $this->value,
-            'status' => $this->status,
+            'status' => $this->status == 1 ? 'active' : 'inactive',
 
         ];
     }
