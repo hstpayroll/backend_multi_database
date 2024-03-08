@@ -19,30 +19,9 @@ class AllowanceTypeController extends Controller
         return AllowanceTypeResource::collection($allowanceTypes);
     }
 
-    public function store(Request $request)
-    {
-        $data = $request->validate([
-            'main_allowance_id' => 'required|exists:main_allowances,id',
-            'name' => 'required|string',
-            'taxability' => 'required|integer|between:1,4',
-            'tax_free_amount' => ($request->input('taxability') == 3) ? 'required|numeric' : 'nullable',
-            'value_type' => 'required|boolean',
-            'value' => ($request->input('value_type') == 0) ? 'required|integer|between:1,100' : 'required|numeric|gt:0',
-            'status' => 'nullable|integer',
-        ]);
-        
-        if ($request->input('taxability') != 3 && isset($data['tax_free_amount'])) {
-            // Add a custom error message
-            $validator = Validator::make([], []); // Empty data array
-            $validator->errors()->add('tax_free_amount', 'The tax_free_amount field should be set to null when taxability is not tax_with_limit.');
-            throw new \Illuminate\Validation\ValidationException($validator);
-        }
-        // if ($request->input('taxability') != 3) {
-        //     unset($data['tax_free_amount']);
-        // }        
-        
-
-        $allowanceType = AllowanceType::create($data);
+    public function store(StoreAllowanceTypeRequest $request, AllowanceType $allowanceType)
+    {    
+        $allowanceType = AllowanceType::create($request->validated());
         return new AllowanceTypeResource($allowanceType);
     }
 

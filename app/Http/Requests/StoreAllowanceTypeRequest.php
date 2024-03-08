@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreAllowanceTypeRequest extends FormRequest
@@ -13,14 +14,24 @@ class StoreAllowanceTypeRequest extends FormRequest
 
     public function rules()
     {
-        return [
+        $rules = [
             'main_allowance_id' => 'required|exists:main_allowances,id',
             'name' => 'required|string',
-            'taxability' => 'required|integer',
-            'tax_free_amount' => 'nullable|numeric|required_if:taxability,3',
-            'value_type' => 'nullable|boolean',
-            'value' => 'required_if:value_type,1|numeric',
+            'taxability' => 'required|integer|between:1,4',
+            'tax_free_amount' => ($this->taxability == 3) ? 'required|numeric' : 'nullable',
+            'value_type' => 'required|boolean',
+            'value' => ($this->value_type == 0) ? 'required|integer|between:1,100' : 'required|numeric|gt:0',
             'status' => 'nullable|integer',
         ];
+
+        // Perform conditional validation outside the return statement
+        if ($this->taxability != 3 && $this->input('tax_free_amount')) {
+            // Add a custom error message
+            $validator = Validator::make([], []); // Empty data array
+            $validator->errors()->add('tax_free_amount', 'The tax_free_amount field should be set to null when taxability is not tax_with_limit.');
+            throw new \Illuminate\Validation\ValidationException($validator);
+        }
+
+        return $rules;
     }
 }
