@@ -18,7 +18,7 @@ class OverTimeTypeController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('overtime_type_index')) {
-                $overTimeTypes = OverTimeType::paginate(10);
+                $overTimeTypes = OverTimeType::latest()->paginate(10);
                 return OverTimeTypeResource::collection($overTimeTypes);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

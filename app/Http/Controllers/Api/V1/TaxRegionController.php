@@ -17,7 +17,7 @@ class TaxRegionController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('tax_region_index')) {
-                return TaxRegionResource::collection(TaxRegion::all());
+                return TaxRegionResource::collection(TaxRegion::latest()->paginate(10));
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }

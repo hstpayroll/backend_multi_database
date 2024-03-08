@@ -20,7 +20,7 @@ class CalendarController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('calendar_index')) {
-                $calendars = Calendar::paginate(10);
+                $calendars = Calendar::latest()->paginate(10);
                 return  CalenderResource::collection($calendars);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

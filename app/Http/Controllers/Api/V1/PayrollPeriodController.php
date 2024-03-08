@@ -17,7 +17,7 @@ class PayrollPeriodController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('payroll_period_index')) {
-                return PayrollPeriodResource::collection(PayrollPeriod::paginate(10));
+                return PayrollPeriodResource::collection(PayrollPeriod::latest()->paginate(10));
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }

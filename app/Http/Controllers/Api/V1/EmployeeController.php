@@ -19,7 +19,7 @@ class EmployeeController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('employee_index')) {
-                $employees = Employee::paginate(10);
+                $employees = Employee::latest()->paginate(10);
                 return EmployeeResource::collection($employees);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

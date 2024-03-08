@@ -18,7 +18,7 @@ class DepartmentController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('department_index')) {
-                $departments = Department::paginate(10);
+                $departments = Department::latest()->paginate(10);
                 return DepartmentResource::collection($departments);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

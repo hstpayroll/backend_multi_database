@@ -14,7 +14,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::paginate(10);
+        $roles = Role::latest()->paginate(10);
         return  RoleResource::collection($roles);
     }
 

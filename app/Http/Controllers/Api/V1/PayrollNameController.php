@@ -18,7 +18,7 @@ class PayrollNameController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('payroll_name_index')) {
-                $payrollNames = PayrollName::paginate(10);
+                $payrollNames = PayrollName::latest()->paginate(10);
                 return PayrollNameResource::collection($payrollNames);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

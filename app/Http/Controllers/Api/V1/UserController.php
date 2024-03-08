@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with(['tenants', 'roles', 'permissions'])->paginate(10);
+        $users = User::with(['tenants', 'roles', 'permissions'])->latest()->paginate(10);
         return  UserResource::collection($users);
     }
 

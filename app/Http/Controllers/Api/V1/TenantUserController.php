@@ -26,7 +26,7 @@ class TenantUserController extends Controller
     }
     public function index()
     {
-        $users = User::paginate(10); // You can adjust the number of items per page as needed
+        $users = User::latest()->paginate(10); // You can adjust the number of items per page as needed
         return  UserResource::collection($users);
     }
 

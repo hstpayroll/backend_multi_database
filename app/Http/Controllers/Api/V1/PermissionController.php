@@ -19,7 +19,7 @@ class PermissionController extends Controller
         // try {
         //     $user = $request->user();
         //     if ($user->hasPermissionTo('payslip_setting_index')) {
-        $permissions =  Permission::paginate(10);
+        $permissions =  Permission::latest()->paginate(10);
 
         // dd($payslipSettings);
         return PermissionResource::collection($permissions);

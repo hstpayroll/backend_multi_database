@@ -17,7 +17,7 @@ class FiscalYearController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('fiscal_year_index')) {
-                $fiscalYears = FiscalYear::paginate(10);
+                $fiscalYears = FiscalYear::latest()->paginate(10);
                 return  FiscalYearResource::collection($fiscalYears);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

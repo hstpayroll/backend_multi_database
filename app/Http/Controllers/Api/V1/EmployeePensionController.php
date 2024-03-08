@@ -21,7 +21,7 @@ class EmployeePensionController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('employee_pension_index')) {
-                $employeePension = employeePension::paginate(10);
+                $employeePension = employeePension::latest()->paginate(10);
                 return  employeePensionResource::collection($employeePension);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

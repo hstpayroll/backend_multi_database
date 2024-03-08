@@ -15,7 +15,7 @@ class AllowanceTypeController extends Controller
 {
     public function index()
     {
-        $allowanceTypes = AllowanceType::paginate(10);
+        $allowanceTypes = AllowanceType::latest()->paginate(10);
         return AllowanceTypeResource::collection($allowanceTypes);
     }
 

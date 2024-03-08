@@ -14,7 +14,7 @@ class SalaryManagementController extends Controller
 {
     public function index()
     {
-        $salaryManagements = SalaryManagement::all();
+        $salaryManagements = SalaryManagement::latest()->paginate(10);
         return SalaryManagementResource::collection($salaryManagements);
     }
 

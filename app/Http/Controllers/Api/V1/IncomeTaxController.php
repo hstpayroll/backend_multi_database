@@ -19,7 +19,7 @@ class IncomeTaxController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('income_tax_index')) {
-                $incomeTaxes = IncomeTax::paginate(10);
+                $incomeTaxes = IncomeTax::latest()->paginate(10);
                 return IncomeTaxResource::collection($incomeTaxes);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
