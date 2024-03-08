@@ -73,7 +73,7 @@ Route::middleware([
 
             Route::apiResource('permissions', PermissionController::class);
 
-            Route::apiResource('currencies', CurrencyController::class);
+            Route::apiResource('currencies', CurrencyController::class); //
             Route::apiResource('banks', BankController::class);
             Route::apiResource('calendars', CalendarController::class);
             Route::apiResource('companies', CompanyController::class);
@@ -105,9 +105,8 @@ Route::middleware([
             Route::apiResource('company-settings', CompanySettingController::class);
             Route::apiResource('payslip-settings', PayslipSettingController::class);
             Route::apiResource('branches', BranchController::class);
-});
-
         });
+});
 
 Route::middleware([
     'web',

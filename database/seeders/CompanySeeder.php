@@ -19,11 +19,6 @@ class CompanySeeder extends Seeder
             'currency_id' => 1,
             'calendar_id' => 1,
         ]);
-        Company::create([
-            'name' => 'ABC',
-            'currency_id' =>2,
-            'calendar_id' =>2
-        ]);
         // Company::factory(50)->create();
     }
 }
