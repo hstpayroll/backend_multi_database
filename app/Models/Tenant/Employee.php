@@ -111,7 +111,8 @@ class Employee extends Model
 
     public function salaryManagements()
     {
-        return $this->hasMany(SalaryManagement::class, 'employee_id', 'id');
+        return $this->hasMany(SalaryManagement::class, 'employee_id', 'id')
+            ->where('status', '1')->first();
     }
 
     public function subDepartment()
@@ -122,5 +123,10 @@ class Employee extends Model
     public function taxRegion()
     {
         return $this->hasOne(TaxRegion::class, 'id', 'tax_region_id');
+    }
+    public function getSalaryAttribute()
+    {
+        $activeSalary = $this->salaryManagements()->new_salary;
+        return $activeSalary;
     }
 }

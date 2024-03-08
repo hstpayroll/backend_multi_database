@@ -19,15 +19,15 @@ class SalaryManagementSeeder extends Seeder
             'old_salary' => 25000,
             'new_salary' => 28000,
             'start_date' => "2024-01-01",
-            'status' => 1
+            'status' => 0
         ]);
         SalaryManagement::create([
             'employee_id' => 1,
             'reason' => "promotion",
             'old_salary' => 28000,
-            'new_salary' => 350000,
+            'new_salary' => 35000,
             'start_date' => "2024-01-01",
-            'status' => 0
+            'status' => 1
         ]);
     }
 }

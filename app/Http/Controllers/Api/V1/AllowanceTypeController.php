@@ -20,7 +20,7 @@ class AllowanceTypeController extends Controller
     }
 
     public function store(StoreAllowanceTypeRequest $request, AllowanceType $allowanceType)
-    {    
+    {
         $allowanceType = AllowanceType::create($request->validated());
         return new AllowanceTypeResource($allowanceType);
     }

@@ -9,22 +9,27 @@ class OverTimeCalculation extends Model
 {
     use SoftDeletes;
 
-    protected $perPage = 20;
 
-    protected $fillable = ['employee_id','over_time_type_id','ot_date','ot_hour','ot_value'];
+    protected $fillable = [
+        'employee_id',
+        'over_time_type_id',
+        'payroll_period_id',
+        'ot_hour',
+        'ot_value'
+    ];
 
-    public function employee()
+    public function employees()
     {
-        return $this->belongsTo(Employee::class);
+        return $this->hasMany(Employee::class, 'id', 'employee_id');
     }
 
-    public function overTimeType()
+    public function overTimeTypes()
     {
-        return $this->belongsTo(OverTimeType::class);
+        return $this->hasMany(OverTimeType::class, 'id', 'over_time_type_id');
     }
 
-    public function payrolls()
+    public function payrollPeriods()
     {
-        return $this->hasMany(Payroll::class, 'over_time_calculation_id');
+        return $this->hasMany(PayrollPeriod::class, 'id', 'payroll_period_id');
     }
 }
