@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\V1\TaxRegionController;
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\LoanController;
 use App\Http\Controllers\Api\V1\UserController;
@@ -16,6 +15,7 @@ use App\Http\Controllers\Api\V1\EmployeeController;
 use App\Http\Controllers\Api\V1\LoanTypeController;
 use App\Http\Controllers\Api\V1\PositionController;
 use App\Http\Controllers\Api\V1\IncomeTaxController;
+use App\Http\Controllers\Api\V1\TaxRegionController;
 use App\Http\Controllers\Api\V1\CostCenterController;
 use App\Http\Controllers\Api\V1\DepartmentController;
 use App\Http\Controllers\Api\V1\FiscalYearController;
@@ -35,11 +35,12 @@ use App\Http\Controllers\Api\V1\CompanySettingController;
 use App\Http\Controllers\Api\V1\EmploymentTypeController;
 use App\Http\Controllers\Api\V1\PayslipSettingController;
 use App\Http\Controllers\Api\V1\EmployeePensionController;
+use App\Http\Controllers\Api\V1\SalaryManagementController;
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
+use App\Http\Controllers\Api\V1\ModelHasPermissionController;
+use App\Http\Controllers\Api\V1\OverTimeCalculationController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\Api\V1\AllowanceTransactionController;
-use App\Http\Controllers\Api\V1\ModelHasPermissionController;
-use App\Http\Controllers\Api\V1\SalaryManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,12 +105,12 @@ Route::middleware([
             Route::apiResource('employee-pensions', EmployeePensionController::class);
             Route::apiResource('company-pensions', CompanyPensionController::class);
             Route::apiResource('overtime-types', OverTimeTypeController::class);
+            Route::apiResource('overtime-calculations', OverTimeCalculationController::class);
             Route::apiResource('company-settings', CompanySettingController::class);
             Route::apiResource('payslip-settings', PayslipSettingController::class);
             Route::apiResource('branches', BranchController::class);
             Route::apiResource('roles-and-permissions', ModelHasPermissionController::class);
             Route::apiResource('salary-managements', SalaryManagementController::class);
-
         });
 });
 

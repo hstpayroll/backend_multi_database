@@ -49,5 +49,7 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(AllowanceTypeSeeder::class);
         $this->call(AllowanceTransactionSeeder::class);
         $this->call(CostCenterSeeder::class);
+        $this->call(DeductionTypeSeeder::class);
+        $this->call(DeductionSeeder::class);
     }
 }
