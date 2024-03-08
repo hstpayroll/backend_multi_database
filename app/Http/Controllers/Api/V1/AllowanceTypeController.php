@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\AllowanceType;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreAllowanceTypeRequest;
 use App\Http\Requests\UpdateAllowanceTypeRequest;
 use App\Http\Resources\Finance\AllowanceTypeResource;
@@ -30,10 +31,15 @@ class AllowanceTypeController extends Controller
             'status' => 'nullable|integer',
         ]);
         
-        // Additional check to ensure tax_free_amount is not set if taxability is not 3
-        if ($request->input('taxability') != 3) {
-            unset($data['tax_free_amount']);
-        }        
+        if ($request->input('taxability') != 3 && isset($data['tax_free_amount'])) {
+            // Add a custom error message
+            $validator = Validator::make([], []); // Empty data array
+            $validator->errors()->add('tax_free_amount', 'The tax_free_amount field should be set to null when taxability is not tax_with_limit.');
+            throw new \Illuminate\Validation\ValidationException($validator);
+        }
+        // if ($request->input('taxability') != 3) {
+        //     unset($data['tax_free_amount']);
+        // }        
         
 
         $allowanceType = AllowanceType::create($data);
