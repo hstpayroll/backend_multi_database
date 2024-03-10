@@ -24,8 +24,8 @@ class StoreBankRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'swift' => 'required|string|max:255',
+            'name' => 'required|unique:banks|max:255',
+            'swift' => 'required|unique:banks|max:255',
         ];
     }
 }

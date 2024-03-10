@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SalaryManagement;
+use App\Models\Tenant\SalaryManagement;
 
 /**
  * Class SalaryManagementController
