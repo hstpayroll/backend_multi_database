@@ -13,7 +13,8 @@ class SalaryManagement extends Model
 
     protected $fillable = [
         'employee_id',
-        'reason', 'old_salary',
+        'reason',
+        'old_salary',
         'new_salary',
         'start_date',
         'end_date',

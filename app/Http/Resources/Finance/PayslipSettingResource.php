@@ -3,7 +3,7 @@
 namespace App\Http\Resources\Finance;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\Finance\CompanyResource ;
+use App\Http\Resources\Finance\CompanyResource;
 
 class PayslipSettingResource extends JsonResource
 {
@@ -15,6 +15,6 @@ class PayslipSettingResource extends JsonResource
             'name' => $this->name,
             'description' => $this->description,
             'value' => $this->value == 1 ? true : false,
-        ];        
+        ];
     }
 }

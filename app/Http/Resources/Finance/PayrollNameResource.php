@@ -16,8 +16,6 @@ class PayrollNameResource extends JsonResource
             'end_date' => $this->end_date,
             'details' => $this->details,
             'status' => $this->status == 1 ? 'active' : 'inactive',
-            // 'created_at' => $this->created_at,
-            // 'updated_at' => $this->updated_at,
         ];
     }
 }

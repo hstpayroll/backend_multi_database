@@ -25,7 +25,7 @@ class Calendar extends Model
 
     public function companies()
     {
-        return $this->hasMany(Company::class, 'calendar_id', 'id');
+        return $this->hasMany(Company::class);
     }
 
     public function getFormattedStatusAttribute()

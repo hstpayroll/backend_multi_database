@@ -17,7 +17,7 @@ class CompanySettingResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'company' => CompanyResource::collection($this->company),
+            'company' => new  CompanyResource($this->company),
             'name' => $this->name,
             'description' => $this->description,
             'value' => $this->value,

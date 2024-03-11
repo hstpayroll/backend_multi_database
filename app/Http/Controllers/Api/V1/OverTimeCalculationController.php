@@ -22,7 +22,9 @@ class OverTimeCalculationController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('overtime_type_index')) {
-                $overTimeDeductions = OverTimeCalculation::latest()->paginate(10);
+                $overTimeDeductions = OverTimeCalculation::latest()
+                    ->active()
+                    ->paginate(10);
                 return OverTimeCalculationResource::collection($overTimeDeductions);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
@@ -44,7 +46,8 @@ class OverTimeCalculationController extends Controller
             'ot_hour' => 'required|numeric|min:1', // Ensures non-negative overtime hours
         ];
         $validatedData = $request->validate($rules);
-        $employee = Employee::find($validatedData['employee_id']);
+        $employee = Employee::find($validatedData['employee_id'])->active()->first();
+        // dd($employee);
         $employee_latest_salary =  $employee->salary;
         $company_monthly_hours = CompanySetting::where('id', 7)->value('value');
         $employee_hourly_salary =   $employee_latest_salary / $company_monthly_hours;

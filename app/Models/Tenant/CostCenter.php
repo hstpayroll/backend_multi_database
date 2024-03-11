@@ -4,19 +4,7 @@ namespace App\Models\Tenant;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class CostCenter
- *
- * @property $id
- * @property $code
- * @property $description
- * @property $status
- * @property $created_at
- * @property $updated_at
- *
- * @package App
- * @mixin \Illuminate\Database\Eloquent\Builder
- */
+
 class CostCenter extends Model
 {
 

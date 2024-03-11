@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
@@ -17,14 +18,14 @@ class PayrollPeriodController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('payroll_period_index')) {
-                return PayrollPeriodResource::collection(PayrollPeriod::latest()->paginate(10));
+                $payrollPeriod = PayrollPeriod::with(['fiscalYear', 'payrollName', 'payrollType'])->latest()->paginate(10);
+                return PayrollPeriodResource::collection($payrollPeriod);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
-
     }
 
     public function store(StorePayrollPeriodRequest $request)
@@ -41,7 +42,6 @@ class PayrollPeriodController extends Controller
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
-
     }
 
     public function show(Request $request, PayrollPeriod $payrollPeriod)
@@ -49,14 +49,13 @@ class PayrollPeriodController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('payroll_period_show')) {
-                return new PayrollPeriodResource($payrollPeriod);
+                return new PayrollPeriodResource($payrollPeriod->load('fiscalYear', 'payrollName', 'payrollType'));
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
-
     }
 
     public function update(UpdatePayrollPeriodRequest $request, PayrollPeriod $payrollPeriod)
@@ -73,7 +72,6 @@ class PayrollPeriodController extends Controller
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
-
     }
 
     public function destroy(Request $request, PayrollPeriod $payrollPeriod)

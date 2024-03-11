@@ -33,8 +33,8 @@ class CompanyResource extends JsonResource
             'woreda' => $this->woreda,
             'house_no' => $this->house_no,
             'fax' => $this->fax,
-            'currency' => CurrencyResource::collection($this->currency),
-            'calender' => CalenderResource::collection($this->calendar),
+            'currency' => new CurrencyResource($this->currency),
+            'calender' => new CalenderResource($this->calendar),
             'description' => $this->description,
 
         ];

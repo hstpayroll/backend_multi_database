@@ -11,7 +11,7 @@ class AllowanceTypeResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'main_allowance' =>  MainAllowanceResource::collection($this->mainAllowance), // Assuming mainAllowance is the relationship with the MainAllowance model
+            'main_allowance' =>  new MainAllowanceResource($this->mainAllowance), // Assuming mainAllowance is the relationship with the MainAllowance model
             'name' => $this->name,
             'taxability' => $this->getTaxabilityLabel(),
             'tax_free_amount' => $this->tax_free_amount,

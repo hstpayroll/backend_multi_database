@@ -10,9 +10,9 @@ class AllowanceTransactionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'employees' => EmployeeResource::collection($this->employees),
-            'allowanceTypes' => OverTimeTypeResource::collection($this->overtimeTypes),
-            'payrollPeriods' => PayrollPeriodResource::collection($this->payrollPeriods),
+            'employees' => new EmployeeResource($this->employee),
+            'allowanceTypes' => new OverTimeTypeResource($this->overtimeType),
+            'payrollPeriods' => new PayrollPeriodResource($this->payrollPeriod),
             'amount' => $this->amount,
             'taxable_amount' => $this->taxable_amount,
             'tax_free_amount' => $this->tax_free_amount,

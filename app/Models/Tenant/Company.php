@@ -12,7 +12,7 @@ use App\Models\Tenant\AllowanceType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Company extends Model
 {
@@ -38,64 +38,23 @@ class Company extends Model
         'description'
     ];
 
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function allowanceTypes()
+    public function currency(): BelongsTo
     {
-        return $this->hasMany(AllowanceType::class, 'company_id', 'id');
+        return $this->belongsTo(Currency::class);
     }
 
-
-    public function calendar()
+    public function calendar(): BelongsTo
     {
-        return $this->hasMany(Calendar::class, 'id', 'calendar_id');
+        return $this->belongsTo(Calendar::class);
     }
 
-    public function currency()
-    {
-        return $this->hasMany(Currency::class, 'id', 'currency_id');
-    }
-
-    public function departments()
-    {
-        return $this->hasMany(Department::class, 'company_id', 'id');
-    }
-
-
-
-    public function loanTypes()
-    {
-        return $this->hasMany(LoanType::class, 'company_id', 'id');
-    }
-
-    public function overTimeCalculations()
-    {
-        return $this->hasMany(OverTimeCalculation::class, 'company_id', 'id');
-    }
-
-    public function overTimeTypes()
-    {
-        return $this->hasMany(OverTimeType::class, 'company_id', 'id');
-    }
-
-    public function payrolls()
-    {
-        return $this->hasMany(Payroll::class, 'company_id', 'id');
-    }
-
-    public function positions()
-    {
-        return $this->hasMany(Position::class, 'company_id', 'id');
-    }
-
-    public function subDepartments()
-    {
-        return $this->hasMany(SubDepartment::class, 'company_id', 'id');
-    }
+    //revers relationship
     public function companySetting()
     {
-        return $this->belongsTo(companySetting::class, 'company_id', 'id');
+        return $this->hasOne(companySetting::class);
+    }
+    public function payslipSetting()
+    {
+        return $this->hasOne(PayslipSetting::class);
     }
 }

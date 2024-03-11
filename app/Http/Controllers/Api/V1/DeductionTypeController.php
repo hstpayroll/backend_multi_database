@@ -19,8 +19,7 @@ class DeductionTypeController extends Controller
 
     public function store(StoreDeductionTypeRequest $request)
     {
-        $validatedData = $request->validated();
-        $deductionType = DeductionType::create($validatedData);
+        $deductionType = DeductionType::create($request->validated());
         return new DeductionTypeResource($deductionType);
     }
 
@@ -31,8 +30,7 @@ class DeductionTypeController extends Controller
 
     public function update(UpdateDeductionTypeRequest $request, DeductionType $deductionType)
     {
-        $validatedData = $request->validated();
-        $deductionType->update($validatedData);
+        $deductionType->update($request->validated());
         return new DeductionTypeResource($deductionType);
     }
 

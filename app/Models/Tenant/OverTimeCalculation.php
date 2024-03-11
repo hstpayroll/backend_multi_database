@@ -2,6 +2,7 @@
 
 namespace App\Models\Tenant;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -15,21 +16,26 @@ class OverTimeCalculation extends Model
         'over_time_type_id',
         'payroll_period_id',
         'ot_hour',
-        'ot_value'
+        'ot_value',
+        'status'
     ];
 
     public function employees()
     {
-        return $this->hasMany(Employee::class, 'id', 'employee_id');
+        return $this->belongsTo(Employee::class);
     }
 
-    public function overTimeTypes()
+    public function overTimeType()
     {
-        return $this->hasMany(OverTimeType::class, 'id', 'over_time_type_id');
+        return $this->belongsTo(OverTimeType::class);
     }
 
-    public function payrollPeriods()
+    public function payrollPeriod()
     {
-        return $this->hasMany(PayrollPeriod::class, 'id', 'payroll_period_id');
+        return $this->belongsTo(PayrollPeriod::class);
+    }
+    public function scopeActive(Builder $query)
+    {
+        return $query->where('status', 1); // Assuming 'active' is represented by status 1
     }
 }

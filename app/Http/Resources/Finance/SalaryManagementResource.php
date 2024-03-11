@@ -18,8 +18,6 @@ class SalaryManagementResource extends JsonResource
             'end_date' => $this->end_date,
             'description' => $this->description,
             'status' => $this->status == 1 ? 'active' : 'inactive',
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
         ];
     }
 }

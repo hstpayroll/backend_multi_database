@@ -24,23 +24,19 @@ class DeductionController extends Controller
         return new DeductionResource($deduction);
     }
 
-    public function show($id)
+    public function show(Deduction $deduction)
     {
-        $deduction = Deduction::findOrFail($id);
         return new DeductionResource($deduction);
     }
 
-    public function update(UpdateDeductionRequest $request, $id)
+    public function update(UpdateDeductionRequest $request, Deduction $deduction)
     {
-        $validatedData = $request->validated();
-        $deduction = Deduction::findOrFail($id);
-        $deduction->update($validatedData);
+        $deduction->update($request->validated());
         return new DeductionResource($deduction);
     }
 
-    public function destroy($id)
+    public function destroy(Deduction $deduction)
     {
-        $deduction = Deduction::findOrFail($id);
         $deduction->delete();
         return response()->noContent();
     }

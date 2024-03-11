@@ -16,9 +16,9 @@ class OverTimeCalculationResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'payrollPeriods' => PayrollPeriodResource::collection($this->payrollPeriods),
-            'employees' => EmployeeResource::collection($this->employees),
-            'overtimeTypes' => OverTimeTypeResource::collection($this->overtimeTypes),
+            'payrollPeriods' => new PayrollPeriodResource($this->payrollPeriod),
+            'employees' => new EmployeeResource($this->employee),
+            'overtimeTypes' => new OverTimeTypeResource($this->overtimeType),
             'ot_hour' => $this->ot_hour,
             'ot_value' => $this->ot_value,
             'status' => $this->status == 1 ? 'active' : 'inactive',
