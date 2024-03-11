@@ -80,7 +80,7 @@ class DepartmentController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('department_destroy')) {
                 $department->delete();
-                return Response::noContent();
+                return response()->json(['message' => 'Department deleted successfully']);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }

@@ -24,7 +24,7 @@ class StoreDepartmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|unique:departments|max:255',
         ];
     }
 }
