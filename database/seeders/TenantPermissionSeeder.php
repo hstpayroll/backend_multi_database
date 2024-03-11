@@ -196,6 +196,9 @@ class TenantPermissionSeeder extends Seeder
             'fiscal_year_index', 'fiscal_year_store', 'fiscal_year_show', 'fiscal_year_update', 'fiscal_year_destroy',
             'grade_index', 'grade_store', 'grade_show', 'grade_update', 'grade_destroy',
 
+            'overtime_calculation_index', 'overtime_calculation_store', 'overtime_calculation_show', 'overtime_calculation_update', 'overtime_calculation_destroy',
+
+
         ];
         foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);
