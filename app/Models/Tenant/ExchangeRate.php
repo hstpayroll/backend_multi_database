@@ -28,22 +28,15 @@ class ExchangeRate extends Model
 {
     use SoftDeletes;
 
-    static $rules = [
-        'from_currency_id' => 'required',
-        'to_currency_id' => 'required',
-        'start_date' => 'required',
-        'rate' => 'required',
-        'status' => 'required',
+
+    protected $fillable = [
+        'from_currency_id',
+        'to_currency_id',
+        'start_date',
+        'end_date',
+        'rate',
+        'status'
     ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['from_currency_id', 'to_currency_id', 'start_date', 'end_date', 'rate', 'status'];
 
 
     /**
@@ -51,14 +44,11 @@ class ExchangeRate extends Model
      */
     public function fromCurrency()
     {
-        return $this->hasOne(Currency::class, 'id', 'from_currency_id');
+        return $this->belongsTo(Currency::class, 'id', 'from_currency_id');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
     public function toCurrency()
     {
-        return $this->hasOne(Currency::class, 'id', 'to_currency_id');
+        return $this->belongsTo(Currency::class, 'id', 'to_currency_id');
     }
 }

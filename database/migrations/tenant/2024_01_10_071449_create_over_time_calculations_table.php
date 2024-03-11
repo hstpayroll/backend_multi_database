@@ -12,9 +12,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('over_time_type_id')->constrained('over_time_types')->onDelete('restrict')->onUpdate('cascade');
-            $table->date('ot_date');
+            $table->foreignId('payroll_period_id')->constrained('payroll_periods')->onDelete('restrict')->onUpdate('cascade');
             $table->decimal('ot_hour', 10, 2)->default(0);
             $table->decimal('ot_value', 10, 2)->default(0);
+            $table->tinyInteger('status')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -25,4 +26,3 @@ return new class extends Migration
         Schema::dropIfExists('over_time_calculations');
     }
 };
-

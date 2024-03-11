@@ -11,28 +11,41 @@ class PayrollPeriod extends Model
     use SoftDeletes;
 
     protected $fillable = [
+<<<<<<< HEAD
         'name', 'start_date', 'end_date',  'payroll_name_id', 'payroll_type_id', 'fiscal_year_id', 'employee_pension_id', 'company_pension_id',  'status',
+=======
+        'name',
+        'start_date',
+        'end_date',
+        'payroll_name_id',
+        'payroll_type_id',
+        'fiscal_year_id',
+        'employee_pension_id',
+        'company_pension_id',
+        'status',
+>>>>>>> 76bb8e8c442610c257c5ab74af3322ab1e457040
     ];
     public function payrollName()
     {
-        return $this->hasMany(PayrollName::class, 'id', 'payroll_name_id');
+        return $this->belongsTo(PayrollName::class);
     }
 
     public function payrollType()
     {
-        return $this->hasMany(PayrollType::class, 'id', 'payroll_type_id');
+        return $this->belongsTo(PayrollType::class);
     }
 
     public function fiscalYear()
     {
-        return $this->hasMany(FiscalYear::class, 'id', 'fiscal_year_id');
+        return $this->belongsTo(FiscalYear::class);
     }
+
     public function employeePension()
     {
-        return $this->hasMany(EmployeePension::class, 'id', 'employee_pension_id');
+        return $this->belongsTo(EmployeePension::class);
     }
     public function companyPension()
     {
-        return $this->hasMany(CompanyPension::class, 'id', 'company_pension_id');
+        return $this->belongsTo(CompanyPension::class);
     }
 }

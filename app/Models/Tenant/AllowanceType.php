@@ -21,11 +21,12 @@ class AllowanceType extends Model
 
     public function mainAllowance()
     {
-        return $this->hasMany(MainAllowance::class, 'id', 'main_allowance_id');
+        return $this->belongsTo(MainAllowance::class);
     }
 
+    //revers relationship
     public function allowanceTransactions()
     {
-        return $this->belongsTo(AllowanceTransaction::class, 'allowance_type_id', 'id');
+        return $this->hasMany(AllowanceTransaction::class);
     }
 }

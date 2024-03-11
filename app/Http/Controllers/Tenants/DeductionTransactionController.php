@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DeductionTransaction;
+use App\Models\Tenant\DeductionTransaction;
 use App\Http\Requests\StoreDeductionTransactionRequest;
 use App\Http\Requests\UpdateDeductionTransactionRequest;
 

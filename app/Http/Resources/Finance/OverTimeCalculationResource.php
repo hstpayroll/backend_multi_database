@@ -14,6 +14,14 @@ class OverTimeCalculationResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'payrollPeriods' => new PayrollPeriodResource($this->payrollPeriod),
+            'employees' => new EmployeeResource($this->employee),
+            'overtimeTypes' => new OverTimeTypeResource($this->overtimeType),
+            'ot_hour' => $this->ot_hour,
+            'ot_value' => $this->ot_value,
+            'status' => $this->status == 1 ? 'active' : 'inactive',
+        ];
     }
 }

@@ -2,8 +2,6 @@
 
 namespace App\Models\Tenant;
 
-use App\Filters\BranchFilters;
-use Essa\APIToolKit\Filters\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

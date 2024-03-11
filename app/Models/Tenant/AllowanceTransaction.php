@@ -21,21 +21,21 @@ class AllowanceTransaction extends Model
     ];
 
 
-    public function payrollPeriods()
+    public function payrollPeriod()
     {
-        return $this->hasMany(PayrollPeriod::class, 'id', 'payroll_period_id');
+        return $this->belongsTo(PayrollPeriod::class);
     }
-    public function employees()
+    public function employee()
     {
-        return $this->hasMany(Employee::class, 'id', 'employee_id');
+        return $this->belongsTo(Employee::class);
     }
 
-    public function allowanceTypes()
+    public function allowanceType()
     {
-        return $this->hasMany(AllowanceType::class, 'id', 'allowance_type_id');
+        return $this->belongsTo(AllowanceType::class);
     }
     public function mainAllowance()
     {
-        return $this->hasMany(mainAllowance::class, 'id', 'allowance_type_id');
+        return $this->belongsTo(mainAllowance::class);
     }
 }

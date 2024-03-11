@@ -11,11 +11,11 @@ class PayrollPeriodResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'payroll_name' =>  PayrollNameResource::collection($this->payrollName),
-            'payroll_type' => PayrollTypeResource::collection($this->payrollType),
-            'fiscal_year' => FiscalYearResource::collection($this->fiscalYear),
-            'employee_pension' => EmployeePensionResource::collection($this->employeePension),
-            'company_pension' => CompanyPensionResource::collection($this->companyPension),
+            'payroll_name' =>  new PayrollNameResource($this->payrollName),
+            'payroll_type' => new  PayrollTypeResource($this->payrollType),
+            'fiscal_year' => new FiscalYearResource($this->fiscalYear),
+            'employee_pension' => new EmployeePensionResource($this->employeePension),
+            'company_pension' => new CompanyPensionResource($this->companyPension),
             'name' => $this->name,
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,

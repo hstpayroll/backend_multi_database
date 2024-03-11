@@ -2,8 +2,11 @@
 
 namespace App\Models\Tenant;
 
+use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Employee extends Model
 {
@@ -34,6 +37,7 @@ class Employee extends Model
         'phone_number',
 
         'cost_center',
+
         'tax_region_id',
         'grade_id',
         'department_id',
@@ -58,60 +62,60 @@ class Employee extends Model
         );
     }
 
-    public function bank()
+    public function bank(): BelongsTo
     {
-        return $this->hasOne(Bank::class, 'id', 'bank_id');
+        return $this->belongsTo(Bank::class);
     }
 
-    public function citizenship()
+    public function citizenship(): BelongsTo
     {
-        return $this->hasOne(Citizenship::class, 'id', 'citizenship_id');
+        return $this->belongsTo(Citizenship::class);
     }
 
-    public function department()
+    public function department(): BelongsTo
     {
-        return $this->hasOne(Department::class, 'id', 'department_id');
+        return $this->belongsTo(Department::class);
     }
 
-    public function employmentType()
+    public function employmentType(): BelongsTo
     {
-        return $this->hasOne(EmploymentType::class, 'id', 'employment_type_id');
+        return $this->belongsTo(EmploymentType::class);
     }
 
-    public function grade()
+    public function grade(): BelongsTo
     {
-        return $this->hasOne(Grade::class, 'id', 'grade_id');
+        return $this->belongsTo(Grade::class);
     }
 
 
     public function loans()
     {
-        return $this->hasMany(Loan::class, 'employee_id', 'id');
+        return $this->belongsTo(Loan::class, 'employee_id', 'id');
     }
 
     public function loanPaymentRecords()
     {
-        return $this->hasMany(LoanPaymentRecord::class, 'employee_id', 'id');
+        return $this->belongsTo(LoanPaymentRecord::class, 'employee_id', 'id');
     }
 
     public function overTimeCalculations()
     {
-        return $this->hasMany(OverTimeCalculation::class, 'employee_id', 'id');
-    }
-
-    public function payrolls()
-    {
-        return $this->hasMany(Payroll::class, 'employee_id', 'id');
+        return $this->belongsTo(OverTimeCalculation::class, 'employee_id', 'id');
     }
 
     public function position()
     {
         return $this->hasOne(Position::class, 'id', 'position_id');
     }
+    public function payrolls()
+    {
+        return $this->hasMany(Payroll::class, 'employee_id', 'id');
+    }
 
     public function salaryManagements()
     {
-        return $this->hasMany(SalaryManagement::class, 'employee_id', 'id');
+        return $this->hasMany(SalaryManagement::class)
+            ->where('status', '1')->first();
     }
 
     public function subDepartment()
@@ -122,5 +126,14 @@ class Employee extends Model
     public function taxRegion()
     {
         return $this->hasOne(TaxRegion::class, 'id', 'tax_region_id');
+    }
+    public function getSalaryAttribute()
+    {
+        $activeSalary = $this->salaryManagements()->new_salary;
+        return $activeSalary;
+    }
+    public function scopeActive(Builder $query)
+    {
+        return $query->where('status', 1); // Assuming 'active' is represented by status 1
     }
 }

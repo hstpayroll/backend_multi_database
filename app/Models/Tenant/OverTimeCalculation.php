@@ -2,6 +2,7 @@
 
 namespace App\Models\Tenant;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -9,11 +10,17 @@ class OverTimeCalculation extends Model
 {
     use SoftDeletes;
 
-    protected $perPage = 20;
 
-    protected $fillable = ['employee_id','over_time_type_id','ot_date','ot_hour','ot_value'];
+    protected $fillable = [
+        'employee_id',
+        'over_time_type_id',
+        'payroll_period_id',
+        'ot_hour',
+        'ot_value',
+        'status'
+    ];
 
-    public function employee()
+    public function employees()
     {
         return $this->belongsTo(Employee::class);
     }
@@ -23,8 +30,12 @@ class OverTimeCalculation extends Model
         return $this->belongsTo(OverTimeType::class);
     }
 
-    public function payrolls()
+    public function payrollPeriod()
     {
-        return $this->hasMany(Payroll::class, 'over_time_calculation_id');
+        return $this->belongsTo(PayrollPeriod::class);
+    }
+    public function scopeActive(Builder $query)
+    {
+        return $query->where('status', 1); // Assuming 'active' is represented by status 1
     }
 }

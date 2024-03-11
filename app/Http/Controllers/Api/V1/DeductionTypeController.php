@@ -3,48 +3,40 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreDeductionTypeRequest;
+use App\Http\Requests\UpdateDeductionTypeRequest;
+use App\Http\Resources\Finance\DeductionTypeResource;
 use App\Models\Tenant\DeductionType;
 use Illuminate\Http\Request;
 
 class DeductionTypeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $deductionTypes = DeductionType::all();
+        return DeductionTypeResource::collection($deductionTypes);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreDeductionTypeRequest $request)
     {
-        //
+        $deductionType = DeductionType::create($request->validated());
+        return new DeductionTypeResource($deductionType);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(DeductionType $deductionType)
     {
-        //
+        return new DeductionTypeResource($deductionType);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, DeductionType $deductionType)
+    public function update(UpdateDeductionTypeRequest $request, DeductionType $deductionType)
     {
-        //
+        $deductionType->update($request->validated());
+        return new DeductionTypeResource($deductionType);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(DeductionType $deductionType)
     {
-        //
+        $deductionType->delete();
+        return response()->noContent();
     }
 }

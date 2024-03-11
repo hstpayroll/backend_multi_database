@@ -3,48 +3,41 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreDeductionRequest;
+use App\Http\Requests\UpdateDeductionRequest;
+use App\Http\Resources\Finance\DeductionResource;
 use App\Models\Tenant\Deduction;
 use Illuminate\Http\Request;
 
 class DeductionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $deductions = Deduction::all();
+        return DeductionResource::collection($deductions);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreDeductionRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+        $deduction = Deduction::create($validatedData);
+        return new DeductionResource($deduction);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Deduction $deduction)
     {
-        //
+        return new DeductionResource($deduction);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Deduction $deduction)
+    public function update(UpdateDeductionRequest $request, Deduction $deduction)
     {
-        //
+        $deduction->update($request->validated());
+        return new DeductionResource($deduction);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Deduction $deduction)
     {
-        //
+        $deduction->delete();
+        return response()->noContent();
     }
 }

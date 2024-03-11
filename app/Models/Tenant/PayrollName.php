@@ -21,6 +21,6 @@ class PayrollName extends Model
     }
     public function payrollPeriods()
     {
-        return $this->belongsTo(PayrollPeriod::class, 'payroll_period_id', 'id');
+        return $this->hasMany(PayrollPeriod::class);
     }
 }
