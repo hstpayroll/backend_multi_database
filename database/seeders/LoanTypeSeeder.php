@@ -13,9 +13,13 @@ class LoanTypeSeeder extends Seeder
      */
     public function run(): void
     {
-      LoanType::create([
-          'name' => 'Staff Loan',
-          'rate' => '12',
-      ]);
+        LoanType::create([
+            'name' => 'Staff Loan',
+            'rate' => '0',
+        ]);
+        LoanType::create([
+            'name' => 'Advance Loan',
+            'rate' => '0',
+        ]);
     }
 }

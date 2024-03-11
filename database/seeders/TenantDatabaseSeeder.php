@@ -21,13 +21,10 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(CurrencySeeder::class);
         $this->call(CalendarSeeder::class);
         $this->call(CompanySeeder::class);
-
         $this->call(GradeSeeder::class);
-
         $this->call(BankSeeder::class);
         $this->call(BranchSeeder::class);
         $this->call(DepartmentSeeder::class);
-
         $this->call(SubDepartmentSeeder::class);
         $this->call(PositionSeeder::class);
         $this->call(PayrollTypeSeeder::class);
@@ -43,6 +40,7 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(OverTimeTypeSeeder::class);
         $this->call(OverTimeCalculationSeeder::class);
         $this->call(LoanTypeSeeder::class);
+        $this->call(LoanSeeder::class);
         $this->call(MainAllowanceSeeder::class);
         $this->call(CompanySettingSeeder::class);
         $this->call(PayslipSettingSeeder::class);
