@@ -34,5 +34,4 @@ class UpdateAllowanceTypeRequest extends FormRequest
 
         return $rules;
     }
-
 }
