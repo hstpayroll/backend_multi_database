@@ -8,7 +8,6 @@ use App\Http\Requests\StoreLoanPaymentRecordRequest;
 use App\Http\Requests\UpdateLoanPaymentRecordRequest;
 use App\Http\Resources\Finance\LoanPaymentRecordResource;
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class LoanPaymentRecordController extends Controller
@@ -33,6 +32,7 @@ class LoanPaymentRecordController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('loan_payment_record_store')) {
+                $validated = $request->validated();
                 $loanPaymentRecord = LoanPaymentRecord::create($request->validated());
                 return new LoanPaymentRecordResource($loanPaymentRecord);
             } else {

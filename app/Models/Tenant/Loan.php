@@ -9,9 +9,18 @@ class Loan extends Model
 {
     use SoftDeletes;
 
-    protected $perPage = 20;
 
-    protected $fillable = ['employee_id','loan_type_id','amount','start_date','expected_end_date','duration_months','description','status','termination_date'];
+    protected $fillable = [
+        'employee_id',
+        'loan_type_id',
+        'amount',
+        'start_date',
+        'expected_end_date',
+        'duration_months',
+        'description',
+        'status',
+        'termination_date'
+    ];
 
     public function employee()
     {
