@@ -20,7 +20,7 @@ class StoreAllowanceTypeRequest extends FormRequest
             'taxability' => 'required|integer|between:1,4',
             'tax_free_amount' => ($this->taxability == 3) ? 'required|numeric' : 'nullable',
             'value_type' => 'required|boolean',
-            'value' => ($this->value_type == 0) ? 'required|integer|between:1,100' : 'required|numeric|gt:0',
+            'value' => ($this->value_type == 0) ? 'required|numeric|gt:0' : 'required|integer|between:1,100',
             'status' => 'nullable|integer',
         ];
 

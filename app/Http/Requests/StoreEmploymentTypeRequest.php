@@ -17,7 +17,7 @@ class StoreEmploymentTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|unique:EmploymentTypes,name',
             // Define other validation rules as needed
         ];
     }

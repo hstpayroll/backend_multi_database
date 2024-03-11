@@ -14,7 +14,7 @@ class StoreCalendarRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|unique:calendars,name|max:255',
             'description' => 'nullable|string',
             'status' => 'nullable|integer|in:0,1',
         ];

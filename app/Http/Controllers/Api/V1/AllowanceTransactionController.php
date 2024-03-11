@@ -18,7 +18,7 @@ class AllowanceTransactionController extends Controller
      */
     public function index()
     {
-        $allowanceTransaction =  AllowanceTransaction::with(['payrollPeriod', 'employee', 'allowanceType'])->paginate(10);
+        $allowanceTransaction =  AllowanceTransaction::with(['payrollPeriods', 'employees', 'allowanceTypes'])->paginate(10);
         return AllowanceTransactionResource::collection($allowanceTransaction);
     }
 

@@ -40,8 +40,9 @@ class BankController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('bank_stores')) {
-                $bank = Bank::create($request->validated());
+            if ($user->hasPermissionTo('bank_store')) {
+                $validatedData = $request->validated();
+                $bank = Bank::create($validatedData);
                 return new BankResource($bank);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
