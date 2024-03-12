@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Tenant\LoanPaymentRecord;
+use App\Models\Tenant\Loan;
+use Illuminate\Http\Request;
+use App\Models\Tenant\Employee;
 use App\Http\Controllers\Controller;
+use App\Models\Tenant\LoanPaymentRecord;
 use App\Http\Requests\StoreLoanPaymentRecordRequest;
 use App\Http\Requests\UpdateLoanPaymentRecordRequest;
-use App\Http\Resources\Finance\LoanPaymentRecordResource;
-use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
+use App\Http\Resources\Finance\LoanPaymentRecordResource;
 
 class LoanPaymentRecordController extends Controller
 {
@@ -33,7 +34,28 @@ class LoanPaymentRecordController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('loan_payment_record_store')) {
-                $loanPaymentRecord = LoanPaymentRecord::create($request->validated());
+                $validatedData = $request->validated();
+                // $loanPaymentRecord = LoanPaymentRecord::create($validatedData);
+                $loan = Loan::find($validatedData['loan_id'])->first();
+                $loan_amount = $loan->amount;
+                $employee = Employee::where('id', $loan->employee_id)->first();
+                $loanPayments = LoanPaymentRecord::where('loan_id', $validatedData['loan_id'])->get();
+                $totalLoanPayments = $loanPayments->sum('amount_payed');
+
+                // dd($totalLoanPayments);
+
+                $amount_payed = $validatedData['amount_payed'];
+                $outstanding_amount = $loan_amount -   $amount_payed;
+
+                $loanPaymentRecord = new LoanPaymentRecord();
+                $loanPaymentRecord->payroll_period_id =  $validatedData['payroll_period_id'];
+                $loanPaymentRecord->loan_id = $validatedData['loan_id'];
+                $loanPaymentRecord->amount_payed = $validatedData['amount_payed'];
+                $loanPaymentRecord->outstanding_amount =  $outstanding_amount;
+                $loanPaymentRecord->is_partial = $validatedData['is_partial'];
+                $loanPaymentRecord->is_missed = $validatedData['is_missed'];
+                $loanPaymentRecord->save();
+
                 return new LoanPaymentRecordResource($loanPaymentRecord);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

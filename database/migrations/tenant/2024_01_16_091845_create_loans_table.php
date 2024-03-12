@@ -20,8 +20,8 @@ return new class extends Migration
             $table->date('expected_end_date');
             $table->integer('duration_months')->default(0);
             $table->text('description')->nullable();
-            $table->tinyInteger('status')->default(1);
             $table->date('termination_date')->nullable(); //if the status is finished this value must have a value
+            $table->tinyInteger('status')->default(1); // 1 = active, 0 = inactive 3 = finished 4 = terminated 5 = cancelled
             $table->timestamps();
             $table->softDeletes();
         });

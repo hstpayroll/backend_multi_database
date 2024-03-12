@@ -2,6 +2,9 @@
 
 namespace App\Models\Tenant;
 
+use App\Models\Tenant\Employee;
+use App\Models\Tenant\PayrollPeriod;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -25,34 +28,28 @@ use Illuminate\Database\Eloquent\Model;
 class LoanPaymentRecord extends Model
 {
 
-    static $rules = [
-		'loan_id' => 'required',
-		'amount_payed' => 'required',
-		'outstanding_amount' => 'required',
-		'is_partial' => 'required',
-		'is_missed' => 'required',
+
+    protected $fillable = [
+        'payroll_period_id',
+        'loan_id',
+        'amount_payed',
+        'outstanding_amount',
+        'is_partial',
+        'is_missed'
     ];
 
-    protected $perPage = 20;
 
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['loan_id','amount_payed','outstanding_amount','is_partial','is_missed'];
-
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
     public function loan()
     {
-        return $this->hasOne(Loan::class, 'id', 'loan_id');
+        return $this->belongsTo(Loan::class);
     }
 
-
+    public function payrollPeriod()
+    {
+        return $this->belongsTo(PayrollPeriod::class);
+    }
+    public function scopeActive(Builder $query)
+    {
+        return $query->where('status', 1); // Assuming 'active' is represented by status 1
+    }
 }
