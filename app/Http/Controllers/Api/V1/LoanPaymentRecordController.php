@@ -6,11 +6,13 @@ use App\Models\Tenant\Loan;
 use Illuminate\Http\Request;
 use App\Models\Tenant\Employee;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Tenant\LoanPaymentRecord;
 use App\Http\Requests\StoreLoanPaymentRecordRequest;
 use App\Http\Requests\UpdateLoanPaymentRecordRequest;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 use App\Http\Resources\Finance\LoanPaymentRecordResource;
+use Illuminate\Validation\ValidationException;
 
 class LoanPaymentRecordController extends Controller
 {
@@ -41,8 +43,19 @@ class LoanPaymentRecordController extends Controller
                 $loanPayments = LoanPaymentRecord::where('loan_id', $loan->id)->get();
                 $totalLoanPayments = $loanPayments->where('loan_id',  $loan->id)->sum('amount_payed');
                 $outstanding_amount = $loanAmount -   ($totalLoanPayments  + $validatedData['amount_payed']);
-                if ($outstanding_amount < 0) {
-                    $outstanding_amount = 0;
+                $validator = Validator::make($validatedData, [
+                    'amount_payed' => [
+                        'required',
+                        function ($attribute, $value, $fail) use ($outstanding_amount) {
+                            if ($outstanding_amount < 0) {
+                                $fail('The outstanding amount cannot be negative.');
+                            }
+                        },
+                    ],
+                ]);
+                // Add a custom validation rule for outstanding amount
+                if ($validator->fails()) {
+                    throw new ValidationException($validator);
                 }
 
                 $loanPaymentRecord = new LoanPaymentRecord();
@@ -82,7 +95,38 @@ class LoanPaymentRecordController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('loan_payment_record_update')) {
-                $loanPaymentRecord->update($request->validated());
+                $validatedData = $request->validated();
+                $loan = Loan::find($validatedData['loan_id'])->first();
+                $loanAmount = $loan->amount; // the loan amount that the employee has borrowed
+                $employee = Employee::where('id', $loan->employee_id)->first();
+                $loanPayments = LoanPaymentRecord::where('loan_id', $loan->id)->get();
+                $totalLoanPayments = $loanPayments->where('loan_id',  $loan->id)->sum('amount_payed');
+                $outstanding_amount = $loanAmount -   ($totalLoanPayments  + $validatedData['amount_payed']);
+                $validator = Validator::make($validatedData, [
+                    'amount_payed' => [
+                        'required',
+                        function ($attribute, $value, $fail) use ($outstanding_amount) {
+                            if ($outstanding_amount < 0) {
+                                $fail('The outstanding amount cannot be negative.');
+                            }
+                        },
+                    ],
+                ]);
+                // Add a custom validation rule for outstanding amount
+                if ($validator->fails()) {
+                    throw new ValidationException($validator);
+                }
+
+                $loanPaymentRecord->update([
+                    'payroll_period_id'  =>  $validatedData['payroll_period_id'],
+                    'loan_id'  => $validatedData['loan_id'],
+                    'amount_payed'  => $validatedData['amount_payed'],
+                    'outstanding_amount'  =>  $outstanding_amount,
+                    'is_partial'  => $validatedData['is_partial'],
+                    'is_missed'  => $validatedData['is_missed'],
+                ]);
+
+
                 return new LoanPaymentRecordResource($loanPaymentRecord);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
