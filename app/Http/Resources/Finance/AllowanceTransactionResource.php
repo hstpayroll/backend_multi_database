@@ -16,8 +16,8 @@ class AllowanceTransactionResource extends JsonResource
             'amount' => $this->amount,
             'taxable_amount' => $this->taxable_amount,
             'tax_free_amount' => $this->non_taxable_amount,
-            'is_day_based' => $this->value_type == 0 ? 'Yes' : 'No',
-            'start_date' =>  $this->start_date,
+            'is_day_based' => $this->value_type == 1 ? 'Yes' : 'No',
+            'number_of_date' =>  $this->number_of_date,
             'status' => $this->status == 1 ? 'active' : 'inactive',
         ];
     }

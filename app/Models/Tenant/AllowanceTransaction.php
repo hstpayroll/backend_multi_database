@@ -17,7 +17,7 @@ class AllowanceTransaction extends Model
         'taxable_amount',
         'non_taxable_amount',
         'is_day_based',
-        'start_date'
+        'number_of_date'
     ];
 
 

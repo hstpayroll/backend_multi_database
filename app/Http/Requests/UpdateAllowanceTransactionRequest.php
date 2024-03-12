@@ -21,7 +21,7 @@ class UpdateAllowanceTransactionRequest extends FormRequest
             'allowance_type_id' => 'required|exists:allowance_types,id',
             'amount' => 'required|numeric',
             'is_day_based' => 'required|boolean', // Ensure is_day_based is present and boolean
-            'start_date' => 'nullable|date|required_if:is_day_based,1',
+            'number_of_date' => 'nullable|date|required_if:is_day_based,1',
         ];
 
         // Merge base rules with taxable amount rules

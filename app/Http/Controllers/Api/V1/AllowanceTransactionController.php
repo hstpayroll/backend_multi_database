@@ -28,6 +28,9 @@ class AllowanceTransactionController extends Controller
     // public function store(Request $request)
     public function store(StoreAllowanceTransactionRequest $request)
     {
+        $validatedData = $request->validated();
+
+        
         $allowanceTransaction = AllowanceTransaction::create($request->validated());
         return new AllowanceTransactionResource($allowanceTransaction);
     }

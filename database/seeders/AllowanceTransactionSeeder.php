@@ -21,6 +21,7 @@ class AllowanceTransactionSeeder extends Seeder
             'taxable_amount' => 800,
             'non_taxable_amount' => 200,
             'is_day_based' => 1,
+            'number_of_date' => 5,
         ]);
 
         AllowanceTransaction::create([
