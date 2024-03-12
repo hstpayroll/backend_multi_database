@@ -21,20 +21,20 @@ class AllowanceTransaction extends Model
     ];
 
 
-    public function payrollPeriod()
+    public function payrollPeriods()
     {
         return $this->belongsTo(PayrollPeriod::class);
     }
-    public function employee()
+    public function employees()
     {
         return $this->belongsTo(Employee::class);
     }
 
-    public function allowanceType()
+    public function allowanceTypes()
     {
         return $this->belongsTo(AllowanceType::class);
     }
-    public function mainAllowance()
+    public function mainAllowances()
     {
         return $this->belongsTo(mainAllowance::class);
     }
