@@ -16,6 +16,7 @@ class LoanSeeder extends Seeder
         Loan::create([
             'employee_id' => 1,
             'loan_type_id' => 1,
+            'name' => "Sample Loan 2",
             'amount' => 5000.00,
             'start_date' => now(),
             'expected_end_date' => now()->addMonths(6),
