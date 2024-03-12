@@ -2,6 +2,7 @@
 
 namespace App\Models\Tenant;
 
+use App\Enums\LoanStatusEnum;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -20,6 +21,9 @@ class Loan extends Model
         'description',
         'status',
         'termination_date'
+    ];
+    protected $casts = [
+        'status' => LoanStatusEnum::class, // Cast the status to LoanStatusEnum
     ];
 
     public function employee()

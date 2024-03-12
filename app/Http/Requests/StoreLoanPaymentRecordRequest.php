@@ -17,7 +17,7 @@ class StoreLoanPaymentRecordRequest extends FormRequest
             'payroll_period_id' => 'required|exists:payroll_periods,id',
             'loan_id' => 'required|exists:loans,id',
             'amount_payed' => 'required|numeric|min:0',
-            'outstanding_amount' => 'required|numeric|min:0',
+            'outstanding_amount' => 'nullable|numeric|min:0',
             'is_partial' => 'required|boolean',
             'is_missed' => 'required|boolean',
         ];
