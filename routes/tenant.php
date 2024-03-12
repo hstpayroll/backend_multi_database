@@ -42,6 +42,7 @@ use App\Http\Controllers\Api\V1\OverTimeCalculationController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\Api\V1\AllowanceTransactionController;
 use App\Http\Controllers\Api\v1\DeductionController;
+use App\Http\Controllers\Api\V1\DeductionTransactionController;
 use App\Http\Controllers\Api\v1\DeductionTypeController;
 
 
@@ -117,6 +118,8 @@ Route::middleware([
 
             Route::apiResource('deduction-types', DeductionTypeController::class);
             Route::apiResource('deductions', DeductionController::class);
+            Route::apiResource('deduction-transactions', DeductionTransactionController::class);
+
         });
 });
 
