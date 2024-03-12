@@ -18,6 +18,7 @@ class LoanResource extends JsonResource
             'id' => $this->id,
             'employee' => new EmployeeResource($this->employee),
             'loan_type' => new LoanTypeResource($this->loanType), // Include full loan type resource
+            'name' => $this->name,
             'amount' => $this->amount,
             'start_date' => $this->start_date,
             'expected_end_date' => $this->expected_end_date,

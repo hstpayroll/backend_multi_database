@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('loan_type_id')->constrained('loan_types')->onDelete('restrict')->onUpdate('cascade');
+            $table->text('name');
             $table->decimal('amount', 10, 2);
             $table->date('start_date');
             $table->date('expected_end_date');

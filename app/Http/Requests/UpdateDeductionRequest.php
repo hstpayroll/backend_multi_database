@@ -18,7 +18,7 @@ class UpdateDeductionRequest extends FormRequest
             'deduction_type_id' => 'required|exists:deduction_types,id',
             'value_type' => 'required|boolean',
             'value' => 'required|numeric|min:0',
-            'status' => 'required|boolean',
+            'status' => 'nullable|boolean',
         ];
     }
 }

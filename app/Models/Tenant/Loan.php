@@ -4,16 +4,26 @@ namespace App\Models\Tenant;
 
 use App\Enums\LoanStatusEnum;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Loan extends Model
 {
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('status', function (Builder $builder) {
+            $builder->where('status', 1);
+        });
+    }
     use SoftDeletes;
 
 
     protected $fillable = [
         'employee_id',
         'loan_type_id',
+        'name',
         'amount',
         'start_date',
         'expected_end_date',
@@ -22,9 +32,9 @@ class Loan extends Model
         'status',
         'termination_date'
     ];
-    protected $casts = [
-        'status' => LoanStatusEnum::class, // Cast the status to LoanStatusEnum
-    ];
+    // protected $casts = [
+    //     'status' => LoanStatusEnum::class, // Cast the status to LoanStatusEnum
+    // ];
 
     public function employee()
     {

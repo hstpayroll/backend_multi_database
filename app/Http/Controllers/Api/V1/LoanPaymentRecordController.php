@@ -35,17 +35,15 @@ class LoanPaymentRecordController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('loan_payment_record_store')) {
                 $validatedData = $request->validated();
-                // $loanPaymentRecord = LoanPaymentRecord::create($validatedData);
                 $loan = Loan::find($validatedData['loan_id'])->first();
-                $loan_amount = $loan->amount;
+                $loanAmount = $loan->amount; // the loan amount that the employee has borrowed
                 $employee = Employee::where('id', $loan->employee_id)->first();
-                $loanPayments = LoanPaymentRecord::where('loan_id', $validatedData['loan_id'])->get();
-                $totalLoanPayments = $loanPayments->sum('amount_payed');
-
-                // dd($totalLoanPayments);
-
-                $amount_payed = $validatedData['amount_payed'];
-                $outstanding_amount = $loan_amount -   $amount_payed;
+                $loanPayments = LoanPaymentRecord::where('loan_id', $loan->id)->get();
+                $totalLoanPayments = $loanPayments->where('loan_id',  $loan->id)->sum('amount_payed');
+                $outstanding_amount = $loanAmount -   ($totalLoanPayments  + $validatedData['amount_payed']);
+                if ($outstanding_amount < 0) {
+                    $outstanding_amount = 0;
+                }
 
                 $loanPaymentRecord = new LoanPaymentRecord();
                 $loanPaymentRecord->payroll_period_id =  $validatedData['payroll_period_id'];
