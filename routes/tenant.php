@@ -104,6 +104,9 @@ Route::middleware([
             Route::apiResource('loan-payment-records', LoanPaymentRecordController::class);
             Route::apiResource('main-allowances', MainAllowanceController::class);
             Route::apiResource('allowance-types', AllowanceTypeController::class);
+
+            Route::get('employee-transaction', [AllowanceTransactionController::class, 'employeeTransaction'])->name('employee-tansaction');
+
             Route::apiResource('allowance-transactions', AllowanceTransactionController::class);
             Route::apiResource('employee-pensions', EmployeePensionController::class);
             Route::apiResource('company-pensions', CompanyPensionController::class);
