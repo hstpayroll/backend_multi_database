@@ -20,6 +20,7 @@ class EmployeeController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('employee_index')) {
                 $employees = Employee::latest()->paginate(10);
+                // return EmployeeResource::collection($employees);
                 return EmployeeResource::collection($employees);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
@@ -106,5 +107,21 @@ class EmployeeController extends Controller
             'status' => 200,
             'data' => $position
         ]);
+    }
+
+
+    public function employeeListWithLess(Request $request)
+    {
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('employee_index')) {
+                $employees = Employee::latest()->paginate(10);
+                return EmployeeResource::collection($employees->items(), false);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 }

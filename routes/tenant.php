@@ -44,7 +44,7 @@ use App\Http\Controllers\Api\V1\AllowanceTransactionController;
 use App\Http\Controllers\Api\v1\DeductionController;
 use App\Http\Controllers\Api\V1\DeductionTransactionController;
 use App\Http\Controllers\Api\v1\DeductionTypeController;
-
+use App\Http\Controllers\Api\V1\ShiftAllowanceTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +99,8 @@ Route::middleware([
             Route::apiResource('payroll-types', PayrollTypeController::class);
             Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');
             Route::get('employee-position', [EmployeeController::class, 'employeePosition'])->name('employee-position');
+            Route::get('/employees/list-with-less', [EmployeeController::class, 'employeeListWithLess']);
+
             Route::apiResource('employees', EmployeeController::class);
             Route::apiResource('loans', LoanController::class);
             Route::apiResource('loan-types', LoanTypeController::class);
@@ -119,6 +121,7 @@ Route::middleware([
             Route::apiResource('deduction-types', DeductionTypeController::class);
             Route::apiResource('deductions', DeductionController::class);
             Route::apiResource('deduction-transactions', DeductionTransactionController::class);
+            Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
 
         });
 });

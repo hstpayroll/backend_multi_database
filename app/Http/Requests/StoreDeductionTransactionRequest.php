@@ -21,7 +21,6 @@ class StoreDeductionTransactionRequest extends FormRequest
             'outstanding_amount' => 'required|numeric|min:0',
             'is_partial' => 'required|boolean',
             'is_missed' => 'required|boolean',
-            'start_date' => 'nullable|date',
         ];
     }
 }
