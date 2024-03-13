@@ -44,6 +44,7 @@ use App\Http\Controllers\Api\V1\AllowanceTransactionController;
 use App\Http\Controllers\Api\v1\DeductionController;
 use App\Http\Controllers\Api\V1\DeductionTransactionController;
 use App\Http\Controllers\Api\v1\DeductionTypeController;
+use App\Http\Controllers\Api\V1\ShiftAllowanceCalculationController;
 use App\Http\Controllers\Api\V1\ShiftAllowanceTypeController;
 
 /*
@@ -122,6 +123,7 @@ Route::middleware([
             Route::apiResource('deductions', DeductionController::class);
             Route::apiResource('deduction-transactions', DeductionTransactionController::class);
             Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
+            Route::apiResource('shift-allowance-calculations', ShiftAllowanceCalculationController::class);
 
         });
 });
