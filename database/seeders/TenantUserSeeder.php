@@ -157,6 +157,14 @@ class TenantUserSeeder extends Seeder
                 'fiscal_year_index', 'fiscal_year_store', 'fiscal_year_show', 'fiscal_year_update', 'fiscal_year_destroy',
                 'grade_index', 'grade_store', 'grade_show', 'grade_update', 'grade_destroy',
                 'overtime_calculation_index', 'overtime_calculation_store', 'overtime_calculation_show', 'overtime_calculation_update', 'overtime_calculation_destroy',
+
+                //Allowance transaction with transaction by employee
+                'allowance_transaction_index',
+                'allowance_transaction_store',
+                'allowance_transaction_show',
+                'allowance_transaction_update',
+                'allowance_transaction_destroy',
+                'transaction_by_employee_show',
             ]
         );
     }

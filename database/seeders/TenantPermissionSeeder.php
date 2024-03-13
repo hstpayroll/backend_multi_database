@@ -198,6 +198,14 @@ class TenantPermissionSeeder extends Seeder
 
             'overtime_calculation_index', 'overtime_calculation_store', 'overtime_calculation_show', 'overtime_calculation_update', 'overtime_calculation_destroy',
 
+            //Allowance transaction with transaction by employee
+            'allowance_transaction_index',
+            'allowance_transaction_store',
+            'allowance_transaction_show',
+            'allowance_transaction_update',
+            'allowance_transaction_destroy',
+            'transaction_by_employee_show',
+
 
         ];
         foreach ($permissions as $permission) {

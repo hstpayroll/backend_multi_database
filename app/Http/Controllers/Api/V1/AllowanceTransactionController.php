@@ -24,10 +24,19 @@ class AllowanceTransactionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $allowanceTransaction =  AllowanceTransaction::with(['payrollPeriod', 'employee', 'allowanceType'])->paginate(10);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('allowance_transaction_index')) {
+                $allowanceTransaction =  AllowanceTransaction::with(['payrollPeriod', 'employee', 'allowanceType'])->paginate(10);
         return AllowanceTransactionResource::collection($allowanceTransaction);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
     /**
@@ -39,7 +48,7 @@ class AllowanceTransactionController extends Controller
 
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('bank_store')) {
+            if ($user->hasPermissionTo('allowance_transaction_store')) {
                 $validatedData = $request->validated();
                 $allowanceType = AllowanceType::find($validatedData['allowance_type_id']);
 
@@ -94,9 +103,18 @@ class AllowanceTransactionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AllowanceTransaction $allowanceTransaction)
+    public function show(Request $request, AllowanceTransaction $allowanceTransaction)
     {
-        return new AllowanceTransactionResource($allowanceTransaction);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('allowance_tranaction_show')) {
+                return new AllowanceTransactionResource($allowanceTransaction);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
     /**
@@ -104,23 +122,53 @@ class AllowanceTransactionController extends Controller
      */
     public function update(UpdateAllowanceTransactionRequest $request, AllowanceTransaction $allowanceTransaction)
     {
-        $allowanceTransaction->update($request->validated());
-        return new AllowanceTransactionResource($allowanceTransaction);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('allowance_tranaction_update')) {
+                $allowanceTransaction->update($request->validated());
+                return new AllowanceTransactionResource($allowanceTransaction);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AllowanceTransaction $allowanceTransaction)
+    public function destroy(Request $request, AllowanceTransaction $allowanceTransaction)
     {
-        $allowanceTransaction->delete();
-        return response()->noContent();
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('allowance_tranaction_destroy')) {
+                $allowanceTransaction->delete();
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Employee Transaction deleted successfully',
+                ]);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
-    public function employeeTransaction(Request $request, Employee $employee)
-    {
-        $employee_id = $request->employee_id;
-        $allowanceTransaction = AllowanceTransaction::where('employee_id', $employee_id)->get();
-        return  AllowanceTransactionResource::collection($allowanceTransaction);
+    public function transactionByEmployee(Request $request, Employee $employee)
+    { 
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('transaction_by_employee_show')) {
+                $employee_id = $request->employee_id;
+                $allowanceTransaction = AllowanceTransaction::where('employee_id', $employee_id)->get();
+                return  AllowanceTransactionResource::collection($allowanceTransaction);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 }
