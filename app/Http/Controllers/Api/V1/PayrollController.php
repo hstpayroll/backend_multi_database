@@ -75,25 +75,29 @@ class PayrollController extends Controller
         $total_taxable_allowance = AllowanceTransaction::where('employee_id', $employee->id)
             ->where('payroll_period_id',  $payrollPeriod->id)
             ->sum('taxable_amount');
-        // dd($total_taxable_allowance);
 
         $total_non_taxable_allowance_amount = AllowanceTransaction::where('employee_id', $employee->id)
             ->where('payroll_period_id',  $payrollPeriod->id)
             ->sum('non_taxable_amount');
-        // dd($total_non_taxable_allowance);
+
         $total_allowance = $total_taxable_allowance + $total_non_taxable_allowance_amount;
-        dd($total_allowance);
+
+        $total_taxable_income = AllowanceTransaction::where('employee_id', $employee->id)
+            ->where('payroll_period_id',  $payrollPeriod->id)
+            ->sum('taxable_amount');
+
+        $total_non_taxable_income_amount = AllowanceTransaction::where('employee_id', $employee->id)
+            ->where('payroll_period_id',  $payrollPeriod->id)
+            ->sum('non_taxable_amount');
+
+        $total_income = $total_taxable_income + $total_non_taxable_income_amount;
+        // dd($total_allowance);
 
         $total_shift_allowance_amount = 0;
         $total_on_call_allowance_amount = 0;
-        $gross_pay =  $employee_salary +  $total_ot_amount +  $total_shift_allowance_amount +  $total_on_call_allowance_amount;
+        $gross_pay =  $employee_salary +  $total_ot_amount +  $total_shift_allowance_amount +  $total_on_call_allowance_amount + $total_allowance;
+        dd($gross_pay);
 
-
-
-
-
-        $employee_salary = $employee->salary;
-        dd($employee_salary);
 
         $loanPayments = LoanPaymentRecord::where('loan_id', $loan->id)->get();
         $totalLoanPayments = $loanPayments->where('loan_id',  $loan->id)->sum('amount_payed');

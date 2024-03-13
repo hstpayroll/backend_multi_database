@@ -24,19 +24,25 @@ return new class extends Migration
             $table->decimal('total_ot_amount', 10, 2)->default(0);
             $table->decimal('total_shift_allowance_amount', 10, 2)->default(0);
             $table->decimal('total_on_call_allowance_amount', 10, 2)->default(0);
+
             $table->decimal('total_taxable_allowance', 10, 2)->default(0);
             $table->decimal('total_non_taxable_allowance_amount', 10, 2)->default(0);
             $table->decimal('total_allowance', 10, 2)->default(0);
 
-            $table->decimal('gross_pay', 10, 2)->default(0);
             $table->decimal('total_taxable_income', 10, 2)->default(0);
-            $table->decimal('taxable_income_exclude_motor_vehicle', 10, 2)->default(0);
+            $table->decimal('total_non_taxable_income_amount', 10, 2)->default(0);
+            $table->decimal('total_income', 10, 2)->default(0);
+
+            $table->decimal('gross_pay', 10, 2)->default(0);
+
             $table->decimal('income_tax', 10, 2)->default(0);
+
             $table->decimal('pension', 10, 2)->default(0);
             $table->decimal('pension_arrears', 10, 2)->default(0);
             $table->decimal('actual_pension', 10, 2)->default(0);
 
             $table->decimal('total_deductions', 10, 2)->default(0);
+
             $table->decimal('net_pay', 10, 2)->default(0);
             $table->timestamps();
             $table->softDeletes();
