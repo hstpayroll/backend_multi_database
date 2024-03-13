@@ -21,6 +21,11 @@ class PayrollPeriod extends Model
         'company_pension_id',
         'status',
     ];
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+    ];
+
     public function payrollName()
     {
         return $this->belongsTo(PayrollName::class);

@@ -69,6 +69,7 @@ Route::middleware([
         ->group(function () {
             Route::get('auth-user-tenant', [TenantUserController::class, 'auth_user_tenant']);
             Route::apiResource('users', TenantUserController::class);
+
             // Route::apiResource('users', UserController::class);
             // Route::get('/users', [UserController::class,'index'])->middleware('can:user_index');
             // Route::post('/users', [UserController::class,'store']);
@@ -106,7 +107,6 @@ Route::middleware([
             Route::apiResource('allowance-types', AllowanceTypeController::class);
 
             Route::get('allowance-transaction-by-employee', [AllowanceTransactionController::class, 'allowanceTransactionByEmployee'])->name('allowance-transaction-by-employee');
-
             Route::apiResource('allowance-transactions', AllowanceTransactionController::class);
             Route::apiResource('employee-pensions', EmployeePensionController::class);
             Route::apiResource('company-pensions', CompanyPensionController::class);
