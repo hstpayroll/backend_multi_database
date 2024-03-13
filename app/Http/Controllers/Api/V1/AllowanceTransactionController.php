@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
+use App\Models\Tenant\Employee;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\AllowanceType;
@@ -12,6 +13,11 @@ use App\Http\Requests\StoreAllowanceTransactionRequest;
 use App\Http\Requests\UpdateAllowanceTransactionRequest;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 use App\Http\Resources\Finance\AllowanceTransactionResource;
+use App\Http\Resources\Finance\AllowanceTypeResource;
+use App\Http\Resources\Finance\EmployeeResource;
+use App\Http\Resources\Finance\PayrollPeriodResource;
+use App\Models\Tenant\PayrollPeriod;
+use App\Http\Resources\Finance\employeeTransactionResource;
 
 class AllowanceTransactionController extends Controller
 {
@@ -20,7 +26,7 @@ class AllowanceTransactionController extends Controller
      */
     public function index()
     {
-        $allowanceTransaction =  AllowanceTransaction::with(['payrollPeriods', 'employees', 'allowanceTypes'])->paginate(10);
+        $allowanceTransaction =  AllowanceTransaction::with(['payrollPeriod', 'employee', 'allowanceType'])->paginate(10);
         return AllowanceTransactionResource::collection($allowanceTransaction);
     }
 
@@ -30,17 +36,12 @@ class AllowanceTransactionController extends Controller
     // public function store(Request $request)
     public function store(StoreAllowanceTransactionRequest $request)
     {
-        // dd($request->all());
-        // $allowanceTransaction = AllowanceTransaction::create($request->validated());
-        // return new AllowanceTransactionResource($allowanceTransaction);
 
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('bank_store')) {
                 $validatedData = $request->validated();
                 $allowanceType = AllowanceType::find($validatedData['allowance_type_id']);
-                // $allowanceTransaction = AllowanceTransaction::where('allowance_type_id', $validatedData['allowance_type_id'])->first();
-                // dd($allowanceTransaction);
 
                 $allowanceTransaction = new allowanceTransaction();
                 $allowanceTransaction->payroll_period_id =  $validatedData['payroll_period_id'];
@@ -57,10 +58,14 @@ class AllowanceTransactionController extends Controller
                 } elseif ($taxability === 2) {
                     $allowanceTransaction->non_taxable_amount = $amount;
                     $allowanceTransaction->taxable_amount = 0;
-                } elseif ($taxability === 3) {
+                }
+                // taxability when the value type is percentage?
+                 elseif ($taxability === 3) {
                     $allowanceTransaction->non_taxable_amount = $allowanceType->tax_free_amount;
                     $allowanceTransaction->taxable_amount = $amount - $allowanceType->tax_free_amount;
-                } else {
+                } 
+                //taxability by taking the total amount of the employee?
+                else {
                     $allowanceTransaction->non_taxable_amount = 0;
                     $allowanceTransaction->taxable_amount = $amount * (1 + 0.35);
                 }
@@ -110,5 +115,17 @@ class AllowanceTransactionController extends Controller
     {
         $allowanceTransaction->delete();
         return response()->noContent();
+    }
+
+    public function employeeTransaction(Request $request, Employee $employee)
+    {
+        $employee_id = $request->employee_id;
+        $TransactionByEmployee = AllowanceTransaction::where('employee_id', $employee_id)->get();
+        // return response()->json([
+        //     'status' => 200,
+        //     'data' => $TransactionByEmployee
+        // ]);
+        
+        return employeeTransactionResource::collection($TransactionByEmployee);
     }
 }
