@@ -43,7 +43,7 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\Api\V1\AllowanceTransactionController;
 use App\Http\Controllers\Api\v1\DeductionController;
 use App\Http\Controllers\Api\v1\DeductionTypeController;
-
+use App\Http\Controllers\Api\V1\PayrollController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,9 +114,9 @@ Route::middleware([
             Route::apiResource('branches', BranchController::class);
             Route::apiResource('roles-and-permissions', ModelHasPermissionController::class);
             Route::apiResource('salary-managements', SalaryManagementController::class);
-
             Route::apiResource('deduction-types', DeductionTypeController::class);
             Route::apiResource('deductions', DeductionController::class);
+            Route::apiResource('payrolls', PayrollController::class);
         });
 });
 
