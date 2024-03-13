@@ -107,7 +107,7 @@ class AllowanceTransactionController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('allowance_tranaction_show')) {
+            if ($user->hasPermissionTo('allowance_transaction_show')) {
                 return new AllowanceTransactionResource($allowanceTransaction);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
@@ -124,7 +124,7 @@ class AllowanceTransactionController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('allowance_tranaction_update')) {
+            if ($user->hasPermissionTo('allowance_transaction_update')) {
                 $allowanceTransaction->update($request->validated());
                 return new AllowanceTransactionResource($allowanceTransaction);
             } else {
@@ -142,7 +142,7 @@ class AllowanceTransactionController extends Controller
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('allowance_tranaction_destroy')) {
+            if ($user->hasPermissionTo('allowance_transaction_destroy')) {
                 $allowanceTransaction->delete();
                 return response()->json([
                     'status' => 200,
@@ -156,7 +156,7 @@ class AllowanceTransactionController extends Controller
         }
     }
 
-    public function transactionByEmployee(Request $request, Employee $employee)
+    public function allowanceTransactionByEmployee(Request $request, Employee $employee)
     { 
         try {
             $user = $request->user();
