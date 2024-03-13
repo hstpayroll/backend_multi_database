@@ -60,10 +60,10 @@ class AllowanceTransactionController extends Controller
                     $allowanceTransaction->taxable_amount = 0;
                 }
                 // taxability when the value type is percentage?
-                 elseif ($taxability === 3) {
+                elseif ($taxability === 3) {
                     $allowanceTransaction->non_taxable_amount = $allowanceType->tax_free_amount;
                     $allowanceTransaction->taxable_amount = $amount - $allowanceType->tax_free_amount;
-                } 
+                }
                 //taxability by taking the total amount of the employee?
                 else {
                     $allowanceTransaction->non_taxable_amount = 0;
@@ -74,13 +74,12 @@ class AllowanceTransactionController extends Controller
 
                 if ($allowanceTransaction->is_day_based === 1) {
                     $allowanceTransaction->number_of_date = $validatedData['number_of_date'];
-                }
-                else{
+                } else {
                     $allowanceTransaction->number_of_date = 0;
                 }
 
                 $allowanceTransaction->save();
-                dd( $allowanceTransaction);
+                dd($allowanceTransaction);
 
                 return new AllowanceTransactionResource($allowanceTransaction);
             } else {
@@ -117,7 +116,7 @@ class AllowanceTransactionController extends Controller
         return response()->noContent();
     }
 
-    public function employeeTransaction(Request $request, Employee $employee)
+    public function employeeTransaction(Request $request)
     {
         $employee_id = $request->employee_id;
         $allowanceTransaction = AllowanceTransaction::where('employee_id', $employee_id)->get();

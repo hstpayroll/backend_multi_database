@@ -15,7 +15,6 @@ class PayrollController extends Controller
     public function index()
     {
         $payrolls = Payroll::all();
-        dd($payrolls);
         return PayrollResource::collection($payrolls);
     }
 
