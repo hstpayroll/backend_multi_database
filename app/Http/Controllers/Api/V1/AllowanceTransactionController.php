@@ -4,20 +4,14 @@ namespace App\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
 use App\Models\Tenant\Employee;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\AllowanceType;
-use Spatie\QueryBuilder\AllowedSort;
 use App\Models\Tenant\AllowanceTransaction;
 use App\Http\Requests\StoreAllowanceTransactionRequest;
 use App\Http\Requests\UpdateAllowanceTransactionRequest;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 use App\Http\Resources\Finance\AllowanceTransactionResource;
-use App\Http\Resources\Finance\AllowanceTypeResource;
-use App\Http\Resources\Finance\EmployeeResource;
-use App\Http\Resources\Finance\PayrollPeriodResource;
-use App\Models\Tenant\PayrollPeriod;
-use App\Http\Resources\Finance\employeeTransactionResource;
+
 
 class AllowanceTransactionController extends Controller
 {
@@ -156,7 +150,7 @@ class AllowanceTransactionController extends Controller
     }
 
 
-    public function transactionByEmployee(Request $request, Employee $employee)
+    public function allowanceTransactionByEmployee(Request $request, Employee $employee)
     {
         try {
             $user = $request->user();
