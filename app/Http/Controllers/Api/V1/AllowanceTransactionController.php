@@ -120,12 +120,7 @@ class AllowanceTransactionController extends Controller
     public function employeeTransaction(Request $request, Employee $employee)
     {
         $employee_id = $request->employee_id;
-        $TransactionByEmployee = AllowanceTransaction::where('employee_id', $employee_id)->get();
-        // return response()->json([
-        //     'status' => 200,
-        //     'data' => $TransactionByEmployee
-        // ]);
-        
-        return employeeTransactionResource::collection($TransactionByEmployee);
+        $allowanceTransaction = AllowanceTransaction::where('employee_id', $employee_id)->get();
+        return  AllowanceTransactionResource::collection($allowanceTransaction);
     }
 }
