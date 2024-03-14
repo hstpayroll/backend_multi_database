@@ -59,30 +59,46 @@ class RoleController extends Controller
             return response()->json(['error' => 'User not found for ID ' . $userId], 404);
         }
 
-        $RoleID = $request->input('Role_id');
-        $Role = Role::find($RoleID);
+        $roleId = $request->input('role_id');
+        $role = Role::find($roleId);
 
-        if (!$Role) {
+        if (!$role) {
             return response()->json(['error' => 'Role not found'], 404);
         }
 
-        $user->giveRoleTo($Role);
+        $user->assignRole($role); 
 
-        return response()->json(['message' => 'Role granted successfully']);
-    } 
+        // Retrieve the user's roles using getRoleNames()
+        $roles = $user->getRoleNames();
+
+        return response()->json([
+            'message' => 'Role granted successfully',
+            'roles' => $roles
+        ]);
+    }
 
     public function revokeRole(Request $request, $userId)
     {
         $user = User::find($userId);
-
+        
         if (!$user) {
             return response()->json(['error' => 'User not found for ID ' . $userId], 404);
         }
 
-        $RoleID = $request->input('Role_ID'); // Change input name to 'Role_name'
-        $user->revokeRoleTo($RoleID); // Revoke Role by name
+        $roleId = $request->input('role_id');
+        $role = Role::find($roleId);
 
-        return response()->json(['message' => 'Role revoked successfully']);
+        if (!$role) {
+            return response()->json(['error' => 'Role not found for ID ' . $roleId], 404);
+        }
+        
+        $user->removeRole($role); // Remove the role from the user
+        $roles = $user->getRoleNames();
+
+        return response()->json([
+            'message' => 'Role revoked successfully',
+            'roles' => $roles
+        ]);
     }
 
     public function getUserRoles($userId)
