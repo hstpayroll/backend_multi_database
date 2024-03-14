@@ -27,15 +27,23 @@ class AuthenticatedSessionController extends Controller
                 'error' => 'The Provided credentials are not correct'
             ], 422);
         }
-        $user = Auth::user();
 
+        $user = Auth::user();
         $token = $user->createToken('main')->plainTextToken;
+        $permissions = $user->getAllPermissions()->map(function ($permission) {
+            return [
+                'id' => $permission->id,
+                'name' => $permission->name
+            ];
+        });
 
         return response([
-            'user' =>  $user,
-            'token' => $token
+            'user' =>  $user->only(['id', 'name', 'email', 'email_verified_at', 'created_at', 'updated_at']),
+            'token' => $token,
+            'permissions' => $permissions
         ]);
     }
+
 
     /**
      * Destroy an authenticated session.

@@ -120,6 +120,10 @@ Route::middleware([
             Route::apiResource('deduction-types', DeductionTypeController::class);
             Route::apiResource('deductions', DeductionController::class);
             Route::apiResource('payrolls', PayrollController::class);
+
+            Route::post('/user-grant-permission/{userId}', [PermissionController::class, 'grantPermission']);
+            Route::post('/user-revoke-permission/{userId}', [PermissionController::class, 'revokePermission']);
+            Route::get('/user-permissions/{userId}', [PermissionController::class, 'getUserPermissions']);
         });
 });
 
