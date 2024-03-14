@@ -9,7 +9,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Auth\LoginRequest;
 use Laravel\Sanctum\PersonalAccessToken;
+use App\Http\Resources\Finance\RoleResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Finance\PermissionResource;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -30,18 +32,15 @@ class AuthenticatedSessionController extends Controller
 
         $user = Auth::user();
         $token = $user->createToken('main')->plainTextToken;
-        $permissions = $user->getAllPermissions()->map(function ($permission) {
-            return [
-                'id' => $permission->id,
-                'name' => $permission->name
-            ];
-        });
+        $permissions = PermissionResource::collection($user->getAllPermissions());
+        $roles = RoleResource::collection($user->roles);
 
-        return response([
-            'user' =>  $user->only(['id', 'name', 'email', 'email_verified_at', 'created_at', 'updated_at']),
-            'token' => $token,
-            'permissions' => $permissions
-        ]);
+    return response([
+        'user' => $user->only(['id', 'name', 'email', 'email_verified_at', 'created_at', 'updated_at']),
+        'token' => $token,
+        'roles' => $roles,
+        'permissions' => $permissions
+    ]);
     }
 
 

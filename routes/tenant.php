@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\LoanController;
+use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\GradeController;
 use App\Http\Controllers\Api\V1\BranchController;
@@ -129,10 +130,14 @@ Route::middleware([
             Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
             Route::apiResource('shift-allowance-calculations', ShiftAllowanceCalculationController::class);
 
-            //Permission Routes
+            //Permission And Role Routes
             Route::post('/user-grant-permission/{userId}', [PermissionController::class, 'grantPermission']);
             Route::post('/user-revoke-permission/{userId}', [PermissionController::class, 'revokePermission']);
             Route::get('/user-permissions/{userId}', [PermissionController::class, 'getUserPermissions']);
+
+            Route::post('/user-grant-role/{userId}', [RoleController::class, 'grantrole']);
+            Route::post('/user-revoke-role/{userId}', [RoleController::class, 'revokerole']);
+            Route::get('/user-role/{userId}', [RoleController::class, 'getUserroles']);
             
         });
 });

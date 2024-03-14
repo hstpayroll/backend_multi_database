@@ -55,7 +55,7 @@ class EmployeeResource extends JsonResource
         ];
 
         // Check if relationships should be included
-        if ($this->includeRelationships) {
+        // if ($this->includeRelationships) {
             $data['tax_region'] = new TaxRegionResource($this->taxRegion);
             $data['grade'] = new GradeResource($this->grade);
             $data['department'] = new DepartmentResource($this->department);
@@ -64,7 +64,7 @@ class EmployeeResource extends JsonResource
             $data['employment_type'] = new EmploymentTypeResource($this->employmentType);
             $data['citizenship'] = new CitizenshipResource($this->citizenship);
             $data['bank'] = new BankResource($this->bank);
-        }
+        // }
 
         return $data;
     }
