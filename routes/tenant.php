@@ -125,14 +125,15 @@ Route::middleware([
             Route::apiResource('deduction-types', DeductionTypeController::class);
             Route::apiResource('deductions', DeductionController::class);
             Route::apiResource('payrolls', PayrollController::class);
+            Route::apiResource('deduction-transactions', DeductionTransactionController::class);
+            Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
+            Route::apiResource('shift-allowance-calculations', ShiftAllowanceCalculationController::class);
 
             //Permission Routes
             Route::post('/user-grant-permission/{userId}', [PermissionController::class, 'grantPermission']);
             Route::post('/user-revoke-permission/{userId}', [PermissionController::class, 'revokePermission']);
             Route::get('/user-permissions/{userId}', [PermissionController::class, 'getUserPermissions']);
-            Route::apiResource('deduction-transactions', DeductionTransactionController::class);
-            Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
-            Route::apiResource('shift-allowance-calculations', ShiftAllowanceCalculationController::class);
+            
         });
 });
 
