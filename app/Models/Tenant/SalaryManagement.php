@@ -9,8 +9,7 @@ class SalaryManagement extends Model
 {
     use SoftDeletes;
     protected $table = 'salary_managements';
-
-
+    
     protected $fillable = [
         'employee_id',
         'reason',
