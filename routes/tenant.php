@@ -121,6 +121,7 @@ Route::middleware([
             Route::apiResource('deductions', DeductionController::class);
             Route::apiResource('payrolls', PayrollController::class);
 
+            //Permission Routes
             Route::post('/user-grant-permission/{userId}', [PermissionController::class, 'grantPermission']);
             Route::post('/user-revoke-permission/{userId}', [PermissionController::class, 'revokePermission']);
             Route::get('/user-permissions/{userId}', [PermissionController::class, 'getUserPermissions']);
