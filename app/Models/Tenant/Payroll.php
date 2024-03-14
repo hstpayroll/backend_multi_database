@@ -91,6 +91,18 @@ class Payroll extends Model
         $totalAllowance = $taxable + $non_taxable;
         return $totalAllowance;
     }
+
+    public function calculateShiftAllowanceAmount()
+    {
+        $employeeId = $this->employee_id;
+        $payrollPeriodId = $this->payroll_period_id;
+
+        $totalShiftAllowance = ShiftAllowanceCalculation::where('employee_id', $employeeId)
+            ->where('payroll_period_id', $payrollPeriodId)
+            ->sum('value');
+
+        return $totalShiftAllowance;
+    }
     public function calculateTaxableIncome()
     {
         $salary = $this->employee->salary;

@@ -93,8 +93,7 @@ class PayrollController extends Controller
         $payroll->basic_salary_arrears = $basic_salary_arrears;
         $payroll->actual_basic_salary = $actual_basic_salary;
         $payroll->total_ot_amount =  $payroll->calculateTotalOtAmount();
-        $payroll->total_shift_allowance_amount = $total_shift_allowance_amount;
-        $payroll->total_on_call_allowance_amount = $total_on_call_allowance_amount;
+        $payroll->total_shift_allowance_amount = $payroll->calculateShiftAllowanceAmount();
         $payroll->total_taxable_allowance = $payroll->calculateTotalTaxableAllowanceAmount();;
         $payroll->total_non_taxable_allowance_amount = $payroll->calculateNonTotalTaxableAllowanceAmount();
         $payroll->total_allowance = $payroll->calculateTotalAllowance();
