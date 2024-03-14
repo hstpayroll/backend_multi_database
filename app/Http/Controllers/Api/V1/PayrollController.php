@@ -35,27 +35,22 @@ class PayrollController extends Controller
             'number_of_days_worked' => ['required', 'integer', 'min:0', 'max:60'], // Ensures non-negative days
             'basic_salary_arrears' => ['nullable', 'numeric'],
             'actual_basic_salary' =>  ['nullable', 'numeric'],
-            'total_ot_amount' => ['numeric', 'between:0,999999.99'],
-            'total_shift_allowance_amount' => ['numeric', 'between:0,999999.99'],
-            'total_on_call_allowance_amount' => ['numeric', 'between:0,999999.99'],
-            'gross_pay' => ['numeric', 'between:0,999999.99'],  // Can add custom logic for gross pay calculation
-            'total_taxable_income' => ['numeric', 'between:0,999999.99'],
-            'taxable_income_exclude_motor_vehicle' => ['numeric', 'between:0,999999.99'],
-            'income_tax' => ['numeric', 'between:0,999999.99'],  // Can add custom logic for tax calculation
-            'pension' => ['numeric', 'between:0,999999.99'],
-            'pension_arrears' => ['numeric', 'between:0,999999.99'],
-            'actual_pension' => ['numeric', 'between:0,999999.99'],
-            'total_deductions' => ['numeric', 'between:0,999999.99'],  // Can add custom logic for deduction calculation
-            'net_pay' => ['numeric', 'between:0,999999.99'],  // Can add custom logic for net pay calculation
+            'total_ot_amount' => ['nullable', 'numeric', 'min:0'],
+            'total_shift_allowance_amount' =>  ['nullable', 'numeric', 'min:0'],
+            'total_on_call_allowance_amount' =>  ['nullable', 'numeric', 'min:0'],
+            'gross_pay' =>  ['nullable', 'numeric', 'min:0'],  // Can add custom logic for gross pay calculation
+            'total_taxable_income' =>  ['nullable', 'numeric', 'min:0'],
+            'taxable_income_exclude_motor_vehicle' =>  ['nullable', 'numeric', 'min:0'],
+            'income_tax' =>  ['nullable', 'numeric', 'min:0'],  // Can add custom logic for tax calculation
+            'pension' =>  ['nullable', 'numeric', 'min:0'],
+            'pension_arrears' =>  ['nullable', 'numeric', 'min:0'],
+            'actual_pension' =>  ['nullable', 'numeric', 'min:0'],
+            'total_deductions' =>  ['nullable', 'numeric', 'min:0'],  // Can add custom logic for deduction calculation
+            'net_pay' =>  ['nullable', 'numeric', 'min:0'],  // Can add custom logic for net pay calculation
         ]);
 
         // $validatedData = $request->validated();
-        $employee = Employee::where('id', $validatedData['employee_id'])->first();
-        $employee_salary = $employee->salary;
         $companyMonthlyHours = CompanySetting::where('id', 7)->value('value');
-        $payrollPeriod = PayrollPeriod::where('id', $validatedData['payroll_period_id'])->first();
-        $payrollPeriod_start_date = $payrollPeriod->start_date; //2021-01-01
-        $payrollPeriod_end_date = $payrollPeriod->end_date; //2021 - 12-31
 
         $number_of_days_worked =  $validatedData['number_of_days_worked'];
         if ($companyMonthlyHours != $number_of_days_worked) {
@@ -68,53 +63,27 @@ class PayrollController extends Controller
             $actual_basic_salary =  0;
         }
 
-        //Total Overtime Amount In Birr
-        $total_ot_amount = OverTimeCalculation::where('employee_id', $employee->id)
-            ->where('payroll_period_id',  $payrollPeriod->id)
-            ->sum('ot_value');
-        $total_taxable_allowance = AllowanceTransaction::where('employee_id', $employee->id)
-            ->where('payroll_period_id',  $payrollPeriod->id)
-            ->sum('taxable_amount');
-
-        $total_non_taxable_allowance_amount = AllowanceTransaction::where('employee_id', $employee->id)
-            ->where('payroll_period_id',  $payrollPeriod->id)
-            ->sum('non_taxable_amount');
-
-        $total_allowance = $total_taxable_allowance + $total_non_taxable_allowance_amount;
-
-        $total_taxable_income = AllowanceTransaction::where('employee_id', $employee->id)
-            ->where('payroll_period_id',  $payrollPeriod->id)
-            ->sum('taxable_amount');
-
-        $total_non_taxable_income_amount = AllowanceTransaction::where('employee_id', $employee->id)
-            ->where('payroll_period_id',  $payrollPeriod->id)
-            ->sum('non_taxable_amount');
-
-        $total_income = $total_taxable_income + $total_non_taxable_income_amount;
-        // dd($total_allowance);
 
         $total_shift_allowance_amount = 0;
         $total_on_call_allowance_amount = 0;
-        $gross_pay =  $employee_salary +  $total_ot_amount +  $total_shift_allowance_amount +  $total_on_call_allowance_amount + $total_allowance;
-        dd($gross_pay);
 
 
-        $loanPayments = LoanPaymentRecord::where('loan_id', $loan->id)->get();
-        $totalLoanPayments = $loanPayments->where('loan_id',  $loan->id)->sum('amount_payed');
-        $outstanding_amount = $loanAmount -   ($totalLoanPayments  + $validatedData['amount_payed']);
-        $validator = Validator::make($validatedData, [
-            'amount_payed' => [
-                'required',
-                function ($attribute, $value, $fail) use ($outstanding_amount) {
-                    if ($outstanding_amount < 0) {
-                        $fail('The outstanding amount cannot be negative.');
-                    }
-                },
-            ],
-        ]);
-        if ($validator->fails()) {
-            throw new ValidationException($validator);
-        }
+        // $loanPayments = LoanPaymentRecord::where('loan_id', $loan->id)->get();
+        // $totalLoanPayments = $loanPayments->where('loan_id',  $loan->id)->sum('amount_payed');
+        // $outstanding_amount = $loanAmount -   ($totalLoanPayments  + $validatedData['amount_payed']);
+        // $validator = Validator::make($validatedData, [
+        //     'amount_payed' => [
+        //         'required',
+        //         function ($attribute, $value, $fail) use ($outstanding_amount) {
+        //             if ($outstanding_amount < 0) {
+        //                 $fail('The outstanding amount cannot be negative.');
+        //             }
+        //         },
+        //     ],
+        // ]);
+        // if ($validator->fails()) {
+        //     throw new ValidationException($validator);
+        // }
 
         $payroll = new Payroll();
         $payroll->employee_id =  $validatedData['employee_id'];
@@ -123,15 +92,22 @@ class PayrollController extends Controller
         $payroll->number_of_days_worked =  $validatedData['number_of_days_worked'];
         $payroll->basic_salary_arrears = $basic_salary_arrears;
         $payroll->actual_basic_salary = $actual_basic_salary;
-        $payroll->total_ot_amount = $total_ot_amount;
+        $payroll->total_ot_amount =  $payroll->calculateTotalOtAmount();
         $payroll->total_shift_allowance_amount = $total_shift_allowance_amount;
         $payroll->total_on_call_allowance_amount = $total_on_call_allowance_amount;
-        $payroll->total_taxable_allowance = $total_taxable_allowance;
-        $payroll->total_non_taxable_allowance_amount = $total_non_taxable_allowance_amount;
-        $payroll->total_allowance = $total_allowance;
-        $payroll->gross_pay = $gross_pay;
+        $payroll->total_taxable_allowance = $payroll->calculateTotalTaxableAllowanceAmount();;
+        $payroll->total_non_taxable_allowance_amount = $payroll->calculateNonTotalTaxableAllowanceAmount();
+        $payroll->total_allowance = $payroll->calculateTotalAllowance();
+        $payroll->total_taxable_income = $payroll->calculateTaxableIncome();
+        // $payroll->total_non_taxable_income_amount = $total_non_taxable_income_amount;
+        // $payroll->total_income = $total_income;
 
-        $payroll->save();
+
+        // $payroll->gross_pay = $gross_pay;
+        $payroll->income_tax = $payroll->calculateIncomeTax();
+
+        // $payroll->save();
+        dd($payroll);
     }
 
 
