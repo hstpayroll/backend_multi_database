@@ -3,17 +3,13 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Tenant\ShiftAllowanceCalculation;
-use App\Http\Requests\ShiftAllowanceCalculationRequest;
 use App\Http\Requests\StoreShiftAllowanceCalculationRequest;
 use App\Http\Requests\UpdateShiftAllowanceCalculationRequest;
 use App\Http\Resources\Finance\ShiftAllowanceCalculationResource;
 use App\Models\Tenant\Employee;
-use App\Models\Tenant\SalaryManagement;
 use App\Models\Tenant\ShiftAllowanceType;
-use Illuminate\Contracts\Cache\Store;
-use Symfony\Component\HttpFoundation\Response;
+
 
 class ShiftAllowanceCalculationController extends Controller
 {
@@ -24,8 +20,7 @@ class ShiftAllowanceCalculationController extends Controller
     }
 
     public function store(StoreShiftAllowanceCalculationRequest $request)
-    {
-        {
+    { {
             $validatedData = $request->validated();
             $allowanceType = ShiftAllowanceType::findOrFail($validatedData['shift_allowance_type_id']);
             $rate = $allowanceType->rate;

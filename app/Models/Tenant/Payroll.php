@@ -20,19 +20,17 @@ class Payroll extends Model
         'actual_basic_salary',
         'total_ot_amount',
         'total_shift_allowance_amount',
-        'total_on_call_allowance_amount',
         'total_taxable_allowance',
         'total_non_taxable_allowance_amount',
         'total_allowance',
         'total_taxable_income',
         'total_non_taxable_income_amount',
-        'total_income',
         'gross_pay',
         'income_tax',
-        'pension',
-        'pension_arrears',
-        'actual_pension',
         'total_deductions',
+        'employee_pension',
+        'employee_pension_arrears',
+        'employee_actual_pension',
         'net_pay',
     ];
 
@@ -49,7 +47,7 @@ class Payroll extends Model
     {
         return $this->belongsTo(CostCenter::class, 'cost_center_id', 'id');
     }
-
+    //Total OT Amount
     public function calculateTotalOtAmount()
     {
         $employeeId = $this->employee_id;
@@ -62,6 +60,19 @@ class Payroll extends Model
         return $totalOtAmount;
     }
 
+    //Total Shift Allowance
+    public function calculateShiftAllowanceAmount()
+    {
+        $employeeId = $this->employee_id;
+        $payrollPeriodId = $this->payroll_period_id;
+
+        $totalShiftAllowance = ShiftAllowanceCalculation::where('employee_id', $employeeId)
+            ->where('payroll_period_id', $payrollPeriodId)
+            ->sum('value');
+
+        return $totalShiftAllowance;
+    }
+    //Total Taxable Allowance
     public function calculateTotalTaxableAllowanceAmount()
     {
         $employeeId = $this->employee_id;
@@ -73,6 +84,7 @@ class Payroll extends Model
 
         return $totalTaxableAllowance;
     }
+    //Total Non Taxable Allowance
     public function calculateNonTotalTaxableAllowanceAmount()
     {
         $employeeId = $this->employee_id;
@@ -92,47 +104,77 @@ class Payroll extends Model
         return $totalAllowance;
     }
 
-    public function calculateShiftAllowanceAmount()
+    //Taxable Income
+    public function calculateTaxableIncome()
+    {
+        $total =  $this->employee->salary +
+            $this->calculateTotalOtAmount() +
+            $this->calculateTotalTaxableAllowanceAmount();
+
+        return $total;
+    }
+    //Non Taxable Income
+    public function calculateNonTaxableIncome()
+    {
+        $non_taxable_allowance = $this->calculateNonTotalTaxableAllowanceAmount();
+        return $non_taxable_allowance;
+    }
+    //Gross Pay
+    public function calculateGrossPay()
+    {
+        $grossPay =
+            $this->calculateTaxableIncome() +
+            $this->calculateNonTotalTaxableAllowanceAmount();
+
+        return $grossPay;
+    }
+
+    //Income Tax
+    public  function calculateIncomeTax()
+    {
+        $tax = 0;
+        if ($this->calculateTaxableIncome() >= 0 && $this->calculateTaxableIncome() <= 600) {
+            $tax = $this->calculateTaxableIncome() * 0;
+        } elseif ($this->calculateTaxableIncome() >= 601 && $this->calculateTaxableIncome() <= 1650) {
+            $tax = $this->calculateTaxableIncome() * 0.1 - 60;
+        } elseif ($this->calculateTaxableIncome() >= 1651 && $this->calculateTaxableIncome() <= 3200) {
+            $tax = $this->calculateTaxableIncome() * 0.15 - 142.5;
+        } elseif ($this->calculateTaxableIncome() >= 3201 && $this->calculateTaxableIncome() <= 5250) {
+            $tax = $this->calculateTaxableIncome() * 0.2 - 302.5;
+        } elseif ($this->calculateTaxableIncome() >= 5251 && $this->calculateTaxableIncome() <= 7800) {
+            $tax = $this->calculateTaxableIncome() * 0.25 - 565;
+        } elseif ($this->calculateTaxableIncome() >= 7801 && $this->calculateTaxableIncome() <= 10900) {
+            $tax = $this->calculateTaxableIncome() * 0.3 - 955;
+        } elseif ($this->calculateTaxableIncome() > 10901) {
+            $tax = $this->calculateTaxableIncome() * 0.35 - 1500;
+        }
+        return $tax;
+    }
+    //Total Deduction
+    public function calculateTotalDeduction()
     {
         $employeeId = $this->employee_id;
         $payrollPeriodId = $this->payroll_period_id;
 
-        $totalShiftAllowance = ShiftAllowanceCalculation::where('employee_id', $employeeId)
+        $totalDeduction = DeductionTransaction::where('employee_id', $employeeId)
             ->where('payroll_period_id', $payrollPeriodId)
-            ->sum('value');
-
-        return $totalShiftAllowance;
+            ->sum('amount_deducted');
+        return $totalDeduction;
     }
-    public function calculateTaxableIncome()
+    //Employee Pension
+    public function calculateEmployeePension()
     {
+        $payrollPeriod = payrollPeriod::where('id', $this->payroll_period_id)->first();
+        $rate =  $payrollPeriod->employeePension->rate;
         $salary = $this->employee->salary;
-        $ot = $this->calculateTotalOtAmount();
-        $taxableAllowance = $this->calculateTotalTaxableAllowanceAmount();
-
-        $total = $salary + $ot;
-        +$taxableAllowance;
-
-        return $total;
+        $pension = $salary * $rate / 100;
+        return $pension;
     }
 
-    public  function calculateIncomeTax()
+    public function calculateNetPay()
     {
-        $tax = 0;
-        if ($this->total_taxable_income >= 0 && $this->total_taxable_income <= 600) {
-            $tax = $this->total_taxable_income * 0;
-        } elseif ($this->total_taxable_income >= 601 && $this->total_taxable_income <= 1650) {
-            $tax = $this->total_taxable_income * 0.1 - 60;
-        } elseif ($this->total_taxable_income >= 1651 && $this->total_taxable_income <= 3200) {
-            $tax = $this->total_taxable_income * 0.15 - 142.5;
-        } elseif ($this->total_taxable_income >= 3201 && $this->total_taxable_income <= 5250) {
-            $tax = $this->total_taxable_income * 0.2 - 302.5;
-        } elseif ($this->total_taxable_income >= 5251 && $this->total_taxable_income <= 7800) {
-            $tax = $this->total_taxable_income * 0.25 - 565;
-        } elseif ($this->total_taxable_income >= 7801 && $this->total_taxable_income <= 10900) {
-            $tax = $this->total_taxable_income * 0.3 - 955;
-        } elseif ($this->total_taxable_income > 10901) {
-            $tax = $this->total_taxable_income * 0.35 - 1500;
-        }
-        return $tax;
+        $netPay =
+            $this->calculateGrossPay() -  $this->calculateTotalDeduction();
+        return $netPay;
     }
 }

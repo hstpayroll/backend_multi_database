@@ -16,7 +16,7 @@ class EmployeePensionSeeder extends Seeder
         EmployeePension::create([
             'name' => 'Pension 1',
             'description' => 'Pension 1 description',
-            'rate' => 55.00,
+            'rate' => 11,
             'start_date' => '2010-01-01',
             'end_date' => '2021-01-01',
         ]);
