@@ -9,11 +9,13 @@ use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\GradeController;
 use App\Http\Controllers\Api\V1\BranchController;
 use App\Http\Controllers\Api\V1\CompanyController;
+use App\Http\Controllers\Api\V1\PayrollController;
 use App\Http\Controllers\Api\V1\CalendarController;
 use App\Http\Controllers\Api\V1\CurrencyController;
 use App\Http\Controllers\Api\V1\EmployeeController;
 use App\Http\Controllers\Api\V1\LoanTypeController;
 use App\Http\Controllers\Api\V1\PositionController;
+use App\Http\Controllers\Api\v1\DeductionController;
 use App\Http\Controllers\Api\V1\IncomeTaxController;
 use App\Http\Controllers\Api\V1\TaxRegionController;
 use App\Http\Controllers\Api\V1\CostCenterController;
@@ -26,6 +28,7 @@ use App\Http\Controllers\Api\V1\PayrollNameController;
 use App\Http\Controllers\Api\V1\PayrollTypeController;
 use App\Http\Controllers\Api\V1\OverTimeTypeController;
 use App\Http\Controllers\Api\V1\AllowanceTypeController;
+use App\Http\Controllers\Api\v1\DeductionTypeController;
 use App\Http\Controllers\Api\V1\MainAllowanceController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
 use App\Http\Controllers\Api\V1\SubDepartmentController;
@@ -38,12 +41,12 @@ use App\Http\Controllers\Api\V1\EmployeePensionController;
 use App\Http\Controllers\Api\V1\SalaryManagementController;
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
 use App\Http\Controllers\Api\V1\ModelHasPermissionController;
+use App\Http\Controllers\Api\V1\ShiftAllowanceTypeController;
 use App\Http\Controllers\Api\V1\OverTimeCalculationController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\Api\V1\AllowanceTransactionController;
-use App\Http\Controllers\Api\v1\DeductionController;
-use App\Http\Controllers\Api\v1\DeductionTypeController;
-use App\Http\Controllers\Api\V1\PayrollController;
+use App\Http\Controllers\Api\V1\DeductionTransactionController;
+use App\Http\Controllers\Api\V1\ShiftAllowanceCalculationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +102,8 @@ Route::middleware([
             Route::apiResource('payroll-types', PayrollTypeController::class);
             Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');
             Route::get('employee-position', [EmployeeController::class, 'employeePosition'])->name('employee-position');
+            Route::get('/employees/list-with-less', [EmployeeController::class, 'employeeListWithLess']);
+
             Route::apiResource('employees', EmployeeController::class);
             Route::apiResource('loans', LoanController::class);
             Route::apiResource('loan-types', LoanTypeController::class);
@@ -120,6 +125,9 @@ Route::middleware([
             Route::apiResource('deduction-types', DeductionTypeController::class);
             Route::apiResource('deductions', DeductionController::class);
             Route::apiResource('payrolls', PayrollController::class);
+            Route::apiResource('deduction-transactions', DeductionTransactionController::class);
+            Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
+            Route::apiResource('shift-allowance-calculations', ShiftAllowanceCalculationController::class);
         });
 });
 

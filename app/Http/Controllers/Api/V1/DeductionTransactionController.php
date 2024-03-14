@@ -1,50 +1,47 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreDeductionTransactionRequest;
+use App\Http\Requests\UpdateDeductionTransactionRequest;
+use App\Http\Resources\Finance\DeductionTransactionResource;
 use App\Models\Tenant\DeductionTransaction;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DeductionTransactionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $deductionTransactions = DeductionTransaction::paginate(10);
+        return DeductionTransactionResource::collection($deductionTransactions);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreDeductionTransactionRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+        $deductionTransaction = DeductionTransaction::create($validatedData);
+        return new DeductionTransactionResource($deductionTransaction);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(DeductionTransaction $deductionTransaction)
+    public function show($id)
     {
-        //
+        $deductionTransaction = DeductionTransaction::findOrFail($id);
+        return new DeductionTransactionResource($deductionTransaction);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, DeductionTransaction $deductionTransaction)
+    public function update(UpdateDeductionTransactionRequest $request, $id)
     {
-        //
+        $deductionTransaction = DeductionTransaction::findOrFail($id);
+        $validatedData = $request->validated();
+        $deductionTransaction->update($validatedData);
+        return new DeductionTransactionResource($deductionTransaction);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(DeductionTransaction $deductionTransaction)
+    public function destroy($id)
     {
-        //
+        $deductionTransaction = DeductionTransaction::findOrFail($id);
+        $deductionTransaction->delete();
+        return response()->noContent();
     }
 }
