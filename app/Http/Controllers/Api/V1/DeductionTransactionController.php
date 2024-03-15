@@ -20,6 +20,7 @@ class DeductionTransactionController extends Controller
     public function store(StoreDeductionTransactionRequest $request)
     {
         $validatedData = $request->validated();
+
         $deductionTransaction = DeductionTransaction::create($validatedData);
         return new DeductionTransactionResource($deductionTransaction);
     }

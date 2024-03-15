@@ -107,12 +107,12 @@ Route::middleware([
 
             Route::apiResource('employees', EmployeeController::class);
 
-            Route::get('loans_by_employee/{employee_id}',[ LoanController::class, 'showLoansByEmployee']);
+            Route::get('loans_by_employee/{employee_id}', [LoanController::class, 'showLoansByEmployee']);
 
             Route::apiResource('loans', LoanController::class);
             Route::apiResource('loan-types', LoanTypeController::class);
             Route::get('loan_payment_records_by_employee/{employee_id}', [LoanPaymentRecordController::class, 'showRecordsByEmployee']);
-            
+
             Route::get('show_loan_payment_by_loan/{loan_id}', [LoanPaymentRecordController::class, 'showLoanPaymentByLoan']);
 
             Route::apiResource('loan-payment-records', LoanPaymentRecordController::class);
@@ -128,7 +128,7 @@ Route::middleware([
             Route::apiResource('company-settings', CompanySettingController::class);
             Route::apiResource('payslip-settings', PayslipSettingController::class);
             Route::apiResource('branches', BranchController::class);
-            Route::apiResource('roles-and-permissions', ModelHasPermissionController::class);
+            // Route::apiResource('roles-and-permissions', ModelHasPermissionController::class);
             Route::apiResource('salary-managements', SalaryManagementController::class);
             Route::apiResource('deduction-types', DeductionTypeController::class);
             Route::apiResource('deductions', DeductionController::class);
@@ -145,7 +145,6 @@ Route::middleware([
             Route::post('/user-grant-role/{userId}', [RoleController::class, 'grantrole']);
             Route::post('/user-revoke-role/{userId}', [RoleController::class, 'revokerole']);
             Route::get('/user-role/{userId}', [RoleController::class, 'getUserroles']);
-            
         });
 });
 

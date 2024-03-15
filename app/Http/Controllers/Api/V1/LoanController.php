@@ -99,7 +99,6 @@ class LoanController extends Controller
             }
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
-        }  
+        }
     }
-
 }

@@ -80,7 +80,6 @@ class AllowanceTransactionController extends Controller
                 } else {
                     $allowanceTransaction->number_of_date = 0;
                 }
-
                 $allowanceTransaction->save();
                 // dd($allowanceTransaction);
 

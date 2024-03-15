@@ -42,7 +42,7 @@ return new class extends Migration
             $table->string('account_number')->nullable();
 
             $table->text('image')->nullable();
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(1);
             $table->text('comment')->nullable();
 
             $table->softDeletes();

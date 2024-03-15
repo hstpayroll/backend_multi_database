@@ -33,7 +33,6 @@ class ShiftAllowanceCalculationController extends Controller
                 'shift_allowance_type_id' => $validatedData['shift_allowance_type_id'],
                 'payroll_period_id' => $validatedData['payroll_period_id'],
                 'value' => $value,
-                'status' => $validatedData['status'],
             ]);
 
             return new ShiftAllowanceCalculationResource($shiftAllowanceCalculation);

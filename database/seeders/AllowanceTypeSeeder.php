@@ -32,14 +32,6 @@ class AllowanceTypeSeeder extends Seeder
         AllowanceType::create([
             'main_allowance_id' => 2,
             'name' => 'Housing Allowance',
-            'taxability' => 3,
-            'tax_free_amount' => 1000,
-            'value_type' => 1,
-            'status' => 0,
-        ]);
-        AllowanceType::create([
-            'main_allowance_id' => 2,
-            'name' => 'Housing Allowance',
             'taxability' => 4,
             'tax_free_amount' => 0,
             'value_type' => 1,

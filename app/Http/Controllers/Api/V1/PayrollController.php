@@ -56,7 +56,7 @@ class PayrollController extends Controller
 
         $number_of_days_worked =  $validatedData['number_of_days_worked'];
 
-        if ($companyMonthlyHours != $number_of_days_worked) {
+        if ($number_of_days_worked  > $companyMonthlyHours) {
             $basic_salary_arrears = 1;
             $actual_basic_salary =  1;
             $employee_pension_arrears =  1;
