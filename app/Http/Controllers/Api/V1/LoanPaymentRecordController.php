@@ -173,7 +173,7 @@ class LoanPaymentRecordController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('payment_recored_by_loan')) {
                 $paymentRecords = LoanPaymentRecord::where('loan_id', $loan_id)->get();
-                return  LoanPaymentRecord::collection($paymentRecords);
+                return  LoanPaymentRecordResource::collection($paymentRecords);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }

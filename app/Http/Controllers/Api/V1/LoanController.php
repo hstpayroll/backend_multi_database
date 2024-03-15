@@ -93,13 +93,13 @@ class LoanController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('loans_by_employee')) {
                 $loans = Loan::where('employee_id', $employee_id)->get();
-                return  Loan::collection($loans);
+                return  LoanResource::collection($loans); // Corrected line
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
-        }
-        
+        }  
     }
+
 }
