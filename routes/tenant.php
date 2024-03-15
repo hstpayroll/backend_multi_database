@@ -41,7 +41,6 @@ use App\Http\Controllers\Api\V1\PayslipSettingController;
 use App\Http\Controllers\Api\V1\EmployeePensionController;
 use App\Http\Controllers\Api\V1\SalaryManagementController;
 use App\Http\Controllers\Api\V1\LoanPaymentRecordController;
-use App\Http\Controllers\Api\V1\ModelHasPermissionController;
 use App\Http\Controllers\Api\V1\ShiftAllowanceTypeController;
 use App\Http\Controllers\Api\V1\OverTimeCalculationController;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
@@ -71,7 +70,7 @@ Route::middleware([
     Route::name('api.')
         ->middleware('auth:sanctum')
         ->group(function () {
-            // Route::get('auth-user-tenant', [UserController::class, 'auth_user_tenant']);
+            Route::get('auth-user-tenant', [TenantUserController::class, 'auth_user_tenant']);
             // Route::apiResource('users', TenantUserController::class);
             Route::post('users/assign-role/{user}', [TenantUserController::class, 'assignRole'])->name('users.assign-role');
             Route::post('users/remove-role/{user}', [TenantUserController::class, 'removeRole'])->name('users.remove-role');
