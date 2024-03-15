@@ -129,9 +129,15 @@ class Employee extends Model
     }
     public function getSalaryAttribute()
     {
-        $activeSalary = $this->salaryManagements()->new_salary;
-        return $activeSalary;
+        $activeSalary = $this->salaryManagements()->new_salary ?? null;
+
+        if ($activeSalary !== null) {
+            return $activeSalary;
+        } else {
+            return 'Salary not set';
+        }
     }
+
     public function scopeActive(Builder $query)
     {
         return $query->where('status', 1); // Assuming 'active' is represented by status 1
