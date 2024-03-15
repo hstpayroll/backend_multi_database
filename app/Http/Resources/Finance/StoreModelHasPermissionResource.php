@@ -2,11 +2,11 @@
 
 namespace App\Http\Resources\Finance;
 
-use App\Http\Resources\PermissionResource;
+use Illuminate\Http\Request;
 use App\Http\Resources\RoleResource;
 use App\Http\Resources\UserResource;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Finance\PermissionResource;
 
 class StoreModelHasPermissionResource extends JsonResource
 {

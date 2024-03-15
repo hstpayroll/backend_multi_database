@@ -106,9 +106,15 @@ Route::middleware([
             Route::get('/employees/list-with-less', [EmployeeController::class, 'employeeListWithLess']);
 
             Route::apiResource('employees', EmployeeController::class);
+
+            Route::get('loans_by_employee/{employee_id}',[ LoanController::class, 'showLoansByEmployee']);
+
             Route::apiResource('loans', LoanController::class);
             Route::apiResource('loan-types', LoanTypeController::class);
             Route::get('loan_payment_records_by_employee/{employee_id}', [LoanPaymentRecordController::class, 'showRecordsByEmployee']);
+            
+            Route::get('show_oan_payment_by_loan/{loan_id}', [LoanPaymentRecordController::class, 'showLoanPaymentByLoan']);
+
             Route::apiResource('loan-payment-records', LoanPaymentRecordController::class);
             Route::apiResource('main-allowances', MainAllowanceController::class);
             Route::apiResource('allowance-types', AllowanceTypeController::class);

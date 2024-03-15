@@ -171,6 +171,7 @@ class TenantPermissionSeeder extends Seeder
             'loan_payment_record_update',
             'loan_payment_record_destroy',
             'loan_payment_records_by_employee',
+            'payment_recored_by_loan',
 
             // Loan
             'loan_index',
@@ -178,6 +179,7 @@ class TenantPermissionSeeder extends Seeder
             'loan_show',
             'loan_update',
             'loan_destroy',
+            'loans_by_employee'.
 
             // IncomeTax
             'income_tax_index',
