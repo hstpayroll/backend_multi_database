@@ -14,6 +14,14 @@ use App\Http\Resources\Finance\TenantUserResource;
 
 class TenantUserController extends Controller
 {
+    public function auth_user_tenant()
+    {
+        auth()->user();
+        return response()->json([
+            'message' => 'success',
+            'code' => '200',
+        ]);
+    }
     public function index()
     {
         $users = User::with(['roles', 'permissions'])->latest()->paginate(10);
