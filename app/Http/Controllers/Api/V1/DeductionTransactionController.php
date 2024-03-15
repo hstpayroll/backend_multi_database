@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDeductionTransactionRequest;
 use App\Http\Requests\UpdateDeductionTransactionRequest;
 use App\Http\Resources\Finance\DeductionTransactionResource;
+use App\Models\Tenant\Deduction;
 use App\Models\Tenant\DeductionTransaction;
+use App\Models\Tenant\Employee;
 use Symfony\Component\HttpFoundation\Response;
 
 class DeductionTransactionController extends Controller
@@ -20,10 +22,10 @@ class DeductionTransactionController extends Controller
     public function store(StoreDeductionTransactionRequest $request)
     {
         $validatedData = $request->validated();
-
         $deductionTransaction = DeductionTransaction::create($validatedData);
         return new DeductionTransactionResource($deductionTransaction);
     }
+
 
     public function show($id)
     {

@@ -2,18 +2,15 @@
 
 namespace App\Http\Resources\Finance;
 
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class EmployeeResource extends JsonResource
 {
-    protected $includeRelationships;
 
 
     public function toArray($request)
     {
         return [
-
             'id' => $this->id,
             'tax_region' => new TaxRegionResource($this->taxRegion),
             'grade' => new GradeResource($this->grade),
@@ -43,7 +40,6 @@ class EmployeeResource extends JsonResource
             'image' => $this->image,
             'status' => $this->status == 1 ? 'active' : 'inactive',
             'comment' => $this->comment,
-
         ];
     }
 }

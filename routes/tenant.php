@@ -100,6 +100,8 @@ Route::middleware([
             Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');
             Route::get('employee-position', [EmployeeController::class, 'employeePosition'])->name('employee-position');
             Route::get('/employees/list-with-less', [EmployeeController::class, 'employeeListWithLess']);
+            Route::get('/employees/refactor-employee-List', [EmployeeController::class, 'refactorEmployeeList']);
+
             Route::apiResource('employees', EmployeeController::class);
 
             Route::get('loans_by_employee/{employee_id}', [LoanController::class, 'showLoansByEmployee']);
@@ -120,7 +122,6 @@ Route::middleware([
             Route::apiResource('company-settings', CompanySettingController::class);
             Route::apiResource('payslip-settings', PayslipSettingController::class);
             Route::apiResource('branches', BranchController::class);
-            // Route::apiResource('roles-and-permissions', ModelHasPermissionController::class);
             Route::apiResource('salary-managements', SalaryManagementController::class);
             Route::apiResource('deduction-types', DeductionTypeController::class);
             Route::apiResource('deductions', DeductionController::class);
