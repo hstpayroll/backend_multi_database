@@ -210,6 +210,14 @@ class TenantPermissionSeeder extends Seeder
             'allowance_transaction_destroy',
             'transaction_by_employee_show',
 
+            //shift Allowance
+            'shift_Allowance_recored_by_employee',
+            'shift_Allowance_index',
+            'shift_Allowance_store',
+            'shift_Allowance_show',
+            'shift_Allowance_update',
+            'shift_Allowance_destroy',
+
 
 
         ];

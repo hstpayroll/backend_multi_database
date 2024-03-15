@@ -151,6 +151,14 @@ class TenantUserSeeder extends Seeder
                 'currency_update',
                 'currency_destroy',
 
+                //shift Allowance
+                'shift_Allowance_recored_by_employee',
+                'shift_Allowance_index',
+                'shift_Allowance_store',
+                'shift_Allowance_show',
+                'shift_Allowance_update',
+                'shift_Allowance_destroy',
+
                 'calendar_index', 'calendar_store', 'calendar_show', 'calendar_update', 'calendar_destroy',
                 'citizenship_index', 'citizenship_store', 'citizenship_show', 'citizenship_update', 'citizenship_destroy',
                 'company_index', 'company_store', 'company_show', 'company_update', 'company_destroy',

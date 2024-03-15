@@ -139,6 +139,9 @@ Route::middleware([
             Route::apiResource('payrolls', PayrollController::class);
             Route::apiResource('deduction-transactions', DeductionTransactionController::class);
             Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
+
+            Route::get('shift-allowance-calculation-by-employee/{employee_id}', [ShiftAllowanceCalculationController::class, 'showShiftAllowanceCalculationByEmployee'])->name('shift-allowance-calculation-by-employee');
+
             Route::apiResource('shift-allowance-calculations', ShiftAllowanceCalculationController::class);
 
             //Permission And Role Routes
