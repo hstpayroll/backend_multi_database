@@ -150,4 +150,36 @@ class LoanPaymentRecordController extends Controller
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
     }
+
+    public function showRecordsByEmployee(Request $request, $employee_id)
+    {
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('loan_payment_records_by_employee')) {
+                $loans = Loan::where('employee_id', $employee_id)->pluck('id');
+                $paymentRecords = LoanPaymentRecord::whereIn('loan_id', $loans)->get();
+            return  LoanPaymentRecordResource::collection($paymentRecords);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
+        
+    }
+    public function showLoanPaymentByLoan(Request $request, $loan_id)
+    {
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('payment_recored_by_loan')) {
+                $paymentRecords = LoanPaymentRecord::where('loan_id', $loan_id)->get();
+                return  LoanPaymentRecordResource::collection($paymentRecords);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
+        
+    }
 }

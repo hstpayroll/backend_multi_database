@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Finance\PermissionResource;
 use Spatie\Permission\Models\Permission;
+use App\Http\Resources\Finance\PermissionResource;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
+
 
 class PermissionController extends Controller
 {
@@ -62,4 +64,52 @@ class PermissionController extends Controller
     {
         //
     }
+
+    public function grantPermission(Request $request, $userId)
+    {
+        $user = User::find($userId);
+
+        if (!$user) {
+            return response()->json(['error' => 'User not found for ID ' . $userId], 404);
+        }
+
+        $permissionID = $request->input('permission_id');
+        $permission = Permission::find($permissionID);
+
+        if (!$permission) {
+            return response()->json(['error' => 'Permission not found'], 404);
+        }
+
+        $user->givePermissionTo($permission);
+
+        return response()->json(['message' => 'Permission granted successfully']);
+    } 
+
+    public function revokePermission(Request $request, $userId)
+    {
+        $user = User::find($userId);
+
+        if (!$user) {
+            return response()->json(['error' => 'User not found for ID ' . $userId], 404);
+        }
+
+        $permissionID = $request->input('permission_ID'); // Change input name to 'permission_name'
+        $user->revokePermissionTo($permissionID); // Revoke permission by name
+
+        return response()->json(['message' => 'Permission revoked successfully']);
+    }
+
+    public function getUserPermissions($userId)
+    {
+        $user = User::find($userId);
+
+        if (!$user) {
+            return response()->json(['error' => 'User not found for ID ' . $userId], 404);
+        }
+
+        $permissions = $user->getAllPermissions()->pluck('name');
+
+        return response()->json(['permissions' => $permissions]);
+    }
+       
 }

@@ -82,7 +82,7 @@ class AllowanceTransactionController extends Controller
                 }
 
                 $allowanceTransaction->save();
-                dd($allowanceTransaction);
+                // dd($allowanceTransaction);
 
                 return new AllowanceTransactionResource($allowanceTransaction);
             } else {
@@ -156,7 +156,7 @@ class AllowanceTransactionController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('transaction_by_employee_show')) {
                 $employee_id = $request->employee_id;
-                $allowanceTransaction = AllowanceTransaction::where('employee_id', $employee_id)->get();
+                $allowanceTransaction = AllowanceTransaction::where('employee_id', $employee_id)->where('status', '1')->get();
                 return  AllowanceTransactionResource::collection($allowanceTransaction);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
