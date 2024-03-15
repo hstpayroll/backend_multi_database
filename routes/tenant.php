@@ -124,6 +124,10 @@ Route::middleware([
             Route::apiResource('employee-pensions', EmployeePensionController::class);
             Route::apiResource('company-pensions', CompanyPensionController::class);
             Route::apiResource('overtime-types', OverTimeTypeController::class);
+
+            Route::get('overtime_calculation_by_employee/{employee_id}', [OverTimeCalculationController::class, 'showOvetimeCalculationByEmployee']);
+
+
             Route::apiResource('over-time-calculations', OverTimeCalculationController::class);
             Route::apiResource('company-settings', CompanySettingController::class);
             Route::apiResource('payslip-settings', PayslipSettingController::class);

@@ -141,4 +141,20 @@ class OverTimeCalculationController extends Controller
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
     }
+
+    public function showOvetimeCalculationByEmployee(Request $request, $employee_id)
+    {
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('overtime_recored_by_employee')) {
+                $overtimeRecords = OverTimeCalculation::where('employee_id', $employee_id)->get();
+                return  OverTimeCalculationResource::collection($overtimeRecords);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
+        
+    }
 }

@@ -149,6 +149,7 @@ class TenantPermissionSeeder extends Seeder
             'overtime_type_show',
             'overtime_type_update',
             'overtime_type_destroy',
+            'overtime_recored_by_employee',
 
             // MainAllowance
             'main_allowance_index',
