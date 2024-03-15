@@ -170,6 +170,7 @@ class TenantPermissionSeeder extends Seeder
             'loan_payment_record_show',
             'loan_payment_record_update',
             'loan_payment_record_destroy',
+            'loan_payment_records_by_employee',
 
             // Loan
             'loan_index',
@@ -205,6 +206,7 @@ class TenantPermissionSeeder extends Seeder
             'allowance_transaction_update',
             'allowance_transaction_destroy',
             'transaction_by_employee_show',
+
 
 
         ];
