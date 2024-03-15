@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\BankController;
 use App\Http\Controllers\Api\V1\LoanController;
-use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\GradeController;
 use App\Http\Controllers\Api\V1\BranchController;
@@ -23,6 +22,7 @@ use App\Http\Controllers\Api\V1\CostCenterController;
 use App\Http\Controllers\Api\V1\DepartmentController;
 use App\Http\Controllers\Api\V1\FiscalYearController;
 use App\Http\Controllers\Api\V1\PermissionController;
+use App\Http\Controllers\Api\V1\TenantRoleController;
 use App\Http\Controllers\Api\V1\TenantUserController;
 use App\Http\Controllers\Api\V1\CitizenshipController;
 use App\Http\Controllers\Api\V1\PayrollNameController;
@@ -71,17 +71,13 @@ Route::middleware([
     Route::name('api.')
         ->middleware('auth:sanctum')
         ->group(function () {
-            Route::get('auth-user-tenant', [TenantUserController::class, 'auth_user_tenant']);
+            // Route::get('auth-user-tenant', [UserController::class, 'auth_user_tenant']);
+            // Route::apiResource('users', TenantUserController::class);
+            Route::post('users/assign-role/{user}', [TenantUserController::class, 'assignRole'])->name('users.assign-role');
+            Route::post('users/remove-role/{user}', [TenantUserController::class, 'removeRole'])->name('users.remove-role');
+
             Route::apiResource('users', TenantUserController::class);
-
-            // Route::apiResource('users', UserController::class);
-            // Route::get('/users', [UserController::class,'index'])->middleware('can:user_index');
-            // Route::post('/users', [UserController::class,'store']);
-            // Route::post('/users', [UserController::class,'store'])->middleware('can:user_store');
-            // Route::get('/users/{user}', [UserController::class,'show'])->middleware('can:user_show');
-            // Route::put('/users/{user}', [UserController::class,'update'])->middleware('can:user_update');
-            // Route::delete('/users/{user}', [UserController::class,'destroy'])->middleware('can:user_destroy');
-
+            Route::apiResource('roles', TenantRoleController::class);
             Route::apiResource('permissions', PermissionController::class);
 
             Route::apiResource('currencies', CurrencyController::class); //
@@ -104,17 +100,13 @@ Route::middleware([
             Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');
             Route::get('employee-position', [EmployeeController::class, 'employeePosition'])->name('employee-position');
             Route::get('/employees/list-with-less', [EmployeeController::class, 'employeeListWithLess']);
-
             Route::apiResource('employees', EmployeeController::class);
 
             Route::get('loans_by_employee/{employee_id}', [LoanController::class, 'showLoansByEmployee']);
-
             Route::apiResource('loans', LoanController::class);
             Route::apiResource('loan-types', LoanTypeController::class);
             Route::get('loan_payment_records_by_employee/{employee_id}', [LoanPaymentRecordController::class, 'showRecordsByEmployee']);
-
             Route::get('show_loan_payment_by_loan/{loan_id}', [LoanPaymentRecordController::class, 'showLoanPaymentByLoan']);
-
             Route::apiResource('loan-payment-records', LoanPaymentRecordController::class);
             Route::apiResource('main-allowances', MainAllowanceController::class);
             Route::apiResource('allowance-types', AllowanceTypeController::class);
@@ -136,15 +128,6 @@ Route::middleware([
             Route::apiResource('deduction-transactions', DeductionTransactionController::class);
             Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
             Route::apiResource('shift-allowance-calculations', ShiftAllowanceCalculationController::class);
-
-            //Permission And Role Routes
-            Route::post('/user-grant-permission/{userId}', [PermissionController::class, 'grantPermission']);
-            Route::post('/user-revoke-permission/{userId}', [PermissionController::class, 'revokePermission']);
-            Route::get('/user-permissions/{userId}', [PermissionController::class, 'getUserPermissions']);
-
-            Route::post('/user-grant-role/{userId}', [RoleController::class, 'grantrole']);
-            Route::post('/user-revoke-role/{userId}', [RoleController::class, 'revokerole']);
-            Route::get('/user-role/{userId}', [RoleController::class, 'getUserroles']);
         });
 });
 
