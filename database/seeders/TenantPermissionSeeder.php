@@ -179,7 +179,7 @@ class TenantPermissionSeeder extends Seeder
             'loan_show',
             'loan_update',
             'loan_destroy',
-            'loans_by_employee'.
+            'loans_by_employee',
 
             // IncomeTax
             'income_tax_index',
