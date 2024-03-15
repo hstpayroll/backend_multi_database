@@ -25,23 +25,25 @@ class ShiftAllowanceCalculationController extends Controller
 
     public function store(StoreShiftAllowanceCalculationRequest $request)
     {
-        {
-            $validatedData = $request->validated();
+        $validatedData = $request->validated();
+
+        $employee = Employee::where('id', $validatedData['employee_id'])->first();
+
+        if ($employee && $employee->Salary) {
             $allowanceType = ShiftAllowanceType::findOrFail($validatedData['shift_allowance_type_id']);
-            $rate = $allowanceType->rate;
-            $employee = Employee::where('id', $validatedData['employee_id'])->first();
-            $employeeSalary = $employee->Salary;
-            $value = $employeeSalary * $rate;
+            $rate = $allowanceType->rate / 100;
+            $value = $employee->Salary * $rate;
 
             $shiftAllowanceCalculation = ShiftAllowanceCalculation::create([
                 'employee_id' => $validatedData['employee_id'],
                 'shift_allowance_type_id' => $validatedData['shift_allowance_type_id'],
                 'payroll_period_id' => $validatedData['payroll_period_id'],
                 'value' => $value,
-                'status' => $validatedData['status'],
             ]);
 
             return new ShiftAllowanceCalculationResource($shiftAllowanceCalculation);
+        } else {
+            return response()->json(['error' => 'Employee not found or salary not set'], 404);
         }
     }
 

@@ -17,10 +17,10 @@ class StoreDeductionTransactionRequest extends FormRequest
             'payroll_period_id' => 'required|exists:payroll_periods,id',
             'employee_id' => 'required|exists:employees,id',
             'deduction_id' => 'required|exists:deductions,id',
-            'amount_deducted' => 'required|numeric|min:0',
-            'outstanding_amount' => 'required|numeric|min:0',
-            'is_partial' => 'required|boolean',
-            'is_missed' => 'required|boolean',
+            'amount_deducted' => 'nullable|numeric|min:0',
+            'outstanding_amount' => 'nullable|numeric|min:0',
+            'is_partial' => 'nullable|boolean',
+            'is_missed' => 'nullable|boolean',
         ];
     }
 }

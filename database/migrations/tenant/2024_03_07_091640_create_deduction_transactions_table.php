@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('deduction_transactions', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('payroll_period_id')->constrained('payroll_periods')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('deduction_id')->constrained('deductions')->onDelete('restrict')->onUpdate('cascade');

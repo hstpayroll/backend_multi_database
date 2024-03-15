@@ -100,7 +100,7 @@ Route::middleware([
             Route::apiResource('payroll-types', PayrollTypeController::class);
             Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');
             Route::get('employee-position', [EmployeeController::class, 'employeePosition'])->name('employee-position');
-            Route::get('/employees/list-with-less', [EmployeeController::class, 'employeeListWithLess']);
+            Route::get('/employees/refactor-employee-List', [EmployeeController::class, 'refactorEmployeeList']);
 
             Route::apiResource('employees', EmployeeController::class);
             Route::apiResource('loans', LoanController::class);
@@ -124,7 +124,6 @@ Route::middleware([
             Route::apiResource('deduction-transactions', DeductionTransactionController::class);
             Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
             Route::apiResource('shift-allowance-calculations', ShiftAllowanceCalculationController::class);
-
         });
 });
 

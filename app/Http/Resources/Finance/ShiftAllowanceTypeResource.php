@@ -13,7 +13,6 @@ class ShiftAllowanceTypeResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'rate' => $this->rate,
-            'formatted_rate' => number_format($this->rate * 100, 2) . '%',
         ];
     }
 }
