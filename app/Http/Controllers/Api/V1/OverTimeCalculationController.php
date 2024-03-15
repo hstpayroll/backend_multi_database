@@ -12,6 +12,7 @@ use App\Models\Tenant\OverTimeCalculation;
 use Illuminate\Validation\ValidationException;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 use App\Http\Resources\Finance\OverTimeCalculationResource;
+use App\Http\Resources\Finance\overtimeCalculationByEmployeeResource;
 
 class OverTimeCalculationController extends Controller
 {
@@ -148,7 +149,7 @@ class OverTimeCalculationController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('overtime_recored_by_employee')) {
                 $overtimeRecords = OverTimeCalculation::where('employee_id', $employee_id)->get();
-                return  OverTimeCalculationResource::collection($overtimeRecords);
+                return  overtimeCalculationByEmployeeResource::collection($overtimeRecords);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
