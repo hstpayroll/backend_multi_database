@@ -21,10 +21,7 @@ class EmployeeController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('employee_index')) {
                 $employees = Employee::latest()->paginate(10);
-                // return EmployeeResource::collection($employees);
                 return EmployeeResource::collection($employees);
-                // $includeRelationships = false;
-                // return EmployeeResource::collection($employees)->additional(['includeRelationships' => $includeRelationships]);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
@@ -118,15 +115,7 @@ class EmployeeController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('employee_index')) {
-                $employees = Employee::latest()->paginate(10);
-
-                // // Create custom data
-                // $includeRelationships = collect(['isIncludedRelations' => true]);
-
-                // // Merge paginated data with custom data
-                // $data = $includeRelationships->merge($employees);
-                // // dd("the merged data",  $data);
-                // // Return the resource
+                $employees = Employee::latest()->select('id', 'emp_id',  'first_name', 'father_name', 'gfather_name')->paginate(10);
                 return EmployeeResourceRefactor::collection($employees);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

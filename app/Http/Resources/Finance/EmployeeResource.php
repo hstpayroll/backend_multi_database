@@ -24,6 +24,7 @@ class EmployeeResource extends JsonResource
             'first_name' => $this->first_name,
             'father_name' => $this->father_name,
             'gfather_name' => $this->gfather_name,
+            'full_name' => $this->fullname,
             'sex' => $this->sex == 1 ? 'male' : 'female',
             'birth_date' => $this->birth_date,
             'hired_date' => $this->hired_date,

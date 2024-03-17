@@ -48,17 +48,6 @@ use App\Http\Controllers\Api\V1\AllowanceTransactionController;
 use App\Http\Controllers\Api\V1\DeductionTransactionController;
 use App\Http\Controllers\Api\V1\ShiftAllowanceCalculationController;
 
-/*
-|--------------------------------------------------------------------------
-| Tenant Routes
-|--------------------------------------------------------------------------
-|
-| Here you can register the tenant routes for your application.
-| These routes are loaded by the TenantRouteServiceProvider.
-|
-| Feel free to customize them however you want. Good luck!
-|
-*/
 
 Route::middleware([
     'api',
@@ -71,7 +60,6 @@ Route::middleware([
         ->middleware('auth:sanctum')
         ->group(function () {
             Route::get('auth-user-tenant', [TenantUserController::class, 'auth_user_tenant']);
-            // Route::apiResource('users', TenantUserController::class);
             Route::post('users/assign-role/{user}', [TenantUserController::class, 'assignRole'])->name('users.assign-role');
             Route::post('users/remove-role/{user}', [TenantUserController::class, 'removeRole'])->name('users.remove-role');
 
@@ -96,13 +84,13 @@ Route::middleware([
             Route::apiResource('citizenships', CitizenshipController::class);
             Route::apiResource('positions', PositionController::class);
             Route::apiResource('payroll-types', PayrollTypeController::class);
+
             Route::get('employee-department', [EmployeeController::class, 'employeeDepartment'])->name('employee-department');
             Route::get('employee-position', [EmployeeController::class, 'employeePosition'])->name('employee-position');
-            Route::get('/employees/list-with-less', [EmployeeController::class, 'employeeListWithLess']);
-            Route::get('/employees/refactor-employee-List', [EmployeeController::class, 'refactorEmployeeList']);
+            Route::get('employees/list-with-less', [EmployeeController::class, 'employeeListWithLess'])->name('employees.list-with-less');
+            Route::get('employees/refactor-employee-list', [EmployeeController::class, 'refactorEmployeeList'])->name('employees.refactor-employee-list');
 
             Route::apiResource('employees', EmployeeController::class);
-
             Route::get('loans_by_employee/{employee_id}', [LoanController::class, 'showLoansByEmployee']);
             Route::apiResource('loans', LoanController::class);
             Route::apiResource('loan-types', LoanTypeController::class);
@@ -142,11 +130,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('tenants.index');
     })->middleware(['auth', 'verified'])->name('dashboard');
-
-    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    // Route::resource('users', TenantUserController::class);
 
     require __DIR__ . '/tenant_auth.php';
 });

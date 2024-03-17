@@ -35,7 +35,7 @@ class EmployeePensionController extends Controller
      * Store a newly created resource in storage.
      */
 
-    public function store(StoreemployeePensionRequest $request)
+    public function store(StoreEmployeePensionRequest $request)
     {
         try {
             $user = $request->user();
