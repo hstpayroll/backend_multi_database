@@ -1,19 +1,20 @@
 <?php
 
 
+use App\Models\client_reequest;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\UserController;
-use App\Http\Controllers\Api\V1\TenantController;
 use App\Http\Controllers\Api\V1\DomainController;
+use App\Http\Controllers\Api\V1\TenantController;
 use App\Http\Controllers\Api\V1\PermissionController;
 use App\Http\Controllers\ApiAuth\NewPasswordController;
 use App\Http\Controllers\ApiAuth\VerifyEmailController;
-use App\Http\Controllers\Api\V1\RoleController;
+use App\Http\Controllers\Api\V1\ClientRequestsController;
 use App\Http\Controllers\ApiAuth\RegisteredUserController;
 use App\Http\Controllers\ApiAuth\PasswordResetLinkController;
 use App\Http\Controllers\ApiAuth\AuthenticatedSessionController;
 use App\Http\Controllers\ApiAuth\EmailVerificationNotificationController;
-use App\Models\client_reequest;
 
 Route::prefix('v1')->group(function () {
 
@@ -49,6 +50,10 @@ Route::prefix('v1')->group(function () {
 
         Route::post('/validate-user', [AuthenticatedSessionController::class, 'validateUser'])
             ->name('validate-user');
+        
+        Route::get('/client_requests', [ClientRequestsController::class, 'index'])
+        ->name('client_requests');
+        Route::delete('client_requests/{id}', [ClientRequestsController::class, 'destroy']);
 
 
         Route::post('users/assign-role/{user}', [UserController::class, 'assignRole'])->name('users.assign-role');
@@ -61,6 +66,9 @@ Route::prefix('v1')->group(function () {
         Route::get('auth-user', [DomainController::class, 'auth_user'])->name('auth-user');
     });
     Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');
+    // Route::apiResource('client_requests', ClientRequestsController::class);
+    Route::post('/client_requests', [ClientRequestsController::class, 'store'])
+    ->middleware('guest')->name('client_requests');
 
     // user
 });
