@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Resources\HRM;
+namespace App\Http\Resources;
 
-use App\Http\Resources\Finance\CompanyResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class PermissionResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,10 +17,6 @@ class UserResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'email' => $this->email,
-            'companies' => CompanyResource::collection($this->companies),
-            'roles' => $this->roles,
-            'permissions' => $this->permissions,
         ];
     }
 }

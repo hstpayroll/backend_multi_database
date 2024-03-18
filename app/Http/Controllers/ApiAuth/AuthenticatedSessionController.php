@@ -35,12 +35,12 @@ class AuthenticatedSessionController extends Controller
         $permissions = PermissionResource::collection($user->getAllPermissions());
         $roles = RoleResource::collection($user->roles);
 
-    return response([
-        'user' => $user->only(['id', 'name', 'email', 'email_verified_at', 'created_at', 'updated_at']),
-        'token' => $token,
-        'roles' => $roles,
-        'permissions' => $permissions
-    ]);
+        return response([
+            'user' => $user->only(['id', 'name', 'email', 'email_verified_at', 'created_at', 'updated_at']),
+            'token' => $token,
+            'roles' => $roles,
+            'permissions' => $permissions
+        ]);
     }
 
 

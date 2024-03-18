@@ -10,6 +10,7 @@ use App\Models\Tenant\SubDepartment;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
 use App\Http\Resources\Finance\EmployeeResource;
+use App\Http\Resources\Finance\EmployeeResourceRefactor;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class EmployeeController extends Controller
@@ -20,7 +21,6 @@ class EmployeeController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('employee_index')) {
                 $employees = Employee::latest()->paginate(10);
-                // return EmployeeResource::collection($employees);
                 return EmployeeResource::collection($employees);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
@@ -110,13 +110,13 @@ class EmployeeController extends Controller
     }
 
 
-    public function employeeListWithLess(Request $request)
+    public function refactorEmployeeList(Request $request)
     {
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('employee_index')) {
-                $employees = Employee::latest()->paginate(10);
-                return EmployeeResource::collection($employees->items(), false);
+                $employees = Employee::latest()->select('id', 'emp_id',  'first_name', 'father_name', 'gfather_name')->paginate(10);
+                return EmployeeResourceRefactor::collection($employees);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }

@@ -117,7 +117,45 @@ class AllowanceTransactionController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('allowance_transaction_update')) {
-                $allowanceTransaction->update($request->validated());
+                $validatedData = $request->validated();
+                $allowanceType = AllowanceType::find($validatedData['allowance_type_id']);
+
+                $allowanceTransaction->payroll_period_id =  $validatedData['payroll_period_id'];
+                $allowanceTransaction->employee_id = $validatedData['employee_id'];
+                $allowanceTransaction->allowance_type_id = $validatedData['allowance_type_id'];
+                $allowanceTransaction->amount = $validatedData['amount'];
+
+                $amount = $request['amount'];
+                $taxability = $allowanceType->taxability;
+
+                if ($taxability === 1) {
+                    $allowanceTransaction->non_taxable_amount = 0;
+                    $allowanceTransaction->taxable_amount = $amount;
+                } elseif ($taxability === 2) {
+                    $allowanceTransaction->non_taxable_amount = $amount;
+                    $allowanceTransaction->taxable_amount = 0;
+                }
+                // taxability when the value type is percentage?
+                elseif ($taxability === 3) {
+                    $allowanceTransaction->non_taxable_amount = $allowanceType->tax_free_amount;
+                    $allowanceTransaction->taxable_amount = $amount - $allowanceType->tax_free_amount;
+                }
+                //taxability by taking the total amount of the employee?
+                else {
+                    $allowanceTransaction->non_taxable_amount = 0;
+                    $allowanceTransaction->taxable_amount = $amount * (1 + 0.35);
+                }
+
+                $allowanceTransaction->is_day_based = $validatedData['is_day_based'];
+
+                if ($allowanceTransaction->is_day_based === 1) {
+                    $allowanceTransaction->number_of_date = $validatedData['number_of_date'];
+                } else {
+                    $allowanceTransaction->number_of_date = 0;
+                }
+                $allowanceTransaction->save();
+                // dd($allowanceTransaction);
+
                 return new AllowanceTransactionResource($allowanceTransaction);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

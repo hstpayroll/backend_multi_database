@@ -61,7 +61,12 @@ class Employee extends Model
             'id'
         );
     }
-
+    public function getFullNameAttribute(): string
+    {
+        $fullName = trim($this->first_name . ' ' . $this->father_name . ' ' . $this->gfather_name);
+        return str_replace('  ', ' ', $fullName);
+        return ucwords($fullName);
+    }
     public function bank(): BelongsTo
     {
         return $this->belongsTo(Bank::class);

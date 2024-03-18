@@ -19,6 +19,7 @@ class AllowanceTypeSeeder extends Seeder
             'taxability' => '2', //  1 for taxable, 2 for non-taxable 3 for partially taxable 4 for tex covered by employer
             'tax_free_amount' => 0,
             'value_type' => 1,
+            'value' => 1200,
             'status' => 1,
         ]);
         AllowanceType::create([

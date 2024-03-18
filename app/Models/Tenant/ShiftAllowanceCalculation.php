@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ShiftAllowanceCalculation extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'employee_id',
@@ -18,10 +18,8 @@ class ShiftAllowanceCalculation extends Model
         'status',
     ];
 
-    public function shiftAllowanceType()
-    {
-        return $this->belongsTo(ShiftAllowanceType::class);
-    }
+
+
 
     public function payrollPeriod()
     {

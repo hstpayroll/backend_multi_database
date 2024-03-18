@@ -37,11 +37,10 @@ class ShiftAllowanceCalculationController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('shift_Allowance_store')) {
             $validatedData = $request->validated();
+
             $allowanceType = ShiftAllowanceType::findOrFail($validatedData['shift_allowance_type_id']);
-            $rate = $allowanceType->rate;
-            $employee = Employee::where('id', $validatedData['employee_id'])->first();
-            $employeeSalary = $employee->Salary;
-            $value = $employeeSalary * $rate;
+            $rate = $allowanceType->rate / 100;
+            $value = $employee->Salary * $rate;
 
             $shiftAllowanceCalculation = ShiftAllowanceCalculation::create([
                 'employee_id' => $validatedData['employee_id'],
@@ -56,6 +55,7 @@ class ShiftAllowanceCalculationController extends Controller
             }
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+
         }
     }
 
