@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Tenant\Payroll;
 use App\Models\Tenant\ShiftAllowanceType;
 use Illuminate\Database\Seeder;
 
@@ -55,5 +56,6 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(DeductionTransactionSeeder::class);
         $this->call(ShiftAllowanceSeeder::class);
         $this->call(ShiftAllowanceCalculationSeeder::class);
+        $this->call(PayrollSeeder::class);
     }
 }

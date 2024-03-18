@@ -19,18 +19,18 @@ class EmployeeController extends Controller
 {
     public function index(Request $request)
     {
-        // try {
-        //     $user = $request->user();
-        //     if ($user->hasPermissionTo('employee_index')) {
-        $employees = Employee::latest()->paginate(10);
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('employee_index')) {
+                $employees = Employee::latest()->paginate(10);
 
-        //         return EmployeeResource::collection($employees);
-        //     } else {
-        //         return response()->json(['message' => 'Unauthorized for this task'], 403);
-        //     }
-        // } catch (PermissionDoesNotExist $exception) {
-        //     return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
-        // }
+                return EmployeeResource::collection($employees);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        }
     }
 
     public function store(StoreEmployeeRequest $request)
@@ -138,6 +138,7 @@ class EmployeeController extends Controller
     public function totalDeductions(Employee $employee)
     {
         $allowanceTypes = $employee->allowanceTypes;
+        $allowanceTypes =  collect($allowanceTypes);
         return response()->json([
             'data' => AllowanceTypeResource::collection($allowanceTypes)
         ]);

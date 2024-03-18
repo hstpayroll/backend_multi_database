@@ -20,6 +20,7 @@ class AllowanceTypeSeeder extends Seeder
             'tax_free_amount' => 0,
             'value_type' => 1,
             'value' => 1200,
+            'is_recurrent' => 1,
             'status' => 1,
         ]);
         AllowanceType::create([
@@ -36,6 +37,7 @@ class AllowanceTypeSeeder extends Seeder
             'taxability' => 4,
             'tax_free_amount' => 0,
             'value_type' => 1,
+            'is_recurrent' => 1,
             'status' => 0,
         ]);
         AllowanceType::create([
@@ -44,6 +46,8 @@ class AllowanceTypeSeeder extends Seeder
             'taxability' => 2,
             'tax_free_amount' => 0,
             'value_type' => 1,
+            'is_recurrent' => 0,
+
             'status' => 0,
         ]);
         AllowanceType::create([
@@ -52,6 +56,7 @@ class AllowanceTypeSeeder extends Seeder
             'taxability' => 2,
             'tax_free_amount' => 0,
             'value_type' => 1,
+            'is_recurrent' => 1,
             'status' => 0,
         ]);
         AllowanceType::create([

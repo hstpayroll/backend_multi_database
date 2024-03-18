@@ -17,6 +17,7 @@ class AllowanceTypeResource extends JsonResource
             'tax_free_amount' => $this->tax_free_amount,
             'value_type' => $this->value_type == 0 ? 'amount' : 'Percent',
             'value' => $this->value,
+            'is_recurrent' => $this->status == 1 ? 'No' : 'Yes',
             'status' => $this->status == 1 ? 'active' : 'inactive',
         ];
     }
