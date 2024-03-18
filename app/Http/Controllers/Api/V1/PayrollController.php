@@ -22,7 +22,7 @@ class PayrollController extends Controller
      */
     public function index()
     {
-        $payrolls = Payroll::all();
+        $payrolls = Payroll::paginate(10);
         return PayrollResource::collection($payrolls);
     }
 
