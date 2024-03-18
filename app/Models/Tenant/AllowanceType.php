@@ -4,6 +4,7 @@ namespace App\Models\Tenant;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class AllowanceType extends Model
 {
@@ -28,5 +29,9 @@ class AllowanceType extends Model
     public function allowanceTransactions()
     {
         return $this->hasMany(AllowanceTransaction::class);
+    }
+    public function employees(): BelongsToMany
+    {
+        return $this->belongsToMany(AllowanceType::class, 'employee_allowance_type', 'employee_id', 'allowance_type_id');
     }
 }

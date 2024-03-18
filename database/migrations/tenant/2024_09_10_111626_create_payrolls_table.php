@@ -24,7 +24,6 @@ return new class extends Migration
             $table->decimal('total_ot_amount', 10, 2)->default(0);
 
             $table->decimal('total_shift_allowance_amount', 10, 2)->default(0);
-            // $table->decimal('total_on_call_allowance_amount', 10, 2)->default(0); // included in other allowances
 
             $table->decimal('total_taxable_allowance', 10, 2)->default(0);
             $table->decimal('total_non_taxable_allowance_amount', 10, 2)->default(0);

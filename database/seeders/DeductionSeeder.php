@@ -95,12 +95,6 @@ class DeductionSeeder extends Seeder
             'status' => 1
         ]);
         Deduction::create([
-            'name' => "laptop_recovery",
-            'deduction_type_id' => 3,
-            'value_type' => 0, // 0 = fixed amount, 1 = percentage
-            'status' => 1
-        ]);
-        Deduction::create([
             'name' => "outstanding_laptop_recovery",
             'deduction_type_id' => 3,
             'value_type' => 0, // 0 = fixed amount, 1 = percentage

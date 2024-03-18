@@ -89,6 +89,7 @@ Route::middleware([
             Route::get('employee-position', [EmployeeController::class, 'employeePosition'])->name('employee-position');
             Route::get('employees/list-with-less', [EmployeeController::class, 'employeeListWithLess'])->name('employees.list-with-less');
             Route::get('employees/refactor-employee-list', [EmployeeController::class, 'refactorEmployeeList'])->name('employees.refactor-employee-list');
+            Route::get('employees/{employee}/allowance-types', [EmployeeController::class, 'allowanceTypes'])->name('employees.allowance-types');
 
             Route::apiResource('employees', EmployeeController::class);
             Route::get('loans_by_employee/{employee_id}', [LoanController::class, 'showLoansByEmployee']);

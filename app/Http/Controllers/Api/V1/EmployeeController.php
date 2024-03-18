@@ -9,25 +9,28 @@ use App\Http\Controllers\Controller;
 use App\Models\Tenant\SubDepartment;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
+use App\Http\Resources\Finance\AllowanceTypeResource;
 use App\Http\Resources\Finance\EmployeeResource;
 use App\Http\Resources\Finance\EmployeeResourceRefactor;
+use App\Models\Tenant\AllowanceType;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class EmployeeController extends Controller
 {
     public function index(Request $request)
     {
-        try {
-            $user = $request->user();
-            if ($user->hasPermissionTo('employee_index')) {
-                $employees = Employee::latest()->paginate(10);
-                return EmployeeResource::collection($employees);
-            } else {
-                return response()->json(['message' => 'Unauthorized for this task'], 403);
-            }
-        } catch (PermissionDoesNotExist $exception) {
-            return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
-        }
+        // try {
+        //     $user = $request->user();
+        //     if ($user->hasPermissionTo('employee_index')) {
+        $employees = Employee::latest()->paginate(10);
+
+        //         return EmployeeResource::collection($employees);
+        //     } else {
+        //         return response()->json(['message' => 'Unauthorized for this task'], 403);
+        //     }
+        // } catch (PermissionDoesNotExist $exception) {
+        //     return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
+        // }
     }
 
     public function store(StoreEmployeeRequest $request)
@@ -123,5 +126,20 @@ class EmployeeController extends Controller
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
         }
+    }
+
+    public function allowanceTypes(Employee $employee)
+    {
+        $allowanceTypes = $employee->allowanceTypes;
+        return response()->json([
+            'data' => AllowanceTypeResource::collection($allowanceTypes)
+        ]);
+    }
+    public function totalDeductions(Employee $employee)
+    {
+        $allowanceTypes = $employee->allowanceTypes;
+        return response()->json([
+            'data' => AllowanceTypeResource::collection($allowanceTypes)
+        ]);
     }
 }

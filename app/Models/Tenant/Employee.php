@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Employee extends Model
 {
@@ -90,6 +91,12 @@ class Employee extends Model
     public function grade(): BelongsTo
     {
         return $this->belongsTo(Grade::class);
+    }
+
+
+    public function allowanceTypes(): BelongsToMany
+    {
+        return $this->belongsToMany(AllowanceType::class, 'employee_allowance_type', 'employee_id', 'allowance_type_id');
     }
 
 

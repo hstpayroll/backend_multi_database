@@ -29,7 +29,6 @@ class AllowanceTransaction extends Model
     {
         return $this->belongsTo(Employee::class);
     }
-
     public function allowanceType()
     {
         return $this->belongsTo(AllowanceType::class);
