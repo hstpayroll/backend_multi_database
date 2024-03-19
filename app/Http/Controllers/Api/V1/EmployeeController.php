@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tenant\Employee;
 use App\Models\Tenant\Position;
 use App\Http\Controllers\Controller;
-use App\Models\Tenant\AllowanceType;
 use App\Models\Tenant\SubDepartment;
-use Illuminate\Validation\ValidationException;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
 use App\Http\Resources\Finance\EmployeeResource;
@@ -129,73 +127,6 @@ class EmployeeController extends Controller
         }
     }
 
-    public function allowanceTypes(Employee $employee)
-    {
-        $allowanceTypes = $employee->allowanceTypes;
-        return response()->json([
-            'data' => AllowanceTypeResource::collection($allowanceTypes)
-        ]);
-    }
-
-    public function storeAllowanceTypes(Request $request, Employee $employee)
-    {
-        $data = $request->validate([
-            'allowance_type_id' => 'required|exists:allowance_types,id',
-            'number_of_days' => 'required|integer',
-            'value_in_birr' => 'nullable|numeric',
-        ]);
-        $recordExist = $employee->allowanceTypes()
-            ->where('allowance_type_id',  $data['allowance_type_id'])
-            ->first();
-
-        if ($recordExist) {
-            return response()->json([
-                'message' => 'Duplicate allowance type assignment detected for this employee.',
-                'errors' => ['allowance_type_id' => ['Duplicate assignment.']],
-            ], 422);
-        }
-        $existingRecord = $employee->allowanceTypes()->attach([
-            'allowance_type_id' => $data['allowance_type_id'],
-        ], [
-            'number_of_days' => $data['number_of_days'],
-            'value_in_birr' => $data['value_in_birr']
-        ]); // Include validated data
-
-        return response()->json([
-            'message' => 'Allowance type assigned successfully.',
-        ]);
-    }
-    public function updateAllowanceTypes(Request $request, Employee $employee)
-    {
-        $data = $request->validate([
-            'allowance_type_id' => 'required|integer',
-            'number_of_days' => 'required|integer',
-            'value_in_birr' => 'nullable|numeric',
-        ]);
-
-        $existingRecord = $employee->allowanceTypes()->syncWithPivotValues([
-            'allowance_type_id' => $data['allowance_type_id'],
-        ], [
-            'number_of_days' => $data['number_of_days'],
-            'value_in_birr' => $data['value_in_birr']
-        ]); // Include validated data
-
-        return response()->json([
-            'message' => 'Allowance type assigned successfully.',
-        ]);
-    }
-    public function destroyAllowanceTypes(Request $request, Employee $employee)
-    {
-        $data = $request->validate([
-            'allowance_type_id' => 'integer|exists:allowance_types,id',
-        ]);
-
-        $employee->allowanceTypes()->detach($data['allowance_type_id']);
-
-        return response()->json([
-            'message' => 'Selected allowance types detached from employee ' . $employee->id,
-        ]);
-    }
     public function totalDeductions(Employee $employee)
     {
         $allowanceTypes = $employee->allowanceTypes;
