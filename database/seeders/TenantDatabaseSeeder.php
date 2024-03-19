@@ -45,6 +45,7 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(OverTimeCalculationSeeder::class);
         $this->call(LoanTypeSeeder::class);
         $this->call(LoanSeeder::class);
+        $this->call(LoanPaymentRecordSeeder::class);
         $this->call(MainAllowanceSeeder::class);
         $this->call(CompanySettingSeeder::class);
         $this->call(PayslipSettingSeeder::class);
