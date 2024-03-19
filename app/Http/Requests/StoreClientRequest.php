@@ -26,7 +26,7 @@ class StoreClientRequest extends FormRequest
             'phone_number' => 'required|string|max:255', 
             'company_name' => 'required|string|max:255', 
             'total_number_of_employee' => 'required|integer|max:255', 
-            'country' => 'nullable|string|max:255', 
+            'country' => 'required|string|max:255', 
             'city' => 'nullable|string|max:255', 
             'sub_city' => 'nullable|string|max:255',
         ];
