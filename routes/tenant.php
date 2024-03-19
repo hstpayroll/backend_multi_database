@@ -91,6 +91,9 @@ Route::middleware([
             Route::get('employees/refactor-employee-list', [EmployeeController::class, 'refactorEmployeeList'])->name('employees.refactor-employee-list');
             Route::get('employees/{employee}/allowance-types', [EmployeeController::class, 'allowanceTypes'])->name('employees.allowance-types');
             Route::get('employees/{employee}/total-deductions', [EmployeeController::class, 'totalDeductions'])->name('employees.total-deductions');
+            Route::post('employees/{employee}/store-allowance-types', [EmployeeController::class, 'storeAllowanceTypes'])->name('employees.store-allowance-types');
+            Route::put('employees/{employee}/update-allowance-types', [EmployeeController::class, 'updateAllowanceTypes'])->name('employees.update-allowance-types');
+            Route::delete('employees/{employee}/destroy-allowance-types', [EmployeeController::class, 'destroyAllowanceTypes'])->name('employees.destroy-allowance-types');
 
             Route::apiResource('employees', EmployeeController::class);
             Route::get('loans_by_employee/{employee_id}', [LoanController::class, 'showLoansByEmployee']);
@@ -123,7 +126,6 @@ Route::middleware([
             Route::apiResource('shift-allowance-types', ShiftAllowanceTypeController::class);
 
             Route::get('shift-allowance-calculation-by-employee/{employee_id}', [ShiftAllowanceCalculationController::class, 'showShiftAllowanceCalculationByEmployee'])->name('shift-allowance-calculation-by-employee');
-
             Route::apiResource('shift-allowance-calculations', ShiftAllowanceCalculationController::class);
         });
 });

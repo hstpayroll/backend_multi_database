@@ -13,7 +13,7 @@ class AllowanceTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        AllowanceType::create([
+        $allowance1 =   AllowanceType::create([
             'main_allowance_id' => 1,
             'name' => 'Transportation Allowance one',
             'taxability' => '2', //  1 for taxable, 2 for non-taxable 3 for partially taxable 4 for tex covered by employer
@@ -23,13 +23,21 @@ class AllowanceTypeSeeder extends Seeder
             'is_recurrent' => 1,
             'status' => 1,
         ]);
-        AllowanceType::create([
+        $allowance1->employees()->attach(1, [
+            'value_in_birr' => 500, // Specify pivot data
+            'number_of_days' => 10,
+        ]);
+        $allowance2 = AllowanceType::create([
             'main_allowance_id' => 2,
             'name' => 'Transportation Allowance Two',
             'taxability' => 1,
             'tax_free_amount' => 0,
             'value_type' => 0,
             'status' => 1,
+        ]);
+        $allowance2->employees()->attach(1, [
+            'value_in_birr' => 5000, // Specify pivot data
+            'number_of_days' => 26,
         ]);
         AllowanceType::create([
             'main_allowance_id' => 2,
