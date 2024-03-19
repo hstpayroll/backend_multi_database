@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class client_requests extends Model
+class ClientRequests extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'first_name', 
@@ -15,7 +16,7 @@ class client_requests extends Model
         'email',  
         'phone_number', 
         'company_name', 
-        'total_number_of_employee', 
+        'total_number_of_employees', 
         'country', 
         'city', 
         'sub_city',

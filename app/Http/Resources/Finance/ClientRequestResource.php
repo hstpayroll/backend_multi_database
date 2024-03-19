@@ -20,7 +20,7 @@ class ClientRequestResource extends JsonResource
             'email' => $this->email,
             'phone_number' => $this->phone_number,
             'company_name' => $this->company_name,
-            'total_number_of_employee' => $this->total_number_of_employee,
+            'total_number_of_employees' => $this->total_number_of_employees,
             'country' => $this->country,
             'city' => $this->city,
             'sub_city' => $this->sub_city,
