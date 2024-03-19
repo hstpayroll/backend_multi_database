@@ -21,7 +21,7 @@ class UpdateLoanRequest extends FormRequest
             'expected_end_date' => 'required|date',
             'duration_months' => 'required|integer|min:0',
             'description' => 'nullable|string|max:255',
-            'status' => 'required|integer|in:0,1',
+            'status' => 'nullable|integer|in:0,1',
             'termination_date' => 'nullable|date|required_if:status,1',
         ];
     }

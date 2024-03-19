@@ -7,7 +7,6 @@ use App\Http\Requests\StoreShiftAllowanceTypeRequest;
 use App\Http\Requests\UpdateShiftAllowanceTypeRequest;
 use App\Http\Resources\Finance\ShiftAllowanceTypeResource;
 use App\Models\Tenant\ShiftAllowanceType;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
 

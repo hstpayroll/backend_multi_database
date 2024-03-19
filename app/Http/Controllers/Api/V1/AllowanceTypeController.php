@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\AllowanceType;
-use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreAllowanceTypeRequest;
 use App\Http\Requests\UpdateAllowanceTypeRequest;
 use App\Http\Resources\Finance\AllowanceTypeResource;
@@ -19,9 +16,13 @@ class AllowanceTypeController extends Controller
         return AllowanceTypeResource::collection($allowanceTypes);
     }
 
-    public function store(StoreAllowanceTypeRequest $request, AllowanceType $allowanceType)
+    public function store(StoreAllowanceTypeRequest $request)
     {
+
         $allowanceType = AllowanceType::create($request->validated());
+        if ($request->has('applies_to')) {
+            $allowanceType->employees()->attach($request->input('applies_to'));
+        }
         return new AllowanceTypeResource($allowanceType);
     }
 

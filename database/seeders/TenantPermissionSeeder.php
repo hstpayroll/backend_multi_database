@@ -149,6 +149,7 @@ class TenantPermissionSeeder extends Seeder
             'overtime_type_show',
             'overtime_type_update',
             'overtime_type_destroy',
+            'overtime_recored_by_employee',
 
             // MainAllowance
             'main_allowance_index',
@@ -170,6 +171,8 @@ class TenantPermissionSeeder extends Seeder
             'loan_payment_record_show',
             'loan_payment_record_update',
             'loan_payment_record_destroy',
+            'loan_payment_records_by_employee',
+            'payment_recored_by_loan',
 
             // Loan
             'loan_index',
@@ -177,6 +180,7 @@ class TenantPermissionSeeder extends Seeder
             'loan_show',
             'loan_update',
             'loan_destroy',
+            'loans_by_employee',
 
             // IncomeTax
             'income_tax_index',
@@ -197,6 +201,23 @@ class TenantPermissionSeeder extends Seeder
             'grade_index', 'grade_store', 'grade_show', 'grade_update', 'grade_destroy',
 
             'overtime_calculation_index', 'overtime_calculation_store', 'overtime_calculation_show', 'overtime_calculation_update', 'overtime_calculation_destroy',
+
+            //Allowance transaction with transaction by employee
+            'allowance_transaction_index',
+            'allowance_transaction_store',
+            'allowance_transaction_show',
+            'allowance_transaction_update',
+            'allowance_transaction_destroy',
+            'transaction_by_employee_show',
+
+            //shift Allowance
+            'shift_Allowance_recored_by_employee',
+            'shift_Allowance_index',
+            'shift_Allowance_store',
+            'shift_Allowance_show',
+            'shift_Allowance_update',
+            'shift_Allowance_destroy',
+
 
 
         ];

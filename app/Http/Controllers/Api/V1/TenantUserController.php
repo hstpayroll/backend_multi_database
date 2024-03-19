@@ -5,20 +5,17 @@ namespace App\Http\Controllers\Api\V1;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
+use App\Http\Resources\Finance\TenantUserResource;
 
 class TenantUserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function auth_user_tenant()
     {
-        $auth_user = auth()->user();
+        auth()->user();
         return response()->json([
             'message' => 'success',
             'code' => '200',
@@ -26,13 +23,9 @@ class TenantUserController extends Controller
     }
     public function index()
     {
-        $users = User::latest()->paginate(10); // You can adjust the number of items per page as needed
-        return  UserResource::collection($users);
+        $users = User::with(['roles', 'permissions'])->latest()->paginate(10);
+        return  TenantUserResource::collection($users);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -45,55 +38,77 @@ class TenantUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-        ]); 
-
-        $user->assignRole(['user']);
-        $user->givePermissionTo(['edit_profile', 'change_password', 'user_index', 'user_create', 'user_show', 'user_update', 'user_destroy']);
-        $user->companies()->attach(1);
+        ]);
 
         event(new Registered($user));
 
-        Auth::login($user);
-
-        $token = $user->createToken('myapptoken')->plainTextToken;
-
         return response()->json([
-            // 'user' => $user,
-            'user' =>  new UserResource($user),
-            'token' => $token,
+            'user' =>  new TenantUserResource($user),
             'status' => 200,
             'message' => 'User created successfully',
         ]);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(User $user)
     {
-        // $user = $user->load(['companies', 'roles', 'permissions']);
-        return new UserResource($user);
+        $user = $user->load(['roles', 'permissions']);
+        return new TenantUserResource($user);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        event(new Registered($user));
+
+        return response()->json([
+            'user' =>  new TenantUserResource($user),
+            'status' => 200,
+            'message' => 'User created successfully',
+        ]);
     }
-
-
     public function destroy(User $user)
     {
-        $user->tenants()->detach();
         $user->roles()->detach();
         $user->permissions()->detach();
         $user->delete();
-
-
+        return response()->noContent();
+    }
+    public function assignRole(Request $request, User $user)
+    {
+        $this->validate($request, [
+            'roles' => 'required|array|min:1',
+            'roles.*' => 'integer|exists:roles,id',
+        ]);
+        $roles = Role::whereIn('id', $request->input('roles'))->get();
+        $user->syncRoles($roles);
         return response()->json([
-            'message' => 'User and associated companies and role deleted successfully.',
-        ], 204); // No Content response
+            'message' => 'Roles assigned successfully!',
+            'user' => new TenantUserResource($user),
+        ], 200);
+    }
+    public function removeRole(Request $request, User $user)
+    {
+        $this->validate($request, [
+            'role_id' => 'required|integer|exists:roles,id', // Ensure a valid role ID is provided
+        ]);
+
+        $roleId = $request->input('role_id');
+        $role = Role::findOrFail($roleId);
+        $user->removeRole($role);
+        return response()->json([
+            'message' => 'Role removed successfully!',
+            'user' => new TenantUserResource($user),
+        ], 200);
     }
 }

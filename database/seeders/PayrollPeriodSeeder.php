@@ -21,7 +21,7 @@ class PayrollPeriodSeeder extends Seeder
             'company_pension_id' => 1,
             'name' => '2021',
             'start_date' => '2021-01-01',
-            'end_date' => '2021-12-31',
+            'end_date' => '2021-01-31',
             'status' => 1,
         ]);
     }

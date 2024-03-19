@@ -98,6 +98,7 @@ class TenantUserSeeder extends Seeder
                 'overtime_type_show',
                 'overtime_type_update',
                 'overtime_type_destroy',
+                'overtime_recored_by_employee',
 
                 // MainAllowance
                 'main_allowance_index',
@@ -112,6 +113,7 @@ class TenantUserSeeder extends Seeder
                 'loan_type_show',
                 'loan_type_update',
                 'loan_type_destroy',
+                'loans_by_employee',
 
                 // LoanPaymentRecord
                 'loan_payment_record_index',
@@ -119,6 +121,8 @@ class TenantUserSeeder extends Seeder
                 'loan_payment_record_show',
                 'loan_payment_record_update',
                 'loan_payment_record_destroy',
+                'payment_recored_by_loan',
+                'loan_payment_records_by_employee',
 
                 // Loan
                 'loan_index',
@@ -147,6 +151,14 @@ class TenantUserSeeder extends Seeder
                 'currency_update',
                 'currency_destroy',
 
+                //shift Allowance
+                'shift_Allowance_recored_by_employee',
+                'shift_Allowance_index',
+                'shift_Allowance_store',
+                'shift_Allowance_show',
+                'shift_Allowance_update',
+                'shift_Allowance_destroy',
+
                 'calendar_index', 'calendar_store', 'calendar_show', 'calendar_update', 'calendar_destroy',
                 'citizenship_index', 'citizenship_store', 'citizenship_show', 'citizenship_update', 'citizenship_destroy',
                 'company_index', 'company_store', 'company_show', 'company_update', 'company_destroy',
@@ -157,6 +169,14 @@ class TenantUserSeeder extends Seeder
                 'fiscal_year_index', 'fiscal_year_store', 'fiscal_year_show', 'fiscal_year_update', 'fiscal_year_destroy',
                 'grade_index', 'grade_store', 'grade_show', 'grade_update', 'grade_destroy',
                 'overtime_calculation_index', 'overtime_calculation_store', 'overtime_calculation_show', 'overtime_calculation_update', 'overtime_calculation_destroy',
+
+                //Allowance transaction with transaction by employee
+                'allowance_transaction_index',
+                'allowance_transaction_store',
+                'allowance_transaction_show',
+                'allowance_transaction_update',
+                'allowance_transaction_destroy',
+                'transaction_by_employee_show',
             ]
         );
     }

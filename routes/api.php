@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\TenantController;
 use App\Http\Controllers\Api\V1\DomainController;
+use App\Http\Controllers\Api\V1\PermissionController;
 use App\Http\Controllers\ApiAuth\NewPasswordController;
 use App\Http\Controllers\ApiAuth\VerifyEmailController;
 use App\Http\Controllers\Api\V1\RoleController;
@@ -51,10 +52,15 @@ Route::prefix('v1')->group(function () {
 
         Route::post('/validate-user', [AuthenticatedSessionController::class, 'validateUser'])
             ->name('validate-user');
+
+
+        Route::post('users/assign-role/{user}', [UserController::class, 'assignRole'])->name('users.assign-role');
+        Route::post('users/remove-role/{user}', [UserController::class, 'removeRole'])->name('users.remove-role');
         Route::apiResource('users', UserController::class);
+        Route::apiResource('roles', RoleController::class);
+        Route::apiResource('permissions', PermissionController::class)->only(['index', 'show']);
         Route::apiResource('tenants', TenantController::class);
         Route::apiResource('domains', DomainController::class)->only(['index']);
-        Route::apiResource('roles', RoleController::class);
         Route::get('auth-user', [DomainController::class, 'auth_user'])->name('auth-user');
     });
     Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');

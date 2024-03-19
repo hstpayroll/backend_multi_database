@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('non_taxable_amount', 10, 2)->nullable()->default(0);
             $table->boolean('is_day_based')->default(0);
             $table->integer('number_of_date')->nullable();
-            $table->tinyInteger('status')->default(0); //0 for inactive 1 for active
+            $table->tinyInteger('status')->default(1); //0 for inactive 1 for active
             $table->timestamps();
         });
     }

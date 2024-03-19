@@ -17,6 +17,7 @@ class Loan extends Model
             $builder->where('status', 1);
         });
     }
+
     use SoftDeletes;
 
 

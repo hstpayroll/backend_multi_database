@@ -29,12 +29,11 @@ class AllowanceTransaction extends Model
     {
         return $this->belongsTo(Employee::class);
     }
-
     public function allowanceType()
     {
         return $this->belongsTo(AllowanceType::class);
     }
-    public function mainAllowance()
+    public function mainAllowances()
     {
         return $this->belongsTo(mainAllowance::class);
     }

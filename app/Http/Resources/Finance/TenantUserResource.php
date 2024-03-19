@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Finance;
 
 use Illuminate\Http\Request;
-use App\Http\Resources\PermissionResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class TenantUserResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

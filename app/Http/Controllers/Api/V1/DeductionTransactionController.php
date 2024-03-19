@@ -22,33 +22,7 @@ class DeductionTransactionController extends Controller
     public function store(StoreDeductionTransactionRequest $request)
     {
         $validatedData = $request->validated();
-
-        // Get the employee's ID from the validated data
-        $employeeId = $validatedData['employee_id'];
-        // Get the deduction value
-        $deduction = Deduction::findOrFail($validatedData['deduction_id']);
-        $value = $deduction->value; //15000
-        // Get the current outstanding amount for the employee
-        $totalPaymenet = DeductionTransaction::where('employee_id', $employeeId)
-            ->where('deduction_id', $validatedData['deduction_id'])
-            ->sum('amount_deducted');
-
-        $employee = Employee::findOrFail($employeeId);
-        $employeeSalary = $employee->salary; //for salary % only
-
-
-        $outstandingAmount = $value - $validatedData['amount_deducted'] -  $totalPaymenet;
-
-        $deductionTransaction = new DeductionTransaction();
-
-        $deductionTransaction->payroll_period_id = $validatedData['payroll_period_id'];
-        $deductionTransaction->employee_id = $validatedData['employee_id'];
-        $deductionTransaction->deduction_id = $validatedData['deduction_id'];
-        $deductionTransaction->amount_deducted = $validatedData['amount_deducted'];
-        $deductionTransaction->outstanding_amount =  $outstandingAmount;
-        $deductionTransaction->save();
-
-
+        $deductionTransaction = DeductionTransaction::create($validatedData);
         return new DeductionTransactionResource($deductionTransaction);
     }
 

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Employee extends Model
 {
@@ -61,7 +62,12 @@ class Employee extends Model
             'id'
         );
     }
-
+    public function getFullNameAttribute(): string
+    {
+        $fullName = trim($this->first_name . ' ' . $this->father_name . ' ' . $this->gfather_name);
+        return str_replace('  ', ' ', $fullName);
+        return ucwords($fullName);
+    }
     public function bank(): BelongsTo
     {
         return $this->belongsTo(Bank::class);
@@ -85,6 +91,12 @@ class Employee extends Model
     public function grade(): BelongsTo
     {
         return $this->belongsTo(Grade::class);
+    }
+
+
+    public function allowanceTypes(): BelongsToMany
+    {
+        return $this->belongsToMany(AllowanceType::class, 'employee_allowance_type', 'employee_id', 'allowance_type_id');
     }
 
 

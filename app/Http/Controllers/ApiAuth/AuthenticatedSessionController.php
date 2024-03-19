@@ -9,7 +9,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Auth\LoginRequest;
 use Laravel\Sanctum\PersonalAccessToken;
+use App\Http\Resources\Finance\RoleResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Finance\PermissionResource;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -27,15 +29,20 @@ class AuthenticatedSessionController extends Controller
                 'error' => 'The Provided credentials are not correct'
             ], 422);
         }
-        $user = Auth::user();
 
+        $user = Auth::user();
         $token = $user->createToken('main')->plainTextToken;
+        $permissions = PermissionResource::collection($user->getAllPermissions());
+        $roles = RoleResource::collection($user->roles);
 
         return response([
-            'user' =>  $user,
-            'token' => $token
+            'user' => $user->only(['id', 'name', 'email', 'email_verified_at', 'created_at', 'updated_at']),
+            'token' => $token,
+            'roles' => $roles,
+            'permissions' => $permissions
         ]);
     }
+
 
     /**
      * Destroy an authenticated session.

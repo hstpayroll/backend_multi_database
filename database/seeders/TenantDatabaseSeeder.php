@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Tenant\Payroll;
+use App\Models\Tenant\ShiftAllowanceType;
 use Illuminate\Database\Seeder;
 
 class TenantDatabaseSeeder extends Seeder
@@ -16,6 +19,7 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(TenantPermissionSeeder::class);
         $this->call(TenantUserSeeder::class);
 
+        $this->call(CostCenterSeeder::class);
         $this->call(TaxRegionSeeder::class);
         $this->call(CitizenshipSeeder::class);
         $this->call(CurrencySeeder::class);
@@ -47,8 +51,11 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(MainAllowanceSeeder::class);
         $this->call(AllowanceTypeSeeder::class);
         $this->call(AllowanceTransactionSeeder::class);
-        $this->call(CostCenterSeeder::class);
         $this->call(DeductionTypeSeeder::class);
         $this->call(DeductionSeeder::class);
+        $this->call(DeductionTransactionSeeder::class);
+        $this->call(ShiftAllowanceSeeder::class);
+        $this->call(ShiftAllowanceCalculationSeeder::class);
+        $this->call(PayrollSeeder::class);
     }
 }
