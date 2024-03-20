@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "6cc3cc85-f72e-4b7e-a77c-681eee521f05",
+        "_postman_id": "f40c51b2-2ddd-402c-9439-7ac75b5b233a",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"tmeomupeutwxwb\",\"email\":\"wwilderman@example.org\",\"password\":\"id\"}"
+                            "raw": "{\"name\":\"khwibqk\",\"email\":\"barbara71@example.com\",\"password\":\"soluta\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"bailee.goldner@example.com\",\"password\":\"#|&|MZ-.gP9\"}"
+                            "raw": "{\"email\":\"jjaskolski@example.net\",\"password\":\"%9JS9XN18]@\"}"
                         },
                         "description": "",
                         "auth": {
@@ -103,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"achamplin@example.net\"}"
+                            "raw": "{\"email\":\"jaleel.wilderman@example.com\"}"
                         },
                         "description": "",
                         "auth": {
@@ -134,7 +134,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"natus\",\"email\":\"leola89@example.net\",\"password\":\"quia\"}"
+                            "raw": "{\"token\":\"voluptate\",\"email\":\"anastasia.kuhn@example.net\",\"password\":\"nobis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -155,13 +155,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "non",
+                                    "value": "est",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "quo",
+                                    "value": "molestiae",
                                     "description": ""
                                 }
                             ]
@@ -349,7 +349,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "17",
                                     "description": "The ID of the client request."
                                 }
                             ]
@@ -521,7 +521,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"awhyjfricazww\",\"email\":\"trey64@example.org\",\"password\":\"ut\"}"
+                            "raw": "{\"name\":\"tiub\",\"email\":\"kaylee52@example.net\",\"password\":\"debitis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -616,7 +616,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"jpulqidaflfgslmhdvcscr\",\"email\":\"vella.walter@example.com\",\"password\":\"qui\"}"
+                            "raw": "{\"name\":\"xvyjfqxaaazmyurglov\",\"email\":\"demetris.okuneva@example.org\",\"password\":\"sed\"}"
                         },
                         "description": "",
                         "auth": {
@@ -731,7 +731,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"corporis\"}"
+                            "raw": "{\"name\":\"cum\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1045,7 +1045,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"hcypaj\",\"email\":\"beatty.rhea@example.net\",\"password\":\"ea\",\"domain\":\"p\"}"
+                            "raw": "{\"name\":\"boxasnzqjjwxluupdftbdfip\",\"email\":\"tracey45@example.net\",\"password\":\"numquam\",\"domain\":\"kgyelbixkokkqznwhuy\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1356,7 +1356,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"pwsdzgpn\",\"last_name\":\"eyhxetlkjhhipqqevxoimwn\",\"email\":\"auer.lessie@example.net\",\"phone_number\":\"racltnygrf\",\"company_name\":\"mi\",\"total_number_of_employees\":8,\"country\":\"dlcsnecufitlkalqi\",\"city\":\"mei\",\"sub_city\":\"oeaytrdahmptbcdrcu\"}"
+                            "raw": "{\"first_name\":\"jtdkc\",\"last_name\":\"umbpgijeagtrkaqyzf\",\"email\":\"tyshawn63@example.com\",\"phone_number\":\"zwudhhutxgahnfrmbivpf\",\"company_name\":\"uedjrjwsm\",\"total_number_of_employees\":16,\"country\":\"csapml\",\"city\":\"xoiizscnjewk\",\"sub_city\":\"urgcpogfrqgzollijmz\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1387,7 +1387,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"bxydfpcsmrqcnfppxzvwoo\",\"email\":\"lilliana.upton@example.net\",\"password\":\"alias\"}"
+                            "raw": "{\"name\":\"cd\",\"email\":\"stiedemann.paul@example.net\",\"password\":\"dolores\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1418,7 +1418,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"deanna96@example.com\",\"password\":\"TD}[sk?E{6T\"}"
+                            "raw": "{\"email\":\"piper79@example.com\",\"password\":\"sCAJczE.D(:\\\"Q\\\\:\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1449,7 +1449,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"strosin.tillman@example.net\"}"
+                            "raw": "{\"email\":\"natasha52@example.org\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1480,7 +1480,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"consectetur\",\"email\":\"zlesch@example.org\",\"password\":\"iusto\"}"
+                            "raw": "{\"token\":\"velit\",\"email\":\"general20@example.org\",\"password\":\"et\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1501,13 +1501,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "placeat",
+                                    "value": "nemo",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "sit",
+                                    "value": "cumque",
                                     "description": ""
                                 }
                             ]
@@ -1695,7 +1695,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "19",
                                     "description": "The ID of the client request."
                                 }
                             ]
@@ -1749,7 +1749,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"roles\":[14]}"
+                            "raw": "{\"roles\":[3]}"
                         },
                         "description": "",
                         "auth": {
@@ -1788,7 +1788,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"role_id\":13}"
+                            "raw": "{\"role_id\":17}"
                         },
                         "description": "",
                         "auth": {
@@ -1867,7 +1867,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"zt\",\"email\":\"kellie.howe@example.org\",\"password\":\"voluptatum\"}"
+                            "raw": "{\"name\":\"kkgvkaa\",\"email\":\"darlene.nitzsche@example.org\",\"password\":\"modi\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1962,7 +1962,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"qbwwr\",\"email\":\"novella84@example.org\",\"password\":\"voluptatem\"}"
+                            "raw": "{\"name\":\"zmiiiwni\",\"email\":\"spinka.valentin@example.net\",\"password\":\"aut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2077,7 +2077,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rerum\"}"
+                            "raw": "{\"name\":\"hic\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2391,7 +2391,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"fmovdrdunmh\",\"email\":\"padberg.kathryne@example.com\",\"password\":\"ea\",\"domain\":\"kntjjkhexazwvukqb\"}"
+                            "raw": "{\"name\":\"d\",\"email\":\"lorenza15@example.org\",\"password\":\"quo\",\"domain\":\"otwzjbduuyzmbdiph\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2702,7 +2702,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"edbgheacpdzvafdomxocml\",\"last_name\":\"pjdhjjopqlkkeoygsjrnrs\",\"email\":\"furman51@example.org\",\"phone_number\":\"ksjwlwdnkpwbcajxrn\",\"company_name\":\"phxrefbgmg\",\"total_number_of_employees\":18,\"country\":\"xbwvtgjtgzlmbluigjc\",\"city\":\"aowyyvsdlixlm\",\"sub_city\":\"slhkhfywuvt\"}"
+                            "raw": "{\"first_name\":\"kpyhdizbl\",\"last_name\":\"qtshgckvwihnhxrnktiwuogep\",\"email\":\"laney.willms@example.org\",\"phone_number\":\"ekxjmceesidkxoqgtukqqgvcr\",\"company_name\":\"hzeoukhcwyrzj\",\"total_number_of_employees\":5,\"country\":\"ri\",\"city\":\"piebwspyvsqzxceqfdr\",\"sub_city\":\"tbplcslyfkigbvak\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2733,7 +2733,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"zmjbqxyhoazbhclkwkqfmac\",\"email\":\"kathleen74@example.net\",\"password\":\"optio\"}"
+                            "raw": "{\"name\":\"julxnmov\",\"email\":\"tamara99@example.com\",\"password\":\"eaque\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2764,7 +2764,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"damion.casper@example.org\",\"password\":\"|8569f{>(`^\"}"
+                            "raw": "{\"email\":\"beer.jaclyn@example.com\",\"password\":\"5&x]uI#p9\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2795,7 +2795,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"triston.jones@example.net\"}"
+                            "raw": "{\"email\":\"jbednar@example.org\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2826,7 +2826,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"nulla\",\"email\":\"twaters@example.net\",\"password\":\"odio\"}"
+                            "raw": "{\"token\":\"aut\",\"email\":\"effie.conn@example.org\",\"password\":\"est\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2847,13 +2847,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quas",
+                                    "value": "provident",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "dolores",
+                                    "value": "et",
                                     "description": ""
                                 }
                             ]
@@ -3059,7 +3059,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"roles\":[3]}"
+                            "raw": "{\"roles\":[4]}"
                         },
                         "description": "",
                         "auth": {
@@ -3098,7 +3098,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"role_id\":11}"
+                            "raw": "{\"role_id\":13}"
                         },
                         "description": "",
                         "auth": {
@@ -3177,7 +3177,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"lvmequukbu\",\"email\":\"wgoldner@example.com\",\"password\":\"quidem\"}"
+                            "raw": "{\"name\":\"hqycyupykjrjrvbasremmg\",\"email\":\"easter.hegmann@example.com\",\"password\":\"ut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -3272,7 +3272,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"tlreezvnmlqxurvejnlzinj\",\"email\":\"eyost@example.com\",\"password\":\"enim\"}"
+                            "raw": "{\"name\":\"btocgbdmsdy\",\"email\":\"pierce.romaguera@example.org\",\"password\":\"omnis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -3387,7 +3387,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ipsam\"}"
+                            "raw": "{\"name\":\"suscipit\"}"
                         },
                         "description": "",
                         "auth": {
@@ -3701,7 +3701,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"ryu\",\"name\":\"sed\"}"
+                            "raw": "{\"code\":\"yrd\",\"name\":\"accusamus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -3722,7 +3722,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "9",
                                     "description": "The ID of the currency."
                                 }
                             ]
@@ -3778,7 +3778,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "14",
+                                    "value": "16",
                                     "description": "The ID of the currency."
                                 }
                             ]
@@ -3796,7 +3796,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"efc\",\"name\":\"qui\"}"
+                            "raw": "{\"code\":\"uls\",\"name\":\"veniam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -3817,7 +3817,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "1",
                                     "description": "The ID of the currency."
                                 }
                             ]
@@ -3911,7 +3911,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"mcvmn\",\"swift\":\"yruyyjqj\"}"
+                            "raw": "{\"name\":\"aaqpyddncrmwulnweasayyff\",\"swift\":\"bfmfgqxstoytyjoiprrwalv\"}"
                         },
                         "description": "",
                         "auth": {
@@ -3932,7 +3932,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "20",
                                     "description": "The ID of the bank."
                                 }
                             ]
@@ -3988,7 +3988,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "9",
                                     "description": "The ID of the bank."
                                 }
                             ]
@@ -4006,7 +4006,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"kgkxpy\",\"swift\":\"jetfucpmugerq\"}"
+                            "raw": "{\"name\":\"ybhzuzjvqhqfyqkasveelgty\",\"swift\":\"ozaxblkljmlxosvekjww\"}"
                         },
                         "description": "",
                         "auth": {
@@ -4027,7 +4027,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "6",
+                                    "value": "13",
                                     "description": "The ID of the bank."
                                 }
                             ]
@@ -4121,7 +4121,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ydksretywhttylncuzeglfqz\",\"description\":\"Voluptas ut aut quod ut.\",\"status\":\"1\"}"
+                            "raw": "{\"name\":\"kljykqarmrktbliuvbulnzp\",\"description\":\"Est temporibus vero minus sunt quisquam commodi.\",\"status\":\"1\"}"
                         },
                         "description": "",
                         "auth": {
@@ -4142,7 +4142,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "9",
                                     "description": "The ID of the calendar."
                                 }
                             ]
@@ -4198,7 +4198,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "17",
                                     "description": "The ID of the calendar."
                                 }
                             ]
@@ -4234,7 +4234,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "1",
                                     "description": "The ID of the calendar."
                                 }
                             ]
@@ -4318,7 +4318,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "14",
                                     "description": "The ID of the company."
                                 }
                             ]
@@ -4374,7 +4374,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "8",
                                     "description": "The ID of the company."
                                 }
                             ]
@@ -4395,97 +4395,97 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "sed",
+                                    "value": "incidunt",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "address",
-                                    "value": "enim",
+                                    "value": "iste",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "tin",
-                                    "value": "voluptatibus",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "website",
-                                    "value": "http:\/\/damore.com\/sed-cum-sed-consequatur-voluptatem-nulla-et-dolor.html",
-                                    "type": "text",
-                                    "description": "Must be a valid URL."
-                                },
-                                {
-                                    "key": "email",
-                                    "value": "twitting@example.com",
-                                    "type": "text",
-                                    "description": "Must be a valid email address."
-                                },
-                                {
-                                    "key": "phone_number",
-                                    "value": "est",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "address_line",
-                                    "value": "molestiae",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "city",
-                                    "value": "tenetur",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "sub_city",
-                                    "value": "molestiae",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "kebele",
-                                    "value": "aut",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "woreda",
-                                    "value": "dolorem",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "house_no",
                                     "value": "nemo",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
-                                    "key": "fax",
-                                    "value": "voluptatem",
+                                    "key": "website",
+                                    "value": "http:\/\/www.baumbach.com\/",
+                                    "type": "text",
+                                    "description": "Must be a valid URL."
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "lilyan45@example.org",
+                                    "type": "text",
+                                    "description": "Must be a valid email address."
+                                },
+                                {
+                                    "key": "phone_number",
+                                    "value": "repellat",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
-                                    "key": "currency_id",
-                                    "value": "placeat",
+                                    "key": "address_line",
+                                    "value": "minima",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
-                                    "key": "calendar_id",
+                                    "key": "city",
+                                    "value": "non",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "sub_city",
+                                    "value": "eos",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "kebele",
+                                    "value": "reprehenderit",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "woreda",
                                     "value": "aut",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
+                                    "key": "house_no",
+                                    "value": "est",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "fax",
+                                    "value": "totam",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "currency_id",
+                                    "value": "sunt",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "calendar_id",
+                                    "value": "quis",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
                                     "key": "description",
-                                    "value": "maiores",
+                                    "value": "reiciendis",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -4520,7 +4520,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "18",
                                     "description": "The ID of the company."
                                 }
                             ]
@@ -4614,7 +4614,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"officia\"}"
+                            "raw": "{\"name\":\"omnis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -4635,7 +4635,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "11",
                                     "description": "The ID of the employment type."
                                 }
                             ]
@@ -4691,7 +4691,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "6",
+                                    "value": "18",
                                     "description": "The ID of the employment type."
                                 }
                             ]
@@ -4709,7 +4709,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ducimus\"}"
+                            "raw": "{\"name\":\"soluta\"}"
                         },
                         "description": "",
                         "auth": {
@@ -4730,7 +4730,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "5",
                                     "description": "The ID of the employment type."
                                 }
                             ]
@@ -4824,7 +4824,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"modi\",\"start_date\":\"2024-03-19T13:07:24\",\"end_date\":\"2098-08-06\",\"details\":\"hic\",\"status\":\"1\"}"
+                            "raw": "{\"name\":\"ea\",\"start_date\":\"2024-03-20T06:33:57\",\"end_date\":\"2060-11-12\",\"details\":\"nostrum\",\"status\":\"1\"}"
                         },
                         "description": "",
                         "auth": {
@@ -4845,7 +4845,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "7",
                                     "description": "The ID of the payroll name."
                                 }
                             ]
@@ -4901,7 +4901,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "4",
                                     "description": "The ID of the payroll name."
                                 }
                             ]
@@ -4937,7 +4937,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "16",
                                     "description": "The ID of the payroll name."
                                 }
                             ]
@@ -5031,7 +5031,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"payroll_name_id\":\"sit\",\"name\":\"veniam\",\"min_income\":30,\"max_income\":63,\"tax_rate\":35,\"deduction\":79,\"details\":\"ut\",\"status\":\"1\"}"
+                            "raw": "{\"payroll_name_id\":\"ipsam\",\"name\":\"quae\",\"min_income\":90,\"max_income\":68,\"tax_rate\":30,\"deduction\":80,\"details\":\"qui\",\"status\":\"0\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5052,7 +5052,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "20",
                                     "description": "The ID of the income tax."
                                 }
                             ]
@@ -5108,7 +5108,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "6",
                                     "description": "The ID of the income tax."
                                 }
                             ]
@@ -5126,7 +5126,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"payroll_name_id\":\"voluptates\",\"name\":\"possimus\",\"min_income\":75,\"max_income\":83,\"tax_rate\":2,\"deduction\":22,\"details\":\"ex\",\"status\":\"0\"}"
+                            "raw": "{\"payroll_name_id\":\"quis\",\"name\":\"est\",\"min_income\":29,\"max_income\":11,\"tax_rate\":27,\"deduction\":87,\"details\":\"esse\",\"status\":\"0\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5147,7 +5147,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "4",
                                     "description": "The ID of the income tax."
                                 }
                             ]
@@ -5241,7 +5241,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"olrscovhiyndgcxgq\",\"start_date\":\"2024-03-19T13:07:24\",\"end_date\":\"2035-12-11\",\"description\":\"Dolor consequatur similique optio mollitia qui.\",\"status\":\"1\"}"
+                            "raw": "{\"name\":\"gwrdaskjggedcdnt\",\"start_date\":\"2024-03-20T06:33:57\",\"end_date\":\"2082-01-01\",\"description\":\"Eaque aut iste temporibus sunt.\",\"status\":\"0\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5318,7 +5318,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "6",
                                     "description": "The ID of the fiscal year."
                                 }
                             ]
@@ -5336,7 +5336,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"pitmulzgvzxmvgpjdofnp\",\"start_date\":\"2024-03-19T13:07:24\",\"end_date\":\"2039-11-08\",\"description\":\"Alias est qui magni quibusdam minus non dolor.\",\"status\":\"0\"}"
+                            "raw": "{\"name\":\"wlpfqadvenkxeu\",\"start_date\":\"2024-03-20T06:33:57\",\"end_date\":\"2113-08-05\",\"description\":\"Consequuntur repellendus repudiandae totam sunt.\",\"status\":\"1\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5357,7 +5357,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "17",
                                     "description": "The ID of the fiscal year."
                                 }
                             ]
@@ -5451,7 +5451,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"non\",\"description\":\"Iure sunt rerum harum eius quis non modi laudantium.\",\"status\":\"1\"}"
+                            "raw": "{\"code\":\"officia\",\"description\":\"Rerum suscipit velit amet veritatis quia est.\",\"status\":\"1\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5472,7 +5472,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "1",
                                     "description": "The ID of the cost center."
                                 }
                             ]
@@ -5528,7 +5528,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "13",
                                     "description": "The ID of the cost center."
                                 }
                             ]
@@ -5546,7 +5546,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"code\":\"consequatur\",\"description\":\"Autem enim aut vel magnam ut illum.\",\"status\":\"1\"}"
+                            "raw": "{\"code\":\"id\",\"description\":\"Et eos voluptas enim ut doloribus.\",\"status\":\"0\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5567,7 +5567,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "3",
                                     "description": "The ID of the cost center."
                                 }
                             ]
@@ -5661,7 +5661,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"yrejanpwxchcavtczfwkom\",\"start_date\":\"2024-03-19T13:07:24\",\"end_date\":\"2024-03-19T13:07:24\",\"payroll_name_id\":\"est\",\"payroll_type_id\":\"vero\",\"fiscal_year_id\":\"aspernatur\",\"employee_pension_id\":\"tempore\",\"company_pension_id\":\"error\"}"
+                            "raw": "{\"name\":\"iwfxspbvvkliyijbcovoxlvrj\",\"start_date\":\"2024-03-20T06:33:57\",\"end_date\":\"2024-03-20T06:33:57\",\"payroll_name_id\":\"laborum\",\"payroll_type_id\":\"minus\",\"fiscal_year_id\":\"a\",\"employee_pension_id\":\"enim\",\"company_pension_id\":\"et\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5682,7 +5682,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "12",
                                     "description": "The ID of the payroll period."
                                 }
                             ]
@@ -5738,7 +5738,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "6",
                                     "description": "The ID of the payroll period."
                                 }
                             ]
@@ -5756,7 +5756,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"erwazwmzvfsleaft\",\"start_date\":\"2024-03-19T13:07:25\",\"end_date\":\"2024-03-19T13:07:25\",\"payroll_name_id\":\"quibusdam\",\"payroll_type_id\":\"quidem\",\"fiscal_year_id\":\"cum\",\"employee_pension_id\":\"quasi\",\"company_pension_id\":\"possimus\"}"
+                            "raw": "{\"name\":\"sbcutkzgbzokmmr\",\"start_date\":\"2024-03-20T06:33:57\",\"end_date\":\"2024-03-20T06:33:57\",\"payroll_name_id\":\"perspiciatis\",\"payroll_type_id\":\"nesciunt\",\"fiscal_year_id\":\"eos\",\"employee_pension_id\":\"sit\",\"company_pension_id\":\"quasi\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5777,7 +5777,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "14",
                                     "description": "The ID of the payroll period."
                                 }
                             ]
@@ -5871,7 +5871,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rt\"}"
+                            "raw": "{\"name\":\"zlknayhdqecpitslnguwn\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5892,7 +5892,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "19",
+                                    "value": "12",
                                     "description": "The ID of the department."
                                 }
                             ]
@@ -5948,7 +5948,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "8",
                                     "description": "The ID of the department."
                                 }
                             ]
@@ -5966,7 +5966,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"lkbkqziojdoueid\"}"
+                            "raw": "{\"name\":\"uqqsnsapo\"}"
                         },
                         "description": "",
                         "auth": {
@@ -5987,7 +5987,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "1",
                                     "description": "The ID of the department."
                                 }
                             ]
@@ -6081,7 +6081,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"piznvuduacqyxpdq\",\"department_id\":\"ut\"}"
+                            "raw": "{\"name\":\"mamqcviqjbjnpjezbdlzirdvn\",\"department_id\":\"enim\"}"
                         },
                         "description": "",
                         "auth": {
@@ -6102,7 +6102,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "5",
                                     "description": "The ID of the sub department."
                                 }
                             ]
@@ -6158,7 +6158,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "10",
                                     "description": "The ID of the sub department."
                                 }
                             ]
@@ -6176,7 +6176,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"cshfmazhezbc\",\"department_id\":\"at\"}"
+                            "raw": "{\"name\":\"lmggnrojwsgzuv\",\"department_id\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -6197,7 +6197,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "4",
                                     "description": "The ID of the sub department."
                                 }
                             ]
@@ -6291,7 +6291,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"faykvpl\"}"
+                            "raw": "{\"name\":\"rhjwfngprqrqjcdspjwxe\"}"
                         },
                         "description": "",
                         "auth": {
@@ -6312,7 +6312,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "6",
                                     "description": "The ID of the tax region."
                                 }
                             ]
@@ -6368,7 +6368,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "16",
                                     "description": "The ID of the tax region."
                                 }
                             ]
@@ -6404,7 +6404,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "10",
                                     "description": "The ID of the tax region."
                                 }
                             ]
@@ -6498,7 +6498,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"n\"}"
+                            "raw": "{\"name\":\"boihzkcpjx\"}"
                         },
                         "description": "",
                         "auth": {
@@ -6519,7 +6519,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "12",
                                     "description": "The ID of the grade."
                                 }
                             ]
@@ -6575,7 +6575,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "13",
                                     "description": "The ID of the grade."
                                 }
                             ]
@@ -6593,7 +6593,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ebutkiealmybsxjygvfqu\"}"
+                            "raw": "{\"name\":\"ozn\"}"
                         },
                         "description": "",
                         "auth": {
@@ -6614,7 +6614,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "11",
                                     "description": "The ID of the grade."
                                 }
                             ]
@@ -6708,7 +6708,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"chlvnzxuug\"}"
+                            "raw": "{\"name\":\"da\"}"
                         },
                         "description": "",
                         "auth": {
@@ -6729,7 +6729,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "1",
                                     "description": "The ID of the citizenship."
                                 }
                             ]
@@ -6785,7 +6785,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "19",
                                     "description": "The ID of the citizenship."
                                 }
                             ]
@@ -6803,7 +6803,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"baykaoytwoklhwbofaa\"}"
+                            "raw": "{\"name\":\"zegnoiwoqupklsebrxqjkhu\"}"
                         },
                         "description": "",
                         "auth": {
@@ -6918,7 +6918,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"kmisjqgvexlprrrlj\",\"sub_department_id\":\"ratione\"}"
+                            "raw": "{\"name\":\"otksgphgobepqmuhb\",\"sub_department_id\":\"nesciunt\"}"
                         },
                         "description": "",
                         "auth": {
@@ -6939,7 +6939,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "17",
                                     "description": "The ID of the position."
                                 }
                             ]
@@ -6995,7 +6995,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "2",
                                     "description": "The ID of the position."
                                 }
                             ]
@@ -7013,7 +7013,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"nibdjnl\",\"sub_department_id\":\"voluptatum\"}"
+                            "raw": "{\"name\":\"mmatrgnviayl\",\"sub_department_id\":\"aut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -7034,7 +7034,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "8",
                                     "description": "The ID of the position."
                                 }
                             ]
@@ -7128,7 +7128,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"gsmdk\"}"
+                            "raw": "{\"name\":\"mpufwzxnscohqo\"}"
                         },
                         "description": "",
                         "auth": {
@@ -7149,7 +7149,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "11",
                                     "description": "The ID of the payroll type."
                                 }
                             ]
@@ -7205,7 +7205,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "7",
                                     "description": "The ID of the payroll type."
                                 }
                             ]
@@ -7223,7 +7223,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"civwm\"}"
+                            "raw": "{\"name\":\"omysmatgj\"}"
                         },
                         "description": "",
                         "auth": {
@@ -7244,7 +7244,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "17",
                                     "description": "The ID of the payroll type."
                                 }
                             ]
@@ -7413,62 +7413,6 @@
                     ]
                 },
                 {
-                    "name": "GET api\/v1\/employees\/{employee_id}\/allowance-types",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/employees\/:employee_id\/allowance-types",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/employees\/:employee_id\/allowance-types",
-                            "variable": [
-                                {
-                                    "id": "employee_id",
-                                    "key": "employee_id",
-                                    "value": "13",
-                                    "description": "The ID of the employee."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\NotFoundHttpException\",\n    \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n    \"line\": 1245,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\n            \"line\": 45,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\stancl\\\\tenancy\\\\src\\\\Middleware\\\\PreventAccessFromCentralDomains.php\",\n            \"line\": 23,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\stancl\\\\tenancy\\\\src\\\\Middleware\\\\PreventAccessFromCentralDomains.php\",\n            \"line\": 26,\n            \"function\": \"Stancl\\\\Tenancy\\\\Middleware\\\\{closure}\",\n            \"class\": \"Stancl\\\\Tenancy\\\\Middleware\\\\PreventAccessFromCentralDomains\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Stancl\\\\Tenancy\\\\Middleware\\\\PreventAccessFromCentralDomains\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\livewire\\\\livewire\\\\src\\\\Features\\\\SupportDisablingBackButtonCache\\\\DisableBackButtonCacheMiddleware.php\",\n            \"line\": 19,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Livewire\\\\Features\\\\SupportDisablingBackButtonCache\\\\DisableBackButtonCacheMiddleware\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\beyondcode\\\\laravel-query-detector\\\\src\\\\QueryDetectorMiddleware.php\",\n            \"line\": 33,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"BeyondCode\\\\QueryDetector\\\\QueryDetectorMiddleware\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\barryvdh\\\\laravel-debugbar\\\\src\\\\Middleware\\\\InjectDebugbar.php\",\n            \"line\": 59,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Barryvdh\\\\Debugbar\\\\Middleware\\\\InjectDebugbar\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\app\\\\Http\\\\Middleware\\\\Localization.php\",\n            \"line\": 22,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\Localization\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 99,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 300,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 288,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 91,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 44,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 125,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 72,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 50,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Commands\\\\GenerateDocumentation.php\",\n            \"line\": 53,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 662,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 211,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Command\\\\Command.php\",\n            \"line\": 326,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 180,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 1096,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 324,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 175,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Console\\\\Kernel.php\",\n            \"line\": 201,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
                     "name": "GET api\/v1\/employees\/{employee_id}\/total-deductions",
                     "request": {
                         "url": {
@@ -7480,7 +7424,7 @@
                                 {
                                     "id": "employee_id",
                                     "key": "employee_id",
-                                    "value": "19",
+                                    "value": "3",
                                     "description": "The ID of the employee."
                                 }
                             ]
@@ -7525,18 +7469,74 @@
                     ]
                 },
                 {
-                    "name": "POST api\/v1\/employees\/{employee_id}\/store-allowance-types",
+                    "name": "GET api\/v1\/employees\/{employee_id}\/allowance-types",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/employees\/:employee_id\/store-allowance-types",
+                            "path": "api\/v1\/employees\/:employee_id\/allowance-types",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/employees\/:employee_id\/store-allowance-types",
+                            "raw": "{{baseUrl}}\/api\/v1\/employees\/:employee_id\/allowance-types",
                             "variable": [
                                 {
                                     "id": "employee_id",
                                     "key": "employee_id",
-                                    "value": "3",
+                                    "value": "1",
+                                    "description": "The ID of the employee."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\NotFoundHttpException\",\n    \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n    \"line\": 1245,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\n            \"line\": 45,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\stancl\\\\tenancy\\\\src\\\\Middleware\\\\PreventAccessFromCentralDomains.php\",\n            \"line\": 23,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\stancl\\\\tenancy\\\\src\\\\Middleware\\\\PreventAccessFromCentralDomains.php\",\n            \"line\": 26,\n            \"function\": \"Stancl\\\\Tenancy\\\\Middleware\\\\{closure}\",\n            \"class\": \"Stancl\\\\Tenancy\\\\Middleware\\\\PreventAccessFromCentralDomains\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Stancl\\\\Tenancy\\\\Middleware\\\\PreventAccessFromCentralDomains\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\livewire\\\\livewire\\\\src\\\\Features\\\\SupportDisablingBackButtonCache\\\\DisableBackButtonCacheMiddleware.php\",\n            \"line\": 19,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Livewire\\\\Features\\\\SupportDisablingBackButtonCache\\\\DisableBackButtonCacheMiddleware\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\beyondcode\\\\laravel-query-detector\\\\src\\\\QueryDetectorMiddleware.php\",\n            \"line\": 33,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"BeyondCode\\\\QueryDetector\\\\QueryDetectorMiddleware\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\barryvdh\\\\laravel-debugbar\\\\src\\\\Middleware\\\\InjectDebugbar.php\",\n            \"line\": 59,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Barryvdh\\\\Debugbar\\\\Middleware\\\\InjectDebugbar\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\app\\\\Http\\\\Middleware\\\\Localization.php\",\n            \"line\": 22,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\Localization\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 99,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 300,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 288,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 91,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 44,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 125,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 72,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 50,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Commands\\\\GenerateDocumentation.php\",\n            \"line\": 53,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 662,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 211,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Command\\\\Command.php\",\n            \"line\": 326,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 180,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 1096,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 324,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 175,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Console\\\\Kernel.php\",\n            \"line\": 201,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/v1\/employees\/{employee_id}\/allowance-types",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/employees\/:employee_id\/allowance-types",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/employees\/:employee_id\/allowance-types",
+                            "variable": [
+                                {
+                                    "id": "employee_id",
+                                    "key": "employee_id",
+                                    "value": "4",
                                     "description": "The ID of the employee."
                                 }
                             ]
@@ -7554,7 +7554,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"allowance_type_id\":\"numquam\",\"number_of_days\":3,\"value_in_birr\":25.5}"
+                            "raw": "{\"allowance_type_id\":\"nihil\",\"number_of_days\":4,\"value_in_birr\":379.9071992}"
                         },
                         "description": "",
                         "auth": {
@@ -7564,19 +7564,25 @@
                     "response": []
                 },
                 {
-                    "name": "PUT api\/v1\/employees\/{employee_id}\/update-allowance-types",
+                    "name": "PUT api\/v1\/employees\/{employee_id}\/allowance-types\/{allowance_type_id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/employees\/:employee_id\/update-allowance-types",
+                            "path": "api\/v1\/employees\/:employee_id\/allowance-types\/:allowance_type_id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/employees\/:employee_id\/update-allowance-types",
+                            "raw": "{{baseUrl}}\/api\/v1\/employees\/:employee_id\/allowance-types\/:allowance_type_id",
                             "variable": [
                                 {
                                     "id": "employee_id",
                                     "key": "employee_id",
-                                    "value": "9",
+                                    "value": "20",
                                     "description": "The ID of the employee."
+                                },
+                                {
+                                    "id": "allowance_type_id",
+                                    "key": "allowance_type_id",
+                                    "value": "ut",
+                                    "description": "The ID of the allowance type."
                                 }
                             ]
                         },
@@ -7593,7 +7599,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"allowance_type_id\":2,\"number_of_days\":5,\"value_in_birr\":1.4}"
+                            "raw": "{\"number_of_days\":20,\"value_in_birr\":4.18380387}"
                         },
                         "description": "",
                         "auth": {
@@ -7603,18 +7609,18 @@
                     "response": []
                 },
                 {
-                    "name": "DELETE api\/v1\/employees\/{employee_id}\/destroy-allowance-types",
+                    "name": "DELETE api\/v1\/employees\/{employee_id}\/allowance-types",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/employees\/:employee_id\/destroy-allowance-types",
+                            "path": "api\/v1\/employees\/:employee_id\/allowance-types",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/employees\/:employee_id\/destroy-allowance-types",
+                            "raw": "{{baseUrl}}\/api\/v1\/employees\/:employee_id\/allowance-types",
                             "variable": [
                                 {
                                     "id": "employee_id",
                                     "key": "employee_id",
-                                    "value": "13",
+                                    "value": "17",
                                     "description": "The ID of the employee."
                                 }
                             ]
@@ -7632,7 +7638,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"allowance_type_id\":16}"
+                            "raw": "{\"allowance_type_id\":4}"
                         },
                         "description": "",
                         "auth": {
@@ -7640,6 +7646,68 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/employees\/:employee_id\/allowance-types\/:allowance_type_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/employees\/:employee_id\/allowance-types\/:allowance_type_id",
+                            "variable": [
+                                {
+                                    "id": "employee_id",
+                                    "key": "employee_id",
+                                    "value": "17",
+                                    "description": "The ID of the employee."
+                                },
+                                {
+                                    "id": "allowance_type_id",
+                                    "key": "allowance_type_id",
+                                    "value": "dolorem",
+                                    "description": "The ID of the allowance type."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\NotFoundHttpException\",\n    \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n    \"line\": 1245,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\n            \"line\": 45,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\stancl\\\\tenancy\\\\src\\\\Middleware\\\\PreventAccessFromCentralDomains.php\",\n            \"line\": 23,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\stancl\\\\tenancy\\\\src\\\\Middleware\\\\PreventAccessFromCentralDomains.php\",\n            \"line\": 26,\n            \"function\": \"Stancl\\\\Tenancy\\\\Middleware\\\\{closure}\",\n            \"class\": \"Stancl\\\\Tenancy\\\\Middleware\\\\PreventAccessFromCentralDomains\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Stancl\\\\Tenancy\\\\Middleware\\\\PreventAccessFromCentralDomains\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\livewire\\\\livewire\\\\src\\\\Features\\\\SupportDisablingBackButtonCache\\\\DisableBackButtonCacheMiddleware.php\",\n            \"line\": 19,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Livewire\\\\Features\\\\SupportDisablingBackButtonCache\\\\DisableBackButtonCacheMiddleware\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\beyondcode\\\\laravel-query-detector\\\\src\\\\QueryDetectorMiddleware.php\",\n            \"line\": 33,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"BeyondCode\\\\QueryDetector\\\\QueryDetectorMiddleware\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\barryvdh\\\\laravel-debugbar\\\\src\\\\Middleware\\\\InjectDebugbar.php\",\n            \"line\": 59,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Barryvdh\\\\Debugbar\\\\Middleware\\\\InjectDebugbar\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\app\\\\Http\\\\Middleware\\\\Localization.php\",\n            \"line\": 22,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\Localization\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 99,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 300,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 288,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 91,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 44,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 125,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 72,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 50,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Commands\\\\GenerateDocumentation.php\",\n            \"line\": 53,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 662,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 211,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Command\\\\Command.php\",\n            \"line\": 326,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 180,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 1096,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 324,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 175,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Console\\\\Kernel.php\",\n            \"line\": 201,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\mutli_1\\\\artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
                     "name": "GET api\/v1\/employees",
@@ -7711,7 +7779,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"emp_id\":\"non\",\"first_name\":\"aut\",\"father_name\":\"sint\",\"gfather_name\":\"a\",\"sex\":true,\"birth_date\":\"2024-03-19T13:07:25\",\"hired_date\":\"2024-03-19T13:07:25\",\"tin_no\":\"eius\",\"email\":\"joy.grady@example.net\",\"phone_number\":70,\"city\":\"ccel\",\"sub_city\":\"driplerjdeovgjyngwmkjb\",\"kebele\":\"o\",\"woreda\":\"ogavncwodfkf\",\"house_no\":\"hqwlqtpvnxolckx\",\"cost_center\":16,\"tax_region_id\":\"aliquam\",\"grade_id\":\"autem\",\"department_id\":\"ipsum\",\"sub_department_id\":\"ut\",\"position_id\":\"qui\",\"employment_type_id\":\"architecto\",\"citizenship_id\":\"laudantium\",\"bank_id\":\"ea\",\"account_number\":\"voluptatem\",\"image\":\"exercitationem\",\"status\":false,\"comment\":\"quis\"}"
+                            "raw": "{\"emp_id\":\"sint\",\"first_name\":\"velit\",\"father_name\":\"quo\",\"gfather_name\":\"ipsa\",\"sex\":false,\"birth_date\":\"2024-03-20T06:33:58\",\"hired_date\":\"2024-03-20T06:33:58\",\"tin_no\":\"porro\",\"email\":\"mayert.deangelo@example.net\",\"phone_number\":24,\"city\":\"ctpyjeyrkqhcxgvgpbuwjce\",\"sub_city\":\"nmuydecuomqnbynhijme\",\"kebele\":\"fzatqrvbginoegisslxjjd\",\"woreda\":\"oyqykskoelbuyxum\",\"house_no\":\"mpe\",\"cost_center\":18,\"tax_region_id\":\"deserunt\",\"grade_id\":\"sed\",\"department_id\":\"autem\",\"sub_department_id\":\"ullam\",\"position_id\":\"quia\",\"employment_type_id\":\"voluptate\",\"citizenship_id\":\"facere\",\"bank_id\":\"provident\",\"account_number\":\"doloribus\",\"image\":\"voluptatem\",\"status\":true,\"comment\":\"officiis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -7788,7 +7856,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "18",
                                     "description": "The ID of the employee."
                                 }
                             ]
@@ -7824,7 +7892,7 @@
                                 {
                                     "id": "employee_id",
                                     "key": "employee_id",
-                                    "value": "fugiat",
+                                    "value": "omnis",
                                     "description": "The ID of the employee."
                                 }
                             ]
@@ -7938,7 +8006,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"employee_id\":\"laudantium\",\"loan_type_id\":\"alias\",\"amount\":80,\"name\":\"inhhbsfvflauxedxwxdl\",\"start_date\":\"2024-03-19T13:07:25\",\"expected_end_date\":\"2024-03-19T13:07:25\",\"duration_months\":13,\"description\":\"Saepe aut facere earum cupiditate natus.\",\"status\":\"1\",\"termination_date\":\"2024-03-19T13:07:25\"}"
+                            "raw": "{\"employee_id\":\"exercitationem\",\"loan_type_id\":\"voluptatem\",\"amount\":21,\"name\":\"oaqqiundleva\",\"start_date\":\"2024-03-20T06:33:58\",\"expected_end_date\":\"2024-03-20T06:33:58\",\"duration_months\":29,\"description\":\"Ut iste doloribus sed.\",\"status\":\"1\",\"termination_date\":\"2024-03-20T06:33:58\"}"
                         },
                         "description": "",
                         "auth": {
@@ -7959,7 +8027,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "2",
                                     "description": "The ID of the loan."
                                 }
                             ]
@@ -8015,7 +8083,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "2",
                                     "description": "The ID of the loan."
                                 }
                             ]
@@ -8033,7 +8101,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"employee_id\":\"dolorem\",\"loan_type_id\":\"autem\",\"amount\":54,\"start_date\":\"2024-03-19T13:07:25\",\"expected_end_date\":\"2024-03-19T13:07:25\",\"duration_months\":84,\"description\":\"Quibusdam iusto provident sapiente nisi et sit.\",\"status\":\"1\",\"termination_date\":\"2024-03-19T13:07:25\"}"
+                            "raw": "{\"employee_id\":\"repellat\",\"loan_type_id\":\"neque\",\"amount\":69,\"start_date\":\"2024-03-20T06:33:58\",\"expected_end_date\":\"2024-03-20T06:33:58\",\"duration_months\":41,\"description\":\"Iusto aperiam cupiditate voluptatum aut.\",\"status\":\"1\",\"termination_date\":\"2024-03-20T06:33:58\"}"
                         },
                         "description": "",
                         "auth": {
@@ -8054,7 +8122,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "16",
                                     "description": "The ID of the loan."
                                 }
                             ]
@@ -8148,7 +8216,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"lqhybvwq\",\"rate\":483975.62266489,\"note\":\"drqgabvvxqvvbqkfrdnssi\"}"
+                            "raw": "{\"name\":\"mwdspjjhqemfak\",\"rate\":357.76543424,\"note\":\"yzfvrafplmhgn\"}"
                         },
                         "description": "",
                         "auth": {
@@ -8169,7 +8237,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "16",
                                     "description": "The ID of the loan type."
                                 }
                             ]
@@ -8225,7 +8293,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "12",
                                     "description": "The ID of the loan type."
                                 }
                             ]
@@ -8243,7 +8311,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"vmseimsydinaz\",\"rate\":147.38,\"note\":\"otnmiq\"}"
+                            "raw": "{\"name\":\"wthxsahtrcf\",\"rate\":2,\"note\":\"toeplof\"}"
                         },
                         "description": "",
                         "auth": {
@@ -8264,7 +8332,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "20",
                                     "description": "The ID of the loan type."
                                 }
                             ]
@@ -8300,7 +8368,7 @@
                                 {
                                     "id": "employee_id",
                                     "key": "employee_id",
-                                    "value": "et",
+                                    "value": "sit",
                                     "description": "The ID of the employee."
                                 }
                             ]
@@ -8356,7 +8424,7 @@
                                 {
                                     "id": "loan_id",
                                     "key": "loan_id",
-                                    "value": "nobis",
+                                    "value": "in",
                                     "description": "The ID of the loan."
                                 }
                             ]
@@ -8470,7 +8538,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"payroll_period_id\":\"nostrum\",\"loan_id\":\"at\",\"amount_payed\":38,\"outstanding_amount\":65,\"is_partial\":true,\"is_missed\":true}"
+                            "raw": "{\"payroll_period_id\":\"labore\",\"loan_id\":\"ipsum\",\"amount_payed\":66,\"outstanding_amount\":50,\"is_partial\":true,\"is_missed\":false}"
                         },
                         "description": "",
                         "auth": {
@@ -8491,7 +8559,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "18",
                                     "description": "The ID of the loan payment record."
                                 }
                             ]
@@ -8547,7 +8615,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "20",
                                     "description": "The ID of the loan payment record."
                                 }
                             ]
@@ -8565,7 +8633,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"payroll_period_id\":\"neque\",\"loan_id\":\"et\",\"amount_payed\":72,\"outstanding_amount\":17,\"is_partial\":false,\"is_missed\":false}"
+                            "raw": "{\"payroll_period_id\":\"hic\",\"loan_id\":\"corrupti\",\"amount_payed\":77,\"outstanding_amount\":11,\"is_partial\":true,\"is_missed\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -8586,7 +8654,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "14",
+                                    "value": "8",
                                     "description": "The ID of the loan payment record."
                                 }
                             ]
@@ -8680,7 +8748,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"dolor\",\"description\":\"Totam atque aliquam sed laborum autem.\"}"
+                            "raw": "{\"name\":\"quia\",\"description\":\"In tempore autem officia quasi non.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -8701,7 +8769,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "5",
                                     "description": "The ID of the main allowance."
                                 }
                             ]
@@ -8775,7 +8843,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ducimus\",\"description\":\"Ut qui et ducimus corrupti mollitia qui et.\"}"
+                            "raw": "{\"name\":\"consequatur\",\"description\":\"Ipsam ab reiciendis incidunt amet quis non vitae.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -8796,7 +8864,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "2",
                                     "description": "The ID of the main allowance."
                                 }
                             ]
@@ -8890,7 +8958,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"main_allowance_id\":\"odio\",\"name\":\"sapiente\",\"taxability\":1,\"value_type\":true,\"value\":85381597.0904938,\"is_recurrent\":0,\"status\":18}"
+                            "raw": "{\"main_allowance_id\":\"qui\",\"name\":\"nihil\",\"taxability\":1,\"value_type\":true,\"value\":49606926.24698,\"is_recurrent\":1,\"status\":14}"
                         },
                         "description": "",
                         "auth": {
@@ -8911,7 +8979,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "19",
                                     "description": "The ID of the allowance type."
                                 }
                             ]
@@ -8967,7 +9035,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "15",
                                     "description": "The ID of the allowance type."
                                 }
                             ]
@@ -8985,7 +9053,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"main_allowance_id\":\"est\",\"name\":\"distinctio\",\"taxability\":2,\"value_type\":false,\"value\":47.9181973,\"status\":2}"
+                            "raw": "{\"main_allowance_id\":\"quo\",\"name\":\"reprehenderit\",\"taxability\":1,\"value_type\":true,\"value\":36167640.752836116,\"status\":4}"
                         },
                         "description": "",
                         "auth": {
@@ -9006,7 +9074,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "8",
                                     "description": "The ID of the allowance type."
                                 }
                             ]
@@ -9148,7 +9216,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"payroll_period_id\":\"vitae\",\"employee_id\":\"dignissimos\",\"allowance_type_id\":\"aliquid\",\"amount\":124.7532321,\"is_day_based\":false,\"number_of_date\":11}"
+                            "raw": "{\"payroll_period_id\":\"tenetur\",\"employee_id\":\"quibusdam\",\"allowance_type_id\":\"libero\",\"amount\":1903116.5782486,\"is_day_based\":true,\"number_of_date\":1}"
                         },
                         "description": "",
                         "auth": {
@@ -9225,7 +9293,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "14",
                                     "description": "The ID of the allowance transaction."
                                 }
                             ]
@@ -9319,7 +9387,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"voluptatem\",\"rate\":0,\"start_date\":\"2024-03-19T13:07:26\",\"end_date\":\"2024-03-19T13:07:26\"}"
+                            "raw": "{\"name\":\"ratione\",\"rate\":1,\"start_date\":\"2024-03-20T06:33:58\",\"end_date\":\"2024-03-20T06:33:58\"}"
                         },
                         "description": "",
                         "auth": {
@@ -9340,7 +9408,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "6",
+                                    "value": "19",
                                     "description": "The ID of the employee pension."
                                 }
                             ]
@@ -9396,7 +9464,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "1",
                                     "description": "The ID of the employee pension."
                                 }
                             ]
@@ -9414,7 +9482,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ab\",\"rate\":0,\"start_date\":\"2024-03-19T13:07:26\",\"end_date\":\"2024-03-19T13:07:26\"}"
+                            "raw": "{\"name\":\"alias\",\"rate\":0,\"start_date\":\"2024-03-20T06:33:58\",\"end_date\":\"2024-03-20T06:33:58\"}"
                         },
                         "description": "",
                         "auth": {
@@ -9435,7 +9503,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "19",
                                     "description": "The ID of the employee pension."
                                 }
                             ]
@@ -9529,7 +9597,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"eum\",\"rate\":0,\"start_date\":\"2024-03-19T13:07:26\",\"end_date\":\"2024-03-19T13:07:26\"}"
+                            "raw": "{\"name\":\"nesciunt\",\"rate\":1,\"start_date\":\"2024-03-20T06:33:58\",\"end_date\":\"2024-03-20T06:33:58\"}"
                         },
                         "description": "",
                         "auth": {
@@ -9550,7 +9618,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "6",
+                                    "value": "1",
                                     "description": "The ID of the company pension."
                                 }
                             ]
@@ -9606,7 +9674,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "18",
                                     "description": "The ID of the company pension."
                                 }
                             ]
@@ -9624,7 +9692,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"perspiciatis\",\"rate\":0,\"start_date\":\"2024-03-19T13:07:26\",\"end_date\":\"2024-03-19T13:07:26\"}"
+                            "raw": "{\"name\":\"totam\",\"rate\":1,\"start_date\":\"2024-03-20T06:33:59\",\"end_date\":\"2024-03-20T06:33:59\"}"
                         },
                         "description": "",
                         "auth": {
@@ -9645,7 +9713,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "14",
                                     "description": "The ID of the company pension."
                                 }
                             ]
@@ -9739,7 +9807,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"est\",\"rate\":26895.76904842}"
+                            "raw": "{\"name\":\"amet\",\"rate\":16171.553977336}"
                         },
                         "description": "",
                         "auth": {
@@ -9760,7 +9828,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "18",
                                     "description": "The ID of the overtime type."
                                 }
                             ]
@@ -9816,7 +9884,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "4",
                                     "description": "The ID of the overtime type."
                                 }
                             ]
@@ -9834,7 +9902,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"vero\",\"rate\":70.237065}"
+                            "raw": "{\"name\":\"minus\",\"rate\":0.11}"
                         },
                         "description": "",
                         "auth": {
@@ -9855,7 +9923,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "18",
                                     "description": "The ID of the overtime type."
                                 }
                             ]
@@ -9891,7 +9959,7 @@
                                 {
                                     "id": "employee_id",
                                     "key": "employee_id",
-                                    "value": "temporibus",
+                                    "value": "est",
                                     "description": "The ID of the employee."
                                 }
                             ]
@@ -10023,7 +10091,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "4",
                                     "description": "The ID of the over time calculation."
                                 }
                             ]
@@ -10079,7 +10147,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "5",
                                     "description": "The ID of the over time calculation."
                                 }
                             ]
@@ -10115,7 +10183,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "8",
                                     "description": "The ID of the over time calculation."
                                 }
                             ]
@@ -10209,7 +10277,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"company_id\":\"rem\",\"name\":\"dolores\",\"value\":\"dolores\"}"
+                            "raw": "{\"company_id\":\"dignissimos\",\"name\":\"sint\",\"value\":\"autem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -10230,7 +10298,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "11",
                                     "description": "The ID of the company setting."
                                 }
                             ]
@@ -10286,7 +10354,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "19",
+                                    "value": "10",
                                     "description": "The ID of the company setting."
                                 }
                             ]
@@ -10304,7 +10372,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"company_id\":\"voluptas\",\"name\":\"aperiam\",\"value\":\"dolores\"}"
+                            "raw": "{\"company_id\":\"vel\",\"name\":\"ut\",\"value\":\"itaque\"}"
                         },
                         "description": "",
                         "auth": {
@@ -10325,7 +10393,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "14",
                                     "description": "The ID of the company setting."
                                 }
                             ]
@@ -10419,7 +10487,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"company_id\":\"corporis\",\"name\":\"ullam\",\"description\":\"Impedit deserunt suscipit et dolorem expedita quibusdam.\",\"value\":8}"
+                            "raw": "{\"company_id\":\"ratione\",\"name\":\"accusamus\",\"description\":\"Reprehenderit voluptate ullam quisquam quas.\",\"value\":7}"
                         },
                         "description": "",
                         "auth": {
@@ -10440,7 +10508,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "11",
                                     "description": "The ID of the payslip setting."
                                 }
                             ]
@@ -10496,7 +10564,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "5",
                                     "description": "The ID of the payslip setting."
                                 }
                             ]
@@ -10514,7 +10582,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"company_id\":\"et\",\"name\":\"porro\",\"description\":\"Praesentium culpa quidem qui distinctio nemo autem assumenda.\",\"value\":3}"
+                            "raw": "{\"company_id\":\"explicabo\",\"name\":\"modi\",\"description\":\"Ullam molestiae totam eos id.\",\"value\":6}"
                         },
                         "description": "",
                         "auth": {
@@ -10535,7 +10603,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "18",
                                     "description": "The ID of the payslip setting."
                                 }
                             ]
@@ -10629,7 +10697,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"pytbwioqjccdul\",\"bank_id\":\"ea\"}"
+                            "raw": "{\"name\":\"cxsxzii\",\"bank_id\":\"dolore\"}"
                         },
                         "description": "",
                         "auth": {
@@ -10650,7 +10718,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "13",
                                     "description": "The ID of the branch."
                                 }
                             ]
@@ -10706,7 +10774,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "19",
                                     "description": "The ID of the branch."
                                 }
                             ]
@@ -10742,7 +10810,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "13",
                                     "description": "The ID of the branch."
                                 }
                             ]
@@ -10836,7 +10904,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"employee_id\":\"saepe\",\"reason\":\"in\",\"old_salary\":20,\"new_salary\":79,\"start_date\":\"2024-03-19T13:07:27\",\"end_date\":\"2024-03-19T13:07:27\",\"description\":\"Nulla qui architecto reiciendis omnis et dicta quis.\",\"status\":\"0\"}"
+                            "raw": "{\"employee_id\":\"doloribus\",\"reason\":\"aut\",\"old_salary\":30,\"new_salary\":45,\"start_date\":\"2024-03-20T06:33:59\",\"end_date\":\"2024-03-20T06:33:59\",\"description\":\"Dicta cum excepturi qui illo sit eum.\",\"status\":\"1\"}"
                         },
                         "description": "",
                         "auth": {
@@ -10857,7 +10925,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "1",
                                     "description": "The ID of the salary management."
                                 }
                             ]
@@ -10913,7 +10981,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "10",
                                     "description": "The ID of the salary management."
                                 }
                             ]
@@ -10931,7 +10999,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"employee_id\":\"sit\",\"reason\":\"perspiciatis\",\"old_salary\":32,\"new_salary\":14,\"start_date\":\"2024-03-19T13:07:27\",\"end_date\":\"2024-03-19T13:07:27\",\"description\":\"Accusantium veritatis consequatur culpa est illum.\",\"status\":\"0\"}"
+                            "raw": "{\"employee_id\":\"qui\",\"reason\":\"quo\",\"old_salary\":73,\"new_salary\":2,\"start_date\":\"2024-03-20T06:33:59\",\"end_date\":\"2024-03-20T06:33:59\",\"description\":\"Magnam sunt sit accusantium.\",\"status\":\"0\"}"
                         },
                         "description": "",
                         "auth": {
@@ -10952,7 +11020,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "16",
                                     "description": "The ID of the salary management."
                                 }
                             ]
@@ -11046,7 +11114,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"culpa\",\"description\":\"Et corrupti quod quas consequuntur ut.\"}"
+                            "raw": "{\"name\":\"alias\",\"description\":\"Nisi nostrum error numquam qui modi maiores et.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -11067,7 +11135,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "19",
                                     "description": "The ID of the deduction type."
                                 }
                             ]
@@ -11123,7 +11191,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "3",
                                     "description": "The ID of the deduction type."
                                 }
                             ]
@@ -11141,7 +11209,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"doloremque\",\"description\":\"Omnis autem enim quia est eum eveniet.\"}"
+                            "raw": "{\"name\":\"assumenda\",\"description\":\"Voluptates optio asperiores aut eos corrupti.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -11162,7 +11230,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "6",
+                                    "value": "7",
                                     "description": "The ID of the deduction type."
                                 }
                             ]
@@ -11256,7 +11324,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ea\",\"deduction_type_id\":\"tenetur\",\"value_type\":true,\"value\":64,\"status\":true}"
+                            "raw": "{\"name\":\"fugit\",\"deduction_type_id\":\"repellendus\",\"value_type\":false,\"value\":34,\"status\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -11277,7 +11345,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "17",
                                     "description": "The ID of the deduction."
                                 }
                             ]
@@ -11333,7 +11401,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "12",
                                     "description": "The ID of the deduction."
                                 }
                             ]
@@ -11351,7 +11419,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"consequatur\",\"deduction_type_id\":\"repellendus\",\"value_type\":false,\"value\":53,\"status\":true}"
+                            "raw": "{\"name\":\"et\",\"deduction_type_id\":\"officia\",\"value_type\":false,\"value\":62,\"status\":false}"
                         },
                         "description": "",
                         "auth": {
@@ -11372,7 +11440,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "14",
+                                    "value": "2",
                                     "description": "The ID of the deduction."
                                 }
                             ]
@@ -11466,7 +11534,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"employee_id\":4,\"payroll_period_id\":20,\"cost_center_id\":16,\"number_of_days_worked\":28,\"basic_salary_arrears\":2.572,\"actual_basic_salary\":5630.8,\"total_ot_amount\":10014.383,\"total_shift_allowance_amount\":3883.517,\"total_taxable_allowance\":168229384.26765504,\"total_non_taxable_allowance_amount\":3563828.20342,\"total_allowance\":224419901.94318,\"total_taxable_income\":75426765.9,\"total_non_taxable_income_amount\":13856.8927284,\"gross_pay\":87,\"income_tax\":0,\"total_deductions\":2795.19,\"employee_pension\":994.8,\"employee_pension_arrears\":507040.2345,\"employee_actual_pension\":1384.23,\"net_pay\":1845.7}"
+                            "raw": "{\"employee_id\":9,\"payroll_period_id\":5,\"cost_center_id\":7,\"number_of_days_worked\":54,\"basic_salary_arrears\":115116303.7617043,\"actual_basic_salary\":9.2942,\"total_ot_amount\":49.5320661,\"total_shift_allowance_amount\":56409796.869,\"total_taxable_allowance\":1465723.8909952,\"total_non_taxable_allowance_amount\":1481352.076273,\"total_allowance\":1405177.631,\"total_taxable_income\":6616303.323022845,\"total_non_taxable_income_amount\":989.1156,\"gross_pay\":36457,\"income_tax\":3305.498,\"total_deductions\":501.0549113,\"employee_pension\":0.5380002,\"employee_pension_arrears\":246.25,\"employee_actual_pension\":5.97472431,\"net_pay\":552.42323}"
                         },
                         "description": "",
                         "auth": {
@@ -11487,7 +11555,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "1",
                                     "description": "The ID of the payroll."
                                 }
                             ]
@@ -11543,7 +11611,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "1",
                                     "description": "The ID of the payroll."
                                 }
                             ]
@@ -11579,7 +11647,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "2",
                                     "description": "The ID of the payroll."
                                 }
                             ]
@@ -11673,7 +11741,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"payroll_period_id\":\"explicabo\",\"employee_id\":\"aspernatur\",\"deduction_id\":\"excepturi\",\"amount_deducted\":10,\"outstanding_amount\":66,\"is_partial\":true,\"is_missed\":true}"
+                            "raw": "{\"payroll_period_id\":\"ratione\",\"employee_id\":\"unde\",\"deduction_id\":\"dolor\",\"amount_deducted\":74,\"outstanding_amount\":44,\"is_partial\":true,\"is_missed\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -11694,7 +11762,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "asperiores",
+                                    "value": "consectetur",
                                     "description": "The ID of the deduction transaction."
                                 }
                             ]
@@ -11750,7 +11818,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "id",
+                                    "value": "debitis",
                                     "description": "The ID of the deduction transaction."
                                 }
                             ]
@@ -11768,7 +11836,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"payroll_period_id\":\"sit\",\"employee_id\":\"sint\",\"deduction_id\":\"possimus\",\"amount_deducted\":65,\"outstanding_amount\":48,\"is_partial\":false,\"is_missed\":true,\"start_date\":\"2024-03-19T13:07:27\"}"
+                            "raw": "{\"payroll_period_id\":\"veritatis\",\"employee_id\":\"impedit\",\"deduction_id\":\"rerum\",\"amount_deducted\":14,\"outstanding_amount\":76,\"is_partial\":true,\"is_missed\":false,\"start_date\":\"2024-03-20T06:33:59\"}"
                         },
                         "description": "",
                         "auth": {
@@ -11789,7 +11857,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "non",
+                                    "value": "veritatis",
                                     "description": "The ID of the deduction transaction."
                                 }
                             ]
@@ -11883,7 +11951,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"facilis\",\"rate\":17}"
+                            "raw": "{\"name\":\"alias\",\"rate\":16}"
                         },
                         "description": "",
                         "auth": {
@@ -11904,7 +11972,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "13",
                                     "description": "The ID of the shift allowance type."
                                 }
                             ]
@@ -11960,7 +12028,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "18",
                                     "description": "The ID of the shift allowance type."
                                 }
                             ]
@@ -11978,7 +12046,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"odit\",\"rate\":1}"
+                            "raw": "{\"name\":\"alias\",\"rate\":1}"
                         },
                         "description": "",
                         "auth": {
@@ -11999,7 +12067,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "10",
                                     "description": "The ID of the shift allowance type."
                                 }
                             ]
@@ -12035,7 +12103,7 @@
                                 {
                                     "id": "employee_id",
                                     "key": "employee_id",
-                                    "value": "distinctio",
+                                    "value": "alias",
                                     "description": "The ID of the employee."
                                 }
                             ]
@@ -12149,7 +12217,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"shift_allowance_type_id\":\"accusamus\",\"employee_id\":\"accusantium\",\"payroll_period_id\":\"neque\",\"value\":8778384,\"status\":\"1\"}"
+                            "raw": "{\"shift_allowance_type_id\":\"delectus\",\"employee_id\":\"consequatur\",\"payroll_period_id\":\"cupiditate\",\"value\":5894.159941,\"status\":\"1\"}"
                         },
                         "description": "",
                         "auth": {
@@ -12170,7 +12238,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "13",
                                     "description": "The ID of the shift allowance calculation."
                                 }
                             ]
@@ -12226,7 +12294,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quaerat",
+                                    "value": "sit",
                                     "description": "The ID of the shift allowance calculation."
                                 }
                             ]
@@ -12244,7 +12312,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"shift_allowance_type_id\":\"similique\",\"employee_id\":\"vitae\",\"payroll_period_id\":\"repudiandae\",\"value\":12.84038,\"status\":false}"
+                            "raw": "{\"shift_allowance_type_id\":\"voluptatibus\",\"employee_id\":\"quia\",\"payroll_period_id\":\"qui\",\"value\":1004523.16032186,\"status\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -12265,7 +12333,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "13",
                                     "description": "The ID of the shift allowance calculation."
                                 }
                             ]
