@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use Illuminate\Http\Request;
 use App\Models\Tenant\Employee;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Finance\AllowanceTypeResource;
 use App\Http\Resources\Finance\EmployeeAllowanceResource;
-use App\Http\Resources\Finance\EmployeeAllowanceTypeResource;
 use App\Models\Tenant\AllowanceType;
 
 class EmployeeAllowanceTypeController extends Controller
@@ -25,6 +23,7 @@ class EmployeeAllowanceTypeController extends Controller
             'number_of_days' => 'required|integer',
             'value_in_birr' => 'nullable|numeric',
         ]);
+
         $recordExist = $employee->allowanceTypes()
             ->where('allowance_type_id',  $data['allowance_type_id'])
             ->first();
@@ -41,7 +40,6 @@ class EmployeeAllowanceTypeController extends Controller
             'number_of_days' => $data['number_of_days'],
             'value_in_birr' => $data['value_in_birr']
         ]); // Include validated data
-
         return response()->json([
             'message' => 'Allowance type assigned successfully.',
         ]);

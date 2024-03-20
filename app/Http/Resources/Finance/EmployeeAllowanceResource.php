@@ -16,7 +16,6 @@ class EmployeeAllowanceResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'main_allowance_id' => $this->main_allowance_id,
             'name' => $this->name,
             'taxability' => $this->taxability,
             'tax_free_amount' => $this->tax_free_amount,
