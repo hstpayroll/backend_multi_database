@@ -156,11 +156,11 @@ class Payroll extends Model
     //Income Tax
     public function calculateIncomeTax()
     {
-        $taxBrackets = IncomeTax::all(); 
-    
+        $taxBrackets = IncomeTax::all();
+
         $taxableIncome = $this->calculateTaxableIncome();
         $tax = 0;
-    
+
         foreach ($taxBrackets as $bracket) {
             if ($bracket->max_income === null) {
                 if ($taxableIncome >= $bracket->min_income) {
@@ -168,13 +168,13 @@ class Payroll extends Model
                 }
             } elseif ($taxableIncome >= $bracket->min_income && $taxableIncome <= $bracket->max_income) {
                 $tax = ($taxableIncome - $bracket->min_income) * ($bracket->tax_rate / 100);
-                break; 
+                break;
             }
         }
-    
+
         return $tax;
     }
-    
+
     //Total Deduction
     public function calculateTotalDeduction()
     {
