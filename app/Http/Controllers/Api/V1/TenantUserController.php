@@ -1,24 +1,32 @@
 <?php
-
+ 
 namespace App\Http\Controllers\Api\V1;
-
+ 
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
+use App\Http\Resources\Finance\RoleResource;
+use App\Http\Resources\Finance\PermissionResource;
 use App\Http\Resources\Finance\TenantUserResource;
-
+ 
 class TenantUserController extends Controller
 {
     public function auth_user_tenant()
     {
         auth()->user();
+        $user = Auth::user();
+        $permissions = PermissionResource::collection($user->getAllPermissions());
+        $roles = RoleResource::collection($user->roles);
         return response()->json([
             'message' => 'success',
             'code' => '200',
+            'roles' => $roles,
+            'permissions' => $permissions
         ]);
     }
     public function index()
@@ -33,28 +41,28 @@ class TenantUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-
+ 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
+ 
         event(new Registered($user));
-
+ 
         return response()->json([
             'user' =>  new TenantUserResource($user),
             'status' => 200,
             'message' => 'User created successfully',
         ]);
     }
-
+ 
     public function show(User $user)
     {
         $user = $user->load(['roles', 'permissions']);
         return new TenantUserResource($user);
     }
-
+ 
     public function update(Request $request, User $user)
     {
         $request->validate([
@@ -62,15 +70,15 @@ class TenantUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-
+ 
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
+ 
         event(new Registered($user));
-
+ 
         return response()->json([
             'user' =>  new TenantUserResource($user),
             'status' => 200,
@@ -102,7 +110,7 @@ class TenantUserController extends Controller
         $this->validate($request, [
             'role_id' => 'required|integer|exists:roles,id', // Ensure a valid role ID is provided
         ]);
-
+ 
         $roleId = $request->input('role_id');
         $role = Role::findOrFail($roleId);
         $user->removeRole($role);
