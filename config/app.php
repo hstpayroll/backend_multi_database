@@ -172,7 +172,6 @@ return [
         App\Providers\TelescopeServiceProvider::class,
         App\Providers\TenancyServiceProvider::class,
     ])->toArray(),
-
     /*
     |--------------------------------------------------------------------------
     | Class Aliases

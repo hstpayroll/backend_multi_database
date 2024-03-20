@@ -115,6 +115,8 @@ return array(
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/src'),
     'Dflydev\\DotAccessData\\' => array($vendorDir . '/dflydev/dot-access-data/src'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+    'Dedoc\\Scramble\\Database\\Factories\\' => array($vendorDir . '/dedoc/scramble/database/factories'),
+    'Dedoc\\Scramble\\' => array($vendorDir . '/dedoc/scramble/src'),
     'DebugBar\\' => array($vendorDir . '/maximebf/debugbar/src/DebugBar'),
     'Database\\Seeders\\' => array($baseDir . '/database/seeders', $vendorDir . '/laravel/pint/database/seeders'),
     'Database\\Factories\\' => array($baseDir . '/database/factories', $vendorDir . '/laravel/pint/database/factories'),

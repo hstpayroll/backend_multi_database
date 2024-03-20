@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '5732f2db0fa5f4aa3ea0617deb0f105af08cf2de',
+        'reference' => '819087bc86fc1495f9bdf367f2237e796b432f36',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -76,6 +76,7 @@
                 0 => '*',
             ),
         ),
+
         'dflydev/dot-access-data' => array(
             'pretty_version' => 'v3.0.2',
             'version' => '3.0.2.0',
@@ -137,7 +138,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../erusev/parsedown',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'facade/ignition-contracts' => array(
             'pretty_version' => '1.0.2',
@@ -155,7 +156,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../fakerphp/faker',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'fidry/cpu-core-counter' => array(
             'pretty_version' => '1.1.0',
@@ -173,7 +174,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../filp/whoops',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'fruitcake/laravel-telescope-toolbar' => array(
             'pretty_version' => 'v1.3.3',
@@ -461,7 +462,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../knuckleswtf/scribe',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
@@ -490,7 +491,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '5732f2db0fa5f4aa3ea0617deb0f105af08cf2de',
+            'reference' => '819087bc86fc1495f9bdf367f2237e796b432f36',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -641,7 +642,7 @@
             'dev_requirement' => false,
         ),
         'mpociot/laravel-apidoc-generator' => array(
-            'dev_requirement' => true,
+            'dev_requirement' => false,
             'replaced' => array(
                 0 => '*',
             ),
@@ -653,7 +654,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../mpociot/reflection-docblock',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'mtdowling/cron-expression' => array(
             'dev_requirement' => false,
@@ -713,7 +714,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../nunomaduro/collision',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'nunomaduro/termwind' => array(
             'pretty_version' => 'v1.15.1',
@@ -821,7 +822,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpstan/phpdoc-parser',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'phpunit/php-code-coverage' => array(
             'pretty_version' => '10.1.12',
@@ -1182,7 +1183,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../shalvah/clara',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'shalvah/upgrader' => array(
             'pretty_version' => '0.6.0',
@@ -1191,7 +1192,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../shalvah/upgrader',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'spatie/backtrace' => array(
             'pretty_version' => '1.5.3',
@@ -1209,7 +1210,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../spatie/data-transfer-object',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'spatie/flare-client-php' => array(
             'pretty_version' => '1.4.4',
@@ -1572,7 +1573,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/var-exporter',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/yaml' => array(
             'pretty_version' => 'v7.0.3',
@@ -1581,7 +1582,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/yaml',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'ta-tikoma/phpunit-architecture-test' => array(
             'pretty_version' => '0.8.4',
