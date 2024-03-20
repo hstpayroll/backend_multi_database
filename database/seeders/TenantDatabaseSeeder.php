@@ -57,6 +57,6 @@ class TenantDatabaseSeeder extends Seeder
         $this->call(DeductionTransactionSeeder::class);
         $this->call(ShiftAllowanceSeeder::class);
         $this->call(ShiftAllowanceCalculationSeeder::class);
-        $this->call(PayrollSeeder::class);
+        // $this->call(PayrollSeeder::class);
     }
 }

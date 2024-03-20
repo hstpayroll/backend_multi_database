@@ -98,10 +98,12 @@ class Payroll extends Model
     }
     public function calculateTotalAllowance()
     {
-        $taxable = $this->calculateTotalTaxableAllowanceAmount();
-        $non_taxable = $this->calculateNonTotalTaxableAllowanceAmount();
-        $totalAllowance = $taxable + $non_taxable;
-        return $totalAllowance;
+        $employee = $this->employee; // Or access through the related model
+
+        $totalAllowances = $employee->allowanceTypes()
+            ->withPivot('value_in_birr')
+            ->sum('value_in_birr');
+        return $totalAllowances;
     }
 
     //Taxable Income
