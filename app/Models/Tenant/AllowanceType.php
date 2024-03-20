@@ -17,7 +17,6 @@ class AllowanceType extends Model
         'tax_free_amount',
         'value_type',
         'value',
-        'is_recurrent',
         'status'
     ];
 
@@ -33,6 +32,7 @@ class AllowanceType extends Model
     }
     public function employees(): BelongsToMany
     {
-        return $this->belongsToMany(AllowanceType::class, 'allowance_type_employee', 'allowance_type_id', 'employee_id');
+        return $this->belongsToMany(Employee::class, 'allowance_type_employee', 'allowance_type_id', 'employee_id')
+            ->withPivot(['number_of_days', 'value_in_birr']);
     }
 }

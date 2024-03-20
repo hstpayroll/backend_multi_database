@@ -9,10 +9,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Tenant\SubDepartment;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
-use App\Http\Resources\Finance\AllowanceTypeResource;
 use App\Http\Resources\Finance\EmployeeResource;
+use App\Http\Resources\Finance\AllowanceTypeResource;
 use App\Http\Resources\Finance\EmployeeResourceRefactor;
-use App\Models\Tenant\AllowanceType;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class EmployeeController extends Controller
@@ -128,13 +127,6 @@ class EmployeeController extends Controller
         }
     }
 
-    public function allowanceTypes(Employee $employee)
-    {
-        $allowanceTypes = $employee->allowanceTypes;
-        return response()->json([
-            'data' => AllowanceTypeResource::collection($allowanceTypes)
-        ]);
-    }
     public function totalDeductions(Employee $employee)
     {
         $allowanceTypes = $employee->allowanceTypes;

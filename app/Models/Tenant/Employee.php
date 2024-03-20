@@ -56,11 +56,7 @@ class Employee extends Model
 
     public function allowanceTransactions()
     {
-        return $this->hasMany(
-            AllowanceTransaction::class,
-            'employee_id',
-            'id'
-        );
+        return $this->hasMany(AllowanceTransaction::class, 'employee_id', 'id');
     }
     public function getFullNameAttribute(): string
     {
@@ -96,7 +92,8 @@ class Employee extends Model
 
     public function allowanceTypes(): BelongsToMany
     {
-        return $this->belongsToMany(AllowanceType::class, 'employee_allowance_type', 'employee_id', 'allowance_type_id');
+        return $this->belongsToMany(AllowanceType::class)
+            ->withPivot(['number_of_days', 'value_in_birr']);
     }
 
 

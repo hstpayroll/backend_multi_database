@@ -23,6 +23,7 @@ class ShiftAllowanceCalculationController extends Controller
             if ($user->hasPermissionTo('shift_Allowance_index')) {
                 $shiftAllowanceCalculations = ShiftAllowanceCalculation::paginate(10);
             return ShiftAllowanceCalculationResource::collection($shiftAllowanceCalculations);
+                return ShiftAllowanceCalculationResource::collection($shiftAllowanceCalculations);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
@@ -33,29 +34,30 @@ class ShiftAllowanceCalculationController extends Controller
 
     public function store(StoreShiftAllowanceCalculationRequest $request)
     {
+    public function store(StoreShiftAllowanceCalculationRequest $request, Employee $employee)
+    {
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('shift_Allowance_store')) {
-            $validatedData = $request->validated();
+                $validatedData = $request->validated();
 
-            $allowanceType = ShiftAllowanceType::findOrFail($validatedData['shift_allowance_type_id']);
-            $rate = $allowanceType->rate / 100;
-            $value = $employee->Salary * $rate;
+                $allowanceType = ShiftAllowanceType::findOrFail($validatedData['shift_allowance_type_id']);
+                $rate = $allowanceType->rate / 100;
+                $value = $employee->Salary * $rate;
 
-            $shiftAllowanceCalculation = ShiftAllowanceCalculation::create([
-                'employee_id' => $validatedData['employee_id'],
-                'shift_allowance_type_id' => $validatedData['shift_allowance_type_id'],
-                'payroll_period_id' => $validatedData['payroll_period_id'],
-                'value' => $value,
-            ]);
+                $shiftAllowanceCalculation = ShiftAllowanceCalculation::create([
+                    'employee_id' => $validatedData['employee_id'],
+                    'shift_allowance_type_id' => $validatedData['shift_allowance_type_id'],
+                    'payroll_period_id' => $validatedData['payroll_period_id'],
+                    'value' => $value,
+                ]);
 
-            return new ShiftAllowanceCalculationResource($shiftAllowanceCalculation);
+                return new ShiftAllowanceCalculationResource($shiftAllowanceCalculation);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
-
         }
     }
 
@@ -97,8 +99,8 @@ class ShiftAllowanceCalculationController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('shift_Allowance_destroy')) {
                 $shiftAllowanceCalculation = ShiftAllowanceCalculation::findOrFail($ShiftAllowanceCalculation);
-            $shiftAllowanceCalculation->delete();
-            return response()->noContent();
+                $shiftAllowanceCalculation->delete();
+                return response()->noContent();
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
