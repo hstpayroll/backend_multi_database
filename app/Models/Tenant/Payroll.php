@@ -164,17 +164,17 @@ class Payroll extends Model
         foreach ($taxBrackets as $bracket) {
             if ($bracket->max_income === null) {
                 if ($taxableIncome >= $bracket->min_income) {
-                    $tax = ($taxableIncome - $bracket->min_income) * ($bracket->tax_rate / 100);
+                    $tax = $taxableIncome * ($bracket->tax_rate / 100) - $bracket->deduction;
                 }
             } elseif ($taxableIncome >= $bracket->min_income && $taxableIncome <= $bracket->max_income) {
-                $tax = ($taxableIncome - $bracket->min_income) * ($bracket->tax_rate / 100);
+                $tax = $taxableIncome * ($bracket->tax_rate / 100)  - $bracket->deduction;
                 break; 
             }
         }
     
         return $tax;
     }
-    
+
     //Total Deduction
     public function calculateTotalDeduction()
     {
