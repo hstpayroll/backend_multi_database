@@ -29,6 +29,7 @@ class Loan extends Model
         'start_date',
         'expected_end_date',
         'duration_months',
+        'monthly_installment',
         'description',
         'status',
         'termination_date'
