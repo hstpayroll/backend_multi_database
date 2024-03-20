@@ -59,15 +59,13 @@ class EmployeeAllowanceTypeController extends Controller
             ->first();
 
         if (!$allowanceTypeWithPivot) {
-            abort(404, 'Employee allowance type not found.');
+            return response()->json(['error' => 'Employee allowance type not found.'], 400);
         }
 
         return response()->json([
             'allowance_type' => $allowanceTypeWithPivot,
         ]);
     }
-
-
     public function update(Request $request, Employee $employee, AllowanceType $allowanceType)
     {
         $data = $request->validate([

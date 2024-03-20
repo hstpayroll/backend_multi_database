@@ -17,7 +17,6 @@ class AllowanceType extends Model
         'tax_free_amount',
         'value_type',
         'value',
-        'is_recurrent',
         'status'
     ];
 
