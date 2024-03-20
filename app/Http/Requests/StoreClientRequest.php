@@ -23,12 +23,12 @@ class StoreClientRequest extends FormRequest
             'first_name'=> 'required|string|max:255', 
             'last_name'=> 'required|string|max:255', 
             'email' => 'required|string|max:255', 
-            'phone_number' => 'required|string|max:255', 
-            'company_name' => 'required|string|max:255', 
-            'total_number_of_employees' => 'required|integer|max:255', 
-            'country' => 'required|string|max:255', 
-            'city' => 'nullable|string|max:255', 
-            'sub_city' => 'nullable|string|max:255',
+            'phone_number' => 'required|string', 
+            'company_name' => 'required|string', 
+            'total_number_of_employees' => 'required|integer|min:1', 
+            'country' => 'required|string', 
+            'city' => 'nullable|string', 
+            'sub_city' => 'nullable|string',
         ];
     }
 }
