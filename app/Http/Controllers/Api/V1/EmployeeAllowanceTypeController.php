@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tenant\Employee;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Finance\AllowanceTypeResource;
+use App\Http\Resources\Finance\EmployeeAllowanceResource;
 use App\Http\Resources\Finance\EmployeeAllowanceTypeResource;
 use App\Models\Tenant\AllowanceType;
 
@@ -14,9 +15,7 @@ class EmployeeAllowanceTypeController extends Controller
     public function index(Employee $employee)
     {
         $allowanceTypes = $employee->allowanceTypes()->withPivot('number_of_days', 'value_in_birr')->get();
-        return response()->json([
-            'allowance_types' => $allowanceTypes,
-        ]);
+        return EmployeeAllowanceResource::collection($allowanceTypes);
     }
 
     public function store(Request $request, Employee $employee)
@@ -48,9 +47,6 @@ class EmployeeAllowanceTypeController extends Controller
         ]);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Employee $employee, AllowanceType $allowanceType)
     {
         $allowanceTypeWithPivot = $employee->allowanceTypes()
@@ -61,10 +57,7 @@ class EmployeeAllowanceTypeController extends Controller
         if (!$allowanceTypeWithPivot) {
             return response()->json(['error' => 'Employee allowance type not found.'], 400);
         }
-
-        return response()->json([
-            'allowance_type' => $allowanceTypeWithPivot,
-        ]);
+        return new EmployeeAllowanceResource($allowanceTypeWithPivot);
     }
     public function update(Request $request, Employee $employee, AllowanceType $allowanceType)
     {
@@ -72,12 +65,10 @@ class EmployeeAllowanceTypeController extends Controller
             'number_of_days' => 'required|integer',
             'value_in_birr' => 'nullable|numeric',
         ]);
-        $employee->allowanceTypes()->updateExistingPivot($allowanceType->id, $data);
+        $allowanceType =  $employee->allowanceTypes()->updateExistingPivot($allowanceType->id, $data);
 
-
-        return response()->json([
-            'message' => 'Allowance type for employee ' . $employee->id . ' updated successfully.',
-        ]);
+        // return new EmployeeAllowanceResource($allowanceType);
+        return new EmployeeAllowanceResource($allowanceType);
     }
 
     public function destroy(Request $request, Employee $employee)
