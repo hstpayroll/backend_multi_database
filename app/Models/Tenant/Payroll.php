@@ -132,26 +132,49 @@ class Payroll extends Model
     }
 
     //Income Tax
-    public  function calculateIncomeTax()
+    // public  function calculateIncomeTax()
+    // {
+    //     $tax = 0;
+    //     if ($this->calculateTaxableIncome() >= 0 && $this->calculateTaxableIncome() <= 600) {
+    //         $tax = $this->calculateTaxableIncome() * 0;
+    //     } elseif ($this->calculateTaxableIncome() >= 601 && $this->calculateTaxableIncome() <= 1650) {
+    //         $tax = $this->calculateTaxableIncome() * 0.1 - 60;
+    //     } elseif ($this->calculateTaxableIncome() >= 1651 && $this->calculateTaxableIncome() <= 3200) {
+    //         $tax = $this->calculateTaxableIncome() * 0.15 - 142.5;
+    //     } elseif ($this->calculateTaxableIncome() >= 3201 && $this->calculateTaxableIncome() <= 5250) {
+    //         $tax = $this->calculateTaxableIncome() * 0.2 - 302.5;
+    //     } elseif ($this->calculateTaxableIncome() >= 5251 && $this->calculateTaxableIncome() <= 7800) {
+    //         $tax = $this->calculateTaxableIncome() * 0.25 - 565;
+    //     } elseif ($this->calculateTaxableIncome() >= 7801 && $this->calculateTaxableIncome() <= 10900) {
+    //         $tax = $this->calculateTaxableIncome() * 0.3 - 955;
+    //     } elseif ($this->calculateTaxableIncome() > 10901) {
+    //         $tax = $this->calculateTaxableIncome() * 0.35 - 1500;
+    //     }
+    //     return $tax;
+    // }
+
+    //Income Tax
+    public function calculateIncomeTax()
     {
+        $taxBrackets = IncomeTax::all(); 
+    
+        $taxableIncome = $this->calculateTaxableIncome();
         $tax = 0;
-        if ($this->calculateTaxableIncome() >= 0 && $this->calculateTaxableIncome() <= 600) {
-            $tax = $this->calculateTaxableIncome() * 0;
-        } elseif ($this->calculateTaxableIncome() >= 601 && $this->calculateTaxableIncome() <= 1650) {
-            $tax = $this->calculateTaxableIncome() * 0.1 - 60;
-        } elseif ($this->calculateTaxableIncome() >= 1651 && $this->calculateTaxableIncome() <= 3200) {
-            $tax = $this->calculateTaxableIncome() * 0.15 - 142.5;
-        } elseif ($this->calculateTaxableIncome() >= 3201 && $this->calculateTaxableIncome() <= 5250) {
-            $tax = $this->calculateTaxableIncome() * 0.2 - 302.5;
-        } elseif ($this->calculateTaxableIncome() >= 5251 && $this->calculateTaxableIncome() <= 7800) {
-            $tax = $this->calculateTaxableIncome() * 0.25 - 565;
-        } elseif ($this->calculateTaxableIncome() >= 7801 && $this->calculateTaxableIncome() <= 10900) {
-            $tax = $this->calculateTaxableIncome() * 0.3 - 955;
-        } elseif ($this->calculateTaxableIncome() > 10901) {
-            $tax = $this->calculateTaxableIncome() * 0.35 - 1500;
+    
+        foreach ($taxBrackets as $bracket) {
+            if ($bracket->max_income === null) {
+                if ($taxableIncome >= $bracket->min_income) {
+                    $tax = ($taxableIncome - $bracket->min_income) * ($bracket->tax_rate / 100);
+                }
+            } elseif ($taxableIncome >= $bracket->min_income && $taxableIncome <= $bracket->max_income) {
+                $tax = ($taxableIncome - $bracket->min_income) * ($bracket->tax_rate / 100);
+                break; 
+            }
         }
+    
         return $tax;
     }
+    
     //Total Deduction
     public function calculateTotalDeduction()
     {
