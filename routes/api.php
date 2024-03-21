@@ -55,7 +55,7 @@ Route::prefix('v1')->group(function () {
         
         // Route::get('/client-requests', [ClientRequestsController::class, 'index'])
         // ->name('client_requests');
-        Route::apiResource('client-requests', PriceTagsController::class)->except('store');
+        Route::apiResource('client-requests', ClientRequestsController::class)->except('store');
 
         Route::apiResource('price-tags', PriceTagsController::class)->except('index');
 
