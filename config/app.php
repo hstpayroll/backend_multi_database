@@ -57,9 +57,9 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
     'domain' => env('APP_DOMAIN', 'localhost'), // I know nege deploy sareg anchi nesh mitbetebichign gin milarge esti eyayew asitekakilalewa
-    
+
     'asset_url' => env('ASSET_URL'),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -169,7 +169,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\TelescopeServiceProvider::class,
         App\Providers\TenancyServiceProvider::class,
     ])->toArray(),
 
