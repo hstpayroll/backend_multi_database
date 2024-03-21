@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoanPaymentRecord extends Model
 {
-
-
     protected $fillable = [
         'payroll_period_id',
         'loan_id',

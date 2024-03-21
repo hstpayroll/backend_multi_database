@@ -94,9 +94,9 @@ Route::middleware([
 
             Route::get('employees/{employee}/allowance-types', [EmployeeAllowanceTypeController::class, 'index'])->name('employees.index-allowance-types');
             Route::post('employees/{employee}/allowance-types', [EmployeeAllowanceTypeController::class, 'store'])->name('employees.store-allowance-types');
-            Route::put('employees/{employee}/allowance-types/{allowance_type}', [EmployeeAllowanceTypeController::class, 'update'])->name('employees.update-allowance-type');
-            Route::delete('employees/{employee}/allowance-types', [EmployeeAllowanceTypeController::class, 'destroy'])->name('employees.destroy-allowance-types');
-            Route::get('employees/{employee}/allowance-types/{allowance_type}', [EmployeeAllowanceTypeController::class, 'show'])->name('employees.show-allowance-type');
+            Route::put('employees/{employee}/allowance-types/{allowanceType}', [EmployeeAllowanceTypeController::class, 'update'])->name('employees.update-allowanceType');
+            Route::delete('employees/{employee}/allowance-types/{allowanceType}', [EmployeeAllowanceTypeController::class, 'destroy'])->name('employees.destroy-allowance-types');
+            Route::get('employees/{employee}/allowance-types/{allowanceType}', [EmployeeAllowanceTypeController::class, 'show'])->name('employees.show-allowance-type');
 
 
             Route::apiResource('employees', EmployeeController::class);
