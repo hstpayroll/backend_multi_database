@@ -23,6 +23,7 @@ class LoanResource extends JsonResource
             'start_date' => $this->start_date,
             'expected_end_date' => $this->expected_end_date,
             'duration_months' => $this->duration_months,
+            'monthly_installment' => $this->monthly_installment,
             'description' => $this->description,
             'status' => $this->status == 1 ? 'active' : 'inactive',
             'termination_date' => $this->termination_date,

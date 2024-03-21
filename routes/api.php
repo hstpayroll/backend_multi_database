@@ -1,8 +1,7 @@
 <?php
 
-
 use App\Models\PriceTags;
-use App\Models\client_reequest;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\UserController;
@@ -70,11 +69,12 @@ Route::prefix('v1')->group(function () {
         Route::get('auth-user', [DomainController::class, 'auth_user'])->name('auth-user');
     });
     Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');
+
     Route::post('/client-requests', [ClientRequestsController::class, 'store'])
     ->middleware('guest')->name('client-requests');
 
     Route::get('/price-tags', [PriceTagsController::class, 'index'])
-    ->middleware('guest')->name('price-tags');
+        ->middleware('guest')->name('price-tags');
 
     // user
 });
