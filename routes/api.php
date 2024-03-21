@@ -53,8 +53,9 @@ Route::prefix('v1')->group(function () {
         Route::post('/validate-user', [AuthenticatedSessionController::class, 'validateUser'])
             ->name('validate-user');
         
-        Route::get('/client_requests', [ClientRequestsController::class, 'index'])
-        ->name('client_requests');
+        // Route::get('/client-requests', [ClientRequestsController::class, 'index'])
+        // ->name('client_requests');
+        Route::apiResource('client-requests', PriceTagsController::class)->except('store');
 
         Route::apiResource('price-tags', PriceTagsController::class)->except('index');
 
@@ -70,7 +71,7 @@ Route::prefix('v1')->group(function () {
     });
     Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');
     Route::post('/client-requests', [ClientRequestsController::class, 'store'])
-    ->middleware('guest')->name('client_requests');
+    ->middleware('guest')->name('client-requests');
 
     Route::get('/price-tags', [PriceTagsController::class, 'index'])
     ->middleware('guest')->name('price-tags');
