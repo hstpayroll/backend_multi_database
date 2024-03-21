@@ -34,7 +34,7 @@ class EmployeeAllowanceTypeController extends Controller
                 'errors' => ['allowance_type_id' => ['Duplicate assignment.']],
             ], 422);
         }
-        $existingRecord = $employee->allowanceTypes()->attach([
+        $employee->allowanceTypes()->attach([
             'allowance_type_id' => $data['allowance_type_id'],
         ], [
             'number_of_days' => $data['number_of_days'],
