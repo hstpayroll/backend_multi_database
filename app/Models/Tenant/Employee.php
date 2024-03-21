@@ -99,7 +99,7 @@ class Employee extends Model
 
     public function loans()
     {
-        return $this->belongsTo(Loan::class, 'employee_id', 'id');
+        return $this->hasMany(Loan::class);
     }
 
     public function loanPaymentRecords()

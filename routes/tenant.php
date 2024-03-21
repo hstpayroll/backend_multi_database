@@ -94,13 +94,14 @@ Route::middleware([
 
             Route::get('employees/{employee}/allowance-types', [EmployeeAllowanceTypeController::class, 'index'])->name('employees.index-allowance-types');
             Route::post('employees/{employee}/allowance-types', [EmployeeAllowanceTypeController::class, 'store'])->name('employees.store-allowance-types');
-            Route::put('employees/{employee}/allowance-types/{allowance_type}', [EmployeeAllowanceTypeController::class, 'update'])->name('employees.update-allowance-type');
-            Route::delete('employees/{employee}/allowance-types', [EmployeeAllowanceTypeController::class, 'destroy'])->name('employees.destroy-allowance-types');
-            Route::get('employees/{employee}/allowance-types/{allowance_type}', [EmployeeAllowanceTypeController::class, 'show'])->name('employees.show-allowance-type');
+            Route::put('employees/{employee}/allowance-types/{allowanceType}', [EmployeeAllowanceTypeController::class, 'update'])->name('employees.update-allowanceType');
+            Route::delete('employees/{employee}/allowance-types/{allowanceType}', [EmployeeAllowanceTypeController::class, 'destroy'])->name('employees.destroy-allowance-types');
+            Route::get('employees/{employee}/allowance-types/{allowanceType}', [EmployeeAllowanceTypeController::class, 'show'])->name('employees.show-allowance-type');
 
 
             Route::apiResource('employees', EmployeeController::class);
-            Route::get('loans_by_employee/{employee_id}', [LoanController::class, 'showLoansByEmployee']);
+            Route::get('loans-by-employee/{employee}', [LoanController::class, 'LoansByEmployee'])->name('loans.loans-by-employee');
+            Route::get('loans-for-payroll/{employee}', [LoanController::class, 'LoansForPayroll'])->name('loans.loan-for-payroll');
             Route::apiResource('loans', LoanController::class);
             Route::apiResource('loan-types', LoanTypeController::class);
             Route::get('loan_payment_records_by_employee/{employee_id}', [LoanPaymentRecordController::class, 'showRecordsByEmployee']);

@@ -21,7 +21,7 @@ class EmployeeAllowanceTypeController extends Controller
         $data = $request->validate([
             'allowance_type_id' => 'required|exists:allowance_types,id',
             'number_of_days' => 'required|integer',
-            'value_in_birr' => 'nullable|numeric',
+            'value_in_birr' => 'required|numeric',
         ]);
 
         $recordExist = $employee->allowanceTypes()
@@ -61,21 +61,17 @@ class EmployeeAllowanceTypeController extends Controller
     {
         $data = $request->validate([
             'number_of_days' => 'required|integer',
-            'value_in_birr' => 'nullable|numeric',
+            'value_in_birr' => 'required|numeric',
         ]);
-        $allowanceType =  $employee->allowanceTypes()->updateExistingPivot($allowanceType->id, $data);
+        $employee->allowanceTypes()->updateExistingPivot($allowanceType->id, $data);
+        $updatedPivot = $employee->allowanceTypes->find($allowanceType->id);
 
-        // return new EmployeeAllowanceResource($allowanceType);
-        return new EmployeeAllowanceResource($allowanceType);
+        return new EmployeeAllowanceResource($updatedPivot);
     }
 
-    public function destroy(Request $request, Employee $employee)
+    public function destroy(Employee $employee, AllowanceType $allowanceType)
     {
-        $data = $request->validate([
-            'allowance_type_id' => 'integer|exists:allowance_types,id',
-        ]);
-
-        $employee->allowanceTypes()->detach($data['allowance_type_id']);
+        $employee->allowanceTypes()->detach($allowanceType->id);
 
         return response()->json([
             'message' => 'Selected allowance types detached from employee ' . $employee->id,
