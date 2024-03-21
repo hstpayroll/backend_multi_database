@@ -9,14 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Loan extends Model
 {
-    protected static function boot()
-    {
-        parent::boot();
+    // protected static function boot()
+    // {
+    //     parent::boot();
 
-        static::addGlobalScope('status', function (Builder $builder) {
-            $builder->where('status', 1);
-        });
-    }
+    //     static::addGlobalScope('status', function (Builder $builder) {
+    //         $builder->where('status', 1);
+    //     });
+    // }
 
     use SoftDeletes;
 
@@ -34,10 +34,6 @@ class Loan extends Model
         'status',
         'termination_date'
     ];
-    // protected $casts = [
-    //     'status' => LoanStatusEnum::class, // Cast the status to LoanStatusEnum
-    // ];
-
     public function employee()
     {
         return $this->belongsTo(Employee::class, 'employee_id', 'id');
