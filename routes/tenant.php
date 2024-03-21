@@ -101,7 +101,7 @@ Route::middleware([
 
             Route::apiResource('employees', EmployeeController::class);
             Route::get('loans-by-employee/{employee}', [LoanController::class, 'LoansByEmployee'])->name('loans.loans-by-employee');
-            Route::get('loans-by-employee2/{employee}', [LoanController::class, 'LoansByEmployee2'])->name('loans.loans-by-employee2');
+            Route::get('loans-for-payroll/{employee}', [LoanController::class, 'LoansForPayroll'])->name('loans.loan-for-payroll');
             Route::apiResource('loans', LoanController::class);
             Route::apiResource('loan-types', LoanTypeController::class);
             Route::get('loan_payment_records_by_employee/{employee_id}', [LoanPaymentRecordController::class, 'showRecordsByEmployee']);

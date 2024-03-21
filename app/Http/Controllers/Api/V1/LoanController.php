@@ -104,7 +104,7 @@ class LoanController extends Controller
             return response()->json(['message' => 'Unauthorized for this task- no permission by this name'], 403);
         }
     }
-    public function LoansByEmployee2(Request $request, Employee $employee)
+    public function LoansForPayroll(Request $request, Employee $employee)
     {
         try {
             $user = $request->user();
