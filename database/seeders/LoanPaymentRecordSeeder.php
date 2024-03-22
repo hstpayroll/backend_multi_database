@@ -17,7 +17,7 @@ class LoanPaymentRecordSeeder extends Seeder
             'id' => 1,
             'Payroll_period_id' => "1",
             'loan_id' => 1,
-            'amount_payed' => 10000,
+            'amount_payed' => 1000,
             'outstanding_amount' => 9000,
             'is_partial' => 0,
             'is_missed' => 0,
