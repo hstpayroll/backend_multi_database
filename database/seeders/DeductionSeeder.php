@@ -33,6 +33,13 @@ class DeductionSeeder extends Seeder
             'status' => 1
         ]);
         Deduction::create([
+            'name' => "Red Cross Contribution",
+            'deduction_type_id' => 3,
+            'value_type' => 1, // 0 = fixed amount, 1 = percentage
+            'value' => 0.5,
+            'status' => 1
+        ]);
+        Deduction::create([
             'name' => "deduction_of_advance_paid_star_award",
             'deduction_type_id' => 3,
             'value_type' => 0, // 0 = fixed amount, 1 = percentage
