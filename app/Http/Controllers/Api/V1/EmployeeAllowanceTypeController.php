@@ -12,7 +12,7 @@ class EmployeeAllowanceTypeController extends Controller
 {
     public function index(Employee $employee)
     {
-        $allowanceTypes = $employee->allowanceTypes()->withPivot('number_of_days', 'value_in_birr')->get();
+        $allowanceTypes = $employee->allowanceTypes()->withPivot('number_of_days', 'value_in_birr')->paginate(10);
         return EmployeeAllowanceResource::collection($allowanceTypes);
     }
 

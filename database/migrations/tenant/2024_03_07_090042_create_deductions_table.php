@@ -14,10 +14,17 @@ return new class extends Migration
         Schema::create('deductions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreignId('deduction_type_id')->constrained('deduction_types')->onDelete('restrict')->onUpdate('cascade');
-            $table->boolean('value_type')->default(0); //0 for fixed value, 1 for percentage
-            $table->decimal('value', 10, 2)->default(0)->nullable(); //how can it deduct from your salary if it is in % deduct in % or the actual value
-            $table->tinyInteger('status')->default(1);
+
+            $table->decimal('amount', 10, 2);
+            $table->date('start_date');
+            $table->date('expected_end_date');
+            $table->integer('duration_months')->default(0);
+            $table->decimal('monthly_installment', 10, 2)->default(0);
+            $table->text('description')->nullable();
+            $table->date('termination_date')->nullable(); //if the status is finished this value must have a value
+            $table->tinyInteger('status')->default(1); // 1 = active, 0 = inactive 3 = finished 4 = terminated 5 = cancelled
             $table->timestamps();
             $table->softDeletes();
         });
