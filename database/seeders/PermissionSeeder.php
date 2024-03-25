@@ -13,18 +13,18 @@ class PermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        // $permissions = [
-        //     'edit_profile',
-        //     'change_password',
+        $permissions = [
+            'edit_profile',
+            'change_password',
 
-        //     'user_index',
-        //     'user_create',
-        //     'user_show',
-        //     'user_update',
-        //     'user_destroy',
-        // ];
-        // foreach ($permissions as $permission) {
-        //     Permission::create(['name' => $permission]);
-        // }
+            'user_index',
+            'user_create',
+            'user_show',
+            'user_update',
+            'user_destroy',
+        ];
+        foreach ($permissions as $permission) {
+            Permission::create(['name' => $permission]);
+        }
     }
 }
