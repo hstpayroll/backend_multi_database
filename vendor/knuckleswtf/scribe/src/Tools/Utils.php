@@ -114,8 +114,7 @@ class Utils
                 [$class, $method] = $usesArray;
 
                 // Support for the Laravel Actions package, docblock should be put on the asController method
-                if ($method === '__invoke' && method_exists($class, 'asController'))
-                {
+                if ($method === '__invoke' && method_exists($class, 'asController')) {
                     return [$class, 'asController'];
                 }
 
@@ -328,7 +327,8 @@ class Utils
     {
         // See https://github.com/laravel/lumen-framework/blob/99330e6ca2198e228f5894cf84d843c2a539a250/src/Application.php#L163
         $app = app();
-        if ($app
+        if (
+            $app
             && is_callable([$app, 'version'])
             && Str::startsWith($app->version(), 'Lumen')
         ) {
@@ -350,13 +350,13 @@ class Utils
     {
         // Avoid "holes" in the keys of the filtered array by using array_values
         return array_values(
-            array_filter($tags, fn($tag) => in_array(strtolower($tag->getName()),$names))
+            array_filter($tags, fn ($tag) => in_array(strtolower($tag->getName()), $names))
         );
     }
 
     /**
      * Like Laravel's trans/__ function, but will fallback to using the default translation if translation fails.
-     * For instance, if the user's locale is DE, but they have no DE strings defined,
+     * For instance, if the user's locale is DE, t they have no DE strings defined,
      * Laravel simply renders the translation key.
      * Instead, we render the EN version.
      */
@@ -364,7 +364,7 @@ class Utils
     {
         // We only load our custom translation layer if we really need it
         if (!ScribeServiceProvider::$customTranslationLayerLoaded) {
-            (new ScribeServiceProvider(app()))->loadCustomTranslationLayer();
+            app(ScribeServiceProvider::class, ['app' => app()])->loadCustomTranslationLayer();
         }
 
         $translation = trans($key, $replace);
@@ -384,9 +384,9 @@ class Utils
 
 function getTopLevelItemsFromMixedOrderList(array $mixedList): array
 {
-  $topLevels = [];
-  foreach ($mixedList as $item => $value) {
-    $topLevels[] = is_int($item) ? $value : $item;
-  }
-  return $topLevels;
+    $topLevels = [];
+    foreach ($mixedList as $item => $value) {
+        $topLevels[] = is_int($item) ? $value : $item;
+    }
+    return $topLevels;
 }

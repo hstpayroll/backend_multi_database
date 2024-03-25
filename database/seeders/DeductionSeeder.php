@@ -17,18 +17,23 @@ class DeductionSeeder extends Seeder
             'name' => "Laptop crush repayment",
             'deduction_type_id' => 1,
             'value_type' => 0, // 0 = fixed amount, 1 = percentage
-            'value' => 12000,
             'status' => 1
         ]);
         Deduction::create([
             'name' => "Cost sharing for fresh graduates",
             'deduction_type_id' => 2,
             'value_type' => 0, // 0 = fixed amount, 1 = percentage
-            'value' => 23000,
             'status' => 1
         ]);
         Deduction::create([
             'name' => "Iddir contribution",
+            'deduction_type_id' => 3,
+            'value_type' => 1, // 0 = fixed amount, 1 = percentage
+            'value' => 0.5,
+            'status' => 1
+        ]);
+        Deduction::create([
+            'name' => "Red Cross Contribution",
             'deduction_type_id' => 3,
             'value_type' => 1, // 0 = fixed amount, 1 = percentage
             'value' => 0.5,
