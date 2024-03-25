@@ -18,11 +18,11 @@ return [
      * Only relevant if you're using the domain or subdomain identification middleware.
      */
     'central_domains' => [
-        // 'localhost',
-        // '127.0.0.1',
+        'localhost',
+        '127.0.0.1',
         'hstpayroll.et',
         // 'pay.hst-et.com'
-        // '10.1.11.29',
+        '10.1.11.29',
         // 'multidb.local'
     ],
 
