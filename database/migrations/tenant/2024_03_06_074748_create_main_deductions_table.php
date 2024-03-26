@@ -13,12 +13,8 @@ return new class extends Migration
     {
         Schema::create('main_deductions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
-            $table->foreignId('deduction_type_id')->constrained()->onDelete('cascade');
-            $table->decimal('static_amount')->nullable();
-            $table->decimal('total_paid_amount')->nullable();
-            $table->decimal('monthly_payment')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->string('name');
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -2,17 +2,29 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use Illuminate\Http\Request;
+use App\Models\Tenant\Deduction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDeductionRequest;
 use App\Http\Requests\UpdateDeductionRequest;
 use App\Http\Resources\Finance\DeductionResource;
-use App\Models\Tenant\Deduction;
-use Illuminate\Http\Request;
+use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 class DeductionController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        try {
+            $user = $request->user();
+            if ($user->hasPermissionTo('deduction_type_index')) {
+                $deductions = Deduction::all();
+                return DeductionResource::collection($deductions);
+            } else {
+                return response()->json(['message' => 'Unauthorized for this task'], 403);
+            }
+        } catch (PermissionDoesNotExist $exception) {
+            return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
+        }
         $deductions = Deduction::all();
         return DeductionResource::collection($deductions);
     }

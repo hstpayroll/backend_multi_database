@@ -14,10 +14,8 @@ class DeductionTransaction extends Model
         'employee_id',
         'deduction_id',
         'amount_deducted',
+        'paid_amount',
         'outstanding_amount',
-        'is_partial',
-        'is_missed',
-        'start_date',
     ];
 
     public function payrollPeriod()
