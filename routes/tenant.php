@@ -31,6 +31,7 @@ use App\Http\Controllers\Api\V1\OverTimeTypeController;
 use App\Http\Controllers\Api\V1\AllowanceTypeController;
 use App\Http\Controllers\Api\v1\DeductionTypeController;
 use App\Http\Controllers\Api\V1\MainAllowanceController;
+use App\Http\Controllers\Api\V1\MainDeductionController;
 use App\Http\Controllers\Api\V1\PayrollPeriodController;
 use App\Http\Controllers\Api\V1\SubDepartmentController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
@@ -125,6 +126,7 @@ Route::middleware([
             Route::apiResource('payslip-settings', PayslipSettingController::class);
             Route::apiResource('branches', BranchController::class);
             Route::apiResource('salary-managements', SalaryManagementController::class);
+            Route::apiResource('main-deductions', MainDeductionController::class);
             Route::apiResource('deduction-types', DeductionTypeController::class);
             Route::apiResource('deductions', DeductionController::class);
             Route::apiResource('payrolls', PayrollController::class);

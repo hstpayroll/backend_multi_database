@@ -177,6 +177,20 @@ class TenantUserSeeder extends Seeder
                 'allowance_transaction_update',
                 'allowance_transaction_destroy',
                 'transaction_by_employee_show',
+
+                //Main_deduction
+                'main_deduction_index',
+                'main_deduction_store',
+                'main_deduction_show',
+                'main_deduction_update',
+                'main_deduction_destroy',
+
+                //Deduction_Type
+                'deduction_type_index',
+                'deduction_type_store',
+                'deduction_type_show',
+                'deduction_type_update',
+                'deduction_type_destroy',
             ]
         );
     }

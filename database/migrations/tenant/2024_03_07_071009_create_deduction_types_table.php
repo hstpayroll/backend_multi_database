@@ -13,8 +13,14 @@ return new class extends Migration
     {
         Schema::create('deduction_types', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('main_deduction_id')->constrained()->onDelete('cascade'); 
             $table->string('name');
             $table->text('description')->nullable();
+            $table->boolean('is_continuous')->default('0');
+            $table->boolean('is_employee_specific')->default('0');
+            $table->enum('value_type', ['absolute', 'percentage'])->default('absolute')->nullable();
+            $table->decimal('value')->default('0.00')->nullable();
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
             $table->softDeletes();
         });

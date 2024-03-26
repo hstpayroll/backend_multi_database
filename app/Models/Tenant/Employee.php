@@ -145,4 +145,9 @@ class Employee extends Model
     {
         return $query->where('status', 1); // Assuming 'active' is represented by status 1
     }
+    
+    public function deductions()
+    {
+        return $this->hasMany(Deduction::class);
+    }
 }
