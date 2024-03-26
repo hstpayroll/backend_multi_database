@@ -51,6 +51,7 @@ class EmployeeController extends Controller
 
                     $employee->image = $filename;
                 }
+
                 $employee = Employee::create($validatedData + ['image' => $filename]);
                 return new EmployeeResource($employee);
             } else {
@@ -81,7 +82,17 @@ class EmployeeController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('employee_update')) {
                 $validatedData = $request->validated();
-                $employee->update($validatedData);
+                if ($request->hasFile('image')) {
+                    $image = $request->file('image');
+                    $filename = time() . '.' . $image->getClientOriginalExtension();
+                    $path = public_path('storage/employees');
+                    // Resize image (optional)
+                    // $resizedImage = InterventionImage::make($image)->resize(200, 200); // Adjust dimensions as needed
+                    $image->save($path . '/' . $filename);
+
+                    $employee->image = $filename;
+                }
+                $employee->update($validatedData + ['image' => $filename]);
                 return new EmployeeResource($employee);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
