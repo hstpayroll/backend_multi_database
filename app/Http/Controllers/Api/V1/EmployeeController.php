@@ -44,13 +44,13 @@ class EmployeeController extends Controller
                 if ($request->hasFile('image')) {
                     $image = $request->file('image');
                     $filename = time() . '.' . $image->getClientOriginalExtension();
-                    $path = public_path('storage/employees');
-                    // Resize image (optional)
-                    // $resizedImage = InterventionImage::make($image)->resize(200, 200); // Adjust dimensions as needed
-                    $image->save($path . '/' . $filename);
+                    $path = 'storage/employees'; // Define the path where you want to store the file
+
+                    $image->storeAs($path, $filename);
 
                     $employee->image = $filename;
                 }
+                dd($filename);
 
                 $employee = Employee::create($validatedData + ['image' => $filename]);
                 return new EmployeeResource($employee);
@@ -85,10 +85,9 @@ class EmployeeController extends Controller
                 if ($request->hasFile('image')) {
                     $image = $request->file('image');
                     $filename = time() . '.' . $image->getClientOriginalExtension();
-                    $path = public_path('storage/employees');
-                    // Resize image (optional)
-                    // $resizedImage = InterventionImage::make($image)->resize(200, 200); // Adjust dimensions as needed
-                    $image->save($path . '/' . $filename);
+                    $path = 'storage/employees'; // Define the path where you want to store the file
+
+                    $image->storeAs($path, $filename);
 
                     $employee->image = $filename;
                 }
