@@ -18,9 +18,9 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->boolean('is_continuous')->default('0');
             $table->boolean('is_employee_specific')->default('0');
-            $table->enum('value_type', ['absolute', 'percentage'])->default('absolute')->nullable();
+            $table->boolean('value_type')->default('0')->nullable();
             $table->decimal('value')->default('0.00')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->boolean('status')->default('1');
             $table->timestamps();
             $table->softDeletes();
         });

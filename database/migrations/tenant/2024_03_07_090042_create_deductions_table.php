@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('static_amount')->nullable();
             $table->decimal('total_paid_amount')->nullable();
             $table->decimal('monthly_payment')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->boolean('status')->default('1');
             $table->timestamps();
             $table->softDeletes();
         });

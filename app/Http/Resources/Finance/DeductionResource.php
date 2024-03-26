@@ -20,3 +20,4 @@ class DeductionResource extends JsonResource
         ];
     }
 }
+d
