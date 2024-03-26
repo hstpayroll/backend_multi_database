@@ -51,7 +51,7 @@ class StoreEmployeeRequest extends FormRequest
             'citizenship_id' => 'required|exists:citizenships,id',
             'bank_id' => 'required|exists:banks,id',
             'account_number' => 'nullable|string',
-            'image' => 'nullable|string', // Assuming the image will be stored as a string (path or URL)
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'status' => 'nullable|boolean',
             'comment' => 'nullable|string',
         ];
