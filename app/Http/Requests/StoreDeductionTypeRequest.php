@@ -22,11 +22,11 @@ class StoreDeductionTypeRequest extends FormRequest
             'is_continuous' => 'required|boolean',
             'is_employee_specific' => 'required|boolean',
             'value_type' => [
-                'required_if:is_employee_specific,1',
+                'required_if:is_employee_specific,0',
                 'boolean',
             ],
             'value' => [
-                'required_if:is_employee_specific,1',
+                'required_if:is_employee_specific,0',
                 'numeric',
                 Rule::when($this->value_type === '1', ['gt:0', 'lte:100']),
                 Rule::when($this->value_type === '0', ['gt:0']),
