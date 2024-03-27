@@ -15,7 +15,6 @@ class StoreDeductionTransactionRequest extends FormRequest
     {
         return [
             'payroll_period_id' => 'required|exists:payroll_periods,id',
-            // 'employee_id' => 'required|exists:employees,id',
             'deduction_id' => 'required|exists:deductions,id',
             'amount_deducted' => 'nullable|numeric|min:0',
             'paid_amount' => 'nullable|numeric|min:0',
