@@ -24,8 +24,7 @@ class StoreDeductionTypeRequest extends FormRequest
             'is_employee_specific' => 'required|boolean',
             'value_type' => [
                 'required_if:is_employee_specific,1',
-                'string',
-                Rule::in(['absolute', 'percentage']),
+                'boolean',
             ],
             'value' => [
                 'required_if:is_employee_specific,1',
