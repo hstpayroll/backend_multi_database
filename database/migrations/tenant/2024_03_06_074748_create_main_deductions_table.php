@@ -11,16 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('deduction_types', function (Blueprint $table) {
+        Schema::create('main_deductions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('main_deduction_id')->constrained()->onDelete('cascade'); 
             $table->string('name');
             $table->text('description')->nullable();
-            $table->boolean('is_continuous')->default('0');
-            $table->boolean('is_employee_specific')->default('0');
-            $table->boolean('value_type')->default('0')->nullable();
-            $table->decimal('value')->default('0.00')->nullable();
-            $table->boolean('status')->default('1');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('deduction_types');
+        Schema::dropIfExists('main_deductions');
     }
 };

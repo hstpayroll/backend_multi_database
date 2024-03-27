@@ -13,18 +13,12 @@ return new class extends Migration
     {
         Schema::create('deductions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('employee_id')->constrained('employees')->onDelete('restrict')->onUpdate('cascade');
-            $table->foreignId('deduction_type_id')->constrained('deduction_types')->onDelete('restrict')->onUpdate('cascade');
-
-            $table->decimal('amount', 10, 2);
-            $table->date('start_date');
-            $table->date('expected_end_date');
-            $table->integer('duration_months')->default(0);
-            $table->decimal('monthly_installment', 10, 2)->default(0);
-            $table->text('description')->nullable();
-            $table->date('termination_date')->nullable(); //if the status is finished this value must have a value
-            $table->tinyInteger('status')->default(1); // 1 = active, 0 = inactive 3 = finished 4 = terminated 5 = cancelled
+            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
+            $table->foreignId('deduction_type_id')->constrained()->onDelete('cascade');
+            $table->decimal('static_amount')->nullable();
+            $table->decimal('total_paid_amount')->nullable();
+            $table->decimal('monthly_payment')->nullable();
+            $table->boolean('status')->default('1');
             $table->timestamps();
             $table->softDeletes();
         });

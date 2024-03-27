@@ -1,51 +1,46 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1;
+namespace App\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Tenant\DeductionType;
-use App\Http\Requests\StoreDeductionTypeRequest;
-use App\Http\Requests\UpdateDeductionTypeRequest;
-use App\Http\Resources\Finance\DeductionTypeResource;
+use App\Models\Tenant\MainDeduction;
+use App\Http\Requests\StoreMainDeductionRequest;
+use App\Http\Requests\UpdateMainDeductionRequest;
+use App\Http\Resources\Finance\MainDeductionResource;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
-class DeductionTypeController extends Controller
+class MainDeductionController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index(Request $request)
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('deduction_type_index')) {
-                $deductionTypes = DeductionType::latest()->paginate(10);
-                return DeductionTypeResource::collection($deductionTypes);
+            if ($user->hasPermissionTo('main_deduction_index')) {
+                return MainDeductionResource::collection(MainDeduction::latest()->paginate(10));
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreMainDeductionRequest $request)
+    {
         
-    }
-
-    public function store(StoreDeductionTypeRequest $request)
-    {
-
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('deduction_type_store')) {
+            if ($user->hasPermissionTo('main_deduction_store')) {
                 $validatedData = $request->validated();
-                $employeeSpecific = request()->input('is_employee_specific');
-
-                if ($employeeSpecific == true && (request()->input('value_type') !== null || request()->input('value_type') !== null)) {
-                    return response()->json([
-                        'message' => 'Deduction type cannot be created due to the filled statement in value and value type. those value must be null.',
-                    ], 422);
-
-                } else {
-                    $deductionType = DeductionType::create($validatedData);
-                    return new DeductionTypeResource($deductionType);    
-                }
+                $mainDeduction = MainDeduction::create($validatedData);
+                return new MainDeductionResource($mainDeduction);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
@@ -54,31 +49,34 @@ class DeductionTypeController extends Controller
         }
     }
 
-
-    public function show(Request $request, DeductionType $deductionType)
+    /**
+     * Display the specified resource.
+     */
+    public function show(Request $request, MainDeduction $mainDeduction)
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('deduction_type_show')) {
-                return new DeductionTypeResource($deductionType);
+            if ($user->hasPermissionTo('main_deduction_show')) {
+                return new MainDeductionResource($mainDeduction);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
         } catch (PermissionDoesNotExist $exception) {
             return response()->json(['message' => 'Unauthorized for this task - no permission by this name'], 403);
         }
-        return new DeductionTypeResource($deductionType);
     }
 
-    public function update(UpdateDeductionTypeRequest $request, DeductionType $deductionType)
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdateMainDeductionRequest $request, MainDeduction $mainDeduction)
     {
-
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('deduction_type_update')) {
+            if ($user->hasPermissionTo('main_deduction_update')) {
                 $validatedData = $request->validated();
-                $deductionType->update($validatedData);
-                return new DeductionTypeResource($deductionType);
+                $mainDeduction->update($validatedData);
+                return new MainDeductionResource($mainDeduction);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
             }
@@ -87,17 +85,20 @@ class DeductionTypeController extends Controller
         }
     }
 
-    public function destroy(Request $request, DeductionType $deductionType)
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Request $request, MainDeduction $mainDeduction)
     {
         try {
             $user = $request->user();
-            if ($user->hasPermissionTo('deduction_type_destroy')) {
+            if ($user->hasPermissionTo('main_deduction_destroy')) {
 
-                if ($deductionType->deductions()->exists()) {
-                    return response()->json(['error' => 'Deduction Type has related deduction. Deletion not allowed.'], 422);
+                if ($mainDeduction->deductionTypes()->exists()) {
+                    return response()->json(['error' => 'Main deduction has related deduction types. Deletion not allowed.'], 422);
                 }
                 else{
-                    $deductionType->delete();
+                    $mainDeduction->delete();
                     return response()->json(['message' => 'Main deduction deleted successfully.']);
                 }
             } else {

@@ -53,9 +53,8 @@ Route::prefix('v1')->group(function () {
             ->name('validate-user');
 
 
-        // Route::get('/client_requests', [ClientRequestsController::class, 'index'])
-        //     ->name('client_requests');
-        Route::apiResource('client-requests', ClientRequestsController::class)->except('store');
+        Route::get('/client-requests', [ClientRequestsController::class, 'index'])
+            ->name('client-requests');
 
         Route::apiResource('price-tags', PriceTagsController::class)->except('index');
 

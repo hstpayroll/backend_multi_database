@@ -12,15 +12,22 @@ class Deduction extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name',
+        'employee_id',
         'deduction_type_id',
-        'value_type',
-        'value',
+        'static_amount',
+        'total_paid_amount',
+        'monthly_payment',
         'status',
     ];
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+    }
 
     public function deductionType(): BelongsTo
     {
         return $this->belongsTo(DeductionType::class);
     }
+
 }
