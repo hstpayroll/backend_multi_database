@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Finance;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Finance\MainDeductionResource;
 
 class DeductionTypeResource extends JsonResource
 {
@@ -16,7 +17,7 @@ class DeductionTypeResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'main_deduction_id' => $this->main_deduction_id,
+            'main_deduction_id' => $this->mainDeduction->name,
             'name' => $this->name,
             'description' => $this->description,
             'is_continuous' => $this->is_continuous == 1 ? 'yes' : 'no',
