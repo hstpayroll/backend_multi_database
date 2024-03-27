@@ -28,7 +28,7 @@ class DeductionTypeResource extends JsonResource
                     : ($this->value_type == 1 ? 'percentage' : 'absolute'),
 
             'value' => $this->is_employee_specific == 1 ? null : $this->value,
-            'status' => $this->status == 1 ? 'active' : 'inactive',
+            'status' => $this->status ? 'active' : 'inactive',
         ];        
     }
 }
