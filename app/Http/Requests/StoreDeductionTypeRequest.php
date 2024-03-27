@@ -21,7 +21,6 @@ class StoreDeductionTypeRequest extends FormRequest
             'description' => 'nullable|string',
             'is_continuous' => 'required|boolean',
             'is_employee_specific' => 'required|boolean',
-            'is_employee_specific' => 'required|boolean',
             'value_type' => [
                 'required_if:is_employee_specific,1',
                 'boolean',
