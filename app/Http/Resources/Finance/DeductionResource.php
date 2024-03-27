@@ -11,12 +11,12 @@ class DeductionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'deduction_type' => new DeductionTypeResource($this->deductionType), // Assuming DeductionTypeResource exists
-            'value_type' => $this->value_type,
-            'value' => $this->value,
+            'employee_id' => $this->employee->first_name . ' ' . $this->employee->father_name . ' ' . $this->employee->gfather_name,
+            'deduction_type' => $this->deductionType->name,
+            'static_amount' => $this->static_amount,
+            'total_paid_amount' => $this->total_paid_amount,
+            'monthly_payment' => $this->monthly_payment,
             'status' => $this->status == 1 ? 'active' : 'inactive',
-
-        ];
+        ];                
     }
 }

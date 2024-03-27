@@ -28,10 +28,10 @@ class StoreDeductionTypeRequest extends FormRequest
             'value' => [
                 'required_if:is_employee_specific,1',
                 'numeric',
-                Rule::when($this->value_type === '1', ['between:0,100']),
-                Rule::when($this->value_type === '0', ['min:0']),
+                Rule::when($this->value_type === '1', ['gt:0', 'lte:100']),
+                Rule::when($this->value_type === '0', ['gt:0']),
             ],
-            'status' => 'nullable|string|in:active,inactive,directive',
+            'status' => 'nullable|boolean|in:1,0',
         ];
     }
 }

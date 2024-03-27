@@ -3,7 +3,6 @@
 namespace App\Http\Resources\Finance;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\Finance\MainDeductionResource;
 
 class DeductionTypeResource extends JsonResource
 {

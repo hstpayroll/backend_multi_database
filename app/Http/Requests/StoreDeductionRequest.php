@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Tenant\Deduction;
 use App\Models\Tenant\DeductionType;
+use App\Models\Tenant\Employee;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreDeductionRequest extends FormRequest
@@ -13,33 +15,48 @@ class StoreDeductionRequest extends FormRequest
     }
 
     public function rules()
-    {
-        // return [
-        //     'employee_id' => 'required|exists:employees,id',
-        //     'deduction_type_id' => 'required|exists:deduction_types,id',
-        //     'static_amount' => 'required|numeric',
-        //     'total_paid_amount' => 'required_if:deduction_type_id,null|numeric',
-        //     'monthly_payment' => 'required_if:deduction_type_id,null|numeric',
-        //     'status' => 'required|string|in:active,inactive,directive',
-        // ];
-        $deductionType = DeductionType::findOrFail($this->input('deduction_type_id'));
-        $isContinuous = $deductionType->is_continuous;
+{
+    $deductionType = DeductionType::findOrFail($this->input('deduction_type_id'));
+    $isContinuous = $deductionType->is_continuous;
 
-        if ($isContinuous == 1) {
-            return [
-                'employee_id' => 'required|exists:employees,id',
-                'deduction_type_id' => 'required|exists:deduction_types,id',
-                'total_paid_amount' => 'required|numeric',
-                'monthly_payment' => 'required|numeric',
-                'status' => 'required|string|in:active,inactive',
-            ];
+    $rules = [
+        'employee_id' => 'required|exists:employees,id',
+        'deduction_type_id' => 'required|exists:deduction_types,id',
+        'status' => 'nullable|boolean|in:1,0',
+    ];
+
+    if ($isContinuous == 1) {
+        $rules += [
+            'total_paid_amount' => 'required|numeric',
+            'monthly_payment' => 'required|numeric',
+            'status' => 'required|string|in:active,inactive',
+        ];
+    } else {
+        $rules['static_amount'] = ['nullable', 'numeric'];
+
+        if ($deductionType->value_type == 1) {
+            $employee = Employee::findOrFail($this->input('employee_id'));
+            $value = $deductionType->value / 100 * $employee->salary;
+            $this->merge(['static_amount' => $value]);
         } else {
-            return [
-                'employee_id' => 'required|exists:employees,id',
-                'deduction_type_id' => 'required|exists:deduction_types,id',
-                'static_amount' => 'required|numeric',
-                'status' => 'required|string|in:active,inactive',
-            ];
+            $this->merge(['static_amount' => $deductionType->value]);
         }
+    }
+
+    return $rules;
+}
+
+    public function withValidator($validator)
+    {
+        $validator->after(function ($validator) {
+            $count = Deduction::where('employee_id', $this->input('employee_id'))
+                ->where('deduction_type_id', $this->input('deduction_type_id'))
+                ->where('status', 1)
+                ->count();
+
+            if ($count > 0) {
+                $validator->errors()->add('error', 'The employee called is already associated with the deduction type with an active status.');
+            }
+        });
     }
 }

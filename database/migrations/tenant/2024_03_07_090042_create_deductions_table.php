@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('employee_id')->constrained()->onDelete('cascade');
             $table->foreignId('deduction_type_id')->constrained()->onDelete('cascade');
-            $table->decimal('static_amount')->nullable();
-            $table->decimal('total_paid_amount')->nullable();
-            $table->decimal('monthly_payment')->nullable();
+            $table->decimal('static_amount')->nullable()->default(0.00);
+            $table->decimal('total_paid_amount')->nullable()->default(0.00);
+            $table->decimal('monthly_payment')->nullable()->default(0.00);
             $table->boolean('status')->default('1');
             $table->timestamps();
             $table->softDeletes();
