@@ -14,16 +14,34 @@ class DeductionTypeSeeder extends Seeder
     public function run(): void
     {
         DeductionType::create([
-            'name' => 'Penalities',
-            'name' => 'It is employees Penalities',
+            'main_deduction_id' => '1',
+            'name' => 'Equipment lost Penalitie',
+            'description' => 'computer (laptop) fun damage',
+            'is_continuous' => '1',
+            'is_employee_specific' => '1',
+            // 'value_type' => '',
+            // 'value' => '',
+            'status' => '1',
         ]);
         DeductionType::create([
-            'name' => 'Cost-sharing',
-            'name' => 'It is employees Cost-sharing',
+            'main_deduction_id' => '2',
+            'name' => 'educational cost-shatring',
+            'description' => 'computer (laptop) fun damage',
+            'is_continuous' => '1',
+            'is_employee_specific' => '1',
+            // 'value_type' => '',
+            // 'value' => '',
+            'status' => '1',
         ]);
         DeductionType::create([
-            'name' => 'Social',
-            'name' => 'It is Includes Edir, Red-cross and other contribution',
+            'main_deduction_id' => '3',
+            'name' => 'Edir',
+            'description' => 'social-contribution',
+            'is_continuous' => '0',
+            'is_employee_specific' => '0',
+            'value_type' => '0',
+            'value' => '30',
+            'status' => '1',
         ]);
     }
 }
