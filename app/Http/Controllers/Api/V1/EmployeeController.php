@@ -34,11 +34,25 @@ class EmployeeController extends Controller
 
     public function store(StoreEmployeeRequest $request)
     {
+        dd($request->all());
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('employee_store')) {
                 $validatedData = $request->validated();
-                $employee = Employee::create($validatedData);
+                $employee = new Employee();
+
+                if ($request->hasFile('image')) {
+                    $image = $request->file('image');
+                    $filename = time() . '.' . $image->getClientOriginalExtension();
+                    $path = 'storage/employees'; // Define the path where you want to store the file
+
+                    $image->storeAs($path, $filename);
+
+                    $employee->image = $filename;
+                }
+                dd($filename);
+
+                $employee = Employee::create($validatedData + ['image' => $filename]);
                 return new EmployeeResource($employee);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
@@ -68,7 +82,16 @@ class EmployeeController extends Controller
             $user = $request->user();
             if ($user->hasPermissionTo('employee_update')) {
                 $validatedData = $request->validated();
-                $employee->update($validatedData);
+                if ($request->hasFile('image')) {
+                    $image = $request->file('image');
+                    $filename = time() . '.' . $image->getClientOriginalExtension();
+                    $path = 'storage/employees'; // Define the path where you want to store the file
+
+                    $image->storeAs($path, $filename);
+
+                    $employee->image = $filename;
+                }
+                $employee->update($validatedData + ['image' => $filename]);
                 return new EmployeeResource($employee);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);

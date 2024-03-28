@@ -18,6 +18,19 @@ class DomainController extends Controller
         return DomainResource::collection($domains);
     }
 
+    public function store(Request $request, Domain $domain)
+    {
+        $data = $request->validate([
+            'allowance_type_id' => 'required|exists:allowance_types,id',
+            'number_of_days' => 'required|integer',
+            'value_in_birr' => 'required|numeric',
+        ]);
+
+        return response()->json([
+            'message' => 'Allowance type assigned successfully.',
+        ]);
+    }
+
     public function domain_exist(Request $request)
     {
         $domain = $request->input('domain');
