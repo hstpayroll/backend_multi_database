@@ -15,43 +15,36 @@ class StoreDeductionRequest extends FormRequest
     }
 
     public function rules()
-    {
-        $deductionType = DeductionType::findOrFail($this->input('deduction_type_id'));
-        $isContinuous = $deductionType->is_continuous;
+{
+    $deductionType = DeductionType::findOrFail($this->input('deduction_type_id'));
+    $isContinuous = $deductionType->is_continuous;
 
-        $rules = [
-            'employee_id' => 'required|exists:employees,id',
-            'deduction_type_id' => 'required|exists:deduction_types,id',
-            'status' => 'nullable|boolean|in:1,0',
+    $rules = [
+        'employee_id' => 'required|exists:employees,id',
+        'deduction_type_id' => 'required|exists:deduction_types,id',
+        'status' => 'nullable|boolean|in:1,0',
+    ];
+
+    if ($isContinuous == 1) {
+        $rules += [
+            'total_paid_amount' => 'required|numeric',
+            'monthly_payment' => 'required|numeric',
+            'status' => 'required|string|in:active,inactive',
         ];
+    } else {
+        $rules['static_amount'] = ['nullable', 'numeric'];
 
-        if ($isContinuous == 1) {
-            $rules += [
-                'total_paid_amount' => 'required|numeric',
-                'monthly_payment' => 'required|numeric',
-                'status' => 'required|string|in:active,inactive',
-            ];
+        if ($deductionType->value_type == 1) {
+            $employee = Employee::findOrFail($this->input('employee_id'));
+            $value = $deductionType->value / 100 * $employee->salary;
+            $this->merge(['static_amount' => $value]);
         } else {
-            $rules['static_amount'] = 'nullable|numeric';
-
-            if ($deductionType->value_type == 1) {
-                // Logic for value calculation based on percentage and employee's salary
-                $employee = Employee::findOrFail($this->input('employee_id'));
-                $value = $deductionType->value / 100 * $employee->salary;
-                $this->merge(['static_amount' => $value]);
-            } else {
-                $this->merge(['static_amount' => $deductionType->value]);
-            }
-
-            // Set default values of 'value_type' and 'value' to 0 if they are null
-            $this->merge([
-                'value_type' => $this->input('value_type', 0),
-                'value' => $this->input('value', 0),
-            ]);
+            $this->merge(['static_amount' => $deductionType->value]);
         }
-
-        return $rules;
     }
+
+    return $rules;
+}
 
     public function withValidator($validator)
     {
@@ -62,7 +55,7 @@ class StoreDeductionRequest extends FormRequest
                 ->count();
 
             if ($count > 0) {
-                $validator->errors()->add('error', 'The employee is already associated with the deduction type with an active status.');
+                $validator->errors()->add('error', 'The employee called is already associated with the deduction type with an active status.');
             }
         });
     }

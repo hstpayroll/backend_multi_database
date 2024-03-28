@@ -41,9 +41,14 @@ class StoreDeductionTypeRequest extends FormRequest
             ],
             'value' => [
                 'required_if:is_employee_specific,0',
+                'nullable',
                 'numeric',
-                Rule::when($this->value_type === '1', ['gt:0', 'lte:100']),
-                Rule::when($this->value_type === '0', ['gt:0']),
+                Rule::when(request()->input('is_employee_specific') === '0', ['gt:0']),
+                Rule::when(request()->input('is_employee_specific') === '0', function ($attribute, $value, $fail) {
+                    if (!is_null($value) && $value <= 0) {
+                        $fail('The value must be greater than 0 when is_employee_specific is false.');
+                    }
+                }),
             ],
             'status' => 'nullable|boolean|in:1,0',
         ];
