@@ -15,36 +15,40 @@ class StoreDeductionRequest extends FormRequest
     }
 
     public function rules()
-{
-    $deductionType = DeductionType::findOrFail($this->input('deduction_type_id'));
-    $isContinuous = $deductionType->is_continuous;
-
-    $rules = [
-        'employee_id' => 'required|exists:employees,id',
-        'deduction_type_id' => 'required|exists:deduction_types,id',
-        'status' => 'nullable|boolean|in:1,0',
-    ];
-
-    if ($isContinuous == 1) {
-        $rules += [
-            'total_paid_amount' => 'required|numeric',
-            'monthly_payment' => 'required|numeric',
-            'status' => 'required|string|in:active,inactive',
+    {
+        $rules = [
+            'employee_id' => 'required|exists:employees,id',
+            'deduction_type_id' => 'required|exists:deduction_types,id',
+            'status' => 'nullable|boolean|in:1,0',
         ];
-    } else {
-        $rules['static_amount'] = ['nullable', 'numeric'];
 
-        if ($deductionType->value_type == 1) {
-            $employee = Employee::findOrFail($this->input('employee_id'));
-            $value = $deductionType->value / 100 * $employee->salary;
-            $this->merge(['static_amount' => $value]);
-        } else {
-            $this->merge(['static_amount' => $deductionType->value]);
+        if ($this->has('deduction_type_id')) {
+            $rules['deduction_type_id'] = 'required|exists:deduction_types,id';
+
+            $deductionType = DeductionType::findOrFail($this->input('deduction_type_id'));
+            $isContinuous = $deductionType->is_continuous;
+
+            if ($isContinuous == 1) {
+                $rules += [
+                    'total_paid_amount' => 'required|numeric',
+                    'monthly_payment' => 'required|numeric',
+                    'status' => 'required|string|in:active,inactive',
+                ];
+            } else {
+                $rules['static_amount'] = ['nullable', 'numeric'];
+
+                if ($deductionType->value_type == 1) {
+                    $employee = Employee::findOrFail($this->input('employee_id'));
+                    $value = $deductionType->value / 100 * $employee->salary;
+                    $this->merge(['static_amount' => $value]);
+                } else {
+                    $this->merge(['static_amount' => $deductionType->value]);
+                }
+            }
         }
-    }
 
-    return $rules;
-}
+        return $rules;
+    }
 
     public function withValidator($validator)
     {

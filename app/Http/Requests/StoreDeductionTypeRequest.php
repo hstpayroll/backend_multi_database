@@ -37,6 +37,7 @@ class StoreDeductionTypeRequest extends FormRequest
             ],
             'value_type' => [
                 'required_if:is_employee_specific,0',
+                'nullable',
                 'boolean',
             ],
             'value' => [
