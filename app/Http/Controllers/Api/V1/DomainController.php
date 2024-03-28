@@ -38,6 +38,7 @@ class DomainController extends Controller
         if ($domain) {
             $domain_exist = Domain::where('domain', $domain . '.hstpayroll.et')->first();
             // dd($domain_exist);
+            // dd($domain_exist);
             if ($domain_exist) {
                 return response()->json([
                     'status' => 'success',
