@@ -21,7 +21,7 @@ class CompanySettingController extends Controller
         try {
             $user = $request->user();
             if ($user->hasPermissionTo('company_setting_index')) {
-                $companySettings = CompanySetting::latest()->paginate(10);
+                $companySettings = CompanySetting::latest()->paginate();
                 return CompanySettingResource::collection($companySettings);
             } else {
                 return response()->json(['message' => 'Unauthorized for this task'], 403);
