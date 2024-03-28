@@ -36,7 +36,7 @@ class DomainController extends Controller
         $domain = $request->input('domain');
         // dd($domain);
         if ($domain) {
-            $domain_exist = Domain::where('domain', $domain . '.localhost')->first();
+            $domain_exist = Domain::where('domain', $domain . '.hstpayroll.et')->first();
             // dd($domain_exist);
             if ($domain_exist) {
                 return response()->json([
