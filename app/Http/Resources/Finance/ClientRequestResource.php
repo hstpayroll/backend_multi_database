@@ -24,7 +24,6 @@ class ClientRequestResource extends JsonResource
             'country' => $this->country,
             'city' => $this->city,
             'sub_city' => $this->sub_city,
-            'created_at' => $this->created_at,
         ];
     }
 }

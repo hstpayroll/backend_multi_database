@@ -15,33 +15,26 @@ class DeductionTypeSeeder extends Seeder
     {
         DeductionType::create([
             'main_deduction_id' => '1',
-            'name' => 'Equipment lost Penalitie',
-            'description' => 'computer (laptop) fun damage',
+            'name' => 'laptop crush',
+            'description' => 'the hp laptop fun is not working',
             'is_continuous' => '1',
             'is_employee_specific' => '1',
-            // 'value_type' => '',
-            // 'value' => '',
-            'status' => '1',
         ]);
         DeductionType::create([
             'main_deduction_id' => '2',
-            'name' => 'educational cost-shatring',
-            'description' => 'computer (laptop) fun damage',
+            'name' => 'Educational Cost-Sharing',
+            'description' => 'university coast sharing',
             'is_continuous' => '1',
             'is_employee_specific' => '1',
-            // 'value_type' => '',
-            // 'value' => '',
-            'status' => '1',
         ]);
         DeductionType::create([
             'main_deduction_id' => '3',
             'name' => 'Edir',
-            'description' => 'social-contribution',
+            'description' => 'social-contribution type',
             'is_continuous' => '0',
             'is_employee_specific' => '0',
             'value_type' => '0',
-            'value' => '30',
-            'status' => '1',
+            'value' => '140'
         ]);
     }
 }

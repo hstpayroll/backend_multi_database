@@ -11,9 +11,6 @@ use App\Http\Resources\Finance\ClientRequestResource;
 class ClientRequestsController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $clientRequests = ClientRequests::latest()->paginate(10);
@@ -30,14 +27,10 @@ class ClientRequestsController extends Controller
         return new ClientRequestResource($clientRequest);
     }
 
-    public function update(Request $request, ClientRequests $user)
-    {
-        //
-    }
+
     public function destroy(ClientRequests $clientRequest)
     {
         $clientRequest->delete();
-        return response()->json(['message' => 'Client Request deleted successfully']);
+        return response()->noContent();
     }
 }
-

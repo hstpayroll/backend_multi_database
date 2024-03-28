@@ -86,6 +86,8 @@ return array(
     'League\\Config\\' => array($vendorDir . '/league/config/src'),
     'League\\CommonMark\\' => array($vendorDir . '/league/commonmark/src'),
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
+    'Laravel\\Telescope\\Database\\Factories\\' => array($vendorDir . '/laravel/telescope/database/factories'),
+    'Laravel\\Telescope\\' => array($vendorDir . '/laravel/telescope/src'),
     'Laravel\\SerializableClosure\\' => array($vendorDir . '/laravel/serializable-closure/src'),
     'Laravel\\Sanctum\\' => array($vendorDir . '/laravel/sanctum/src'),
     'Laravel\\Sail\\' => array($vendorDir . '/laravel/sail/src'),
@@ -112,7 +114,6 @@ return array(
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/src'),
     'Dflydev\\DotAccessData\\' => array($vendorDir . '/dflydev/dot-access-data/src'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
-    'DebugBar\\' => array($vendorDir . '/maximebf/debugbar/src/DebugBar'),
     'Database\\Seeders\\' => array($baseDir . '/database/seeders', $vendorDir . '/laravel/pint/database/seeders'),
     'Database\\Factories\\' => array($baseDir . '/database/factories', $vendorDir . '/laravel/pint/database/factories'),
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
@@ -121,6 +122,5 @@ return array(
     'Brick\\Money\\' => array($vendorDir . '/brick/money/src'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'BeyondCode\\QueryDetector\\' => array($vendorDir . '/beyondcode/laravel-query-detector/src'),
-    'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
     'App\\' => array($baseDir . '/app', $vendorDir . '/laravel/pint/app'),
 );

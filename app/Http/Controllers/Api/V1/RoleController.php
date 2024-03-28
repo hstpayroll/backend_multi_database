@@ -45,16 +45,15 @@ class RoleController extends Controller
     }
     public function destroy(Role $role)
     {
-        // Detach users from the role (assuming a many-to-many relationship)
-        $role->users()->detach();
+        // $role = Role::where('id', $id)
+        // ->where('guard_name', 'sanctum')
+        // ->firstOrFail();
 
-        // Detach permissions from the role (assuming a many-to-many relationship)
+        // Detach permissions associated with the role
         $role->permissions()->detach();
 
-        // Delete any other related models (based on your specific relationships)
-
-        $role->delete(); // Finally, delete the role itself
-
+        $role->delete();
+        dd("deletd");
         return response()->json([
             'message' => 'Role deleted successfully!',
         ], 200);

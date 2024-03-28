@@ -22,7 +22,7 @@ class MainDeductionSeeder extends Seeder
             'description' => 'It is employees Cost-sharing',
         ]);
         MainDeduction::create([
-            'name' => 'Social-Contribution',
+            'name' => 'Social-contribution',
             'description' => 'It is Includes Edir, Red-cross and other contribution',
         ]);
     }

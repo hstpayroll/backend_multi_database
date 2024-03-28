@@ -34,7 +34,7 @@ class UserController extends Controller
         ]);
 
         $user->assignRole(['user']);
-        $user->givePermissionTo(['edit_profile', 'change_password']);
+        // $user->givePermissionTo(['edit_profile', 'change_password']);
 
         event(new Registered($user));
 
@@ -66,7 +66,7 @@ class UserController extends Controller
         ]);
 
         $user->assignRole(['user']);
-        $user->givePermissionTo(['edit_profile', 'change_password']);
+        // $user->givePermissionTo(['edit_profile', 'change_password']);
 
         event(new Registered($user));
 

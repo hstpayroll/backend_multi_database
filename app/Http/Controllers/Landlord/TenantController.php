@@ -60,8 +60,8 @@ class TenantController extends Controller
         event(new Registered($tenant));
 
         // Auth::login($user);
-        $activity = Activity::all()->last();
-        Log::info($activity);
+        // $activity = Activity::all()->last();
+        // Log::info($activity);
 
         return redirect()->to(route('tenants.index'));
     }

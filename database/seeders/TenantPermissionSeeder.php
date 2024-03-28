@@ -14,9 +14,6 @@ class TenantPermissionSeeder extends Seeder
     public function run(): void
     {
         $permissions = [
-            'edit_profile',
-            'change_password',
-
             'tenant_user_index',
             'tenant_user_create',
             'tenant_user_show',
