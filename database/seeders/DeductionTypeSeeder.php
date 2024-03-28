@@ -19,6 +19,8 @@ class DeductionTypeSeeder extends Seeder
             'description' => 'the hp laptop fun is not working',
             'is_continuous' => '1',
             'is_employee_specific' => '1',
+            'value_type' => null, // Set to null instead of an empty string
+            'value' => null, // Set to null instead of an empty string
         ]);
         DeductionType::create([
             'main_deduction_id' => '2',

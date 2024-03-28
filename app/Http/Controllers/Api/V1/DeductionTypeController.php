@@ -43,6 +43,9 @@ class DeductionTypeController extends Controller
                     ], 422);
 
                 } else {
+                    $validatedData['value_type'] = $validatedData['value_type'] ?? 0;
+                    $validatedData['value'] = $validatedData['value'] ?? 0;
+                    
                     $deductionType = DeductionType::create($validatedData);
                     return new DeductionTypeResource($deductionType);    
                 }

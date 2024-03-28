@@ -14,16 +14,28 @@ class DeductionSeeder extends Seeder
     public function run(): void
     {
         Deduction::create([
-            'name' => 'Penalities',
-            'description' => 'It is employees Penalities',
+            'employee_id' => '1',
+            'deduction_type_id' => '1',
+            // 'static_amount' => '',
+            'total_paid_amount' => '40000',
+            'monthly_payment' => '1000',
+            'status' => '1',
         ]);
         Deduction::create([
-            'name' => 'Cost-sharing',
-            'description' => 'It is employees Cost-sharing',
+            'employee_id' => '1',
+            'deduction_type_id' => '2',
+            // 'static_amount' => '',
+            'total_paid_amount' => '60000',
+            'monthly_payment' => '1000',
+            'status' => '1',
         ]);
         Deduction::create([
-            'name' => 'Social-contribution',
-            'description' => 'It is Includes Edir, Red-cross and other contribution',
+            'employee_id' => '1',
+            'deduction_type_id' => '1',
+            'static_amount' => '140',
+            // 'total_paid_amount' => '',
+            // 'monthly_payment' => '',
+            'status' => '1',
         ]);
     }
 }
