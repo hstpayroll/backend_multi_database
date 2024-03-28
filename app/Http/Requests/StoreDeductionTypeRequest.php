@@ -20,7 +20,21 @@ class StoreDeductionTypeRequest extends FormRequest
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'is_continuous' => 'required|boolean',
-            'is_employee_specific' => 'required|boolean',
+            'is_employee_specific' => [
+                'required',
+                'boolean',
+                function ($attribute, $value, $fail) {
+                    $isContinuous = request()->input('is_continuous');
+
+                    if ($isContinuous === '1' && $value !== 1) {
+                        $fail('The is_employee_specific field must be true when is_continuous is true.');
+                    }
+
+                    if ($isContinuous === '0' && !in_array($value, [0, 1])) {
+                        $fail('The is_employee_specific field must be true or false when is_continuous is false.');
+                    }
+                }
+            ],
             'value_type' => [
                 'required_if:is_employee_specific,0',
                 'boolean',
