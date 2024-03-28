@@ -11,18 +11,12 @@ use App\Http\Resources\Finance\PriceTagResource;
 
 class PriceTagsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $pricetags = PriceTags::latest()->paginate(10);
         return PriceTagResource::collection($pricetags);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StorePriceTagsRequest $request)
     {
         $validatedData = $request->validated();
@@ -30,26 +24,17 @@ class PriceTagsController extends Controller
         return new PriceTagResource($pricetag);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(PriceTags $priceTags)
     {
         return new PriceTagResource($priceTags);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdatePriceTagsRequest $request, PriceTags $priceTags)
     {
         $priceTags->update($request->validated());
         return new PriceTagResource($priceTags);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(PriceTags $priceTags)
     {
         $priceTags->delete();

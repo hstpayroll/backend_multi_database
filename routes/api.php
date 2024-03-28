@@ -45,36 +45,30 @@ Route::prefix('v1')->group(function () {
 
     // require __DIR__ . '/api_extended.php';
     Route::middleware('auth:sanctum')->group(function () {
-
         Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
             ->name('logout');
-
         Route::post('/validate-user', [AuthenticatedSessionController::class, 'validateUser'])
             ->name('validate-user');
+        // Login ends and
 
+        //custom begins
 
-        Route::get('/client-requests', [ClientRequestsController::class, 'index'])
-            ->name('client-requests');
-
+        Route::get('client-requests', [ClientRequestsController::class, 'index'])->name('client-requests');
         Route::apiResource('price-tags', PriceTagsController::class)->except('index');
-
 
         Route::post('users/assign-role/{user}', [UserController::class, 'assignRole'])->name('users.assign-role');
         Route::post('users/remove-role/{user}', [UserController::class, 'removeRole'])->name('users.remove-role');
         Route::apiResource('users', UserController::class);
+
         Route::apiResource('roles', RoleController::class);
         Route::apiResource('permissions', PermissionController::class)->only(['index', 'show']);
         Route::apiResource('tenants', TenantController::class);
         Route::apiResource('domains', DomainController::class)->only(['index']);
         Route::get('auth-user', [DomainController::class, 'auth_user'])->name('auth-user');
     });
+
     Route::get('domain-exist', [DomainController::class, 'domain_exist'])->name('domain-exist');
 
-    Route::post('/client-requests', [ClientRequestsController::class, 'store'])
-        ->middleware('guest')->name('client-requests');
-
-    Route::get('/price-tags', [PriceTagsController::class, 'index'])
-        ->middleware('guest')->name('price-tags');
-
-    // user
+    Route::post('client-requests', [ClientRequestsController::class, 'store'])->middleware('guest')->name('client-requests');
+    Route::get('price-tags', [PriceTagsController::class, 'index'])->middleware('guest')->name('price-tags');
 });

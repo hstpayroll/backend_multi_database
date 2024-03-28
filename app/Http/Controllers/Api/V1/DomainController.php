@@ -34,9 +34,10 @@ class DomainController extends Controller
     public function domain_exist(Request $request)
     {
         $domain = $request->input('domain');
-
+        // dd($domain);
         if ($domain) {
             $domain_exist = Domain::where('domain', $domain . '.localhost')->first();
+            // dd($domain_exist);
             if ($domain_exist) {
                 return response()->json([
                     'status' => 'success',
